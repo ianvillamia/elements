@@ -40,7 +40,7 @@ class _SomethingState extends State<Something> {
             // color: Colors.red,
                  decoration: BoxDecoration(
                   image: DecorationImage(
-                     image: AssetImage("assets/mario.png"),
+                     image: AssetImage("assets/bg.jpg"),
                       fit: BoxFit.cover))
                       ),
             Positioned(
