@@ -52,6 +52,22 @@ class _Login extends State<Login> {
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
 
     return new Scaffold(
+      drawer: Drawer(child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          DrawerHeader(
+            child: Text('Header'),
+            decoration: BoxDecoration(
+              color: Colors.blue
+            ),
+          ),
+          ListTile(
+            title: Text('Item'),
+            onTap: (){},
+          )
+        ],
+      ),),
+      
       resizeToAvoidBottomPadding: false,
       body: Stack(
         fit: StackFit.expand,
@@ -180,6 +196,7 @@ Container buildCard(auth) {
                             offset: Offset(0.0, 8.0),
                             blurRadius: 8.0)
                       ]),
+
                   child: MaterialButton(
                     //   onPressed: (){},
                     color: Colors.transparent,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Screens/Login/login.dart';
 import './Screens/SignUp/signup.dart';
+import './Screens/Login/login.dart';
 
 void main() => runApp(MaterialApp(
-      home: SignUp(),
+      home:Login(), 
+      //SignUp(),
       debugShowCheckedModeBanner: false,
     ));
