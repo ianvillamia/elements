@@ -2,7 +2,7 @@ import 'package:mynewapp/Shared/input.dart';
 
 import '../../Shared/animation.dart';
 import 'package:flutter/material.dart';
-
+import '../Login/login.dart';
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);
 
@@ -107,11 +107,23 @@ class _SignUp extends State<SignUp> {
                                     border: Border(
                                         bottom:
                                             BorderSide(color: Colors.grey[100]))),
-                                child: Input().buildTextFormField("Email",Colors.grey[400], false)
+                                child: Input().buildTextFormField("First Name",Colors.grey[400], false)
                               ),
                               Container(
                                 padding: EdgeInsets.all(8.0),
+                                child: Input().buildTextFormField("Last Name",Colors.grey[400], false)
+                              ),
+                               Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: Input().buildTextFormField("Email",Colors.grey[400], false)
+                              ),
+                               Container(
+                                padding: EdgeInsets.all(8.0),
                                 child: Input().buildTextFormField("Password",Colors.grey[400], false)
+                              ),
+                               Container(
+                                padding: EdgeInsets.all(8.0),
+                                child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false)
                               )
                             ],
                           ),
@@ -148,10 +160,15 @@ class _SignUp extends State<SignUp> {
                     ),
                      FadeAnimation(
                         1.5,
-                        Text(
-                          "Login?",
-                          style:
-                              TextStyle(color: Color.fromRGBO(143, 148, 251, 1)),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                          },
+                                                  child: Text(
+                            "Login?",
+                            style:
+                                TextStyle(color: Color.fromRGBO(143, 148, 251, 1)),
+                          ),
                         )),
                         SizedBox(height: 10,),
                     FadeAnimation(
