@@ -1,241 +1,183 @@
+import 'package:mynewapp/Screens/SignUp/signup.dart';
+import 'package:mynewapp/Shared/input.dart';
+
+import '../../Shared/animation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../Services/auth.dart';
-import '../../Global/globals.dart';
+
 class Login extends StatefulWidget {
+  Login({Key key}) : super(key: key);
+
   @override
-  _Login createState() => new _Login();
+  _LoginState createState() => _LoginState();
 }
 
-class _Login extends State<Login> {
-  bool _isSelected = false;
-
-  void _radio() {
-    setState(() {
-      _isSelected = !_isSelected;
-    });
-  }
-
-  Widget radioButton(bool isSelected) => Container(
-        width: 16.0,
-        height: 16.0,
-        padding: EdgeInsets.all(2.0),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(width: 2.0, color: Colors.black),
-        ),
-        child: isSelected
-            ? Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-              )
-            : Container(),
-      );
-
-  Widget horizontalLine() => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Container(
-          width: ScreenUtil.getInstance().setWidth(120),
-          height: 1.0,
-          color: Colors.black26.withOpacity(.2),
-        ),
-      );
-
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    Globals global = Globals();
-    final AuthService _auth = AuthService();
-
-    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    ScreenUtil.instance =
-        ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
-
-    return new Scaffold(
-    drawer:global.drawDrawer() ,
-      resizeToAvoidBottomPadding: false,
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
             children: <Widget>[
-              Image.asset(
-                "assets/background.jpg",
-                fit: BoxFit.cover,
-                height: ScreenUtil.getInstance().setHeight(1330),
-                width: ScreenUtil.getInstance().setWidth(800),
+              Container(
+                height: 310,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/bg.png'), fit: BoxFit.fill)),
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+                      left: 30,
+                      width: 80,
+                      height: 200,
+                      child: FadeAnimation(
+                          1,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/light-1.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      left: 140,
+                      width: 80,
+                      height: 150,
+                      child: FadeAnimation(
+                          1.3,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/light-2.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      right: 40,
+                      top: 40,
+                      width: 80,
+                      height: 150,
+                      child: FadeAnimation(
+                          1.5,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/clock.png'))),
+                          )),
+                    ),
+                    Positioned(
+                      child: FadeAnimation(
+                          1.6,
+                          Container(
+                            margin: EdgeInsets.only(top: 50),
+                            child: Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          )),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Column(
+                  children: <Widget>[
+                    FadeAnimation(
+                        1.8,
+                        Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color.fromRGBO(143, 148, 251, .2),
+                                    blurRadius: 20.0,
+                                    offset: Offset(0, 10))
+                              ]),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.grey[100]))),
+                                child: Input().buildTextFormField("Email",Colors.grey[400],false)
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(8.0),
+                                
+                                child: Input().buildTextFormField("Password",Colors.grey[400],true)
+                              )
+                            ],
+                          ),
+                        )),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    FadeAnimation(
+                        2,
+                        Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(colors: [
+                                Color.fromRGBO(143, 148, 251, 1),
+                                Color.fromRGBO(143, 148, 251, .6),
+                              ])),
+                          child: MaterialButton(
+                            child: Center(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            onPressed: () {},
+                          ),
+                        )),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      },
+                      child: FadeAnimation(
+                          1.5,
+                          Text(
+                            "Sign-Up?",
+                            style: TextStyle(
+                                color: Color.fromRGBO(143, 148, 251, 1)),
+                          )),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    FadeAnimation(
+                        1.5,
+                        Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                              color: Color.fromRGBO(143, 148, 251, 1)),
+                        )),
+                  ],
+                ),
               )
             ],
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 60.0),
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: ScreenUtil.getInstance().setHeight(180),
-                ),
-                buildCard(_auth),
-                SizedBox(
-                  height: ScreenUtil.getInstance().setHeight(150),
-                ),
-                buildFooter()
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
-}
-
-Row buildFooter() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      Text(
-        "New User? ",
-        style: TextStyle(fontFamily: "Poppins-Medium"),
-      ),
-      InkWell(
-        onTap: () {
-          //signup
-        },
-        child: Text(
-          "Signup",
-          style: TextStyle(
-            color: Color(0xFF5d74e3),
-            fontFamily: "Poppins-Bold",
-          ),
-        ),
-      )
-    ],
-  );
-}
-
-Container buildCard(auth) {
-  return Container(
-    margin: EdgeInsets.fromLTRB(0, 40, 0, 90),
-    width: double.infinity,
-    height: ScreenUtil.getInstance().setHeight(550),
-    decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
-          BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0.0, 15.0),
-              blurRadius: 15.0),
-          BoxShadow(
-              color: Colors.black12,
-              offset: Offset(0.0, -10.0),
-              blurRadius: 10.0),
-        ]),
-    child: Padding(
-      padding: EdgeInsets.only(left: 16.0, right: 16.0, top: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            "Login",
-            style: TextStyle(
-                fontSize: ScreenUtil.getInstance().setSp(45),
-                fontFamily: "Poppins-Bold",
-                letterSpacing: .6),
-          ),
-          SizedBox(
-            height: ScreenUtil.getInstance().setHeight(30),
-          ),
-          TextField(
-            decoration: InputDecoration(
-                hintText: "Username",
-                hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
-          ),
-          SizedBox(
-            height: ScreenUtil.getInstance().setHeight(30),
-          ),
-          TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-                hintText: "Password",
-                hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
-          ),
-          SizedBox(
-            height: ScreenUtil.getInstance().setHeight(35),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              InkWell(
-                child: Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                  width: ScreenUtil.getInstance().setWidth(330),
-                  height: ScreenUtil.getInstance().setHeight(100),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [Colors.pink[50], Colors.blue[300]]),
-                      borderRadius: BorderRadius.circular(6.0),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color(0xFF6078ea).withOpacity(.3),
-                            offset: Offset(0.0, 8.0),
-                            blurRadius: 8.0)
-                      ]),
-
-                  child: MaterialButton(
-                    //   onPressed: (){},
-                    color: Colors.transparent,
-                    child: InkWell(
-                        onTap: () {
-                          print('object');
-                        },
-                        child: Center(
-                          child: Text(
-                            "SIGN IN",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Poppins-Bold",
-                                fontSize: 18,
-                                letterSpacing: 1.0),
-                          ),
-                        )),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  print('igit');
-                },
-                child: Text("Forgot Password?",
-                    style: TextStyle(
-                        fontSize: 12, fontFamily: "Poppins-Medium")),
-              ),
-              GestureDetector(
-                onTap: () async{
-                  dynamic result = await auth.signInAnon;
-                  if(result==null){print('error Sign in');}
-                  else{
-                    print('Signed in');
-                    print(result);
-                  }
-                },child: Text('Anonymous'),
-              ),
-            Text(
-            "Forgot Password?",
-            style: TextStyle(
-                color: Colors.blue,
-                fontFamily: "Poppins-Medium",
-                fontSize: ScreenUtil.getInstance().setSp(28)),
-          ), ],
-          ),
-        ],
-      ),
-    ),
-  );
 }

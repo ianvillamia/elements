@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import './Screens/SignUp/signup.dart';
-import './Screens/Login/login.dart';
+
+import './Screens/Toggle/toggle.dart';
 
 void main() => runApp(MaterialApp(
-      home:Login(), 
-      //SignUp(),
+      //home:Login(), 
+     // home:SignUp(),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
     ));
