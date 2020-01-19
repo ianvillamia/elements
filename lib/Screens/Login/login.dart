@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../Services/auth.dart';
+import '../../Global/globals.dart';
 class Login extends StatefulWidget {
   @override
   _Login createState() => new _Login();
@@ -44,7 +45,7 @@ class _Login extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-
+    Globals global = Globals();
     final AuthService _auth = AuthService();
 
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
@@ -52,22 +53,7 @@ class _Login extends State<Login> {
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
 
     return new Scaffold(
-      drawer: Drawer(child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            child: Text('Header'),
-            decoration: BoxDecoration(
-              color: Colors.blue
-            ),
-          ),
-          ListTile(
-            title: Text('Item'),
-            onTap: (){},
-          )
-        ],
-      ),),
-      
+    drawer:global.drawDrawer() ,
       resizeToAvoidBottomPadding: false,
       body: Stack(
         fit: StackFit.expand,
