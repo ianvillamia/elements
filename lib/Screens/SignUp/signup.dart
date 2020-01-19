@@ -14,6 +14,8 @@ class SignUp extends StatefulWidget {
 class _SignUp extends State<SignUp> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  String password1,password2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,23 +114,23 @@ class _SignUp extends State<SignUp> {
                                       border: Border(
                                           bottom:
                                               BorderSide(color: Colors.grey[100]))),
-                                  child: Input().buildTextFormField("First Name",Colors.grey[400], false)
+                                  child: Input().buildTextFormField("First Name",Colors.grey[400], false,Validators().emailValidator())
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Last Name",Colors.grey[400], false)
+                                  child: Input().buildTextFormField("Last Name",Colors.grey[400], false,Validators().emailValidator())
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Email",Colors.grey[400], false)
+                                  child: Input().buildTextFormField("Email",Colors.grey[400], false,Validators().emailValidator())
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Password",Colors.grey[400], false)
+                                  child: Input().buildTextFormField("Password",Colors.grey[400], false,Validators().emailValidator())
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false)
+                                  child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false,Validators().emailValidator())
                                 )
                               ],
                             ),
