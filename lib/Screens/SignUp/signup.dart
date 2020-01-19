@@ -14,6 +14,15 @@ class SignUp extends StatefulWidget {
 class _SignUp extends State<SignUp> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  
+  bool _autoValidate= false;
+
+  TextEditingController _password1Controller = TextEditingController(),
+  _password2Controller = TextEditingController(),
+  _firstNameController=TextEditingController(),
+  _lastNameController = TextEditingController(),
+  _emailController=TextEditingController()
+  ;
 
   String password1,password2;
   @override
@@ -21,6 +30,7 @@ class _SignUp extends State<SignUp> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Form(
+        autovalidate: _autoValidate,
         key: _formKey,
               child: Container(
           child: SingleChildScrollView(
@@ -114,23 +124,23 @@ class _SignUp extends State<SignUp> {
                                       border: Border(
                                           bottom:
                                               BorderSide(color: Colors.grey[100]))),
-                                  child: Input().buildTextFormField("First Name",Colors.grey[400], false,Validators().emailValidator())
+                                  child: Input().buildTextFormField("First Name",Colors.grey[400], false,Validators().emailValidator(),_firstNameController)
                                 ),
                                 Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Last Name",Colors.grey[400], false,Validators().emailValidator())
+                                  child: Input().buildTextFormField("Last Name",Colors.grey[400], false,Validators().emailValidator(),_lastNameController)
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Email",Colors.grey[400], false,Validators().emailValidator())
+                                  child: Input().buildTextFormField("Email",Colors.grey[400], false,Validators().emailValidator(),_emailController)
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Password",Colors.grey[400], false,Validators().emailValidator())
+                                  child: Input().buildTextFormField("Password",Colors.grey[400], false,Validators().passwordValidator(),_password1Controller)
                                 ),
                                  Container(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false,Validators().emailValidator())
+                                  child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false,Validators().passwordValidator(),_password2Controller)
                                 )
                               ],
                             ),
@@ -158,7 +168,7 @@ class _SignUp extends State<SignUp> {
                                 ),
                               ),
                             onPressed: (){
-                              
+                              _validateInputs();
                             },
                             ),
                           )),
@@ -198,6 +208,11 @@ class _SignUp extends State<SignUp> {
   void _validateInputs() async{
     if(_formKey.currentState.validate()){
 
+    }
+    else{
+      setState(() {
+        _autoValidate=true;
+      });
     }
   }
 }

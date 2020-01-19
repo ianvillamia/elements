@@ -13,6 +13,9 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController _emailController = TextEditingController(),
+      _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,18 +107,24 @@ class _LoginState extends State<Login> {
                           child: Column(
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                    border: Border(
-                                        bottom: BorderSide(
-                                            color: Colors.grey[100]))),
-                                child: Input().buildTextFormField("Email",Colors.grey[400],false,Validators().emailValidator())
-                              ),
+                                  padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                          bottom: BorderSide(
+                                              color: Colors.grey[100]))),
+                                  child: Input().buildTextFormField(
+                                    "Email",
+                                    Colors.grey[400],
+                                    false,
+                                    Validators().emailValidator(),_emailController
+                                  )),
                               Container(
-                                padding: EdgeInsets.all(8.0),
-                                
-                                child: Input().buildTextFormField("Password",Colors.grey[400],true,Validators().passwordValidator())
-                              )
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Input().buildTextFormField(
+                                      "Password",
+                                      Colors.grey[400],
+                                      true,
+                                      Validators().passwordValidator(),_passwordController))
                             ],
                           ),
                         )),
