@@ -1,3 +1,4 @@
+import 'package:mynewapp/Global/validators.dart';
 import 'package:mynewapp/Screens/SignUp/signup.dart';
 import 'package:mynewapp/Shared/input.dart';
 
@@ -108,12 +109,12 @@ class _LoginState extends State<Login> {
                                     border: Border(
                                         bottom: BorderSide(
                                             color: Colors.grey[100]))),
-                                child: Input().buildTextFormField("Email",Colors.grey[400],false)
+                                child: Input().buildTextFormField("Email",Colors.grey[400],false,Validators().emailValidator())
                               ),
                               Container(
                                 padding: EdgeInsets.all(8.0),
                                 
-                                child: Input().buildTextFormField("Password",Colors.grey[400],true)
+                                child: Input().buildTextFormField("Password",Colors.grey[400],true,Validators().passwordValidator())
                               )
                             ],
                           ),
