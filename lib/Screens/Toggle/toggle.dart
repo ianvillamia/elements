@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
                           margin: EdgeInsets.only(top: 50),
                           child: Center(
                             child: Text(
-                              "ELEMENTOS",
+                              "Elements",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 40,
@@ -161,13 +161,7 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 70,
                   ),
-                  FadeAnimation(
-                      1.5,
-                      Text(
-                        "Forgot Password?",
-                        style:
-                            TextStyle(color: Color.fromRGBO(143, 148, 251, 1)),
-                      )),
+                
                 ],
               ),
             )

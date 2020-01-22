@@ -156,21 +156,7 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       height: 30,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SignUp()),
-                        );
-                      },
-                      child: FadeAnimation(
-                          1.5,
-                          Text(
-                            "Sign-Up?",
-                            style: TextStyle(
-                                color: Color.fromRGBO(143, 148, 251, 1)),
-                          )),
-                    ),
+                  
                     SizedBox(
                       height: 30,
                     ),
