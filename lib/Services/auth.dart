@@ -27,6 +27,7 @@ class AuthService {
   Future<void> googleSignIn() async {
     try {
       await _googleSignIn.signIn();
+
     } catch (error) {
       print(error);
     }
