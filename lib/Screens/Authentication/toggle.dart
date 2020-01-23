@@ -1,8 +1,8 @@
-import 'package:mynewapp/Screens/SignUp/signup.dart';
-
-import '../../Shared/animation.dart';
 import 'package:flutter/material.dart';
-import '../../Screens/Login/login.dart';
+import '../../Shared/animation.dart';
+import './login.dart';
+import './signup.dart';
+
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
@@ -97,7 +97,6 @@ class HomePage extends StatelessWidget {
                                   blurRadius: 20.0,
                                   offset: Offset(0, 10))
                             ]),
-                    
                       )),
                   SizedBox(
                     height: 30,
@@ -121,17 +120,18 @@ class HomePage extends StatelessWidget {
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                        onPressed: (){
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => Login()),
-  );
-                        },
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
+                          },
                         ),
                       )),
-        SizedBox(height: 20,),
-
-                       FadeAnimation(
+                  SizedBox(
+                    height: 20,
+                  ),
+                  FadeAnimation(
                       2,
                       Container(
                         height: 50,
@@ -150,18 +150,17 @@ class HomePage extends StatelessWidget {
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                        onPressed: (){
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => SignUp()),
-  );
-                        },
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignUp()),
+                            );
+                          },
                         ),
                       )),
                   SizedBox(
                     height: 70,
                   ),
-                
                 ],
               ),
             )

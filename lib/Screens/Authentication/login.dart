@@ -1,5 +1,5 @@
 import 'package:mynewapp/Global/validators.dart';
-import 'package:mynewapp/Screens/SignUp/signup.dart';
+import 'package:mynewapp/Screens/Main/landing.dart';
 import 'package:mynewapp/Shared/input.dart';
 import '../../Services/auth.dart';
 import '../../Shared/animation.dart';
@@ -154,7 +154,7 @@ class _LoginState extends State<Login> {
                             onPressed: () {
                               AuthService().googleSignIn().whenComplete((){
                                
-                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                             Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingPage()));
                               }).catchError((onError){
                                 
                               });

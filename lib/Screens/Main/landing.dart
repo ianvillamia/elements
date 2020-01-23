@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class LandingPage extends StatefulWidget {
   LandingPage({Key key}) : super(key: key);
 
@@ -8,48 +9,92 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  PageController _pageController;
-  int currentPage = 0;
+  PageController pageController;
+
+  //image list
+  List<String> images = [
+    'https://i.giphy.com/media/tHufwMDTUi20E/giphy.webp',
+    'https://i.giphy.com/media/13Kguu4fbMbz1K/giphy.webp',
+    'https://i.giphy.com/media/ziQVZDpNBSV7G/giphy.webp',
+    'https://i.giphy.com/media/LzRrW7v0WFLzO/giphy.webp',
+    'https://i.giphy.com/media/IPbS5R4fSUl5S/200.webp'
+  ];
+List routename=[
+  "Learning Module",
+  "Compund Simulation",
+  "Lewis Structure Calculator",
+  "Periodic Table",
+  "Quiz"
+
+];
+  List route=[
+
+    
+  ];
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(
-        initialPage: currentPage, keepPage: false, viewportFraction: 0.5);
+    pageController = PageController(initialPage: 1, viewportFraction: .8);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: PageView.builder(
-        onPageChanged: (value) {
-          currentPage = value;
-        },
-        controller: _pageController,
-        itemBuilder: (context, index) => animateItemBuilder(index),
-      ),
-    );
+    return Scaffold(  
+   
+      body: Column(
+      children: <Widget>[
+        Container(
+      height: 300,
+    
+      child:buildPageView()),
+      Container(
+        child: Text('data'),
+      )
+      ],
+    ));
+      
   }
 
-  animateItemBuilder(int index) {
+  buildPageView(){
+    return PageView.builder(
+      
+          controller: pageController,
+      itemCount: images.length,
+      itemBuilder: (context, position) {
+        return imageSlider(position);
+      },
+    );
+  }
+  imageSlider(int index) {
     return AnimatedBuilder(
-      animation: _pageController,
-      builder: (context, child) {
-        double value = 1;
-        if (_pageController.position.haveDimensions) {
-          value = _pageController.page - index;
-          value = (1 - (value.abs() * .5)).clamp(0.0, 1.0);
-        }
-        return Center(
-          child: SizedBox(
-            height: Curves.easeOut.transform(value) * 300,
-            width: Curves.easeOut.transform(value) * 250,
-          ),
+    
+      animation: pageController,
+      builder: (context, widget) {
+
+        return SizedBox(
+          height: 100,
+          width:200,
+          child: widget,
         );
       },
-      child: Container(
-        margin: EdgeInsets.all(10.0),
-        color: index % 2 == 0 ? Colors.lightBlue : Colors.lightGreenAccent,
-        child: FlutterLogo(),
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>route[index]));
+        },
+              child: Column(
+                    children: <Widget>[
+                      Container(
+         height: 250,
+         width: 350,
+          margin: EdgeInsets.all(10),
+          child: Image.network(
+            images[index],
+            fit: BoxFit.fill,
+          ),
+        ),
+        Center(child: Text(routename[index]),)
+                    ], 
+              ),
       ),
     );
   }

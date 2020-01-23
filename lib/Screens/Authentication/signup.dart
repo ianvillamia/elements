@@ -3,7 +3,6 @@ import 'package:mynewapp/Shared/input.dart';
 
 import '../../Shared/animation.dart';
 import 'package:flutter/material.dart';
-import '../Login/login.dart';
 class SignUp extends StatefulWidget {
   SignUp({Key key}) : super(key: key);
 
