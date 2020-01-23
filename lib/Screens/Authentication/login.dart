@@ -1,5 +1,5 @@
 import 'package:mynewapp/Global/validators.dart';
-import 'package:mynewapp/Screens/Main/landing.dart';
+import 'package:mynewapp/Screens/Main/Landing/landing.dart';
 import 'package:mynewapp/Shared/input.dart';
 import '../../Services/auth.dart';
 import '../../Shared/animation.dart';
