@@ -1,7 +1,7 @@
 import 'package:mynewapp/Global/validators.dart';
 import 'package:mynewapp/Screens/SignUp/signup.dart';
 import 'package:mynewapp/Shared/input.dart';
-
+import '../../Services/auth.dart';
 import '../../Shared/animation.dart';
 import 'package:flutter/material.dart';
 
@@ -113,18 +113,19 @@ class _LoginState extends State<Login> {
                                           bottom: BorderSide(
                                               color: Colors.grey[100]))),
                                   child: Input().buildTextFormField(
-                                    "Email",
-                                    Colors.grey[400],
-                                    false,
-                                    Validators().emailValidator(),_emailController
-                                  )),
+                                      "Email",
+                                      Colors.grey[400],
+                                      false,
+                                      Validators().emailValidator(),
+                                      _emailController)),
                               Container(
                                   padding: EdgeInsets.all(8.0),
                                   child: Input().buildTextFormField(
                                       "Password",
                                       Colors.grey[400],
                                       true,
-                                      Validators().passwordValidator(),_passwordController))
+                                      Validators().passwordValidator(),
+                                      _passwordController))
                             ],
                           ),
                         )),
@@ -150,13 +151,19 @@ class _LoginState extends State<Login> {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              AuthService().googleSignIn().whenComplete((){
+                               
+                               // Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUp()));
+                              }).catchError((onError){
+                                
+                              });
+                            },
                           ),
                         )),
                     SizedBox(
                       height: 30,
                     ),
-                  
                     SizedBox(
                       height: 30,
                     ),
