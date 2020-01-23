@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Shared/appbar.dart';
 import 'package:mynewapp/Shared/bottomNavigation.dart';
 import 'package:mynewapp/Shared/drawer.dart';
 class LandingPage extends StatefulWidget {
@@ -36,82 +37,33 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       key: _scaffoldKey,
       drawer:buildDrawer() ,
       bottomNavigationBar:buildBottomNavigation(),
-      body: Container(
-          child: SingleChildScrollView(
-        child: Stack(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.12,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color(0xFFF1f94aa).withOpacity(0.5),
-                            blurRadius: 5)
-                      ]),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      InkWell(
-                          onTap: () =>
-                            _scaffoldKey.currentState.openDrawer(),
-                          
-                          child: Icon(Icons.menu,
-                              color: Color(0xFFF2c4e5e), size: 30)),
-                      profile()
-                    ],
-                  ),
-                ),
-                Container(height: 300, child: buildPageView()),
-                Container(
-                  child: Text('data'),
-                )
-              ],
-            ),
-          ],
-        ),
-      )),
-    );
-  }
 
-  Widget profile() {
-    return Row(
-      children: <Widget>[
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            Text("Name",
-                style: TextStyle(
-                    color: Color(0xFFF2c4e5e), fontWeight: FontWeight.bold)),
-            Text("Etc", style: TextStyle(color: Color(0xFFF1f94aa))),
-          ],
-        ),
-        SizedBox(width: 5),
-        Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-              color: Colors.red,
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                  image: AssetImage("assets/bg.png"), fit: BoxFit.cover)),
-        )
-      ],
-    );
+      body: Stack(
+        children: <Widget>[  Container(
+          decoration:BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/bg.png'),fit: BoxFit.cover)
+          )),  SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              buildappbar(context, _scaffoldKey),
+              Container(height: 300, child: buildPageView()),
+              Container(
+                child: Text('data'),
+              )
+            ],
+          ),
+        )],
+   
+         ),
+      );
+
   }
+ 
+  
 
   buildPageView() {
     return PageView.builder(
