@@ -8,9 +8,7 @@ class Build extends StatefulWidget {
 }
 
 class _BuildState extends State<Build> {
-
   String caughtValue;
-  
   @override
   Widget build(BuildContext context) {
     return Stack(

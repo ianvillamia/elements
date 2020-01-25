@@ -151,12 +151,12 @@ class _LoginState extends State<Login> {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            onPressed: () {
-                              AuthService().googleSignIn().whenComplete((){
+                            onPressed: () async{
+                           await   AuthService().googleSignIn().whenComplete((){
                                
                              Navigator.push(context, MaterialPageRoute(builder: (context)=>LandingPage()));
-                              }).catchError((onError){
-                                
+                              }).catchError((error){
+                                print(error.toString());
                               });
                             },
                           ),
