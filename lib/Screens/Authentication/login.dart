@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
                 height: 310,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/bg.png'), fit: BoxFit.fill)),
+                        image: AssetImage('assets/background.png'), fit: BoxFit.fill)),
                 child: Stack(
                   children: <Widget>[
                     Positioned(
@@ -139,8 +139,8 @@ class _LoginState extends State<Login> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               gradient: LinearGradient(colors: [
-                                Color.fromRGBO(143, 148, 251, 1),
-                                Color.fromRGBO(143, 148, 251, .6),
+                                Color.fromRGBO(131, 33, 172, 1),
+                              Color.fromRGBO(224, 198, 241, .6),
                               ])),
                           child: MaterialButton(
                             child: Center(
