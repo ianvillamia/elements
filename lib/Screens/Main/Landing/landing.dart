@@ -14,7 +14,7 @@ class _LandingPageState extends State<LandingPage> {
  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   //image list
   List<String> images = [
-    'https://i.giphy.com/media/tHufwMDTUi20E/giphy.webp',
+    'https://i.imgur.com/Uq8Bbnh.png',
     'https://i.giphy.com/media/13Kguu4fbMbz1K/giphy.webp',
     'https://i.giphy.com/media/ziQVZDpNBSV7G/giphy.webp',
     'https://i.giphy.com/media/LzRrW7v0WFLzO/giphy.webp',
@@ -45,7 +45,7 @@ class _LandingPageState extends State<LandingPage> {
       body: Stack(
         children: <Widget>[  Container(
           decoration:BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/bg.png'),fit: BoxFit.cover)
+            image: DecorationImage(image: AssetImage('assets/background.png'),fit: BoxFit.cover)
           )),  SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -94,7 +94,7 @@ class _LandingPageState extends State<LandingPage> {
           children: <Widget>[
             Container(
               height: 250,
-              width: 350,
+              width: 250,
               margin: EdgeInsets.all(10),
               child: Image.network(
                 images[index],
