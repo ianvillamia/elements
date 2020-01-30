@@ -16,6 +16,53 @@ class _LoginState extends State<Login> {
   TextEditingController _emailController = TextEditingController(),
       _passwordController = TextEditingController();
 
+Widget facebook_google_buttons(Function onTap, AssetImage logo) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 50.0,
+        width: 50.0,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, 2),
+              blurRadius: 6.0,
+            ),
+          ],
+          image: DecorationImage(
+            image: logo,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget button_rows() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          facebook_google_buttons(
+            () => print('Login with Facebook'),
+            AssetImage(
+              'assets/facebook.jpg',
+            ),
+          ),
+          facebook_google_buttons(
+            () => print('Login with Google'),
+            AssetImage(
+              'assets/google.jpg',
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +155,7 @@ class _LoginState extends State<Login> {
                           child: Column(
                             children: <Widget>[
                               Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   decoration: BoxDecoration(
                                       border: Border(
                                           bottom: BorderSide(
@@ -120,7 +167,7 @@ class _LoginState extends State<Login> {
                                       Validators().emailValidator(),
                                       _emailController)),
                               Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Input().buildTextFormField(
                                       "Password",
                                       Colors.grey[400],
@@ -131,7 +178,7 @@ class _LoginState extends State<Login> {
                           ),
                         )),
                     SizedBox(
-                      height: 30,
+                      height: 10,
                     ),
                     FadeAnimation(
                         2,
@@ -163,18 +210,21 @@ class _LoginState extends State<Login> {
                           ),
                         )),
                     SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
+                      height: 10,
+                    ),                   
                     FadeAnimation(
                         1.5,
-                        Text(
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: Text(
                           "Forgot Password?",
                           style: TextStyle(
-                              color: Color.fromRGBO(143, 148, 251, 1)),
-                        )),
+                            
+                            color: Color.fromRGBO(143, 148, 251, 1)),
+                          ),
+                        ),
+                    ),
+                    button_rows(),
                   ],
                 ),
               )
@@ -184,4 +234,5 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+
 }

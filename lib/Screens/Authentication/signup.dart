@@ -119,7 +119,7 @@ class _SignUp extends State<SignUp> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   decoration: BoxDecoration(
                                       border: Border(
                                           bottom:
@@ -127,19 +127,19 @@ class _SignUp extends State<SignUp> {
                                   child: Input().buildTextFormField("First Name",Colors.grey[400], false,Validators().emailValidator(),_firstNameController)
                                 ),
                                 Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Input().buildTextFormField("Last Name",Colors.grey[400], false,Validators().emailValidator(),_lastNameController)
                                 ),
                                  Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Input().buildTextFormField("Email",Colors.grey[400], false,Validators().emailValidator(),_emailController)
                                 ),
                                  Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Input().buildTextFormField("Password",Colors.grey[400], false,Validators().passwordValidator(),_password1Controller)
                                 ),
                                  Container(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.all(5.0),
                                   child: Input().buildTextFormField("Confirm Password",Colors.grey[400], false,Validators().passwordValidator(),_password2Controller)
                                 )
                               ],
