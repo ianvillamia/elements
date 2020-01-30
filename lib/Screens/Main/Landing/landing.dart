@@ -40,23 +40,24 @@ class _LandingPageState extends State<LandingPage> {
       
       key: _scaffoldKey,
       drawer:buildDrawer() ,
-      bottomNavigationBar:buildBottomNavigation(),
-
+    
       body: Stack(
         children: <Widget>[  Container(
           decoration:BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/background.png'),fit: BoxFit.cover)
-          )),  SingleChildScrollView(
-          child: Column(
+            color: Colors.red
+          //  image: DecorationImage(image: AssetImage('assets/background.png'),fit: BoxFit.cover)
+          )),  Column(
             children: <Widget>[
-              buildappbar(context, _scaffoldKey),
-              Container(height: 300, child: buildPageView()),
+         //     buildappbar(context, _scaffoldKey),
+             //eto container ng top 
+              Container(color: Colors.black,width: MediaQuery.of(context).size.width, child: buildPageView()),
+              //bottom of scaff
               Container(
-                child: Text('data'),
+                color: Colors.blue,
+                child: Text('Bottom'),
               )
             ],
-          ),
-        )],
+          )],
    
          ),
       );
@@ -79,9 +80,10 @@ class _LandingPageState extends State<LandingPage> {
     return AnimatedBuilder(
       animation: pageController,
       builder: (context, widget) {
-        return SizedBox(
-          height: 100,
-          width: 200,
+        return Container(
+        color: Colors.pink,
+          height: 300,
+         width: MediaQuery.of(context).size.width,
           child: widget,
         );
       },
@@ -93,12 +95,16 @@ class _LandingPageState extends State<LandingPage> {
         child: Column(
           children: <Widget>[
             Container(
-              height: 250,
+              height: 350,
+              decoration: BoxDecoration(
+                color: Colors.purple,
+              borderRadius: BorderRadius.circular(40),
+              ),
               width: 250,
               margin: EdgeInsets.all(10),
               child: Image.network(
                 images[index],
-                fit: BoxFit.fill,
+  
               ),
             ),
             Center(
