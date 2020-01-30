@@ -24,51 +24,52 @@ class HomePage extends StatelessWidget {
                       image: AssetImage('assets/background.png'), fit: BoxFit.fill)),
               child: Stack(
                 children: <Widget>[
+                  // Positioned(
+                  //   left: 30,
+                  //   width: 80,
+                  //   height: 200,
+                  //   child: FadeAnimation(
+                  //       1,
+                  //       Container(
+                  //         decoration: BoxDecoration(
+                  //             image: DecorationImage(
+                  //                 image: AssetImage('assets/light-1.png'))),
+                  //       )),
+                  // ),
                   Positioned(
-                    left: 30,
-                    width: 80,
-                    height: 200,
-                    child: FadeAnimation(
-                        1,
-                        Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/light-1.png'))),
-                        )),
-                  ),
-                  Positioned(
-                    left: 140,
-                    width: 80,
-                    height: 150,
+                    right: -120,
+                    width: 600,
+                    height: 220,
                     child: FadeAnimation(
                         1.3,
                         Container(
+                          margin: EdgeInsets.only(top: 20),
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage('assets/light-2.png'))),
+                                  image: AssetImage('assets/logo.png'))),
                         )),
                   ),
-                  Positioned(
-                    right: 40,
-                    top: 40,
-                    width: 80,
-                    height: 150,
-                    child: FadeAnimation(
-                        1.5,
-                        Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/clock.png'))),
-                        )),
-                  ),
+                  // Positioned(
+                  //   right: 40,
+                  //   top: 40,
+                  //   width: 80,
+                  //   height: 150,
+                  //   child: FadeAnimation(
+                  //       1.5,
+                  //       Container(
+                  //         decoration: BoxDecoration(
+                  //             image: DecorationImage(
+                  //                 image: AssetImage('assets/clock.png'))),
+                  //       )),
+                  // ),
                   Positioned(
                     child: FadeAnimation(
                         1.6,
                         Container(
-                          margin: EdgeInsets.only(top: 50),
+                          margin: EdgeInsets.only(top: 100),
                           child: Center(
                             child: Text(
-                              "Elements",
+                              "Elements++",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 40,
@@ -108,8 +109,8 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(colors: [
-                              Color.fromRGBO(131, 33, 172, 1),
-                              Color.fromRGBO(224, 198, 241, 3),
+                              Color.fromRGBO(156, 39, 176, 1),
+                              Color.fromRGBO(224, 198, 241, 1),
                             ])),
                         child: MaterialButton(
                           child: Center(
@@ -138,8 +139,8 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(colors: [
-                              Color.fromRGBO(131, 33, 172, 1),
-                              Color.fromRGBO(224, 198, 241, 3),
+                               Color.fromRGBO(156, 39, 176, 1),
+                              Color.fromRGBO(224, 198, 241, 1),
                             ])),
                         child: MaterialButton(
                           child: Center(
