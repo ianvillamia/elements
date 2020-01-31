@@ -21,21 +21,10 @@ class HomePage extends StatelessWidget {
               height: 310,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/background.png'), fit: BoxFit.fill)),
+                      image: AssetImage('assets/background.png'),
+                      fit: BoxFit.fill)),
               child: Stack(
                 children: <Widget>[
-                  // Positioned(
-                  //   left: 30,
-                  //   width: 80,
-                  //   height: 200,
-                  //   child: FadeAnimation(
-                  //       1,
-                  //       Container(
-                  //         decoration: BoxDecoration(
-                  //             image: DecorationImage(
-                  //                 image: AssetImage('assets/light-1.png'))),
-                  //       )),
-                  // ),
                   Positioned(
                     right: -120,
                     width: 600,
@@ -49,19 +38,7 @@ class HomePage extends StatelessWidget {
                                   image: AssetImage('assets/logo.png'))),
                         )),
                   ),
-                  // Positioned(
-                  //   right: 40,
-                  //   top: 40,
-                  //   width: 80,
-                  //   height: 150,
-                  //   child: FadeAnimation(
-                  //       1.5,
-                  //       Container(
-                  //         decoration: BoxDecoration(
-                  //             image: DecorationImage(
-                  //                 image: AssetImage('assets/clock.png'))),
-                  //       )),
-                  // ),
+            
                   Positioned(
                     child: FadeAnimation(
                         1.6,
@@ -139,7 +116,7 @@ class HomePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(colors: [
-                               Color.fromRGBO(156, 39, 176, 1),
+                              Color.fromRGBO(156, 39, 176, 1),
                               Color.fromRGBO(224, 198, 241, 1),
                             ])),
                         child: MaterialButton(
