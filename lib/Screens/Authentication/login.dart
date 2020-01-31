@@ -216,11 +216,11 @@ Widget facebook_google_buttons(Function onTap, AssetImage logo) {
                             () => print('Login with Google'),
                             AssetImage(
                               'assets/google.jpg',
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
                   ],
                 ),
               )
