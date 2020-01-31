@@ -40,29 +40,6 @@ Widget facebook_google_buttons(Function onTap, AssetImage logo) {
     );
   }
 
-  Widget button_rows() {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 15.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          facebook_google_buttons(
-            () => print('Login with Facebook'),
-            AssetImage(
-              'assets/facebook.jpg',
-            ),
-          ),
-          facebook_google_buttons(
-            () => print('Login with Google'),
-            AssetImage(
-              'assets/google.jpg',
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -224,7 +201,26 @@ Widget facebook_google_buttons(Function onTap, AssetImage logo) {
                           ),
                         ),
                     ),
-                    button_rows(),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          facebook_google_buttons(
+                            () => print('Login with Facebook'),
+                            AssetImage(
+                              'assets/facebook.jpg',
+                            ),
+                          ),
+                          facebook_google_buttons(
+                            () => print('Login with Google'),
+                            AssetImage(
+                              'assets/google.jpg',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   ],
                 ),
               )
