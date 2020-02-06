@@ -21,42 +21,42 @@ class HomePage extends StatelessWidget {
               height: 310,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/background.png'),
+                      image: AssetImage('assets/chemistry.png'),
                       fit: BoxFit.fill)),
               child: Stack(
                 children: <Widget>[
-                  Positioned(
-                    right: -120,
-                    width: 600,
-                    height: 220,
-                    child: FadeAnimation(
-                        1.3,
-                        Container(
-                          margin: EdgeInsets.only(top: 20),
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/logo.png'))),
-                        )),
-                  ),
+              //     Positioned(
+              //       right: -120,
+              //       width: 600,
+              //       height: 220,
+              //       child: FadeAnimation(
+              //           1.3,
+              //           Container(
+              //             margin: EdgeInsets.only(top: 20),
+              //             decoration: BoxDecoration(
+              //                 image: DecorationImage(
+              //                     image: AssetImage('assets/logo.png'))),
+              //           )),
+              //     ),
             
-                  Positioned(
-                    child: FadeAnimation(
-                        1.6,
-                        Container(
-                          margin: EdgeInsets.only(top: 100),
-                          child: Center(
-                            child: Text(
-                              "Elements++",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        )),
-                  )
-                ],
-              ),
+                   Positioned(
+                     child: FadeAnimation(
+                         1.6,
+                         Container(
+                           margin: EdgeInsets.only(top: 100),
+                           child: Center(
+                             child: Text(
+                               "Elements++",
+                               style: TextStyle(
+                                   color: Colors.white,
+                                   fontSize: 40,
+                                   fontWeight: FontWeight.bold),
+              //               ),
+              //             ),
+              //           )),
+              //     )
+              //   ],
+              // ),
             ),
             Padding(
               padding: EdgeInsets.all(30.0),

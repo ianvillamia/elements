@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/Authentication/toggle.dart';
+import 'Screens/Authentication/login.dart';
 
 void main() => runApp(MaterialApp(
       //home:Login(), 
      // home:SignUp(),
-     home: HomePage(),
+     home: Scaffold(
+        body: Login()
+       ),
       //home:LandingPage(),
       debugShowCheckedModeBanner: false,
     ));

@@ -65,17 +65,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: PBold     
+  - family: OpenSans     
     fonts:
-    - asset: fonts/Poppins-Bold.ttf
-
-  - family: PMedium     
-    fonts:
-    - asset: fonts/Poppins-Medium.ttf
-  
-  - family: CuteFont     
-    fonts:
-    - asset: fonts/CuteFont-Regular.ttf
+    - asset: fonts/OpenSans-Regular.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
