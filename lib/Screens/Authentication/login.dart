@@ -11,11 +11,11 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-       padding: EdgeInsets.fromLTRB(50, 20, 50, 20),
+       padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
        child: Column(
          children: <Widget>[
            Container(
-             height: 300,
+            height: 250.0,
              decoration: BoxDecoration(
                image: DecorationImage(
                  image: AssetImage('assets/chemistry.png'),
