@@ -15,13 +15,14 @@ class _LoginState extends State<Login> {
        child: Column(
          children: <Widget>[
            Container(
-            height: 250.0,
-             decoration: BoxDecoration(
-               image: DecorationImage(
-                 image: AssetImage('assets/chemistry.png'),
-                 fit: BoxFit.fill
-               )
-             ),
+            height: 200.0,
+            child: Center(
+              child: Image.asset(
+                'assets/chemistry.png', 
+                width: 550, 
+                height: 550,
+                fit: BoxFit.fitHeight),
+            ),
            ),
            Container(
              alignment: Alignment.centerLeft,
@@ -49,14 +50,25 @@ class _LoginState extends State<Login> {
                 'Sign in to continue',
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.grey[400],
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'OpenSans',
                 ),
               )
-             ],)
-           )
+             ],),
+           ),
+           Container(
+            child: TextField(
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(10),
+              hintText: 'Enter your Email',
+             ),
+             
+            ),
+             
+           ),
            
          ],
          ),
