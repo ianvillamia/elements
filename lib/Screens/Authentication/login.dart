@@ -167,7 +167,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                      button_rows(),
+                      _buttonRows(),
                     ],
                   ),
                 )
@@ -180,7 +180,7 @@ class _LoginState extends State<Login> {
   }
 }
 
-Widget facebook_google_buttons(Function onTap, AssetImage logo) {
+Widget _socialButtons(Function onTap, AssetImage logo) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
@@ -204,7 +204,7 @@ Widget facebook_google_buttons(Function onTap, AssetImage logo) {
   );
 }
 
-Widget button_rows() {
+Widget _buttonRows() {
   return FadeAnimation(
     1.3,
     Padding(
@@ -212,13 +212,13 @@ Widget button_rows() {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          facebook_google_buttons(
+          _socialButtons(
             () async {},
             AssetImage(
               'assets/facebook.jpg',
             ),
           ),
-          facebook_google_buttons(
+          _socialButtons(
             () async {
               bool res = await AuthProvider().loginWithGoogle();
               if (!res) print("error logging in with google");
