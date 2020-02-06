@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
 
   Widget build(BuildContext context) {
     return Padding(
-       padding: EdgeInsets.fromLTRB(40, 30, 40, 10),
+       padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
        child: Column(
          children: <Widget>[
            Container(
