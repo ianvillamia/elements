@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Shared/design.dart';
+import '../../Shared/output.dart';
 
 class Landing extends StatelessWidget {
   const Landing({Key key}) : super(key: key);
@@ -38,53 +40,51 @@ class Landing extends StatelessWidget {
           child: Container(
               alignment: Alignment.centerLeft,
               child: Column(children: <Widget>[
-                Text(
-                  'Let\'s get',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(.8),
-                    fontSize: 40,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'OpenSans',
-                    shadows: [
-                      Shadow(
-                        color: Colors.grey,
-                        offset: Offset(2.0, 3.0),
-                      ),
-                    ],
-                  ),
-                ),
-                Text(
-                  'Started',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(.8),
-                    fontSize: 40,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'OpenSans',
-                    shadows: [
-                      Shadow(
-                        color: Colors.grey,
-                        offset: Offset(2.0, 3.0),
-                      ),
-                    ],
-                  ),
-                ),
+                Output().buildShadowText('Lets get', 40),
+                Output().buildShadowText('Started', 40),
               ])),
         ),
-        SizedBox(height:20),
+        SizedBox(height: 20),
         Container(
           height: 300,
-          color: Colors.red,
+          width: MediaQuery.of(context).size.width,
           child: Stack(
             children: <Widget>[
+              Positioned(
+                left: 100,
+                top: 80,
+                  child:Design().buildCircle(30, 30)),
+                     Positioned(
+                left: 130,
+                top: 120,
+                  child:Design().buildCircle(40, 40)),
+                    Positioned(
+                left: 90,
+                top: 170,
+                  child:Design().buildCircle(60,60)),
+              Positioned(
+                  top: 10,
+                  left: 80,
+                  child: MaterialButton(
+                    height: 40,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0)),
+                    child: Text(
+                      'Go',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                    onPressed: () {},
+                    color: Colors.redAccent,
+                  )),
               Positioned(
                 top: -30,
                 right: -70,
                 child: Container(
                   height: 300,
-                  color: Colors.teal,
-                  child: Image.asset('assets/chemist.png',fit: BoxFit.contain,),
+                  child: Image.asset(
+                    'assets/chemist.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ],
@@ -93,4 +93,5 @@ class Landing extends StatelessWidget {
       ]),
     );
   }
+ 
 }

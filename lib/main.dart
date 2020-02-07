@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Authentication/landing.dart';
 
-
 void main() => runApp(MaterialApp(
       //home:Login(),
       // home:SignUp(),

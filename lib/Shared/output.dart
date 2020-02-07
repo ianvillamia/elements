@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Output {
-  buildShadowText(String text){
+  buildShadowText(String text,double size){
     return Text(
                 text,
                 textAlign: TextAlign.left,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 30,
+                    fontSize: size,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'OpenSans',
                     shadows: [

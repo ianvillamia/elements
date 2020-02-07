@@ -10,15 +10,17 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
 
-  Widget horizontalLine() => 
-  Padding(
-    padding: EdgeInsets.symmetric(horizontal: 16.0),
-    child: Container(
-      width: 50,
-      height: 1.0,
-      color: Colors.black26.withOpacity(.3),
-    ),
-  );
+  buildButton(String loc,Color color){
+    return  Container(
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: color
+                      ),
+                      child: Image.asset(loc),
+                    );
+  }
 
   Widget build(BuildContext context) {
     return Padding(
@@ -39,7 +41,7 @@ class _LoginState extends State<Login> {
              child:Column (
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Output().buildShadowText('Elements++'),
+                Output().buildShadowText('Elements++',30),
                 Text(
                   'Sign in to continue',
                   textAlign: TextAlign.left,
@@ -68,12 +70,14 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 Center(
                   child:Container(
-                    width: 260,
+                    width: 175,
                     child: MaterialButton(
+                    
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                       color: Color.fromRGBO(245, 47, 89, 100),
                       child: Center(
                         child: Text(
@@ -90,46 +94,23 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    horizontalLine(),
-                    Text(
-                      "Sign up with"
-                    ),
-                    horizontalLine(),
-                  ],
+                Center(
+                  child: Text(
+                    "Sign up with"
+                  ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 5.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromRGBO(8, 18, 77, 100)
-                      ),
-                      child: Image.asset('assets/facebook.png'),
-                    ),
-                    SizedBox(
-                      width: 30
-                    ),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromRGBO(255, 79, 56, 50)
-                      ),
-                      child: Image.asset('assets/google.png'),
-                    ),
-                  ],))
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                 buildButton('assets/facebook.png',Colors.blueAccent),
+                  SizedBox(
+                    width: 10
+                  ),
+                buildButton('assets/google.png',Colors.white70),
+                ],)
                 
               ],),
            ),
