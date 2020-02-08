@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Screens/Authentication/landing.dart';
 import 'package:mynewapp/Screens/Main/Menu/menu.dart';
 
 void main() => runApp(MaterialApp(
