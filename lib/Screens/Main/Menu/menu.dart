@@ -18,9 +18,14 @@ class _MenuState extends State<Menu> {
   PageController pageController;
   int current = 0;
   List images = [
-    "https://i.imgur.com/n1bKdZr.png",
-    "https://i.imgur.com/Z78Fymp.jpg",
-    "https://i.imgur.com/eWN8NlX.png"
+    "assets/learning-module.png",
+    "assets/compound-simulation.jpg",
+    "assets/periodic-table.png"
+  ];
+  List name = [
+    "Learning Module",
+    "Compound Simulation",
+    "Periodic Table"
   ];
 
   @override
@@ -76,21 +81,38 @@ class _MenuState extends State<Menu> {
         }
         return Center(
           child: SizedBox(
-            height: Curves.easeInOut.transform(value) * 200,
-            width: Curves.easeInOut.transform(value) * 250,
+            height: 300,
+            width: 250,
+            //height: Curves.easeInOut.transform(value) * 300,
+            //width: Curves.easeInOut.transform(value) * 250,
             child: widget,
           ),
         );
       },
-      child: Container( 
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration( 
-          borderRadius: BorderRadius.circular(3.0), 
-          border: Border.all(color: Colors.grey[300])
-        ), 
-          child: ClipRRect( borderRadius: BorderRadius.circular(3.0), 
-          child: Image.network(images[index], fit: BoxFit.fill),
-      ),
+      child: Column(
+        children: <Widget>[
+          
+          Container(
+            height: 200, width: 400,
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(20.0), 
+              border: Border.all(color: Colors.grey[400]),
+              image: DecorationImage(image: AssetImage(images[index]), fit: BoxFit.fill)
+            ), 
+          ),
+          Center(
+            child: Text(
+              name[index],
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'CuteFont'
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

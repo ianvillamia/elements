@@ -7,10 +7,8 @@ class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
-class _LoginState extends State<Login> {
-  @override
 
-  buildButton(String loc,Color color){
+buildButton(String loc,Color color){
     return  Container(
                       height: 50,
                       width: 50,
@@ -21,7 +19,8 @@ class _LoginState extends State<Login> {
                       child: Image.asset(loc),
                     );
   }
-
+class _LoginState extends State<Login> {
+  @override
   Widget build(BuildContext context) {
     return Padding(
        padding: EdgeInsets.fromLTRB(40, 0, 40, 0),

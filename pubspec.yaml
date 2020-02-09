@@ -68,6 +68,15 @@ flutter:
   - family: OpenSans     
     fonts:
     - asset: fonts/OpenSans-Regular.ttf
+  - family: CuteFont     
+    fonts:
+    - asset: fonts/CuteFont-Regular.ttf
+  - family: PoppinsB     
+    fonts:
+    - asset: fonts/Poppins-Bold.ttf
+  - family: PoppinsM     
+    fonts:
+    - asset: fonts/Poppins-Medium.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
