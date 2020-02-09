@@ -33,18 +33,29 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Colors.white,
         key: _scaffoldKey,
-   
         bottomNavigationBar: buildBottomNavigation(),
         body: Stack(
           children: <Widget>[
             SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   buildappbar(context, _scaffoldKey),
-                  Container(
-                
-                    child: Container(height: 400, child: test()),
+                  Stack(
+                    children: <Widget>[
+
+                      Container(
+                        height: 400,
+                        width: MediaQuery.of(context).size.width,
+                      color: Colors.lightBlue,
+                      ),
+                      Container(
+                      child: Container(height: 400, child: test()),
+                    ),
+                    ],
+                                
                   ),
                 ],
               ),
@@ -75,8 +86,6 @@ class _MenuState extends State<Menu> {
         return Container(
           child: Container(
             height: 300,
-            width: 250,
-            color: Colors.teal,
             child: widget,
           ),
         );
