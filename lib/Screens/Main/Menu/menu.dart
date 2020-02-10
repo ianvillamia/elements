@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mynewapp/Shared/appbar.dart';
-import 'package:mynewapp/Shared/drawer.dart';
+import 'package:mynewapp/Shared/design.dart';
 import 'package:mynewapp/Shared/bottomNavigation.dart';
 
 class Menu extends StatefulWidget {
@@ -17,9 +17,9 @@ class _MenuState extends State<Menu> {
   PageController pageController;
   int current = 0;
   List images = [
-    "assets/.png",
+    "assets/learning-module.jpg",
     "assets/compound-simulation.jpg",
-    "assets/periodic-table.png"
+    "assets/periodic-table.jpg"
   ];
   List name = ["Learning Module", "Compound Simulation", "Periodic Table"];
 
@@ -45,17 +45,31 @@ class _MenuState extends State<Menu> {
                   buildappbar(context, _scaffoldKey),
                   Stack(
                     children: <Widget>[
-
                       Container(
-                        height: 400,
+                        height: 180,
                         width: MediaQuery.of(context).size.width,
-                      color: Colors.lightBlue,
+                        child:welcome()
+                      ),
+                     
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Stack(
+                    children: <Widget>[
+                      Container(
+                        height: 260,
+                        width: MediaQuery.of(context).size.width,
+                        color: Color.fromRGBO(252, 180, 180, 100),
                       ),
                       Container(
-                      child: Container(height: 400, child: test()),
-                    ),
+                        child: Container(
+                          height: 400, 
+                          child: test()
+                        ),
+                      ),
                     ],
-                                
                   ),
                 ],
               ),
@@ -63,6 +77,74 @@ class _MenuState extends State<Menu> {
           ],
         ),
       );
+
+  welcome(){
+    return Row(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 40),
+          child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    'Hey, Ashley', 
+                    textAlign: TextAlign.left, 
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Learn About Chemistry!', 
+                    textAlign: TextAlign.left, 
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "let's get started,", 
+                    textAlign: TextAlign.left, 
+                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20)),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'choose a category', 
+                    textAlign: TextAlign.left, 
+                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20)),
+                ]
+              ),
+          ),
+        ),
+        Container(         
+          height: 300,
+          width: 150,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                left: 80,
+                top: 20,
+                  child:Design().buildCircle(30, 30, 83, 204, 64, 80)),
+                Positioned(
+                left: 50,
+                top: 60,
+                  child:Design().buildCircle(40, 40, 83, 204, 64, 80)),
+                Positioned(
+                left: 85,
+                top: 100,
+                  child:Design().buildCircle(50, 50, 83, 204, 64, 80)),
+
+            
+            ]
+          ),
+        ),
+      ],
+    );
+  }
+
 
   test() {
     return PageView.builder(
@@ -97,19 +179,26 @@ class _MenuState extends State<Menu> {
             width: 400,
             margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(20.0),
-                border: Border.all(color: Colors.grey[400]),
-                image: DecorationImage(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(2, 5), // changes position of shadow
+                ),
+              ],
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20.0),
+              image: DecorationImage(
                     image: AssetImage(images[index]), fit: BoxFit.fill)),
           ),
           Center(
             child: Text(
               name[index],
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
-                  fontFamily: 'CuteFont'),
+                  fontFamily: 'OpenSans'),
             ),
           ),
         ],

@@ -53,15 +53,15 @@ class Landing extends StatelessWidget {
               Positioned(
                 left: 100,
                 top: 80,
-                  child:Design().buildCircle(30, 30)),
+                  child:Design().buildCircle(30, 30, 224, 224, 224, 100)),
                      Positioned(
                 left: 130,
                 top: 120,
-                  child:Design().buildCircle(40, 40)),
+                  child:Design().buildCircle(40, 40, 224, 224, 224, 100)),
                     Positioned(
                 left: 90,
                 top: 170,
-                  child:Design().buildCircle(60,60)),
+                  child:Design().buildCircle(60,60, 224, 224, 224, 100)),
               Positioned(
                   top: 10,
                   left: 80,
