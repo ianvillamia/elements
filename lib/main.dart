@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mynewapp/Screens/Main/Learning_Module/learning_module.dart';
+import 'package:mynewapp/Screens/Authentication/landing.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -8,10 +8,9 @@ void main() {
   statusBarBrightness: Brightness.light
   ));
   runApp(MaterialApp(
-    //home:Login(),
-    // home:SignUp(),
-    home: Scaffold(body: LearningModule()),
-    //home:LandingPage(),
+    home:Scaffold(body:Landing()),
+
+
     debugShowCheckedModeBanner: false,
   ));
 }
