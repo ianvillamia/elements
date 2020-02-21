@@ -64,23 +64,20 @@ class Landing extends StatelessWidget {
                   left: 90,
                   top: 170,
                     child:Design().buildCircle(60,60, 224, 224, 224, 100)),
-                Positioned(
-                    top: 10,
-                    left: 80,
-                    child: MaterialButton(
-                      height: 40,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: Text(
-                        'Go',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                      ),
-                      onPressed: () {
-                        print('Go');
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
-                      },
-                      color: Colors.redAccent,
-                    )),
+                MaterialButton(                    
+                  height: 40,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: Text(
+                    'Go',
+                    style: TextStyle(color: Colors.white, fontSize: 25),
+                  ),
+                  onPressed: () {
+                    print('Go');
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                  },
+                  color: Colors.redAccent,
+                ),
                 Positioned(
                   top: -30,
                   right: -70,
