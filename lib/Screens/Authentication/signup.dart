@@ -23,7 +23,7 @@ class _SignupState extends State<Signup> {
                   height: 250.0,
                   child: Center(
                     child: Image.asset(
-                      'assets/chemistry.png',  
+                      'assets/compound-simulation.jpg',  
                       height: 250,
                       fit: BoxFit.cover),
                   ),
