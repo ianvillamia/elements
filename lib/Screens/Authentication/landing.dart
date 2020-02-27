@@ -13,7 +13,7 @@ class Landing extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: Column(children: <Widget>[
           SizedBox(
-            height: 50,
+            height: 20,
           ),
           Row(children: <Widget>[
             Container(
@@ -48,7 +48,7 @@ class Landing extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Container(
-            height: 330,
+            height: 280,
             width: MediaQuery.of(context).size.width,
             child: Stack(
               children: <Widget>[
