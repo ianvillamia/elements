@@ -73,7 +73,7 @@ class Landing extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Container(
-            height: 330,
+            height: 280,
             width: MediaQuery.of(context).size.width,
             child: Stack(
               children: <Widget>[

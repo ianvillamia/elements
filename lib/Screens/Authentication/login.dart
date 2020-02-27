@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Screens/Authentication/signup.dart';
 import 'package:mynewapp/Shared/output.dart';
 
 class Login extends StatefulWidget {
@@ -44,7 +45,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 10,
                     ),
                     TextField(
                       keyboardType: TextInputType.emailAddress,
@@ -61,7 +62,25 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        InkWell(
+                          child: Text(
+                            "Forgot Password?",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontFamily: 'OpenSans',
+                              fontSize:14
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Center(
                       child:Container(
@@ -83,26 +102,55 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
-                    ),
-                    Center(
-                      child: Text(
-                        "Sign up with"
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                     buildButton('assets/facebook.png',Colors.blueAccent),
-                      SizedBox(
-                        width: 10
-                      ),
-                    buildButton('assets/google.png',Colors.white70),
-                    ],)
-                    
+                      children: <Widget>[
+                        horizontalLine(),
+                        Text(
+                          "Or"
+                        ),
+                        horizontalLine(),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                      buildButton('assets/facebook.png',Colors.blueAccent),
+                        SizedBox(
+                          width: 10
+                        ),
+                      buildButton('assets/google.png',Colors.grey[100]),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "New User? ",
+                          style: TextStyle(fontFamily: 'OpenSans',),
+                        ),
+                        InkWell(
+                          child: Text("Signup",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontFamily: 'OpenSans',
+                            ),
+                          ),
+                          onTap: () {
+                            print('SignUp');
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Signup()));
+                          },
+                        )
+                      ],
+                    ),
                   ],),
                ),
              ],
@@ -111,15 +159,26 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+
+  horizontalLine() => 
+    Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      child: Container(
+        width: 40,
+        height: 1.0,
+        color: Colors.black26.withOpacity(.3),
+      ),
+  );
+
   buildButton(String loc,Color color){
     return  Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: color
-                      ),
-                      child: Image.asset(loc),
-                    );
+      height: 45,
+      width: 45,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: color
+      ),
+      child: Image.asset(loc),
+    );
   }
 }
