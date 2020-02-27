@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mynewapp/Shared/appbar.dart';
-import 'package:mynewapp/Shared/design.dart';
+
 import 'package:mynewapp/Shared/bottomNavigation.dart';
 
 class Menu extends StatefulWidget {
@@ -127,15 +127,15 @@ class _MenuState extends State<Menu> {
               Positioned(
                 left: 80,
                 top: 20,
-                  child:Design().buildCircle(30, 30, 83, 204, 64, 80)),
+                  child:buildCircle(30, 30, 83, 204, 64, 80)),
                 Positioned(
                 left: 50,
                 top: 60,
-                  child:Design().buildCircle(40, 40, 83, 204, 64, 80)),
+                  child:buildCircle(40, 40, 83, 204, 64, 80)),
                 Positioned(
                 left: 85,
                 top: 100,
-                  child:Design().buildCircle(50, 50, 83, 204, 64, 80)),
+                  child:buildCircle(50, 50, 83, 204, 64, 80)),
 
             
             ]
@@ -144,7 +144,13 @@ class _MenuState extends State<Menu> {
       ],
     );
   }
-
+buildCircle(double w, double h, int r, int g, int b , double o){
+    return Container(
+                width: w,
+                height: h,
+                decoration: BoxDecoration(shape: BoxShape.circle,color: Color.fromRGBO(r, g, b, o)),
+              );
+  }
 
   test() {
     return PageView.builder(
