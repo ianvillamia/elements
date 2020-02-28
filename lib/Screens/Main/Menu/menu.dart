@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:mynewapp/Shared/appbar.dart';
-
+import 'package:mynewapp/Shared/drawer.dart' as drawer;
 import 'package:mynewapp/Shared/bottomNavigation.dart';
-
+import 'package:mynewapp/Services/auth.dart';
 class Menu extends StatefulWidget {
   Menu({Key key}) : super(key: key);
 
@@ -11,7 +11,7 @@ class Menu extends StatefulWidget {
   _MenuState createState() => _MenuState();
 }
 
-final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+final GlobalKey<ScaffoldState> _scaffoldKey1 = new GlobalKey<ScaffoldState>();
 
 class _MenuState extends State<Menu> {
   PageController pageController;
@@ -31,9 +31,50 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+
         backgroundColor: Colors.white,
-        key: _scaffoldKey,
+        key: _scaffoldKey1,
         bottomNavigationBar: buildBottomNavigation(),
+        drawer:Drawer(
+      child: ListView(
+    children: <Widget>[
+      DrawerHeader(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            //image
+            
+            //name
+            Text("Emma Watson"),
+            //email
+            Text("emmaWatson@gmail.com")
+          ],
+        ),
+        decoration: BoxDecoration(color: Colors.redAccent),
+      ),
+      ListTile(
+          title: Container(
+        alignment: Alignment.topLeft,
+        height: 100,
+        color: Colors.redAccent,
+        child: Column(
+          children: <Widget>[],
+        ),
+      )),
+      ListTile(
+        title: Text("Item 2"),
+        trailing: Icon(Icons.arrow_forward),
+      ),
+      ListTile(
+          title: MaterialButton(
+        color: Colors.redAccent,
+        onPressed: () async{
+          await Auth().signOut();
+        },
+        child: Text('data'),
+      ))
+    ],
+  )),
         body: Stack(
           children: <Widget>[
             SingleChildScrollView(
@@ -42,7 +83,7 @@ class _MenuState extends State<Menu> {
                   SizedBox(
                     height: 15,
                   ),
-                  buildappbar(context, _scaffoldKey),
+                  buildappbar(context, _scaffoldKey1),
                   Stack(
                     children: <Widget>[
                       Container(

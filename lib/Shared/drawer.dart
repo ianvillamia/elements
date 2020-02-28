@@ -1,52 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Services/auth.dart';
 
-buildDrawer(){
+buildDrawer() {
   return Drawer(
-    child: ListView(
-          padding: EdgeInsets.zero,
+      child: ListView(
+    children: <Widget>[
+      DrawerHeader(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            DrawerHeader(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/logo.png',
-                    width: 80,
-                    height: 80,
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text("test@gmail.com"),
-                ],
-              ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-            ),
-            ListTile(
-              //leading: Icon(Icons.photo),
-              title: Text("Something 1"),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Something 2"),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Something 3"),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Something 4"),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text("Something 5"),
-              onTap: () {},
-            ),
+            //image
+            
+            //name
+            Text("Emma Watson"),
+            //email
+            Text("emmaWatson@gmail.com")
           ],
         ),
-      );
+        decoration: BoxDecoration(color: Colors.redAccent),
+      ),
+      ListTile(
+          title: Container(
+        alignment: Alignment.topLeft,
+        height: 100,
+        color: Colors.redAccent,
+        child: Column(
+          children: <Widget>[],
+        ),
+      )),
+      ListTile(
+        title: Text("Item 2"),
+        trailing: Icon(Icons.arrow_forward),
+      ),
+      ListTile(
+          title: MaterialButton(
+        color: Colors.redAccent,
+        onPressed: () async{
+          await Auth().signOut();
+        },
+        child: Text('data'),
+      ))
+    ],
+  ));
 }
