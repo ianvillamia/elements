@@ -36,7 +36,7 @@ buildDrawer() {
           title: MaterialButton(
         color: Colors.redAccent,
         onPressed: () async{
-          await Auth().signOut();
+          await AuthService().signOut();
         },
         child: Text('data'),
       ))

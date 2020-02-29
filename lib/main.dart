@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mynewapp/Models/user.dart';
 import 'package:mynewapp/Screens/Authentication/landing.dart';
+import 'package:mynewapp/Screens/Authentication/login.dart';
+import 'package:mynewapp/Screens/Main/Menu/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:mynewapp/Services/auth.dart';
 
@@ -18,14 +20,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<User>.value(
-      value: Auth().user,
-      child: (MaterialApp(
-        home: Scaffold(
-          body: Landing(),
-        ),
-        debugShowCheckedModeBanner: false,
-      )),
+     return StreamProvider<User>.value(
+      value: AuthService().user,
+      child: MaterialApp(
+        home: Wrapper(),
+      ),
     );
+  }
+}
+
+class Wrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    final user = Provider.of<User>(context);
+    print(user);
+    
+    // return either the Home or Authenticate widget
+    if (user == null){
+      return Login();
+    } else {
+      return Menu();
+    }
+    
   }
 }

@@ -11,7 +11,6 @@ class Menu extends StatefulWidget {
   _MenuState createState() => _MenuState();
 }
 
-final GlobalKey<ScaffoldState> _scaffoldKey1 = new GlobalKey<ScaffoldState>();
 
 class _MenuState extends State<Menu> {
   PageController pageController;
@@ -33,7 +32,7 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) => Scaffold(
 
         backgroundColor: Colors.white,
-        key: _scaffoldKey1,
+        //key: _scaffoldKey1,
         bottomNavigationBar: buildBottomNavigation(),
         drawer:Drawer(
       child: ListView(
@@ -69,7 +68,7 @@ class _MenuState extends State<Menu> {
           title: MaterialButton(
         color: Colors.redAccent,
         onPressed: () async{
-          await Auth().signOut();
+          await AuthService().signOut();
         },
         child: Text('data'),
       ))
@@ -83,7 +82,7 @@ class _MenuState extends State<Menu> {
                   SizedBox(
                     height: 15,
                   ),
-                  buildappbar(context, _scaffoldKey1),
+                 // buildappbar(context, _scaffoldKey1),
                   Stack(
                     children: <Widget>[
                       Container(

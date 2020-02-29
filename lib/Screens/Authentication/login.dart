@@ -13,7 +13,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final Auth _auth = Auth();
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,16 +91,13 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                               onTap: () async {
-                                dynamic result = await _auth.signInAnon();
-                                if(result==null){
+                               dynamic result = await _auth.signInAnon();
+                                if (result == null) {
                                   print("Error signing in");
-                                }
-                                else{
+                                } else {
                                   print("Signed in:");
                                   print(result);
-                                
                                 }
-
                               },
                             ),
                           ],
