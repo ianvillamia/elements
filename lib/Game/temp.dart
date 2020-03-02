@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Game/game_db.dart';
 import 'package:mynewapp/Game/game_items.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 
@@ -48,20 +47,17 @@ class _GameState extends State<Game> {
         child: Stack(children: <Widget>[
           dragItem("C", 5, 30, Colors.redAccent),
           dragItem("H", 5, 100, Colors.amber),
-          dragItem("O", 5, 170, Colors.purple),
-          //deleters buttoners
+        
           Positioned(
               right: 15,
               child: MaterialButton(
-                onPressed: () async {
-                  db.collection('elements').getDocuments().then((snapshot) {
-                    for (DocumentSnapshot ds in snapshot.documents) {
+                onPressed: () async{
+                  db.collection('elements').getDocuments().then((snapshot){
+                    for(DocumentSnapshot ds in snapshot.documents){
                       ds.reference.delete();
                     }
                   });
-                  DocumentReference ref = await db
-                      .collection('elements')
-                      .add({'left': 5000, 'name': '+', 'top': 5000});
+                   DocumentReference ref = await db.collection('elements').add({'left': 5000, 'name': '+','top':5000});
                 },
                 color: Colors.orangeAccent,
                 child: Text('Reset'),
@@ -81,23 +77,22 @@ class _GameState extends State<Game> {
           top: top,
           left: left,
           child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
-              return true;
+            onWillAccept: (data) {
+              print(data);
+              
+           //   print("data = $data onWillAccept");
+            return true;
             },
             onAccept: (List data) async {
               print(data);
-
-              print(" onAccept");
-              setState(() {});
-              updateData(db, doc, data);
-              if (data[0] == "C") {
-                addData(db, left, top - 150, "+");
-                addData(db, left - 150, top, "+");
-                addData(db, left + 150, top, "+");
-                addData(db, left, top + 150, "+");
-              }
+              // print(" onAccept");
+              // setState(() {});
+              // await db
+              //     .collection('elements')
+              //     .document(doc.documentID)
+              //     .updateData({'name': data});
             },
+            
             onLeave: (data) {
               print("data = $data onLeave");
             },
@@ -111,15 +106,24 @@ class _GameState extends State<Game> {
           top: top,
           left: left,
           child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
+            onWillAccept: (String data) {
+              print("data = $data onWillAccept");
               return true;
             },
-            onAccept: (List data) async {
-              print(data);
+            onAccept: (data) async {
               print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
+              setState(() {});
+
+              await db
+                  .collection('elements')
+                  .document(doc.documentID)
+                  .updateData({'name': data});
+              print('added');
+              if (data == "H") {
+                // var query = db.collection('elements').where('name','==',"H");
+              }
+              GameItems().blank_left(db, left, top);
+              GameItems().blank_right(db, left, top);
             },
             onLeave: (data) {
               print("data = $data onLeave");
@@ -134,15 +138,18 @@ class _GameState extends State<Game> {
           top: top,
           left: left,
           child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
+            onWillAccept: (String data) {
+              print("data = $data onWillAccept");
               return true;
             },
-            onAccept: (List data) async {
-              print(data);
+            onAccept: (data) async {
               print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
+              await db
+                  .collection('elements')
+                  .document(doc.documentID)
+                  .updateData({'name': data});
+              // isVisible = true;
+              //  targetText = "data";
             },
             onLeave: (data) {
               print("data = $data onLeave");
@@ -152,32 +159,9 @@ class _GameState extends State<Game> {
             },
           ));
     }
-     if (name == "O") {
-      return Positioned(
-          top: top,
-          left: left,
-          child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
-              return true;
-            },
-            onAccept: (List data) async {
-              print(data);
-              print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
-            },
-            onLeave: (data) {
-              print("data = $data onLeave");
-            },
-            builder: (context, candidateData, rejectedData) {
-              return GameItems().hydrogen();
-            },
-          ));
-    }
-
     return Container();
   }
+  //prefab          
 
   Widget dragItem(String element, double top, double left, Color color) {
     return Positioned(
@@ -185,7 +169,7 @@ class _GameState extends State<Game> {
       left: left,
       child: Draggable(
         //DATA
-        data: [element, color],
+        data: [element,color],
         child: Container(
           decoration: BoxDecoration(color: color, shape: BoxShape.circle),
           width: 150,

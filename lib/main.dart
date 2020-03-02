@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mynewapp/Game/game.dart';
 import 'package:mynewapp/Models/user.dart';
-import 'package:mynewapp/Screens/Authentication/landing.dart';
 import 'package:mynewapp/Screens/Authentication/login.dart';
-import 'package:mynewapp/Screens/Main/Menu/menu.dart';
+import 'package:mynewapp/Screens/Main/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:mynewapp/Services/auth.dart';
+import 'package:mynewapp/Screens/Main/Periodic_Table/periodic_table.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -23,7 +24,9 @@ class MyApp extends StatelessWidget {
      return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
-        home: Wrapper(),
+        home: PeriodicTable(),
+        //home: Game(),
+       // home: Wrapper(),
       ),
     );
   }

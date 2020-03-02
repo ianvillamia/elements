@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Authentication/login.dart';
-import 'package:mynewapp/Screens/Main/Menu/menu.dart';
+import 'package:mynewapp/Screens/Main/menu.dart';
 import '../../Shared/output.dart';
 import 'package:mynewapp/Global/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Authentication/signup.dart';
-import 'package:mynewapp/Screens/Main/Menu/menu.dart';
+import 'package:mynewapp/Screens/Main/menu.dart';
 import 'package:mynewapp/Services/auth.dart';
 import 'package:mynewapp/Shared/output.dart';
 import 'package:mynewapp/Shared/animation.dart';
