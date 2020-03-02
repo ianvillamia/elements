@@ -9,14 +9,10 @@ Future updateData(db, doc, data) async {
   }
 }
 
-Future addData(db, left, top, name) async {
+Future addData(db,left,top,name) async {
   try {
-    var doc = await db
+  await db
         .collection('elements')
-        .add({'left': left, 'name': name, 'top': top}).then((doc) async {
-      var d2 = await db
-          .collection('elements')
-          .add({'id':doc.documentID});
-    });
+        .add({'left': left, 'name': name, 'top': top});
   } catch (err) {}
 }

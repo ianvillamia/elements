@@ -16,34 +16,34 @@ class _PeriodicTableState extends State<PeriodicTable> {
         body: Padding(
       padding: EdgeInsets.all(15),
       child: Column(
-          children: <Widget>[
-            Row(
-      children: <Widget>[
-        buildElement(Colors.amber),
-        buildElement(Colors.deepOrange),
-        buildElement(Colors.brown),
-        buildElement(Colors.amber),
-        buildElement(Colors.deepOrange),
-        buildElement(Colors.brown),
-        buildElement(Colors.amber),
-        buildElement(Colors.deepOrange),
-        buildElement(Colors.brown),
-        buildElement(Colors.amber),
-        buildElement(Colors.deepOrange),
-        buildElement(Colors.brown),buildElement(Colors.amber),
-        buildElement(Colors.deepOrange),
-        buildElement(Colors.brown),
-        
-      ],
-            ),
-            Row(
-      children: <Widget>[
-        buildElement(Colors.deepPurple),
-        buildElement(Colors.deepOrange)
-      ],
-            ),
-          ],
-        ),
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              buildElement(Colors.amber),
+              buildElement(Colors.deepOrange),
+              buildElement(Colors.brown),
+              buildElement(Colors.amber),
+              buildElement(Colors.deepOrange),
+              buildElement(Colors.brown),
+              buildElement(Colors.amber),
+              buildElement(Colors.deepOrange),
+              buildElement(Colors.brown),
+              buildElement(Colors.amber),
+              buildElement(Colors.deepOrange),
+              buildElement(Colors.brown),buildElement(Colors.amber),
+              buildElement(Colors.deepOrange),
+              buildElement(Colors.brown),
+              
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              buildElement(Colors.deepPurple),
+              buildElement(Colors.deepOrange)
+            ],
+          ),
+        ],
+      ),
     ));
   }
 
