@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Global/sizes.dart';
-import 'package:flutter/services.dart';
 
 class PeriodicTable extends StatefulWidget {
   PeriodicTable({Key key}) : super(key: key);
@@ -10,18 +9,11 @@ class PeriodicTable extends StatefulWidget {
 }
 
 class _PeriodicTableState extends State<PeriodicTable> {
-  void initState(){
-    super.initState();
-    SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeRight,
-        DeviceOrientation.landscapeLeft,
-    ]);
-  }
   @override
   Widget build(BuildContext context) {
     Size().init(context);
     return Scaffold(
-      body: ListView(
+        body: Padding(
       padding: EdgeInsets.all(15),
       child: Column(
           children: <Widget>[
@@ -55,40 +47,11 @@ class _PeriodicTableState extends State<PeriodicTable> {
     ));
   }
 
-  buildElement(Color color, String text, String atom) {
-    return Padding(
-      padding: EdgeInsets.all(2),
-      child: Container(
-        width: Size.width * .13,
-        height: Size.height * .20,
-        color: color,
-        child: Column(
-          children: <Widget>[
-            Text (
-            atom,
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontFamily: 'OpenSans',
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(
-              height: 2,
-            ),
-            Text(
-              text,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontFamily: 'OpenSans',
-                fontWeight: FontWeight.bold
-              ),
-            ),
-          ],
-        ),
-      ),
-      
+  buildElement(Color color) {
+    return Container(
+      width: Size.height * .112,
+      height: Size.width * .0556,
+      color: color,
     );
   }
 }
