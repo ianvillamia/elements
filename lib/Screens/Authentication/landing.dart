@@ -26,7 +26,7 @@ class Landing extends StatelessWidget {
               1,
               Container(
                 height: ScreenUtil().setHeight(1100),
-                width: MediaQuery.of(context).size.width,
+                width: ScreenUtil().setWidth(2000),
                 child: Stack(
                   children: <Widget>[
                     Positioned(
