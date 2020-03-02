@@ -59,9 +59,17 @@ class _GameState extends State<Game> {
                       ds.reference.delete();
                     }
                   });
-                  DocumentReference ref = await db
-                      .collection('elements')
-                      .add({'left': 5000, 'name': '+', 'top': 5000});
+                  // List<dynamic> a = ['a','b','c'];
+                  List list = [];
+                  DocumentReference ref = await db.collection('elements').add({
+                    'left': 5000,
+                    'name': '+',
+                    'top': 5000,
+                    'children': list,
+                    'parent': ''
+                  }).then((ref) {
+                    print(ref.documentID);
+                  });
                 },
                 color: Colors.orangeAccent,
                 child: Text('Reset'),
@@ -76,6 +84,7 @@ class _GameState extends State<Game> {
     double top = doc.data['top'].toDouble();
     double left = doc.data['left'].toDouble();
     var name = doc.data['name'];
+
     if (name == "+") {
       return Positioned(
           top: top,
@@ -92,10 +101,15 @@ class _GameState extends State<Game> {
               setState(() {});
               updateData(db, doc, data);
               if (data[0] == "C") {
-                addData(db, left, top - 150, "+");
-                addData(db, left - 150, top, "+");
-                addData(db, left + 150, top, "+");
-                addData(db, left, top + 150, "+");
+               addData(db, left, top - 150, "+");
+             // addData(db, left - 150, top, "+");
+               // addData(db, left + 150, top, "+");
+               // addData(db, left, top + 150, "+");
+                // var doc = await db
+                //     .collection('elements')
+                //     .add({'left': left, 'name': name, 'top': top}).then((doc) {
+                //   print('added' + doc.documentID);
+                // });
               }
             },
             onLeave: (data) {
@@ -152,7 +166,7 @@ class _GameState extends State<Game> {
             },
           ));
     }
-     if (name == "O") {
+    if (name == "O") {
       return Positioned(
           top: top,
           left: left,
@@ -175,6 +189,30 @@ class _GameState extends State<Game> {
             },
           ));
     }
+    if(name==''){
+      return  Positioned(
+          top: top,
+          left: left,
+          child: DragTarget(
+            onWillAccept: (List data) {
+              print(id);
+              return true;
+            },
+            onAccept: (List data) async {
+              print(data);
+              print(" onAccept");
+              //setState(() {});
+              updateData(db, doc, data);
+            },
+            onLeave: (data) {
+              print("data = $data onLeave");
+            },
+            builder: (context, candidateData, rejectedData) {
+              return GameItems().hydrogen();
+            },
+          ));
+    }
+
 
     return Container();
   }
