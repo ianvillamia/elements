@@ -21,25 +21,31 @@ class GameService {
       var document = await Firestore.instance.document('elements/$parent');
       document.get().then((document) {
         print('NOT NULL');
-     print(document.data['value']);
+        var parentTop = document.data['top'];
+        var parentLeft = document.data['left'];
+            //if parentTop,parentLeft == addDatatop,left 
+        //isert add here
       });
     }
-  // else{
-      addData(doc,top,left+200, data, "C", doc.documentID);
-  //  }
+   else{
+    addData(doc, top-200, left, data, "+", doc.documentID);
+        addData(doc, top, left + 200, data, "+", doc.documentID);
+            addData(doc, top+200, left, data, "+", doc.documentID);
+                addData(doc, top, left - 200, data, "+", doc.documentID);
+     }
 
-    // try {
-    //   await db
-    //       .collection('elements')
-    //       .document(doc.documentID)
-    //       .updateData({'value': data[0],
-    //       });
-    // } catch (err) {
-    //   print(err.toString());
-    // }
+    try {
+      await db
+          .collection('elements')
+          .document(doc.documentID)
+          .updateData({'value': data[0],
+          });
+    } catch (err) {
+      print(err.toString());
+    }
   }
 
-  Future addData(doc,top,left ,data, value, parent) async {
+  Future addData(doc, top, left, data, value, parent) async {
     try {
       int max = 0;
       switch (value) {
@@ -55,7 +61,7 @@ class GameService {
       }
       await db.collection('elements').add({
         'top': top,
-        'left':  left,
+        'left': left,
         'value': value,
         'parent': parent,
         'children': "",
