@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Game/game_db.dart';
+import 'package:mynewapp/Game/game_db.dart' ;
 import 'package:mynewapp/Game/game_items.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 
@@ -12,7 +12,9 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
-  final db = Firestore.instance;
+
+  GameService gameService = GameService();
+ final db = Firestore.instance;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -54,14 +56,7 @@ class _GameState extends State<Game> {
               right: 15,
               child: MaterialButton(
                 onPressed: () async {
-                  db.collection('elements').getDocuments().then((snapshot) {
-                    for (DocumentSnapshot ds in snapshot.documents) {
-                      ds.reference.delete();
-                    }
-                  });
-                  DocumentReference ref = await db
-                      .collection('elements')
-                      .add({'left': 5000, 'name': '+', 'top': 5000});
+                  gameService.reset();
                 },
                 color: Colors.orangeAccent,
                 child: Text('Reset'),
@@ -72,11 +67,14 @@ class _GameState extends State<Game> {
   }
 
   Widget prefab(DocumentSnapshot doc) {
+
     var id = doc.documentID;
     double top = doc.data['top'].toDouble();
     double left = doc.data['left'].toDouble();
-    var name = doc.data['name'];
-    if (name == "+") {
+    var value = doc.data['value'];
+    //get parent 
+
+    if (value=="+") {
       return Positioned(
           top: top,
           left: left,
@@ -86,17 +84,24 @@ class _GameState extends State<Game> {
               return true;
             },
             onAccept: (List data) async {
-              print(data);
+              // print(data);
 
-              print(" onAccept");
-              setState(() {});
-              updateData(db, doc, data);
+              // print(" onAccept");
+              // setState(() {});
+              // GameService.
+              // GameService.updateData(db, doc, data);
+               gameService.updateData(doc, data );
+           
               if (data[0] == "C") {
-                addData(db, left, top - 150, "+");
-                addData(db, left - 150, top, "+");
-                addData(db, left + 150, top, "+");
-                addData(db, left, top + 150, "+");
+             
+           
+                   //update this.document
               }
+                //addData(db, left, top - 150, "+");
+              //   addData(db, left - 150, top, "+");
+              //   addData(db, left + 150, top, "+");
+              //   addData(db, left, top + 150, "+");
+              // }
             },
             onLeave: (data) {
               print("data = $data onLeave");
@@ -106,7 +111,7 @@ class _GameState extends State<Game> {
             },
           ));
     }
-    if (name == "C") {
+     if (value=="C") {
       return Positioned(
           top: top,
           left: left,
@@ -116,10 +121,23 @@ class _GameState extends State<Game> {
               return true;
             },
             onAccept: (List data) async {
-              print(data);
-              print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
+              // print(data);
+
+              // print(" onAccept");
+              // setState(() {});
+              // GameService.
+              // GameService.updateData(db, doc, data);
+              if (data[0] == "C") {
+              
+              gameService.updateData(doc, data);
+           //   gameService.addData(doc,data,top, left, value, id);
+                   //update this.document
+              }
+                //addData(db, left, top - 150, "+");
+              //   addData(db, left - 150, top, "+");
+              //   addData(db, left + 150, top, "+");
+              //   addData(db, left, top + 150, "+");
+              // }
             },
             onLeave: (data) {
               print("data = $data onLeave");
@@ -129,53 +147,7 @@ class _GameState extends State<Game> {
             },
           ));
     }
-    if (name == "H") {
-      return Positioned(
-          top: top,
-          left: left,
-          child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
-              return true;
-            },
-            onAccept: (List data) async {
-              print(data);
-              print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
-            },
-            onLeave: (data) {
-              print("data = $data onLeave");
-            },
-            builder: (context, candidateData, rejectedData) {
-              return GameItems().hydrogen();
-            },
-          ));
-    }
-     if (name == "O") {
-      return Positioned(
-          top: top,
-          left: left,
-          child: DragTarget(
-            onWillAccept: (List data) {
-              print(id);
-              return true;
-            },
-            onAccept: (List data) async {
-              print(data);
-              print(" onAccept");
-              //setState(() {});
-              updateData(db, doc, data);
-            },
-            onLeave: (data) {
-              print("data = $data onLeave");
-            },
-            builder: (context, candidateData, rejectedData) {
-              return GameItems().hydrogen();
-            },
-          ));
-    }
-
+  
     return Container();
   }
 
