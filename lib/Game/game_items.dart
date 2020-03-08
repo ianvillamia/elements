@@ -64,6 +64,20 @@ class GameItems {
     );
   }
 
+
+  oxygen() {
+    return Container(
+      width: 150.0,
+      height: 150.0,
+      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.purple),
+      child: Center(
+        child: Text(
+          "O",
+          style: TextStyle(fontSize: 50),
+        ),
+      ),
+    );
+  }
   hydrogen() {
     return Container(
       width: 150.0,

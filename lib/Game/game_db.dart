@@ -10,42 +10,96 @@ class GameService {
     db.collection('elements').snapshots();
   }
 
+  Future addChild(parent, value) async {
+    try {
+      await db.collection('elements').document(parent).updateData({
+        'children': FieldValue.arrayUnion([value])
+      });
+    } catch (err) {
+      print(err.toString());
+    }
+  }
+
   Future updateData(doc, data) async {
-    //do checking before adding
-    //print('id is:::->'+doc.documentID);
-    // addData(doc, data, "C", doc.documentID);
     var top = doc.data['top'];
     var left = doc.data['left'];
     var parent = doc.data['parent'];
     if (parent != "") {
+
       var document = await Firestore.instance.document('elements/$parent');
       document.get().then((document) {
         print('NOT NULL');
         var parentTop = document.data['top'];
         var parentLeft = document.data['left'];
-            //if parentTop,parentLeft == addDatatop,left 
+     
+
+      if(data[0]=="O"){
+           if(top==parentTop&&left==parentLeft){
+          //dont render
+        }
+        else{
+          addData(doc, top , left+200, data, "+", doc.documentID);
+        }
+       
+      }
+       if(data[0]=="C"){
+           if(top==parentTop&&left==parentLeft){
+          //dont render
+          print('hit');
+        }
+        else{
+
+          addData(doc, top , left+200, data, "+", doc.documentID);
+            addData(doc, top-200 , left, data, "+", doc.documentID);
+                   addData(doc, top+200 , left, data, "+", doc.documentID);
+        }
+       
+      }
+
+        //if parentTop,parentLeft == addDatatop,left
+
         //isert add here
       });
+    } else {
+      switch (data[0]) {
+        case "C":
+          addData(doc, top - 200, left, data, "+", doc.documentID);
+          addData(doc, top, left + 200, data, "+", doc.documentID);
+          addData(doc, top + 200, left, data, "+", doc.documentID);
+          addData(doc, top, left - 200, data, "+", doc.documentID);
+
+          break;
+        case "H":
+          //IDUNNO
+          // addData(doc, top - 200, left, data, "+", doc.documentID);
+          // addData(doc, top, left + 200, data, "+", doc.documentID);
+          // addData(doc, top + 200, left, data, "+", doc.documentID);
+          // addData(doc, top, left - 200, data, "+", doc.documentID);
+          break;
+        case "O":
+          //ADD TWO HOLDER
+          // addData(doc, top - 200, left, data, "+", doc.documentID);
+          // addData(doc, top, left + 200, data, "+", doc.documentID);
+          // addData(doc, top + 200, left, data, "+", doc.documentID);
+          // addData(doc, top, left - 200, data, "+", doc.documentID);
+          break;
+      }
     }
-   else{
-    addData(doc, top-200, left, data, "+", doc.documentID);
-        addData(doc, top, left + 200, data, "+", doc.documentID);
-            addData(doc, top+200, left, data, "+", doc.documentID);
-                addData(doc, top, left - 200, data, "+", doc.documentID);
-     }
 
     try {
-      await db
-          .collection('elements')
-          .document(doc.documentID)
-          .updateData({'value': data[0],
-          });
+      await db.collection('elements').document(doc.documentID).updateData({
+        'value': data[0],
+      });
     } catch (err) {
       print(err.toString());
     }
   }
 
   Future addData(doc, top, left, data, value, parent) async {
+
+    // do check get snapshot then see if top and left matches
+
+
     try {
       int max = 0;
       switch (value) {
@@ -67,8 +121,10 @@ class GameService {
         'children': "",
         'current': 0,
         'max': max
-      }).then((value) {
-        print(value.documentID);
+      }).then((value) async {
+        print('welcome child');
+        print('documentIDis:::::' + value.documentID);
+        addChild(parent, value.documentID);
       });
     } catch (err) {}
   }
@@ -87,7 +143,7 @@ class GameService {
       'left': 5000,
       'value': '+',
       'parent': '',
-      'children': "",
+      'children': [],
       'current': 0,
       'max': 1
     });

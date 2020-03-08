@@ -31,6 +31,7 @@ dependencies:
   flutter_screenutil: ^1.0.2
   google_sign_in: ^4.1.4
   provider: ^4.0.4
+  responsive_widgets: ^1.0.2
 
 dev_dependencies:
   flutter_test:

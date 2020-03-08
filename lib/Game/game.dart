@@ -84,23 +84,10 @@ class _GameState extends State<Game> {
               return true;
             },
             onAccept: (List data) async {
-              // print(data);
-
-              // print(" onAccept");
-              // setState(() {});
-              // GameService.
-              // GameService.updateData(db, doc, data);
+          
                gameService.updateData(doc, data );
            
-              if (data[0] == "C") {
-             
-           
-                   //update this.document
-              }
-                //addData(db, left, top - 150, "+");
-              //   addData(db, left - 150, top, "+");
-              //   addData(db, left + 150, top, "+");
-              //   addData(db, left, top + 150, "+");
+              
               // }
             },
             onLeave: (data) {
@@ -111,6 +98,7 @@ class _GameState extends State<Game> {
             },
           ));
     }
+
      if (value=="C") {
       return Positioned(
           top: top,
@@ -144,6 +132,64 @@ class _GameState extends State<Game> {
             },
             builder: (context, candidateData, rejectedData) {
               return GameItems().carbon();
+            },
+          ));
+    }
+
+      if (value=="O") {
+      return Positioned(
+          top: top,
+          left: left,
+          child: DragTarget(
+            onWillAccept: (List data) {
+              print(id);
+              return true;
+            },
+            onAccept: (List data) async {
+          
+               gameService.updateData(doc, data );
+           
+              if (data[0] == "C") {
+             
+           
+              }
+              
+              // }
+            },
+            onLeave: (data) {
+              print("data = $data onLeave");
+            },
+            builder: (context, candidateData, rejectedData) {
+              return GameItems().oxygen();
+            },
+          ));
+    }
+
+      if (value=="H") {
+      return Positioned(
+          top: top,
+          left: left,
+          child: DragTarget(
+            onWillAccept: (List data) {
+              print(id);
+              return true;
+            },
+            onAccept: (List data) async {
+          
+               gameService.updateData(doc, data );
+           
+              if (data[0] == "C") {
+             
+           
+              }
+              
+              // }
+            },
+            onLeave: (data) {
+              print("data = $data onLeave");
+            },
+            builder: (context, candidateData, rejectedData) {
+              return GameItems().hydrogen();
             },
           ));
     }
