@@ -6,7 +6,7 @@ import 'package:mynewapp/Screens/Authentication/login.dart';
 import 'package:mynewapp/Screens/Main/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:mynewapp/Services/auth.dart';
-import 'package:mynewapp/Screens/Main/Periodic_Table/periodic_table.dart';
+import 'package:mynewapp/Screens/Main/Learning_Module/learning_module.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       child: MaterialApp(
        // home: PeriodicTable(),
-        home: Game(),
+        home: LearningModule(),
        // home: Wrapper(),
       ),
     );
