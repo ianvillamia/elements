@@ -32,7 +32,8 @@ dependencies:
   google_sign_in: ^4.1.4
   provider: ^4.0.4
   responsive_widgets: ^1.0.2
-
+  video_player: ^0.5.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

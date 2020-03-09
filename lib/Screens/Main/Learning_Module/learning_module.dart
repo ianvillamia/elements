@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Shared/videoplayer.dart';
+import 'package:video_player/video_player.dart';
 
 class LearningModule extends StatefulWidget {
   LearningModule({Key key}) : super(key: key);
@@ -82,8 +83,36 @@ class _LearningModuleState extends State<LearningModule> {
                             Text("1k"),
                           ],
                         ),
-                        SizedBox(height: 20),
-                        buildVideoPlayer(),
+                        Container(
+                          height: MediaQuery.of(context).copyWith().size.height / 2.3,
+                          child: ListView(
+                            padding: EdgeInsets.all(15),
+                          children: <Widget>[
+                          SingleChildScrollView(
+                            child: Container(
+                              height: 600,
+                            child: Column(
+                              children: <Widget>[
+                                BuildVideoPlayer(),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                BuildVideoPlayer(),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                BuildVideoPlayer(),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                BuildVideoPlayer(),
+                                
+                               
+                              ])
+                            ),
+                          ),])
+                        )
+                        //buildVideoPlayer(),
                       ])),
                 ),
               )
