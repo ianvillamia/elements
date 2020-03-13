@@ -93,19 +93,19 @@ class _LearningModuleState extends State<LearningModule> {
                               height: 600,
                             child: Column(
                               children: <Widget>[
-                                BuildVideoPlayer(),
+                                BuildVideoPlayer1(),
                                 SizedBox(
                                   height: 20,
                                 ),
-                                BuildVideoPlayer(),
+                                BuildVideoPlayer2(),
                                 SizedBox(
                                   height: 20,
                                 ),
-                                BuildVideoPlayer(),
+                                BuildVideoPlayer3(),
                                 SizedBox(
                                   height: 20,
                                 ),
-                                BuildVideoPlayer(),
+                                BuildVideoPlayer4(),
                                 
                                
                               ])
