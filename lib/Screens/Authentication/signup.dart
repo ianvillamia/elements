@@ -1,27 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Screens/Authentication/login.dart';
 import 'package:mynewapp/Services/auth.dart';
 import 'package:mynewapp/Shared/output.dart';
 import 'package:mynewapp/Shared/animation.dart';
+import 'package:mynewapp/Shared/textFormField.dart';
+import 'package:mynewapp/Shared/loading.dart';
 
 class Signup extends StatefulWidget {
-  Signup({Key key}) : super(key: key);
+  
+  final Function toggleView;
+  Signup({ this.toggleView });
 
   @override
   _SignupState createState() => _SignupState();
 }
 
 class _SignupState extends State<Signup> {
-  bool _obscureText = true;
+  bool _isHidden = true;
+  bool _isHiddenn = true;
+  bool loading = false;
+
+  void _toggleVisibility() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
+  }
+
+  void _toggleVisibilityy() {
+    setState(() {
+      _isHiddenn = !_isHiddenn;
+    });
+  }
+  
+
   final _formKey = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
-  String error = '';
+  final TextEditingController _pass = TextEditingController();
+  final TextEditingController _confirmPass = TextEditingController();
+  
 
   //values
-  String email='';
-  String password='';
+  String firstname = '';
+  String lastname = '';
+  String email = '';
+  String password = '';
+  String confirmpassword = '';
+  String error = '';
+  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       body: FadeAnimation(
         1,
         Form(
@@ -31,10 +59,10 @@ class _SignupState extends State<Signup> {
               padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
               child: Column(children: <Widget>[
                 Container(
-                  height: 250.0,
+                  height: 230.0,
                   child: Center(
-                    child: Image.asset('assets/compound-simulation.jpg',
-                        height: 250, fit: BoxFit.cover),
+                    child: Image.asset('assets/chemistry.png',
+                        height: 230, fit: BoxFit.cover),
                   ),
                 ),
                 Container(
@@ -53,37 +81,10 @@ class _SignupState extends State<Signup> {
                             fontFamily: 'OpenSans',
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Container(
-                              width: 125,
-                              child: TextField(
-                                keyboardType: TextInputType.emailAddress,
-                                decoration: InputDecoration(
-                                  hintText: 'First Name',
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 125,
-                              child: TextField(
-                                keyboardType: TextInputType.emailAddress,
-                                decoration: InputDecoration(
-                                  hintText: 'LastName Name',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        TextField(
-                          obscureText: _obscureText,
-                          keyboardType: TextInputType.visiblePassword,
-                          decoration: InputDecoration(
-                            hintText: 'Email',
+                        Center(
+                          child:Text(
+                            error,
+                            style: TextStyle(color: Colors.red, fontSize: 16),
                           ),
                         ),
                         Row(
@@ -91,71 +92,84 @@ class _SignupState extends State<Signup> {
                           children: <Widget>[
                             Container(
                               width: 125,
-                              child: TextField(
-                                obscureText: _obscureText,
-                                keyboardType: TextInputType.visiblePassword,
-                                decoration: InputDecoration(
-                                  hintText: 'Password',
-                                  // suffixIcon: GestureDetector(
-                                  //   onTap: () {
-                                  //     setState(() {
-                                  //       _obscureText = !_obscureText;
-                                  //     });
-                                  //   },
-                                  //   child: Icon(
-                                  //     _obscureText ? Icons.visibility : Icons.visibility_off,
-                                  //   ),
-                                  // ),
-                                ),
+                              child: TextFormField(
+                                decoration: textInputDecoration.copyWith(hintText: 'First Name'),
+                                validator: (val) => val.isEmpty ? 'Enter Firstname' : null,
+                                onChanged: (val) {
+                                  setState(() => firstname = val);
+                                },
                               ),
                             ),
                             Container(
                               width: 125,
-                              child: TextField(
-                                obscureText: _obscureText,
-                                keyboardType: TextInputType.visiblePassword,
-                                decoration: InputDecoration(
-                                  hintText: 'Confirm Password',
-                                  // suffixIcon: GestureDetector(
-                                  //   onTap: () {
-                                  //     setState(() {
-                                  //       _obscureText = !_obscureText;
-                                  //     });
-                                  //   },
-                                  //   child: Icon(
-                                  //     _obscureText ? Icons.visibility : Icons.visibility_off,
-                                  //   ),
-                                  // ),
-                                ),
+                              child: TextFormField(
+                                decoration: textInputDecoration.copyWith(hintText: 'Last Name'),
+                                validator: (val) => val.isEmpty ? 'Enter Lastname' : null,
+                                onChanged: (val) {
+                                  setState(() => lastname = val);
+                                },
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 15,
+                        TextFormField(
+                          decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                          validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                          onChanged: (val) {
+                            setState(() => email = val);
+                          },
                         ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.end,
-                        //   children: <Widget>[
-                        //     InkWell(
-                        //       child: Text(
-                        //         "Forgot Password?",
-                        //         style: TextStyle(
-                        //           color: Colors.blue,
-                        //           fontFamily: 'OpenSans',
-                        //           fontSize:14
-                        //         ),
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
+                        TextFormField(
+                          controller: _pass,
+                          obscureText: _isHiddenn,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(top: 16),
+                            hintText: 'Password',
+                            suffixIcon: IconButton(
+                              onPressed: _toggleVisibilityy,
+                              icon: _isHiddenn ? Icon(Icons.visibility_off, size: 20) : Icon(Icons.visibility, size: 20),
+                            ),
+                          ),
+                          validator: (val) {
+                            if(val.length < 8)
+                              return "Your password must be at least 6 characters long.";
+                            else if(val.isEmpty)
+                              return 'Enter your password';
+                            return null;
+                          },
+                          onChanged: (val) {
+                            setState(() => password = val);
+                          },
+                        ),
+                        SizedBox(height: 5),
+                        Text('(Use 8 or more characters)'),
+                        TextFormField(
+                          controller: _confirmPass,
+                          obscureText: _isHidden,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(top: 16),
+                            hintText: 'Confirm Password',
+                            suffixIcon: IconButton(
+                              onPressed: _toggleVisibility,
+                              icon: _isHidden ? Icon(Icons.visibility_off, size: 20) : Icon(Icons.visibility, size: 20),
+                            ),
+                          ),
+                          validator: (val) {
+                            if(val != _pass.text)
+                              return "Password didn't match. Try again!";
+                            return null;
+                          },
+                          onChanged: (val) {
+                            setState(() => confirmpassword = val);
+                          },
+                        ),
                         SizedBox(
                           height: 10,
                         ),
                         Center(
                           child: Container(
                             width: 175,
-                            child: MaterialButton(
+                            child: RaisedButton(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
                               color: Color.fromRGBO(245, 47, 89, 100),
@@ -169,12 +183,12 @@ class _SignupState extends State<Signup> {
                               ),
                               onPressed: () async {
                                 if (_formKey.currentState.validate()) {
-                                  dynamic result =
-                                      await _auth.registerWithEmailAndPassword(
-                                          email, password);
+                                  setState(() => loading = true);
+                                  dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                                   if (result == null) {
                                     setState(() {
-                                      error = 'Please supply a valid email';
+                                      error = 'Please enter a valid email';
+                                      loading = false;
                                     });
                                   }
                                 }
@@ -183,7 +197,7 @@ class _SignupState extends State<Signup> {
                           ),
                         ),
                         SizedBox(
-                          height: 15,
+                          height: 5,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -194,7 +208,7 @@ class _SignupState extends State<Signup> {
                           ],
                         ),
                         SizedBox(
-                          height: 15,
+                          height: 5,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -205,6 +219,19 @@ class _SignupState extends State<Signup> {
                             buildButton('assets/google.png', Colors.grey[100]),
                           ],
                         ),
+                        InkWell(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontFamily: 'OpenSans',
+                                ),
+                              ),
+                              onTap: () {
+                                print('Login');
+                                widget.toggleView();
+                              },
+                            )
                       ]),
                 )
               ]),
@@ -214,7 +241,7 @@ class _SignupState extends State<Signup> {
       ),
     );
   }
-
+  
   horizontalLine() => Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Container(

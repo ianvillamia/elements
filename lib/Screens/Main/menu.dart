@@ -29,95 +29,112 @@ class _MenuState extends State<Menu> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-
-        backgroundColor: Colors.white,
-        //key: _scaffoldKey1,
-        bottomNavigationBar: buildBottomNavigation(),
-        drawer:Drawer(
-      child: ListView(
-    children: <Widget>[
-      DrawerHeader(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+  Widget build(BuildContext context) {
+    final AuthService _auth = AuthService();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      //key: _scaffoldKey1,
+      bottomNavigationBar: buildBottomNavigation(),
+      drawer:Drawer(
+        child: ListView(
           children: <Widget>[
-            //image
-            
-            //name
-            Text("Emma Watson"),
-            //email
-            Text("emmaWatson@gmail.com")
-          ],
-        ),
-        decoration: BoxDecoration(color: Colors.redAccent),
-      ),
-      ListTile(
-          title: Container(
-        alignment: Alignment.topLeft,
-        height: 100,
-        color: Colors.redAccent,
-        child: Column(
-          children: <Widget>[],
-        ),
-      )),
-      ListTile(
-        title: Text("Item 2"),
-        trailing: Icon(Icons.arrow_forward),
-      ),
-      ListTile(
-          title: MaterialButton(
-        color: Colors.redAccent,
-        onPressed: () async{
-          await AuthService().signOut();
-        },
-        child: Text('data'),
-      ))
-    ],
-  )),
-        body: Stack(
-          children: <Widget>[
-            SingleChildScrollView(
+            DrawerHeader(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(
-                    height: 15,
-                  ),
-                 // buildappbar(context, _scaffoldKey1),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        height: 180,
-                        width: MediaQuery.of(context).size.width,
-                        child:welcome()
-                      ),
-                     
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Stack(
-                    children: <Widget>[
-                      Container(
-                        height: 260,
-                        width: MediaQuery.of(context).size.width,
-                        color: Color.fromRGBO(252, 180, 180, 100),
-                      ),
-                      Container(
-                        child: Container(
-                          height: 280, 
-                          child: test()
-                        ),
-                      ),
-                    ],
-                  ),
+                  //image
+                  
+                  //name
+                  Text("Emma Watson"),
+                  //email
+                  Text("emmaWatson@gmail.com")
                 ],
               ),
+              decoration: BoxDecoration(color: Colors.redAccent),
             ),
+            ListTile(
+              title: Container(
+                alignment: Alignment.topLeft,
+                height: 100,
+                color: Colors.redAccent,
+                child: Column(
+                  children: <Widget>[],
+                ),
+              )
+            ),
+            ListTile(
+              title: Text("Item 2"),
+              trailing: Icon(Icons.arrow_forward),
+            ),
+            ListTile(
+              title: MaterialButton(
+                color: Colors.redAccent,
+                onPressed: () async{
+                  await AuthService().signOut();
+                },
+                child: Text('data'),
+              )
+            )
           ],
-        ),
-      );
-
+        )
+      ),
+      body: Stack(
+        children: <Widget>[
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 15,
+                ),
+                // buildappbar(context, _scaffoldKey1),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      height: 180,
+                      width: MediaQuery.of(context).size.width,
+                      child:welcome()
+                    ),
+                    
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      height: 260,
+                      width: MediaQuery.of(context).size.width,
+                      color: Color.fromRGBO(252, 180, 180, 100),
+                    ),
+                    Container(
+                      child: Container(
+                        height: 280, 
+                        child: test()
+                      ),
+                    ),
+                  ],
+                ),
+                InkWell(
+                              child: Text(
+                                "Logout",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontFamily: 'OpenSans',
+                                ),
+                              ),
+                              onTap: () async {
+                                print('Logout');
+                                await _auth.signOut();
+                              },
+                            ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
   welcome(){
     return Row(
       children: <Widget>[
@@ -184,7 +201,8 @@ class _MenuState extends State<Menu> {
       ],
     );
   }
-buildCircle(double w, double h, int r, int g, int b , double o){
+  
+  buildCircle(double w, double h, int r, int g, int b , double o){
     return Container(
                 width: w,
                 height: h,

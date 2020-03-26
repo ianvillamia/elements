@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mynewapp/Game/game.dart';
 import 'package:mynewapp/Models/user.dart';
-import 'package:mynewapp/Screens/Authentication/login.dart';
-import 'package:mynewapp/Screens/Main/menu.dart';
 import 'package:provider/provider.dart';
 import 'package:mynewapp/Services/auth.dart';
-import 'package:mynewapp/Screens/Main/Learning_Module/learning_module.dart';
+import 'package:mynewapp/Screens/Authentication/landing.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -24,27 +22,11 @@ class MyApp extends StatelessWidget {
      return StreamProvider<User>.value(
       value: AuthService().user,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
        // home: PeriodicTable(),
-        home: LearningModule(),
+        home: Wrapper(),
        // home: Wrapper(),
       ),
     );
-  }
-}
-
-class Wrapper extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-
-    final user = Provider.of<User>(context);
-    print(user);
-    
-    // return either the Home or Authenticate widget
-    if (user == null){
-      return Login();
-    } else {
-      return Menu();
-    }
-    
   }
 }
