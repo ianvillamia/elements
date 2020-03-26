@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mynewapp/Models/user.dart';
+import 'package:mynewapp/splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:mynewapp/Services/auth.dart';
 import 'package:mynewapp/Screens/Authentication/landing.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
        // home: PeriodicTable(),
-        home: Wrapper(),
+        home: TestSplash(),
        // home: Wrapper(),
       ),
     );
