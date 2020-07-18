@@ -10,13 +10,13 @@ class Output {
                     fontSize: size,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'OpenSans',
-                    shadows: [
-                      Shadow(
-                          blurRadius: 3.0,
-                          color: Colors.grey,
-                          offset: Offset(2.0, 5.0),
-                          ),
-                    ],
+                    // shadows: [
+                    //   Shadow(
+                    //       blurRadius: 3.0,
+                    //       color: Colors.grey,
+                    //       offset: Offset(2.0, 5.0),
+                    //       ),
+                    // ],
                   ),
                 );
 }}

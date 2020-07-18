@@ -12,7 +12,7 @@ void main() {
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light));
 
-  runApp(MyApp());
+  runApp(MyApp()); 
 }
 
 class MyApp extends StatelessWidget {

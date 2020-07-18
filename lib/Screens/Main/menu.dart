@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mynewapp/Screens/Main/Learning_Module/learning_module.dart';
+import 'package:mynewapp/Screens/Main/Periodic_Table/periodic_table.dart';
 import 'package:mynewapp/Shared/appbar.dart';
 import 'package:mynewapp/Shared/drawer.dart' as drawer;
 import 'package:mynewapp/Shared/bottomNavigation.dart';
 import 'package:mynewapp/Services/auth.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
 class Menu extends StatefulWidget {
   Menu({Key key}) : super(key: key);
 
@@ -13,20 +17,37 @@ class Menu extends StatefulWidget {
 
 
 class _MenuState extends State<Menu> {
-  PageController pageController;
-  int current = 0;
-  List images = [
-    "assets/learning-module.jpg",
-    "assets/compound-simulation.jpg",
-    "assets/periodic-table.jpg"
-  ];
-  List name = ["Learning Module", "Compound Simulation", "Periodic Table"];
+  int _currentIndex=0;
 
-  @override
-  void initState() {
-    super.initState();
-    pageController = PageController(initialPage: 1, viewportFraction: 0.8);
+  List cardList=[
+    LearningModule1(),
+    CompoundSimulation1(),
+    PeriodicTable1(),
+    Item4()
+  ];
+
+  List<T> map<T>(List list, Function handler) {
+    List<T> result = [];
+    for (var i = 0; i < list.length; i++) {
+      result.add(handler(i, list[i]));
+    }
+    return result;
   }
+
+  // PageController pageController;
+  // int current = 0;
+  // List images = [
+  //   "assets/learning-module.jpg",
+  //   "assets/compound-simulation.jpg",
+  //   "assets/periodic-table.jpg"
+  // ];
+  // List name = ["Learning Module", "Compound Simulation", "Periodic Table"];
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   pageController = PageController(initialPage: 1, viewportFraction: 0.8);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -110,24 +131,48 @@ class _MenuState extends State<Menu> {
                     Container(
                       child: Container(
                         height: 280, 
-                        child: test()
+                        child: CarouselSlider(
+                          height: 200.0,
+                          aspectRatio: 2.0,
+                          onPageChanged: (index) {
+                            setState(() {
+                              _currentIndex = index;
+                            });
+                          },
+                          items: cardList.map((card){
+                            return Builder(
+                              builder:(BuildContext context){
+                                return Container(
+                                  height: MediaQuery.of(context).size.height*0.30,
+                                  width: MediaQuery.of(context).size.width*0.75,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                    child: card,
+                                  ),
+                                );
+                              }
+                            );
+                          }).toList(),
+                        ),
                       ),
                     ),
                   ],
                 ),
                 InkWell(
-                              child: Text(
-                                "Logout",
-                                style: TextStyle(
-                                  color: Colors.blue,
-                                  fontFamily: 'OpenSans',
-                                ),
-                              ),
-                              onTap: () async {
-                                print('Logout');
-                                await _auth.signOut();
-                              },
-                            ),
+                  child: Text(
+                    "Logout",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: 'OpenSans',
+                    ),
+                  ),
+                  onTap: () async {
+                    print('Logout');
+                    await _auth.signOut();
+                  },
+                ),
               ],
             ),
           ),
@@ -210,38 +255,76 @@ class _MenuState extends State<Menu> {
               );
   }
 
-  test() {
-    return PageView.builder(
-      controller: pageController,
-      itemCount: images.length,
-      itemBuilder: (context, position) {
-        return _carousel(position);
-      },
-    );
-  }
+  // test() {
+  //   return PageView.builder(
+  //     controller: pageController,
+  //     itemCount: images.length,
+  //     itemBuilder: (context, position) {
+  //       return _carousel(position);
+  //     },
+  //   );
+  // }
 
-  _carousel(int index) {
-    return AnimatedBuilder(
-      animation: pageController,
-      builder: (context, widget) {
-        double value = 1;
-        if (pageController.position.haveDimensions) {
-          value = pageController.page - index;
-          value = (1 - (value.abs() * 0.3)).clamp(0.0, 1.0);
-        }
-        return Container(
-          child: Container(
-            height: 300,
-            child: widget,
-          ),
-        );
-      },
-      child: Column(
-        children: <Widget>[
-          Container(
+  // _carousel(int index) {
+  //   return AnimatedBuilder(
+  //     animation: pageController,
+  //     builder: (context, widget) {
+  //       double value = 1;
+  //       if (pageController.position.haveDimensions) {
+  //         value = pageController.page - index;
+  //         value = (1 - (value.abs() * 0.3)).clamp(0.0, 1.0);
+  //       }
+  //       return Container(
+  //         child: Container(
+  //           height: 300,
+  //           child: widget,
+  //         ),
+  //       );
+  //     },
+  //     child: Column(
+  //       children: <Widget>[
+  //         Container(
+  //           height: 200,
+  //           width: 400,
+  //           margin: EdgeInsets.all(10),
+  //           decoration: BoxDecoration(
+  //             boxShadow: [
+  //               BoxShadow(
+  //                 color: Colors.black.withOpacity(0.2),
+  //                 spreadRadius: 1,
+  //                 blurRadius: 5,
+  //                 offset: Offset(2, 5), // changes position of shadow
+  //               ),
+  //             ],
+  //             color: Colors.red,
+  //             borderRadius: BorderRadius.circular(20.0),
+  //             image: DecorationImage(
+  //                   image: AssetImage(images[index]), fit: BoxFit.fill)),
+  //         ),
+  //         Center(
+  //           child: Text(
+  //             name[index],
+  //             style: TextStyle(
+  //                 fontSize: 25,
+  //                 fontWeight: FontWeight.bold,
+  //                 fontFamily: 'OpenSans'),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
+}
+
+class LearningModule1 extends StatelessWidget {
+  const LearningModule1({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        child: Container(
             height: 200,
             width: 400,
-            margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -254,18 +337,120 @@ class _MenuState extends State<Menu> {
               color: Colors.red,
               borderRadius: BorderRadius.circular(20.0),
               image: DecorationImage(
-                    image: AssetImage(images[index]), fit: BoxFit.fill)),
+                    image: AssetImage("assets/learning-module.jpg"), fit: BoxFit.fill)),
           ),
-          Center(
-            child: Text(
-              name[index],
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'OpenSans'),
-            ),
+      onTap: () =>
+        Navigator.push(context,MaterialPageRoute(builder: (context) => LearningModule()))
+      
+    );
+  }
+}
+
+class CompoundSimulation1 extends StatelessWidget {
+  const CompoundSimulation1 ({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        child: Container(
+            height: 200,
+            width: 400,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(2, 5), // changes position of shadow
+                ),
+              ],
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20.0),
+              image: DecorationImage(
+                    image: AssetImage("assets/compound-simulation.jpg"), fit: BoxFit.fill)),
+          ),
+      // onTap: () =>
+      //   Navigator.push(context,MaterialPageRoute(builder: (context) => CompoundSimulation()))
+      
+    );
+  }
+}
+
+class PeriodicTable1 extends StatelessWidget {
+  const PeriodicTable1({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        child: Container(
+            height: 200,
+            width: 400,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  spreadRadius: 1,
+                  blurRadius: 5,
+                  offset: Offset(2, 5), // changes position of shadow
+                ),
+              ],
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20.0),
+              image: DecorationImage(
+                    image: AssetImage("assets/periodic-table.jpg"), fit: BoxFit.fill)),
+          ),
+      onTap: () =>
+        Navigator.push(context,MaterialPageRoute(builder: (context) => PeriodicTable()))
+      
+    );
+  }
+}
+
+class Item4 extends StatelessWidget {
+  const Item4({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Data",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold
+            )
+          ),
+          Text(
+            "Data",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 17.0,
+              fontWeight: FontWeight.w600
+            )
           ),
         ],
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
       ),
     );
   }

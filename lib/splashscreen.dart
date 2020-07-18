@@ -13,7 +13,7 @@ class _TestSplashState extends State<TestSplash> {
 
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3)).then((_) => setState(() {
+    Future.delayed(Duration(seconds: 2)).then((_) => setState(() {
           _isLoading = false;
         }));
     super.initState();
@@ -22,11 +22,11 @@ class _TestSplashState extends State<TestSplash> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen.navigate(
-      name: 'assets/Elements.flr',
+    name: 'assets/Elementss.flr',
       next: (context) => Wrapper(),
       startAnimation: 'Atom',
       isLoading: _isLoading,
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.black,
     );
   }
 }

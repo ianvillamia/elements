@@ -37,6 +37,8 @@ dependencies:
   cloud_firestore: ^0.13.4+2
   flutter_spinkit: ^4.1.2
   flare_splash_screen: ^3.0.1
+  carousel_slider: ^1.4.1
+  flutter_auth_buttons: ^0.8.0
 
 dev_dependencies:
   flutter_test:

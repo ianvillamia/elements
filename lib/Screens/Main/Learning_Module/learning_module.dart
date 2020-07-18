@@ -118,19 +118,25 @@ class _LearningModuleState extends State<LearningModule> {
               )
             ],
           ),
-          Positioned(
+          InkWell(
+            child: Positioned(
               top: 20,
               left: 20,
               child: Container(
                 decoration: BoxDecoration(
-             
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.grey
+                  color: Colors.pink[300]
                 ),
                 width: 50,
                 height: 50,
                 child: Icon(Icons.arrow_back_ios),
-              )),
+              )
+            ),
+            onTap: () {
+              print('Login');
+              Navigator.pop(context);
+            },
+          ),
         ],
       ),
     );

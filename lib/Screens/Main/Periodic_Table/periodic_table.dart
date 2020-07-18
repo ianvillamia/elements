@@ -10,19 +10,15 @@ class PeriodicTable extends StatefulWidget {
 }
 
 class _PeriodicTableState extends State<PeriodicTable> {
-  void initState(){
-    super.initState();
-    SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeRight,
-        DeviceOrientation.landscapeLeft,
-    ]);
-  }
+  
   @override
   Widget build(BuildContext context) {
     Size().init(context);
     return Scaffold(
+      appBar: AppBar(title: Text('Periodic Table of Elements'),centerTitle: true, backgroundColor: Colors.blueGrey[800]),
+      backgroundColor: Color.fromRGBO(71, 88, 115, 1),
       body: ListView(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(5),
         children: <Widget>[
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
@@ -33,7 +29,7 @@ class _PeriodicTableState extends State<PeriodicTable> {
                   Row(
                     children: <Widget>[
                       buildElement(Color.fromRGBO(77 ,182, 172, 100), "H", "1"),
-                      buildElement(Colors.transparent, "", ""),
+                      buildElement(Color.fromRGBO(27, 36, 51, 100), "", ""),
                       buildElement(Colors.transparent, "", ""),
                       buildElement(Colors.transparent, "", ""),
                       buildElement(Colors.transparent, "", ""),
@@ -242,10 +238,10 @@ class _PeriodicTableState extends State<PeriodicTable> {
 
   buildElement(Color color, String text, String atom) {
     return Padding(
-      padding: EdgeInsets.all(2),
+      padding: EdgeInsets.all(3),
       child: Container(
-        width: Size.width * .13,
-        height: Size.height * .20,
+        width: Size.width * .25,
+        height: Size.height * .13,
         color: color,
         child: Column(
           children: <Widget>[
@@ -269,6 +265,7 @@ class _PeriodicTableState extends State<PeriodicTable> {
                 fontFamily: 'OpenSans',
                 fontWeight: FontWeight.bold
               ),
+              textAlign: TextAlign.left,
             ),
           ],
         ),

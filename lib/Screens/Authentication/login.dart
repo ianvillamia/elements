@@ -4,6 +4,7 @@ import 'package:mynewapp/Services/auth.dart';
 import 'package:mynewapp/Shared/output.dart';
 import 'package:mynewapp/Shared/animation.dart';
 import 'package:mynewapp/Shared/loading.dart';
+import 'package:mynewapp/Global/sizes.dart';
 
 class Login extends StatefulWidget {
   final Function toggleView;
@@ -16,50 +17,52 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
-  bool loading = false;
-
   //text field state
   String email = '';
   String password = '';
   String error = '';
-
+  FocusNode fnOne = new FocusNode();
+  FocusNode fnTwo = new FocusNode(); 
+  bool loading = false;
   bool _isHidden = true;
+  bool _enabled = true;
 
   void _toggleVisibility() {
     setState(() {
       _isHidden = !_isHidden;
     });
   }
+
+  void _toggleEnabled() {
+    setState(() {
+      _enabled = !_enabled;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Size().init(context);
     return loading ? Loading() : Scaffold(
       body: FadeAnimation(1,
         SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+            padding: EdgeInsets.fromLTRB(40, 70, 40, 0),
             child: Form(
               key: _formKey,
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: 230.0,
-                    child: Center(
-                      child: Image.asset('assets/chemistry.png',
-                          height: 230, fit: BoxFit.cover),
-                    ),
-                  ),
-                  Container(
                     alignment: Alignment.centerLeft,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Output().buildShadowText('Elements++', 30),
+                        Output().buildShadowText('Welcome,', 40),
                         Text(
                           'Sign in to continue',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             color: Colors.grey[400],
-                            fontSize: 20,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'OpenSans',
                           ),
@@ -71,28 +74,80 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: Size.height * .08,
                         ),
                         TextFormField(
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(left:8),
-                            hintText: 'Email',
+                          focusNode: fnOne,
+                          textInputAction: _enabled ? TextInputAction.next : TextInputAction.done,
+                          onFieldSubmitted: (term) {
+                            fnOne.unfocus();
+                            if (_enabled) {
+                              FocusScope.of(context).requestFocus(fnTwo);
+                            }
+                          },
+                          decoration: new InputDecoration(
+                            alignLabelWithHint: true,
+                            labelStyle: TextStyle(
+                              fontSize: fnOne.hasFocus ? 18 : 16.0,//I believe the size difference here is 6.0 to account padding
+                              color:fnOne.hasFocus ? Colors.deepPurple[400]: Colors.grey
+                            ),
+                            labelText: 'Email',
+                            filled: true,
+                            fillColor: Colors.transparent,
+                            enabledBorder: new OutlineInputBorder(
+                              borderRadius: new BorderRadius.circular(14.0),
+                              borderSide: new BorderSide(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            focusedBorder: new OutlineInputBorder(
+                              borderRadius: new BorderRadius.circular(14.0),
+                              borderSide: new BorderSide(
+                                color: Colors.deepPurple[400],
+                              )
+                            )
                           ),
+                          style: new TextStyle(color: Colors.black),
+                
                           validator: (val) => val.isEmpty ? 'Enter your email' : null,
                           onChanged: (val) {
                             setState(() => email = val);
                           },
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         TextFormField(
                           obscureText: _isHidden,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.only(top: 16, left: 8),
-                            hintText: 'Password',
+                          focusNode: fnTwo,
+                          enabled: _enabled,
+                          decoration: new InputDecoration(
                             suffixIcon: IconButton(
                               onPressed: _toggleVisibility,
-                              icon: _isHidden ? Icon(Icons.visibility_off, size: 20) : Icon(Icons.visibility, size: 20),
+                              icon: _isHidden ? Icon(Icons.visibility_off, size: 20, color: Colors.deepPurple[400]) : Icon(Icons.visibility, size: 20, color: Colors.deepPurple[400]),
                             ),
+                            alignLabelWithHint: true,
+                            labelStyle: TextStyle(
+                              fontSize: fnTwo.hasFocus ? 18 : 16.0,//I believe the size difference here is 6.0 to account padding
+                              color:fnTwo.hasFocus ? Colors.deepPurple[400]: Colors.grey
+                            ),
+                            labelText: 'Password',
+                            filled: true,
+                            fillColor: Colors.transparent,
+                            enabledBorder: new OutlineInputBorder(
+                              borderRadius: new BorderRadius.circular(14.0),
+                              borderSide: new BorderSide(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            focusedBorder: new OutlineInputBorder(
+                              borderRadius: new BorderRadius.circular(14.0),
+                              borderSide: new BorderSide(
+                                color: Colors.deepPurple[400],
+                              )
+                            )
                           ),
+                          style: new TextStyle(color: Colors.black),
                           validator: (val) => val.isEmpty ? 'Enter your password' : null,
                           onChanged: (val) {
                             setState(() => password = val);
@@ -104,7 +159,7 @@ class _LoginState extends State<Login> {
                         Padding(
                           padding: EdgeInsets.only(left: 10),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
                               InkWell(
                                 child: Text(
@@ -115,42 +170,24 @@ class _LoginState extends State<Login> {
                                       fontSize: 14),
                                 ),
                               ),
-                              GestureDetector(
-                                child: InkWell(
-                                  child: Text(
-                                    "Anonymous",
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontFamily: 'OpenSans',
-                                        fontSize: 14),
-                                  ),
-                                ),
-                                onTap: () async {
-                                dynamic result = await _auth.signInAnon();
-                                  if (result == null) {
-                                    print("Error signing in");
-                                  } else {
-                                    print("Signed in:");
-                                    print(result);
-                                  }
-                                },
-                              ),
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         Center(
                           child: Container(
-                            width: 175,
+                            width: Size.width * 1,
+                            height: Size.height * .13,
+                            padding: EdgeInsets.all(20),
                             child: RaisedButton(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              color: Color.fromRGBO(245, 47, 89, 100),
+                                  borderRadius: BorderRadius.circular(20)),
+                              color: Colors.deepPurple[400],
                               child: Center(
                                 child: Text(
-                                  'Sign in',
+                                  'L O G I N',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
@@ -172,29 +209,26 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             horizontalLine(),
-                            Text("Or"),
+                            Text("OR CONNECT WITH", style: TextStyle(color: Colors.grey)),
                             horizontalLine(),
                           ],
                         ),
                         SizedBox(
-                          height: 5,
+                          height: 10,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            buildButton('assets/facebook.png', Colors.blueAccent),
+                            buildButton('assets/facebook.png', 'Facebook', Color.fromRGBO(24, 119, 242, 1), Colors.white),
                             SizedBox(width: 10),
-                            buildButton('assets/google.png', Colors.grey[100]),
+                            buildButton('assets/google.png', 'Google', Colors.grey[100], Colors.grey),
                           ],
                         ),
-                        SizedBox(height: 15),
+                        SizedBox(height: Size.height * .17),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -232,20 +266,47 @@ class _LoginState extends State<Login> {
   }
 
   horizontalLine() => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 5.0),
         child: Container(
-          width: 40,
+          width: Size.width * .2,
           height: 1.0,
           color: Colors.black26.withOpacity(.3),
         ),
       );
 
-  buildButton(String loc, Color color) {
+  buildButton(String loc, String txt, Color color, Color txtColor) {
     return Container(
       height: 45,
-      width: 45,
-      decoration: BoxDecoration(shape: BoxShape.circle, color: color),
-      child: Image.asset(loc),
+      width: Size.width * .35,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(22), color: color, 
+      boxShadow: [
+        BoxShadow(
+          blurRadius: 2.0,
+          color: Colors.grey,
+          offset: Offset(1.0, 2.0),
+        ),
+      ]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image(
+          image: AssetImage(
+            loc,
+          ),
+          height: 26.0,
+          width: 26.0,
+          fit: BoxFit.contain,
+        ),
+        Text(
+          txt,
+          style: TextStyle(
+            color: txtColor,
+            fontSize: 18,
+            fontWeight: FontWeight.bold
+          ),
+        )
+        ],
+      )
     );
   }
 }
