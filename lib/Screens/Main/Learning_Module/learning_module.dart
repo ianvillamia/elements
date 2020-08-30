@@ -16,6 +16,7 @@ class _LearningModuleState extends State<LearningModule> {
       body: Stack(
         children: <Widget>[
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
                 height: MediaQuery.of(context).copyWith().size.height / 3,
@@ -27,7 +28,8 @@ class _LearningModuleState extends State<LearningModule> {
               Container(
                 color: Color.fromRGBO(243, 198, 189, 1), // ETO YUNG PINK BG
                 height: MediaQuery.of(context).copyWith().size.height / 1.5,
-                child: Container( //ETO YUNG WHITE BG
+                child: Container(
+                  //ETO YUNG WHITE BG
                   width: MediaQuery.of(context).copyWith().size.width,
                   decoration: new BoxDecoration(
                       color: Colors.white,
@@ -84,58 +86,55 @@ class _LearningModuleState extends State<LearningModule> {
                           ],
                         ),
                         Container(
-                          height: MediaQuery.of(context).copyWith().size.height / 2.3,
-                          child: ListView(
-                            padding: EdgeInsets.all(15),
-                          children: <Widget>[
-                          SingleChildScrollView(
-                            child: Container(
-                              height: 600,
-                            child: Column(
-                              children: <Widget>[
-                                BuildVideoPlayer1(),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                BuildVideoPlayer2(),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                BuildVideoPlayer3(),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                BuildVideoPlayer4(),
-                                
-                               
-                              ])
-                            ),
-                          ),])
-                        )
+                            height:
+                                MediaQuery.of(context).copyWith().size.height /
+                                    2.3,
+                            child: ListView(
+                                padding: EdgeInsets.all(15),
+                                children: <Widget>[
+                                  SingleChildScrollView(
+                                    child: Container(
+                                        height: 600,
+                                        child: Column(children: <Widget>[
+                                          BuildVideoPlayer1(),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          BuildVideoPlayer2(),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          BuildVideoPlayer3(),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          BuildVideoPlayer4(),
+                                        ])),
+                                  ),
+                                ]))
                         //buildVideoPlayer(),
                       ])),
                 ),
-              )
+              ),
             ],
           ),
-          InkWell(
-            child: Positioned(
-              top: 20,
-              left: 20,
+          Positioned(
+            top: 20,
+            left: 20,
+            child: InkWell(
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.pink[300]
-                ),
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                    color: Colors.pink[300]),
                 width: 50,
                 height: 50,
                 child: Icon(Icons.arrow_back_ios),
-              )
+              ),
+              onTap: () {
+                print('Login');
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              print('Login');
-              Navigator.pop(context);
-            },
           ),
         ],
       ),
