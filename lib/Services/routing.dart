@@ -1,7 +1,9 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Screens/Lessons/lessonsMain.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
-import 'package:mynewapp/Strings/rotes.dart';
+import 'package:mynewapp/Screens/authentication/signUp.dart';
+import 'package:mynewapp/Strings/routes.dart';
 
 class FluroRouter {
   static Router router = Router();
@@ -9,10 +11,19 @@ class FluroRouter {
   static Handler _signInHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           SignIn());
-
+  static Handler _signUpHandler = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          SignUp());
+  static Handler _lessonsMainHandler = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          LessonsMain());
 //-----------------------Routenames----------------------------------------//
   static void setupRouter() {
     router.define(Routes.def,
         handler: _signInHandler, transitionType: TransitionType.fadeIn);
+    router.define(Routes.signUp,
+        handler: _signUpHandler, transitionType: TransitionType.cupertino);
+    router.define(Routes.lessonsMain,
+        handler: _lessonsMainHandler, transitionType: TransitionType.cupertino);
   }
 }

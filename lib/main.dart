@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Services/routing.dart';
+import 'package:mynewapp/Strings/routes.dart';
 
 void main() {
   FluroRouter.setupRouter();
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       //setup fluro
       onGenerateRoute: FluroRouter.router.generator,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: Routes.lessonsMain,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.purple,
