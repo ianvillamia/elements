@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Services/routing.dart';
 import 'package:mynewapp/Strings/routes.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.lessonsMain,
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: GoogleFonts.notoSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
