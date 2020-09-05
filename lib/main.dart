@@ -1,33 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mynewapp/Models/user.dart';
-import 'package:mynewapp/splashscreen.dart';
-import 'package:provider/provider.dart';
-import 'package:mynewapp/Services/auth.dart';
-import 'package:mynewapp/Screens/Authentication/landing.dart';
-
+import 'package:mynewapp/Screens/authentication/signIn.dart';
+import 'package:mynewapp/Services/routing.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarBrightness: Brightness.light));
-
-  runApp(MyApp()); 
+  FluroRouter.setupRouter();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-     return StreamProvider<User>.value(
-      value: AuthService().user,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-       // home: PeriodicTable(),
-        home: TestSplash(),
-       // home: Wrapper(),
+    return MaterialApp(
+      //setup fluro
+      onGenerateRoute: FluroRouter.router.generator,
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+
+      home: SignIn(),
     );
   }
 }
