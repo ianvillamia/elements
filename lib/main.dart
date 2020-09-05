@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       //setup fluro
       onGenerateRoute: FluroRouter.router.generator,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.lessonsMain,
+      initialRoute: '/',
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: GoogleFonts.notoSansTextTheme(
