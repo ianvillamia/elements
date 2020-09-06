@@ -94,7 +94,7 @@ class _SignInState extends State<SignIn> {
                           fontWeight: FontWeight.bold, letterSpacing: 7),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/lessonsMain');
+                      Navigator.pushNamed(context, '/home');
                     },
                   ),
                 ),

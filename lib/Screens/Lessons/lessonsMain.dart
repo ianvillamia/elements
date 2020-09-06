@@ -30,7 +30,7 @@ class _LessonsMainState extends State<LessonsMain> {
                 //topbar
                 _topbar(),
                 SizedBox(
-                  height: size.height * .1,
+                  height: size.height * .05,
                 ),
                 _greeting(),
 
