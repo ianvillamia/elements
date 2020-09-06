@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Screens/Lessons/lesson.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
@@ -100,11 +101,6 @@ class _CourseState extends State<Course> {
                 child: Column(
                   children: [
                     _lessonCard(),
-                    _lessonCard(),
-                    _lessonCard(),
-                    _lessonCard(),
-                    _lessonCard(),
-                    _lessonCard(),
                   ],
                 ),
               ),
@@ -116,37 +112,43 @@ class _CourseState extends State<Course> {
   }
 
   _lessonCard() {
-    return Container(
-      width: size.width,
-      height: size.height * .15,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            '01',
-            style: CustomTextStyles.customText(
-                size: FontSizes.heading,
-                isBold: true,
-                color: Color.fromRGBO(228, 231, 244, 1)),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Hero(
+      tag: 'toLesson',
+      child: Material(
+        type: MaterialType.transparency,
+        child: Container(
+          width: size.width,
+          height: size.height * .15,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                '5:35 mins',
+                '01',
                 style: CustomTextStyles.customText(
-                    size: FontSizes.medium,
-                    color: Color.fromRGBO(195, 199, 213, 1)),
+                    size: FontSizes.heading,
+                    isBold: true,
+                    color: Color.fromRGBO(228, 231, 244, 1)),
               ),
-              Text(
-                'Welcome to the Course',
-                style: CustomTextStyles.customText(size: FontSizes.large),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '5:35 mins',
+                    style: CustomTextStyles.customText(
+                        size: FontSizes.medium,
+                        color: Color.fromRGBO(195, 199, 213, 1)),
+                  ),
+                  Text(
+                    'Welcome to the Course',
+                    style: CustomTextStyles.customText(size: FontSizes.large),
+                  ),
+                ],
               ),
+              _playIcon()
             ],
           ),
-          _playIcon()
-        ],
+        ),
       ),
     );
   }
@@ -156,7 +158,13 @@ class _CourseState extends State<Course> {
       child: Material(
         color: Color.fromRGBO(73, 204, 150, 1),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (_) {
+              return Lesson(
+                image: Images.girl_study,
+              );
+            }));
+          },
           splashColor: Colors.blue,
           child: Container(
             width: 50,
