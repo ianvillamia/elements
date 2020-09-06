@@ -4,4 +4,5 @@ class Routes {
   static String home = '/home';
   static String lessonsMain = '/lessonsMain';
   static String periodicTable = '/periodicTable';
+  static String lesson1 = '/lesson1';
 }

@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
+        color: Colors.white,
         width: size.width,
         height: size.height,
         child: Padding(

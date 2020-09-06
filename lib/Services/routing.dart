@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsMain.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
@@ -25,6 +26,7 @@ class FluroRouter {
   static Handler _periodicTableHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PeriodicTable());
+
 //-----------------------Routenames----------------------------------------//
   static void setupRouter() {
     router.define(Routes.def,

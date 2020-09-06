@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Strings/images.dart';
+import 'package:mynewapp/Strings/routes.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
 class LessonsMain extends StatefulWidget {
@@ -125,27 +127,33 @@ class _LessonsMainState extends State<LessonsMain> {
   _buildCategories() {
     return Wrap(
       children: [
-        _card(),
-        _card(),
-        _card(),
-        _card(),
+        _card(image: Images.city),
       ],
     );
   }
 
-  _card() {
-    return Card(
-        elevation: 5,
-        child: InkWell(
-          splashColor: Colors.blue.withAlpha(30),
-          onTap: () {},
-          child: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(Images.read1), fit: BoxFit.contain)),
-            width: size.width * .4,
-            height: size.height * .2,
-          ),
-        ));
+  _card({@required String image}) {
+    return Hero(
+      tag: 'imageHero',
+      child: Card(
+          elevation: 5,
+          child: InkWell(
+            splashColor: Colors.blue.withAlpha(30),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return Course(
+                  image: image,
+                );
+              }));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(image), fit: BoxFit.fill)),
+              width: size.width * .4,
+              height: size.height * .2,
+            ),
+          )),
+    );
   }
 }
