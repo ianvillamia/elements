@@ -26,6 +26,7 @@ dependencies:
   animate_do: ^1.7.2
   chewie: ^0.9.10
   video_player: ^0.10.12+2
+  http: ^0.12.0+1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 dev_dependencies:
@@ -42,6 +43,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/elements/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - assets/a_dot_burr.jpeg
@@ -68,5 +70,13 @@ flutter:
     - family: PoppinsM
       fonts:
         - asset: fonts/Poppins-Medium.ttf
+    - family: Share Tech Mono
+      fonts:
+      - asset: assets/fonts/ShareTechMono-Regular.ttf
+    - family: Roboto Condensed
+      fonts:
+      - asset: assets/fonts/RobotoCondensed-Regular.ttf
+      - asset: assets/fonts/RobotoCondensed-Light.ttf
+        weight: 300
     # For details regarding fonts from package dependencies,
     # see https://flutter.dev/custom-fonts/#from-packages
