@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Models/Lessons.dart';
+import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:video_player/video_player.dart';
 
 class Lesson extends StatefulWidget {
-  final image;
+  final LessonModel lesson;
 
-  Lesson({@required this.image});
+  Lesson({@required this.lesson});
   @override
   _LessonState createState() => _LessonState();
 }
 
 class _LessonState extends State<Lesson> {
+  LessonModel lesson;
   TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
   VideoPlayerController _videoPlayerController2;
@@ -60,6 +63,8 @@ class _LessonState extends State<Lesson> {
 //             ),
   @override
   Widget build(BuildContext context) {
+    lesson = widget.lesson;
+    print(lesson.banner_url);
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -81,7 +86,7 @@ class _LessonState extends State<Lesson> {
       child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(widget.image), fit: BoxFit.fill)),
+                  image: NetworkImage(lesson.banner_url), fit: BoxFit.cover)),
           height: size.height * .3,
           width: size.width,
           child: Stack(
@@ -133,29 +138,21 @@ class _LessonState extends State<Lesson> {
               height: size.height * .65,
               child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Chewie(
-                      controller: _chewieController,
-                    ),
-                    SizedBox(
-                      height: size.height * .05,
-                    ),
-                    Text(
-                      'Introduction',
-                      style: CustomTextStyles.customText(size: FontSizes.large),
-                    ),
-                    Text(
-                        'When we talk about chemistry, what was the first thing that comes up into you mind as a student?'),
-                    SizedBox(
-                      height: size.height * .05,
-                    ),
-                    Text(
-                        'Experimentations? Liquid Substances mixed together to create an explosion? If those things ever crossesyour mind as you hear the words Chemistry, then you’re starting it right'),
-                    Text(
-                        'The word Chemistry comes from the Greek word “Khēmeia” which means “to cast together” or “pour together”. To introduce you further to the concept of chemistry, we are going to look back on the most famous philosophers of all time, to see what triggers the birth of Chemistry.')
-                  ],
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Chewie(
+                        controller: _chewieController,
+                      ),
+                      SizedBox(
+                        height: size.height * .05,
+                      ),
+                      Text(
+                        lesson.header ?? 'Error getting',
+                        style:
+                            CustomTextStyles.customText(size: FontSizes.large),
+                      ),
+                      Text(lesson.description)
+                    ]),
               ),
             )
           ],
