@@ -26,8 +26,8 @@ class _LessonState extends State<Lesson> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    _videoPlayerController1 = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/uplearn-prod.appspot.com/o/courses%2FReOpening97%2FREO1%2FREO1_L1.mp4?alt=media&token=3b33682a-b5ad-4767-97e7-2201421a338c');
+    lesson = widget.lesson;
+    _videoPlayerController1 = VideoPlayerController.network(lesson.video_url);
 
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
@@ -63,7 +63,6 @@ class _LessonState extends State<Lesson> {
 //             ),
   @override
   Widget build(BuildContext context) {
-    lesson = widget.lesson;
     print(lesson.banner_url);
     size = MediaQuery.of(context).size;
     return Scaffold(
@@ -82,7 +81,7 @@ class _LessonState extends State<Lesson> {
 
   _topbar() {
     return Hero(
-      tag: 'imageHero',
+      tag: lesson.ref,
       child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
@@ -151,7 +150,13 @@ class _LessonState extends State<Lesson> {
                         style:
                             CustomTextStyles.customText(size: FontSizes.large),
                       ),
-                      Text(lesson.description)
+                      Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Text(
+                          lesson.description ?? 'error',
+                          textAlign: TextAlign.left,
+                        ),
+                      )
                     ]),
               ),
             )

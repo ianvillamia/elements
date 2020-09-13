@@ -110,8 +110,10 @@ class _CourseState extends State<Course> {
                 height: size.height * .55,
                 child: SingleChildScrollView(
                   child: StreamBuilder<QuerySnapshot>(
-                      stream:
-                          Firestore.instance.collection('lessons').snapshots(),
+                      stream: Firestore.instance
+                          .collection('lessons')
+                          .orderBy('sequence')
+                          .snapshots(),
                       builder: (BuildContext context,
                           AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
@@ -139,40 +141,71 @@ class _CourseState extends State<Course> {
     LessonModel lesson = LessonModel.getData(doc: doc);
 
     return Hero(
-      tag: 'toLesson',
+      tag: lesson.ref,
       child: Material(
         type: MaterialType.transparency,
-        child: Container(
-          width: size.width,
-          height: size.height * .15,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                lesson.sequence,
-                style: CustomTextStyles.customText(
-                    size: FontSizes.heading,
-                    isBold: true,
-                    color: Color.fromRGBO(228, 231, 244, 1)),
-              ),
-              Column(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            elevation: 5,
+            child: Container(
+              width: size.width,
+              height: size.height * .4,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    lesson.video_time,
-                    style: CustomTextStyles.customText(
-                        size: FontSizes.medium,
-                        color: Color.fromRGBO(195, 199, 213, 1)),
+                  Container(
+                    width: size.width * .4,
+                    height: size.height * .1,
+                    child: Image.network(lesson.banner_url),
                   ),
-                  Text(
-                    lesson.title,
-                    style: CustomTextStyles.customText(size: FontSizes.large),
+                  SizedBox(
+                    height: size.height * .05,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        lesson.sequence,
+                        style: CustomTextStyles.customText(
+                            size: FontSizes.heading,
+                            isBold: true,
+                            color: Color.fromRGBO(228, 231, 244, 1)),
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            lesson.video_time,
+                            style: CustomTextStyles.customText(
+                                size: FontSizes.medium,
+                                color: Color.fromRGBO(195, 199, 213, 1)),
+                          ),
+                          Container(
+                            width: size.width * .45,
+                            height: size.height * .2,
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    lesson.title,
+                                    style: CustomTextStyles.customText(
+                                        size: FontSizes.large, isBold: true),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      _playIcon(lesson: lesson)
+                    ],
                   ),
                 ],
               ),
-              _playIcon(lesson: lesson)
-            ],
+            ),
           ),
         ),
       ),
@@ -185,7 +218,7 @@ class _CourseState extends State<Course> {
         color: Color.fromRGBO(73, 204, 150, 1),
         child: InkWell(
           onTap: () {
-            print(lesson.banner_url);
+            print(lesson.lessons_list);
             Navigator.push(context, MaterialPageRoute(builder: (_) {
               return Lesson(
                 lesson: lesson,

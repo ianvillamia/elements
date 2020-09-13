@@ -9,6 +9,7 @@ class LessonModel {
   String header;
   String description;
   String banner_url;
+  List lessons_list;
   static getData({DocumentSnapshot doc}) {
     var lesson = LessonModel();
     lesson.ref = doc.data['ref'];
@@ -19,6 +20,7 @@ class LessonModel {
     lesson.header = doc.data['header'];
     lesson.description = doc.data['description'];
     lesson.banner_url = doc.data['banner_url'];
+    lesson.lessons_list = doc.data['lessons'];
     return lesson;
   }
 }
