@@ -10,6 +10,9 @@ class LessonModel {
   String description;
   String banner_url;
   List lessons_list;
+  String question;
+  List choices;
+  String correctAnswer;
   static getData({DocumentSnapshot doc}) {
     var lesson = LessonModel();
     lesson.ref = doc.data['ref'];
@@ -21,6 +24,9 @@ class LessonModel {
     lesson.description = doc.data['description'];
     lesson.banner_url = doc.data['banner_url'];
     lesson.lessons_list = doc.data['lessons'];
+    lesson.question = doc.data['question'];
+    lesson.choices = doc.data['choices'];
+    lesson.correctAnswer = doc.data['correctAnswer'];
     return lesson;
   }
 }

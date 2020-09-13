@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Lessons.dart';
@@ -150,15 +151,19 @@ class _CourseState extends State<Course> {
             elevation: 5,
             child: Container(
               width: size.width,
-              height: size.height * .4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: size.width * .4,
-                    height: size.height * .1,
-                    child: Image.network(lesson.banner_url),
+                  Center(
+                    child: Container(
+                      width: size.width * .4,
+                      height: size.height * .15,
+                      child: FadeInImage.assetNetwork(
+                        placeholder: Images.loading,
+                        image: lesson.banner_url,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: size.height * .05,
@@ -180,22 +185,23 @@ class _CourseState extends State<Course> {
                           Text(
                             lesson.video_time,
                             style: CustomTextStyles.customText(
-                                size: FontSizes.medium,
-                                color: Color.fromRGBO(195, 199, 213, 1)),
+                                size: FontSizes.medium, color: Colors.red),
                           ),
-                          Container(
-                            width: size.width * .45,
-                            height: size.height * .2,
-                            child: Row(
-                              children: [
-                                Flexible(
-                                  child: Text(
-                                    lesson.title,
-                                    style: CustomTextStyles.customText(
-                                        size: FontSizes.large, isBold: true),
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 25),
+                            child: Container(
+                              width: size.width * .45,
+                              child: Row(
+                                children: [
+                                  Flexible(
+                                    child: Text(
+                                      lesson.title,
+                                      style: CustomTextStyles.customText(
+                                          size: FontSizes.large, isBold: true),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           )
                         ],

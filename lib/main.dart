@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Screens/Lessons/questionItem.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Services/routing.dart';
 import 'package:mynewapp/Strings/routes.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       //setup fluro
       onGenerateRoute: FluroRouter.router.generator,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.periodicTable,
+      initialRoute: Routes.def,
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: GoogleFonts.notoSansTextTheme(

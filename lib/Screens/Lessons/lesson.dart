@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Lessons.dart';
+import 'package:mynewapp/Screens/Lessons/questionItem.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:chewie/chewie.dart';
@@ -17,8 +18,8 @@ class Lesson extends StatefulWidget {
 class _LessonState extends State<Lesson> {
   LessonModel lesson;
   TargetPlatform _platform;
-  VideoPlayerController _videoPlayerController1;
-  VideoPlayerController _videoPlayerController2;
+  VideoPlayerController _videoPlayerController;
+
   ChewieController _chewieController;
 
   Size size;
@@ -27,13 +28,23 @@ class _LessonState extends State<Lesson> {
     // TODO: implement initState
     super.initState();
     lesson = widget.lesson;
-    _videoPlayerController1 = VideoPlayerController.network(lesson.video_url);
 
+    _videoPlayerController = VideoPlayerController.network(lesson.video_url);
+    _videoPlayerController.addListener(() {
+      if (_videoPlayerController.value.position ==
+          _videoPlayerController.value.duration) {
+        print('video Ended');
+        Navigator.push(context, MaterialPageRoute(builder: (_) {
+          return Question(lesson: widget.lesson);
+        }));
+        //show quiz
+      }
+    });
     _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController1,
+      videoPlayerController: _videoPlayerController,
       aspectRatio: 3 / 2,
       autoPlay: true,
-      looping: true,
+
       // Try playing around with some of these other options:
 
       // showControls: false,
@@ -52,8 +63,8 @@ class _LessonState extends State<Lesson> {
 
   @override
   void dispose() {
-    _videoPlayerController1.dispose();
-    _videoPlayerController2.dispose();
+    _videoPlayerController.dispose();
+
     _chewieController.dispose();
     super.dispose();
   }
@@ -63,7 +74,6 @@ class _LessonState extends State<Lesson> {
 //             ),
   @override
   Widget build(BuildContext context) {
-    print(lesson.banner_url);
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -153,7 +163,7 @@ class _LessonState extends State<Lesson> {
                       Padding(
                         padding: const EdgeInsets.all(15),
                         child: Text(
-                          lesson.description ?? 'error',
+                          lesson.description,
                           textAlign: TextAlign.left,
                         ),
                       )
