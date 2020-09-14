@@ -8,4 +8,7 @@ class Images {
   static String girl_study = 'assets/girl-study.png';
   static String quiz_time = 'assets/quiz_time.png';
   static String loading = 'assets/loading.gif';
+
+  //Elements
+  static String hydrogen = 'assets/elements/01.png';
 }

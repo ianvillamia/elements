@@ -17,20 +17,21 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        width: size.width,
-        height: size.height,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40),
-          child: SingleChildScrollView(
-            child: Column(children: <Widget>[
+      appBar: AppBar(),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Column(children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
-                child: _topbar(),
+                child: Text(
+                  'Elements++',
+                  style: GoogleFonts.indieFlower(
+                      fontSize: FontSizes.heading, fontWeight: FontWeight.bold),
+                ),
               ),
               SizedBox(
-                height: size.height * .05,
+                height: size.height * .03,
               ),
               _leftIconcategoryBuilder(
                 size: size,
@@ -54,7 +55,7 @@ class _HomeState extends State<Home> {
                   color2: Colors.blue[200]),
               _leftIconcategoryBuilder(
                 size: size,
-                icon: Images.giraffe,
+                icon: Images.hippo,
                 onTap: () {},
                 buttonText: 'Lewis Structure Calculator',
                 descText: 'Get your naming problem solve',
@@ -63,7 +64,7 @@ class _HomeState extends State<Home> {
               ),
               _rightIconcategoryBuilder(
                   size: size,
-                  icon: Images.hippo,
+                  icon: Images.giraffe,
                   onTap: () {
                     Navigator.pushNamed(context, '/periodicTable');
                   },
@@ -73,6 +74,17 @@ class _HomeState extends State<Home> {
                   color1: Colors.green[300],
                   color2: Colors.green[200]),
             ]),
+          ],
+        ),
+      ),
+      body: Container(
+        color: Colors.white,
+        width: size.width,
+        height: size.height,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 40),
+          child: SingleChildScrollView(
+            child: Column(children: <Widget>[]),
           ),
         ),
       ),
@@ -124,9 +136,9 @@ class _HomeState extends State<Home> {
             alignment: Alignment.center,
             children: <Widget>[
               Container(
-                padding: EdgeInsets.fromLTRB(120, 10, 10, 10),
+                padding: EdgeInsets.fromLTRB(105, 10, 10, 10),
                 //margin: EdgeInsets.only(left: 20),
-                width: size.width * .8,
+                width: size.width * .72,
                 height: size.height * .2,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -137,9 +149,9 @@ class _HomeState extends State<Home> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
+                      spreadRadius: 2,
                       blurRadius: 7,
-                      offset: Offset(3, 3),
+                      offset: Offset(0, 3),
                     )
                   ],
                   borderRadius: BorderRadius.circular(20),
@@ -152,25 +164,25 @@ class _HomeState extends State<Home> {
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold)),
                     Flexible(
                       child: Text(descText,
                           textAlign: TextAlign.left,
-                          style: TextStyle(color: Colors.white, fontSize: 14)),
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
                     ),
                   ],
                 ),
               ),
               Container(
-                  width: size.width * .8,
+                  width: size.width * .72,
                   height: size.height * .2,
-                  child: FirstStars()),
+                  child: Stars()),
               Positioned(
-                left: -5,
+                left: -8,
                 child: Container(
-                  width: size.width * .4,
-                  height: size.height * .28,
+                  width: size.width * .35,
+                  height: size.height * .23,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(icon), fit: BoxFit.contain)),
@@ -204,7 +216,7 @@ class _HomeState extends State<Home> {
               Container(
                 padding: EdgeInsets.fromLTRB(30, 10, 90, 10),
                 //margin: EdgeInsets.only(left: 20),
-                width: size.width * .8,
+                width: size.width * .72,
                 height: size.height * .2,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -230,22 +242,22 @@ class _HomeState extends State<Home> {
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold)),
                     Flexible(
                       child: Text(descText,
                           textAlign: TextAlign.left,
-                          style: TextStyle(color: Colors.white, fontSize: 14)),
+                          style: TextStyle(color: Colors.white, fontSize: 12)),
                     ),
                   ],
                 ),
               ),
               Container(
-                  width: size.width * .8,
+                  width: size.width * .72,
                   height: size.height * .2,
-                  child: SecondStars()),
+                  child: Stars()),
               Positioned(
-                right: -5,
+                right: -10,
                 child: Container(
                   width: size.width * .35,
                   height: size.height * .28,
@@ -256,16 +268,6 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  _buildStars({@required size}) {
-    return Container(
-      width: size.width * 0.02,
-      height: size.height * 0.02,
-      child: ShapeOfView(
-        shape: StarShape(noOfPoints: 5),
       ),
     );
   }

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shape_of_view/shape_of_view.dart';
 import 'package:animate_do/animate_do.dart';
 
-class FirstStars extends StatefulWidget {
+class Stars extends StatefulWidget {
   @override
-  _FirstStarsState createState() => _FirstStarsState();
+  _StarsState createState() => _StarsState();
 }
 
-class _FirstStarsState extends State<FirstStars> {
+class _StarsState extends State<Stars> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -58,65 +58,14 @@ class _FirstStarsState extends State<FirstStars> {
           left: 260,
           child: _buildStars(size: size),
         ),
-      ],
-    );
-  }
-}
-
-class SecondStars extends StatefulWidget {
-  @override
-  _SecondStarsState createState() => _SecondStarsState();
-}
-
-class _SecondStarsState extends State<SecondStars> {
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Stack(
-      children: <Widget>[
-        Positioned(
-          top: 25,
-          right: 70,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 10,
-          right: 120,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 13,
-          right: 210,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 8,
-          right: 270,
-          child: _buildStars(size: size),
-        ),
         Positioned(
           top: 48,
           right: 240,
           child: _buildStars(size: size),
         ),
         Positioned(
-          top: 60,
-          right: 160,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 65,
-          right: 90,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 110,
-          right: 140,
-          child: _buildStars(size: size),
-        ),
-        Positioned(
-          top: 100,
-          right: 260,
+          top: 95,
+          right: 220,
           child: _buildStars(size: size),
         ),
       ],
