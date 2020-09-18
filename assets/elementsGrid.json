@@ -8,7 +8,7 @@
       "source": "https://en.wikipedia.org/wiki/Hydrogen",
       "category": "Reactive Nonmetal",
       "atomic_weight": "1.008 u(±)",
-      "trivia_image": "assets/elements/01.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F01.png?alt=media&token=515297a1-e008-4f1a-81ef-5797df7fd548",
       "trivia_desc": "Hydrogen is the smallest, lightest and most abundant element in the universe.",
       "colors": [
         4283657726,
@@ -23,7 +23,7 @@
       "source": "https://en.wikipedia.org/wiki/Lithium",
       "category": "Alkali Metal",
       "atomic_weight": "6.94 u(±)",
-      "trivia_image": "assets/elements/03.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F03.png?alt=media&token=2a4e1678-95c3-442e-8427-b7005c1f7f75",
       "trivia_desc": "The metal form of Lithium is so soft, it can be cut with a knife",
       "colors": [
         4292030255,
@@ -38,7 +38,7 @@
       "source": "https://en.wikipedia.org/wiki/Sodium",
       "category": "Alkali Metal",
       "atomic_weight": "22.98976928(2) u(±)",
-      "trivia_image": "assets/elements/11.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F11.png?alt=media&token=e2dbaf08-2a85-46d5-ba5f-bc6df478cac5",
       "trivia_desc": "Sodium is found in the ocean, but the pure metal reacts violently with water.",
       "colors": [
         4292030255,
@@ -53,7 +53,7 @@
       "source": "https://en.wikipedia.org/wiki/Potassium",
       "category": "Alkali Metal",
       "atomic_weight": "39.0983(1) u(±)",
-      "trivia_image": "assets/elements/19.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F19.png?alt=media&token=69f41092-9244-41cb-a619-ffb54c964b95",
       "trivia_desc": "Potassium is a very reactive element that burns with a lilac flame.",
       "colors": [
         4292030255,
@@ -68,7 +68,7 @@
       "source": "https://en.wikipedia.org/wiki/Rubidium",
       "category": "Alkali Metal",
       "atomic_weight": "85.4678(3) u(±)",
-      "trivia_image": "assets/elements/37.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F37.png?alt=media&token=a1c58b27-fe4f-4765-af33-f0ccf5eb8f15",
       "trivia_desc": "Rubidium's name means red and the metal explodes on impact with water.",
       "colors": [
         4292030255,
@@ -83,7 +83,7 @@
       "source": "https://en.wikipedia.org/wiki/Caesium",
       "category": "Alkali Metal",
       "atomic_weight": "132.90545196(6) u(±)",
-      "trivia_image": "assets/elements/55.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F55.png?alt=media&token=3105199c-d7bc-4525-88f3-f9cb96ede4de",
       "trivia_desc": "Caesium is one of the most reactive elements, exploding violently in water.",
       "colors": [
         4292030255,
@@ -98,7 +98,7 @@
       "source": "https://en.wikipedia.org/wiki/Francium",
       "category": "Alkali Metal",
       "atomic_weight": "[223] (mass number)",
-      "trivia_image": "assets/elements/87.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F87.png?alt=media&token=bd69f347-3ef4-4fdd-b746-27449c2cfad9",
       "trivia_desc": "Francium is so radioactive that it tends to dissolve itself.",
       "colors": [
         4292030255,
@@ -117,7 +117,7 @@
       "source": "https://en.wikipedia.org/wiki/Beryllium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "9.0121831(5) u(±)",
-      "trivia_image": "assets/elements/04.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F04.png?alt=media&token=735cb6e1-949b-49b2-b2cf-37058bbac14a",
       "trivia_desc": "Beryllium can be found in the forms of aquamarine and emerald.",
       "colors": [
         4294208325,
@@ -132,7 +132,7 @@
       "source": "https://en.wikipedia.org/wiki/Magnesium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "24.305 u(±)",
-      "trivia_image": "assets/elements/12.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F12.png?alt=media&token=35a07aba-e38a-44b2-a727-b24f3a78aced",
       "trivia_desc": "The only way to put out a Magnesium fire is with sand.",
       "colors": [
         4294208325,
@@ -147,7 +147,7 @@
       "source": "https://en.wikipedia.org/wiki/Calcium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "40.078(4) u(±)",
-      "trivia_image": "assets/elements/20.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F20.png?alt=media&token=455e1575-f873-43ae-839b-b50ddf8ef9f2",
       "trivia_desc": "Calcium in milk helps to strengthen the skeleton",
       "colors": [
         4294208325,
@@ -162,8 +162,9 @@
       "source": "https://en.wikipedia.org/wiki/Strontium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "87.62(1) u(±)",
-      "trivia_image": "assets/elements/38.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F38.png?alt=media&token=d8073775-b14b-4af9-9c6a-6afbbff935d5",
       "trivia_desc": "Strontium named after the Scottish village Strontian, gives fireworks a red color.",
+
       "colors": [
         4294208325,
         4293830729
@@ -177,8 +178,9 @@
       "source": "https://en.wikipedia.org/wiki/Barium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "137.327(7) u(±)",
-      "trivia_image": "assets/elements/56.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F56.png?alt=media&token=4218eb98-4303-4f2e-9233-2082f8dd6714",
       "trivia_desc": "Barium is a reactive emtal that burns easily in air.",
+
       "colors": [
         4294208325,
         4293830729
@@ -192,7 +194,7 @@
       "source": "https://en.wikipedia.org/wiki/Radium",
       "category": "Alkaline Earth Metal",
       "atomic_weight": "[226] (mass number)",
-      "trivia_image": "assets/elements/88.png",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F88.png?alt=media&token=0d4b493e-7c2b-4a41-951e-b53b50a4b03b",
       "trivia_desc": "Rdium was frequently used until people discovered it was radioactive.",
       "colors": [
         4294208325,
@@ -213,6 +215,8 @@
       "source": "https://en.wikipedia.org/wiki/Scandium",
       "category": "Transition Metal",
       "atomic_weight": "44.955908(5) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F21.png?alt=media&token=ab4a60c3-cb6c-4bd7-8ed9-18cde4d09fd7",
+      "trivia_desc": "Rumors arose that baseball bats containing Scandium had remarkable striking power.",
       "colors": [
         4294953512,
         4294963811
@@ -226,6 +230,8 @@
       "source": "https://en.wikipedia.org/wiki/Yttrium",
       "category": "Transition Metal",
       "atomic_weight": "88.90584(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F39.png?alt=media&token=6972659b-8a18-4e03-866a-1ba7ad4a157f",
+      "trivia_desc": "Yttrium was rumored to have had strange and mystical properties",
       "colors": [
         4294953512,
         4294963811
@@ -242,6 +248,8 @@
       "source": "https://en.wikipedia.org/wiki/Lanthanum",
       "category": "Lanthanide",
       "atomic_weight": "138.90547(7) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F57.png?alt=media&token=9f6a199d-b5fa-40e4-baf1-2b9fe69878a8",
+      "trivia_desc": "Lanthanum is the first of the Rare Earth elements and is used in sudio lights.",
       "colors": [
         4287349578,
         4292141399
@@ -255,6 +263,8 @@
       "source": "https://en.wikipedia.org/wiki/Actinium",
       "category": "Actinide",
       "atomic_weight": "[227] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F89.png?alt=media&token=dc7792d2-821c-4f85-b17b-be6042e96bf9",
+      "trivia_desc": "Actinium is so radioactive its glow can be seen without the use of a special screen.",
       "colors": [
         4279161591,
         4289920762
@@ -271,6 +281,8 @@
       "source": "https://en.wikipedia.org/wiki/Titanium",
       "category": "Transition Metal",
       "atomic_weight": "47.867(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F22.png?alt=media&token=22d9f1d0-b1b7-4168-888d-e92f7796c3b8",
+      "trivia_desc": "Titanium is a non-allergenic and can be used in body piercings.",
       "colors": [
         4294953512,
         4294963811
@@ -284,6 +296,8 @@
       "source": "https://en.wikipedia.org/wiki/Zirconium",
       "category": "Transition Metal",
       "atomic_weight": "91.224(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F40.png?alt=media&token=d15868ee-532e-498a-904a-e65114da0989",
+      "trivia_desc": "Cubic Zirconium is a common form of this element",
       "colors": [
         4294953512,
         4294963811
@@ -297,6 +311,8 @@
       "source": "https://en.wikipedia.org/wiki/Hafnium",
       "category": "Transition Metal",
       "atomic_weight": "178.49(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F72.png?alt=media&token=0e745f7b-c9b8-4a35-a3ed-82faf42e2cf0",
+      "trivia_desc": "Hafnium has an almost identical chemistry to its cousin, Zirconium.",
       "colors": [
         4294953512,
         4294963811
@@ -310,6 +326,8 @@
       "source": "https://en.wikipedia.org/wiki/Rutherfordium",
       "category": "Transition Metal",
       "atomic_weight": "[267] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F104.png?alt=media&token=df6529a2-0fee-43ba-b024-2552d1fbbdac",
+      "trivia_desc": "Rutherfordium is named for Ernest Rutherford, who discovered that elements have nuclei.",
       "colors": [
         4294953512,
         4294963811
@@ -324,6 +342,8 @@
       "source": "https://en.wikipedia.org/wiki/Cerium",
       "category": "Lanthanide",
       "atomic_weight": "140.116(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F58.png?alt=media&token=e752777b-1296-4ba1-8942-2a34020e35bf",
+      "trivia_desc": "Cerium helps prevent the buildup of cooking residues and ca nbe found in some ovens.",
       "colors": [
         4287349578,
         4292141399
@@ -337,6 +357,8 @@
       "source": "https://en.wikipedia.org/wiki/Thorium",
       "category": "Actinide",
       "atomic_weight": "232.0377(4) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F90.png?alt=media&token=f0912efd-601f-4511-9408-76205dff672c",
+      "trivia_desc": "Thorium was found in toothpastes before people knew it was radioactive.",
       "colors": [
         4279161591,
         4289920762
@@ -353,6 +375,8 @@
       "source": "https://en.wikipedia.org/wiki/Vanadium",
       "category": "Transition Metal",
       "atomic_weight": "50.9415(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F23.png?alt=media&token=94b4ca93-412f-44de-a261-f784d810c566",
+      "trivia_desc": "Vanadium is added to steel to make it stronger and is found in many tools.",
       "colors": [
         4294953512,
         4294963811
@@ -366,6 +390,8 @@
       "source": "https://en.wikipedia.org/wiki/Niobium",
       "category": "Transition Metal",
       "atomic_weight": "92.90637(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F41.png?alt=media&token=56b2d5cb-345b-43bc-a7e6-53ec1c2b3a68",
+      "trivia_desc": "Niobium is named after a Greek goddess who was punushed for her vanity.",
       "colors": [
         4294953512,
         4294963811
@@ -379,6 +405,8 @@
       "source": "https://en.wikipedia.org/wiki/Tantalum",
       "category": "Transition Metal",
       "atomic_weight": "180.94788(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F73.png?alt=media&token=e8b6b200-f042-4697-a947-e23c65c177f6",
+      "trivia_desc": "Tantalum is named after a Greek God taunted by food he coud not reach.",
       "colors": [
         4294953512,
         4294963811
@@ -392,6 +420,8 @@
       "source": "https://en.wikipedia.org/wiki/Dubnium",
       "category": "Transition Metal",
       "atomic_weight": "[268] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F105.png?alt=media&token=37f92f93-daca-4890-83d3-fab31381ff7a",
+      "trivia_desc": "Dubnium is named for Dubna, Russia, home of the Joint Institute of Nuclear Research.",
       "colors": [
         4294953512,
         4294963811
@@ -406,6 +436,8 @@
       "source": "https://en.wikipedia.org/wiki/Praseodymium",
       "category": "Lanthanide",
       "atomic_weight": "140.90766(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F59.png?alt=media&token=d886209a-cc2a-4a1f-bcf9-3fbc361566ad",
+      "trivia_desc": "Praseodymium has a green oxide and its Greek name translates to green twin.",
       "colors": [
         4287349578,
         4292141399
@@ -419,6 +451,8 @@
       "source": "https://en.wikipedia.org/wiki/Protactinium",
       "category": "Actinide",
       "atomic_weight": "231.03588(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F91.png?alt=media&token=87633a39-e3d6-4370-b5ae-074ae946d371",
+      "trivia_desc": "Protactinium is very scarce and only a small amount is available for testing.",
       "colors": [
         4279161591,
         4289920762
@@ -435,6 +469,8 @@
       "source": "https://en.wikipedia.org/wiki/Chromium",
       "category": "Transition Metal",
       "atomic_weight": "51.9961(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F24.png?alt=media&token=e1e07113-0afe-4a8c-9961-2b2c9ebec549",
+      "trivia_desc": "Cars from the 1950's and 60's were often decked out with Chromium.",
       "colors": [
         4294953512,
         4294963811
@@ -448,6 +484,8 @@
       "source": "https://en.wikipedia.org/wiki/Molybdenum",
       "category": "Transition Metal",
       "atomic_weight": "95.95(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F42.png?alt=media&token=6c632207-9e16-4c07-93a8-ea780b4f2374",
+      "trivia_desc": "Molybdenum is a tough metal used in many types of power tools.",
       "colors": [
         4294953512,
         4294963811
@@ -461,6 +499,8 @@
       "source": "https://en.wikipedia.org/wiki/Tungsten",
       "category": "Transition Metal",
       "atomic_weight": "183.84(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F74.png?alt=media&token=2d42e6de-d5a6-45c4-b573-23a36f8b4489",
+      "trivia_desc": "Tungsten, once known as Wolfram, is used in a variety of cutting materials.",
       "colors": [
         4294953512,
         4294963811
@@ -474,6 +514,8 @@
       "source": "https://en.wikipedia.org/wiki/Seaborgium",
       "category": "Transition Metal",
       "atomic_weight": "[269] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F106.png?alt=media&token=b81c5f5a-db6a-4b52-9534-1ce065ddebc1",
+      "trivia_desc": "Seaborgium is named for Glenn T. Seaborg, who helped discover many elements.",
       "colors": [
         4294953512,
         4294963811
@@ -488,6 +530,8 @@
       "source": "https://en.wikipedia.org/wiki/Neodymium",
       "category": "Lanthanide",
       "atomic_weight": "144.242(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F60.png?alt=media&token=b3b2d771-36f9-4354-9c67-fd197a599361",
+      "trivia_desc": "Neodymium's name means new twin and has rose-colored oxides.",
       "colors": [
         4287349578,
         4292141399
@@ -501,6 +545,8 @@
       "source": "https://en.wikipedia.org/wiki/Uranium",
       "category": "Actinide",
       "atomic_weight": "238.02891(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F92.png?alt=media&token=71cfae92-d0df-455b-8a06-5e5aa616ee17",
+      "trivia_desc": "Uranium's most famous application was its use in a nuclear bomb in WWII.",
       "colors": [
         4279161591,
         4289920762
@@ -517,6 +563,8 @@
       "source": "https://en.wikipedia.org/wiki/Manganese",
       "category": "Transition Metal",
       "atomic_weight": "54.938043(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F25.png?alt=media&token=53301e3f-b41c-4832-af84-b1147521e7db",
+      "trivia_desc": "Manganese can lead to manganism, a toxic state causing hallucinations and violence.",
       "colors": [
         4294953512,
         4294963811
@@ -530,6 +578,8 @@
       "source": "https://en.wikipedia.org/wiki/Technetium",
       "category": "Transition Metal",
       "atomic_weight": "[98] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F43.png?alt=media&token=43cc3bf3-0a34-42a2-b226-aa30c2295c4f",
+      "trivia_desc": "Technetium is used in x-ray procedures to locate bone cancer.",
       "colors": [
         4294953512,
         4294963811
@@ -543,6 +593,8 @@
       "source": "https://en.wikipedia.org/wiki/Rhenium",
       "category": "Transition Metal",
       "atomic_weight": "186.207(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F75.png?alt=media&token=27ea40da-3739-4e29-b4c5-b9dd9e0e6a00",
+      "trivia_desc": "Rhenium is used in fighter jet engines and other aircraft parts.",
       "colors": [
         4294953512,
         4294963811
@@ -556,6 +608,8 @@
       "source": "https://en.wikipedia.org/wiki/Bohrium",
       "category": "Transition Metal",
       "atomic_weight": "[270] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F107.png?alt=media&token=63d5723f-42c5-4e37-8cab-fa97fdcfcfea",
+      "trivia_desc": "Bohrium is named for Niels Bohr, who did groundbreaking research on the atom.",
       "colors": [
         4294953512,
         4294963811
@@ -570,6 +624,8 @@
       "source": "https://en.wikipedia.org/wiki/Promethium",
       "category": "Lanthanide",
       "atomic_weight": "[145] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F61.png?alt=media&token=64440a9b-7ceb-4b32-9488-ae7b9c5a46e2",
+      "trivia_desc": "Promethium is named after the Titan Prometheus, who gifted fire to mankind.",
       "colors": [
         4287349578,
         4292141399
@@ -583,6 +639,8 @@
       "source": "https://en.wikipedia.org/wiki/Neptunium",
       "category": "Actinide",
       "atomic_weight": "[237] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F93.png?alt=media&token=6db5cd83-71d7-45ce-9bcd-41627547b2a4",
+      "trivia_desc": "All elements beyond Uranium are made artificially, Neptunium being the first.",
       "colors": [
         4279161591,
         4289920762
@@ -599,6 +657,8 @@
       "source": "https://en.wikipedia.org/wiki/Iron",
       "category": "Transition Metal",
       "atomic_weight": "55.845(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F26.png?alt=media&token=5b1d1425-7189-4c61-9842-933d1897b9a7",
+      "trivia_desc": "Iron rusts by itselff, which is why a lot of elements are added to it to make steel.",
       "colors": [
         4294953512,
         4294963811
@@ -612,6 +672,8 @@
       "source": "https://en.wikipedia.org/wiki/Ruthenium",
       "category": "Transition Metal",
       "atomic_weight": "101.07(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F44.png?alt=media&token=eb6c0457-1720-46c1-9978-d1cfc466c39f",
+      "trivia_desc": "Ruthenium is a rare metal used to give jewelry a dark finish.",
       "colors": [
         4294953512,
         4294963811
@@ -625,6 +687,8 @@
       "source": "https://en.wikipedia.org/wiki/Osmium",
       "category": "Transition Metal",
       "atomic_weight": "190.23(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F76.png?alt=media&token=813af8b5-9671-4276-bd0d-b0c83b4efdfd",
+      "trivia_desc": "One of Osmium's main applications is its use in fountain pen tips.",
       "colors": [
         4294953512,
         4294963811
@@ -638,6 +702,8 @@
       "source": "https://en.wikipedia.org/wiki/Hassium",
       "category": "Transition Metal",
       "atomic_weight": "[270] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F108.png?alt=media&token=79252be1-272b-4506-8f7c-2188361deeb8",
+      "trivia_desc": "Hassium is named for Hesse, the German state where the element was discovered.",
       "colors": [
         4294953512,
         4294963811
@@ -652,6 +718,8 @@
       "source": "https://en.wikipedia.org/wiki/Samarium",
       "category": "Lanthanide",
       "atomic_weight": "150.36(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F62.png?alt=media&token=f123047c-4da5-440e-8a28-cc126f53f237",
+      "trivia_desc": "Samarium can sometimes be found in electric guitar pickups.",
       "colors": [
         4287349578,
         4292141399
@@ -665,6 +733,8 @@
       "source": "https://en.wikipedia.org/wiki/Plutonium",
       "category": "Actinide",
       "atomic_weight": "[244] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F94.png?alt=media&token=541015ed-4f79-4b73-bafa-a7e85fd0b4f6",
+      "trivia_desc": "Plutonium was the key ingredient in the second nuclear bomb detonated in WWII.",
       "colors": [
         4279161591,
         4289920762
@@ -681,6 +751,8 @@
       "source": "https://en.wikipedia.org/wiki/Cobalt",
       "category": "Transition Metal",
       "atomic_weight": "58.933194(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F27.png?alt=media&token=caba3e08-9de8-4642-bedd-e692c358c058",
+      "trivia_desc": "Cobalt helps create one of the strongest magnets in the world.",
       "colors": [
         4294953512,
         4294963811
@@ -694,6 +766,8 @@
       "source": "https://en.wikipedia.org/wiki/Rhodium",
       "category": "Transition Metal",
       "atomic_weight": "102.90549(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F45.png?alt=media&token=620af43b-5266-4c98-974c-7598e01b804a",
+      "trivia_desc": "Rhodium is one of the shiniest metals on the periodic table.",
       "colors": [
         4294953512,
         4294963811
@@ -707,6 +781,8 @@
       "source": "https://en.wikipedia.org/wiki/Iridium",
       "category": "Transition Metal",
       "atomic_weight": "192.217(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F77.png?alt=media&token=05e38fae-f94f-4c6d-b569-17157ff5f14a",
+      "trivia_desc": "Iridium can be found in many asteroids that landed on earth.",
       "colors": [
         4294953512,
         4294963811
@@ -720,6 +796,8 @@
       "source": "https://en.wikipedia.org/wiki/Meitnerium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[278] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F109.png?alt=media&token=b3f49b93-5267-4f91-a949-d070b349a3c7",
+      "trivia_desc": "Meitnerium is named for Lise Meitner, who helped discover nuclear fusion.",
       "colors": [
         4285890458,
         4292337128
@@ -734,6 +812,8 @@
       "source": "https://en.wikipedia.org/wiki/Europium",
       "category": "Lanthanide",
       "atomic_weight": "151.964(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F63.png?alt=media&token=9d8bb4bb-3c0f-494b-a401-0a4cbb1b38af",
+      "trivia_desc": "Europium, named after Europe improves the red color in TV and computer screens.",
       "colors": [
         4287349578,
         4292141399
@@ -747,6 +827,8 @@
       "source": "https://en.wikipedia.org/wiki/Americium",
       "category": "Actinide",
       "atomic_weight": "[243] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F95.png?alt=media&token=e11a8e5d-a026-4dcc-99da-2754e7a13b0b",
+      "trivia_desc": "Americium is named after America, can be found in home smoke detectors.",
       "colors": [
         4279161591,
         4289920762
@@ -763,6 +845,8 @@
       "source": "https://en.wikipedia.org/wiki/Nickel",
       "category": "Transition Metal",
       "atomic_weight": "58.6934(4) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F28.png?alt=media&token=3e33d9c6-03bd-4774-9a73-80a039c62e1f",
+      "trivia_desc": "Nickel's name means devil's copper and it adds a green color to glass.",
       "colors": [
         4294953512,
         4294963811
@@ -776,6 +860,8 @@
       "source": "https://en.wikipedia.org/wiki/Palladium",
       "category": "Transition Metal",
       "atomic_weight": "106.42(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F46.png?alt=media&token=e922ff63-742b-4364-ac88-a2609a62bc99",
+      "trivia_desc": "Palladium banishes harmful chemicals and is found in catalytic converters of cars.",
       "colors": [
         4294953512,
         4294963811
@@ -789,6 +875,8 @@
       "source": "https://en.wikipedia.org/wiki/Platinum",
       "category": "Transition Metal",
       "atomic_weight": "195.084(9) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F78.png?alt=media&token=a597ac84-71bb-4e74-8a3b-fd0734e84a4c",
+      "trivia_desc": "Platinum is one of the most precious and valued metals in the world.",
       "colors": [
         4294953512,
         4294963811
@@ -802,6 +890,8 @@
       "source": "https://en.wikipedia.org/wiki/Darmstadtium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[281] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F110.png?alt=media&token=dca1a2c0-6fde-4983-a11c-a9795f9b04a8",
+      "trivia_desc": "Darmstadtium is named for the German state of Darmstadt, elements's home.",
       "colors": [
         4285890458,
         4292337128
@@ -816,6 +906,8 @@
       "source": "https://en.wikipedia.org/wiki/Gadolinium",
       "category": "Lanthanide",
       "atomic_weight": "157.25(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F64.png?alt=media&token=9e259960-2801-4dab-88be-a7c130dee791",
+      "trivia_desc": "There aren't many uses for Gadolinium, but its allows can be found in data CDs.",
       "colors": [
         4287349578,
         4292141399
@@ -829,6 +921,8 @@
       "source": "https://en.wikipedia.org/wiki/Curium",
       "category": "Actinide",
       "atomic_weight": "[247] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F96.png?alt=media&token=0e19f0a1-3972-4de3-ab58-93483540e5eb",
+      "trivia_desc": "Curium is named after Marie Curie who discovered radium and polonium.",
       "colors": [
         4279161591,
         4289920762
@@ -845,6 +939,8 @@
       "source": "https://en.wikipedia.org/wiki/Copper",
       "category": "Transition Metal",
       "atomic_weight": "63.546(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F29.png?alt=media&token=ebcc501f-b611-4704-a337-1313ad881e89",
+      "trivia_desc": "Copper is a red-colored metal that is a good conductor of electricity.",
       "colors": [
         4294953512,
         4294963811
@@ -858,6 +954,8 @@
       "source": "https://en.wikipedia.org/wiki/Silver",
       "category": "Transition Metal",
       "atomic_weight": "107.8682(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F47.png?alt=media&token=a0e6ea6b-db98-4461-a861-e9882742d44f",
+      "trivia_desc": "Silver is the best conductor of electricity of all the metals",
       "colors": [
         4294953512,
         4294963811
@@ -871,6 +969,8 @@
       "source": "https://en.wikipedia.org/wiki/Gold",
       "category": "Transition Metal",
       "atomic_weight": "196.966570(4) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F79.png?alt=media&token=a614c607-98b6-4285-9934-5bb0c9c53823",
+      "trivia_desc": "Gold is a very soft and beautiful metal, has been coveted for thousands of years.",
       "colors": [
         4294953512,
         4294963811
@@ -884,6 +984,8 @@
       "source": "https://en.wikipedia.org/wiki/Roentgenium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[282] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F111.png?alt=media&token=1b868f68-8e45-4741-a3fd-5f880c23f735",
+      "trivia_desc": "Roentgenium is named for Wilhelm Conrad Rontgen, inventor of the x-ray.",
       "colors": [
         4285890458,
         4292337128
@@ -898,6 +1000,8 @@
       "source": "https://en.wikipedia.org/wiki/Terbium",
       "category": "Lanthanide",
       "atomic_weight": "158.925354(8) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F65.png?alt=media&token=042b2038-f2e0-4c12-907e-6af2b096aa9d",
+      "trivia_desc": "Terbium is added to TV and computer screens to improve the green phosphor.",
       "colors": [
         4287349578,
         4292141399
@@ -911,6 +1015,8 @@
       "source": "https://en.wikipedia.org/wiki/Berkelium",
       "category": "Actinide",
       "atomic_weight": "[247] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F97.png?alt=media&token=10ceecd7-3395-4500-b4bd-c64ee67d0096",
+      "trivia_desc": "Berkelium was created at and named after the University of California, Berkeley.",
       "colors": [
         4279161591,
         4289920762
@@ -927,6 +1033,8 @@
       "source": "https://en.wikipedia.org/wiki/Zinc",
       "category": "Post-transition Metal",
       "atomic_weight": "65.38(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F30.png?alt=media&token=eceeeafb-18c3-4c29-ae15-28cd1f899dd7",
+      "trivia_desc": "Because it corrodes quickly, Zinc is added to steel to increase longevity.",
       "colors": [
         4279343502,
         4281921405
@@ -940,6 +1048,8 @@
       "source": "https://en.wikipedia.org/wiki/Cadmium",
       "category": "Post-transition Metal",
       "atomic_weight": "112.414(4) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F48.png?alt=media&token=22d72f38-fc8a-48f3-bdfd-b8fe1a404664",
+      "trivia_desc": "Cadmium can be found in some paint pigments.",
       "colors": [
         4279343502,
         4281921405
@@ -953,6 +1063,8 @@
       "source": "https://en.wikipedia.org/wiki/Mercury (element)",
       "category": "Post-transition Metal",
       "atomic_weight": "200.592(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F80.png?alt=media&token=62790cac-c394-4cc3-b8a6-74d218070829",
+      "trivia_desc": "Mercury is a deadly liquid element that causes damage to the nervous system.",
       "colors": [
         4279343502,
         4281921405
@@ -966,6 +1078,8 @@
       "source": "https://en.wikipedia.org/wiki/Copernicium",
       "category": "Post-transition Metal",
       "atomic_weight": "[285] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F112.png?alt=media&token=ce386b26-40c2-4474-8acc-5ec186cc5504",
+      "trivia_desc": "Copernicium is named after Nicolaus Copernicus, the famous astronomer.",
       "colors": [
         4279343502,
         4281921405
@@ -980,6 +1094,8 @@
       "source": "https://en.wikipedia.org/wiki/Dysprosium",
       "category": "Lanthanide",
       "atomic_weight": "162.500(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F66.png?alt=media&token=9efbdd1b-5692-41a7-9445-ed68e5d30441",
+      "trivia_desc": "Dysprosium's name is Greek and translates to hard to get at",
       "colors": [
         4287349578,
         4292141399
@@ -993,6 +1109,8 @@
       "source": "https://en.wikipedia.org/wiki/Californium",
       "category": "Actinide",
       "atomic_weight": "[251] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F98.png?alt=media&token=592d920d-0913-49c2-bff4-a187ef8bc152",
+      "trivia_desc": "Unsurprisingly, Californium was named after the state of California.",
       "colors": [
         4279161591,
         4289920762
@@ -1007,6 +1125,8 @@
       "source": "https://en.wikipedia.org/wiki/Boron",
       "category": "Metalloid",
       "atomic_weight": "10.81 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F05.png?alt=media&token=d2662c60-23b7-49ef-b48b-67a6dd42dfa7",
+      "trivia_desc": "Boron is a subdued element that produces a bright green flame.",
       "colors": [
         4278219519,
         4278241023
@@ -1014,12 +1134,14 @@
     },
     {
       "number": 13,
-      "name": "Aluminium",
+      "name": "Aluminum",
       "symbol": "Al",
-      "extract": "Aluminium or aluminum is a chemical element with symbol Al and atomic number 13. It is a silvery-white, soft, nonmagnetic and ductile metal in the boron group. By mass, aluminium makes up about 8% of the Earth's crust; it is the third most abundant element after oxygen and silicon and the most abundant metal in the crust, though it is less common in the mantle below. The chief ore of aluminium is bauxite. Aluminium metal is so chemically reactive that native specimens are rare and limited to extreme reducing environments.",
+      "extract": "Aluminum or Aluminium is a chemical element with symbol Al and atomic number 13. It is a silvery-white, soft, nonmagnetic and ductile metal in the boron group. By mass, aluminium makes up about 8% of the Earth's crust; it is the third most abundant element after oxygen and silicon and the most abundant metal in the crust, though it is less common in the mantle below. The chief ore of aluminium is bauxite. Aluminium metal is so chemically reactive that native specimens are rare and limited to extreme reducing environments.",
       "source": "https://en.wikipedia.org/wiki/Aluminium",
       "category": "Post-transition Metal",
       "atomic_weight": "26.9815384(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F13.png?alt=media&token=1d0f8576-4fbe-49d8-8a12-67dfec789e6d",
+      "trivia_desc": "Aluminum is a strong yet lightweight metal commonly found in soda cans.",
       "colors": [
         4279343502,
         4281921405
@@ -1033,6 +1155,8 @@
       "source": "https://en.wikipedia.org/wiki/Gallium",
       "category": "Post-transition Metal",
       "atomic_weight": "69.723(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F31.png?alt=media&token=611520fa-f800-477d-8523-3d1dfa1f573f",
+      "trivia_desc": "Gallium spoons melt when served in hot beverages.",
       "colors": [
         4279343502,
         4281921405
@@ -1046,6 +1170,8 @@
       "source": "https://en.wikipedia.org/wiki/Indium",
       "category": "Post-transition Metal",
       "atomic_weight": "114.818(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F49.png?alt=media&token=86175c32-fb83-48ac-ba4a-16c0e3223338",
+      "trivia_desc": "When bent rapidly. the metal Indium gives off a loud shrieking sound.",
       "colors": [
         4279343502,
         4281921405
@@ -1059,6 +1185,8 @@
       "source": "https://en.wikipedia.org/wiki/Thallium",
       "category": "Post-transition Metal",
       "atomic_weight": "204.38 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F81.png?alt=media&token=c796f7ed-024e-49dc-9320-f2be33116043",
+      "trivia_desc": "The surface of Thallium constantly corrodes like a snake shedding its skin.",
       "colors": [
         4279343502,
         4281921405
@@ -1072,6 +1200,8 @@
       "source": "https://en.wikipedia.org/wiki/Nihonium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[286] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F113.png?alt=media&token=c60a320f-1323-4ed2-bff5-62ece8f10ca1",
+      "trivia_desc": "Nihonium is named for Nihon (also known as Japan), where it was discovered.",
       "colors": [
         4285890458,
         4292337128
@@ -1086,6 +1216,8 @@
       "source": "https://en.wikipedia.org/wiki/Holmium",
       "category": "Lanthanide",
       "atomic_weight": "164.930328(7) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F67.png?alt=media&token=2d20272e-b994-4b1d-a374-b3f17134af45",
+      "trivia_desc": "Holmium is one of the several elements discovered in Stockholm, Sweden.",
       "colors": [
         4287349578,
         4292141399
@@ -1099,6 +1231,8 @@
       "source": "https://en.wikipedia.org/wiki/Einsteinium",
       "category": "Actinide",
       "atomic_weight": "[252] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F99.png?alt=media&token=95607229-3f75-43de-9fe1-cb2467481a46",
+      "trivia_desc": "Einsteinium was named after the famous physicist Albert Einstein.",
       "colors": [
         4279161591,
         4289920762
@@ -1113,6 +1247,8 @@
       "source": "https://en.wikipedia.org/wiki/Carbon",
       "category": "Reactive Nonmetal",
       "atomic_weight": "12.011 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F06.png?alt=media&token=fe617e85-d2c1-4fd6-a854-2cbdb70a7314",
+      "trivia_desc": "Carbon can take the forms of charcoal, graphite and diamond.",
       "colors": [
         4283657726,
         4287535603
@@ -1126,6 +1262,8 @@
       "source": "https://en.wikipedia.org/wiki/Silicon",
       "category": "Metalloid",
       "atomic_weight": "28.085 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F14.png?alt=media&token=de5be711-294c-4f6b-89a3-d5f7dc3286b5",
+      "trivia_desc": "Silicon is often found in computer microchips and other electronics.",
       "colors": [
         4278219519,
         4278241023
@@ -1139,6 +1277,8 @@
       "source": "https://en.wikipedia.org/wiki/Germanium",
       "category": "Metalloid",
       "atomic_weight": "72.630(8) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F32.png?alt=media&token=88e1d53a-3dcc-48e6-8a97-f3f9e83b5258",
+      "trivia_desc": "Germanium is a semi-conductor used in cellphones and other electronics.",
       "colors": [
         4278219519,
         4278241023
@@ -1152,6 +1292,8 @@
       "source": "https://en.wikipedia.org/wiki/Tin",
       "category": "Post-transition Metal",
       "atomic_weight": "118.710(7) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F50.png?alt=media&token=b61fe3c2-0229-48f9-9d09-4079d09e7a7c",
+      "trivia_desc": "Tin was once widely used, but has largely replaced by Aluminum in metal cans.",
       "colors": [
         4279343502,
         4281921405
@@ -1165,6 +1307,8 @@
       "source": "https://en.wikipedia.org/wiki/Lead",
       "category": "Post-transition Metal",
       "atomic_weight": "207.2(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F82.png?alt=media&token=edf9e1fe-a3fd-4d6b-8b71-7bea100c6414",
+      "trivia_desc": "Although poisonous, people used to drink from Lead tankards in medieval times.",
       "colors": [
         4279343502,
         4281921405
@@ -1178,6 +1322,8 @@
       "source": "https://en.wikipedia.org/wiki/Flerovium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[289] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F114.png?alt=media&token=d02da299-dd8c-4fe2-a333-bc85ed5d90d7",
+      "trivia_desc": "Flerovium is named after Russian physicist Georgy Flyorov.",
       "colors": [
         4285890458,
         4292337128
@@ -1192,6 +1338,8 @@
       "source": "https://en.wikipedia.org/wiki/Erbium",
       "category": "Lanthanide",
       "atomic_weight": "167.259(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F68.png?alt=media&token=23ed5320-5d6c-4616-bca5-03730ed356a9",
+      "trivia_desc": "Erbium's oxides are added to make a pink color in glazes and glass jewelry.",
       "colors": [
         4287349578,
         4292141399
@@ -1205,6 +1353,8 @@
       "source": "https://en.wikipedia.org/wiki/Fermium",
       "category": "Actinide",
       "atomic_weight": "[257] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F100.png?alt=media&token=20e9e0b3-3539-4e50-ae8f-a5b328cf30ee",
+      "trivia_desc": "Fermium was named after Enrico Fermi who did work on nuclear reactions.",
       "colors": [
         4279161591,
         4289920762
@@ -1219,6 +1369,8 @@
       "source": "https://en.wikipedia.org/wiki/Nitrogen",
       "category": "Reactive Nonmetal",
       "atomic_weight": "14.007 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F07.png?alt=media&token=6f00a5de-d938-4678-b19a-5606a1020aaa",
+      "trivia_desc": "Some forms of Nitrogen are toxic and other forms cause light-headedness",
       "colors": [
         4283657726,
         4287535603
@@ -1232,6 +1384,8 @@
       "source": "https://en.wikipedia.org/wiki/Phosphorus",
       "category": "Reactive Nonmetal",
       "atomic_weight": "30.973761998(5) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F15.png?alt=media&token=0e2be539-bdde-4489-9b73-43aab5c487af",
+      "trivia_desc": "It is the red Phosphorus in match tips that makes it ignite.",
       "colors": [
         4283657726,
         4287535603
@@ -1245,6 +1399,8 @@
       "source": "https://en.wikipedia.org/wiki/Arsenic",
       "category": "Metalloid",
       "atomic_weight": "74.921595(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F33.png?alt=media&token=790e436c-3b1b-4a8d-ac9f-901380976e5d",
+      "trivia_desc": "Arsenic is a highly toxic element commonly used in rat poisons.",
       "colors": [
         4278219519,
         4278241023
@@ -1258,6 +1414,8 @@
       "source": "https://en.wikipedia.org/wiki/Antimony",
       "category": "Metalloid",
       "atomic_weight": "121.760(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F51.png?alt=media&token=55c10af8-05ed-4bdd-806d-bbd8c2db3caf",
+      "trivia_desc": "Antimony is a brittle, toxic metal that is added as a hardening agent to lead bullets.",
       "colors": [
         4278219519,
         4278241023
@@ -1271,6 +1429,8 @@
       "source": "https://en.wikipedia.org/wiki/Bismuth",
       "category": "Post-transition Metal",
       "atomic_weight": "208.98040(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F83.png?alt=media&token=e4ff7a38-0838-432c-90c6-fb7b649c8fb9",
+      "trivia_desc": "Bismuth is a prominent ingredient in Pepto Bismol.",
       "colors": [
         4279343502,
         4281921405
@@ -1284,6 +1444,8 @@
       "source": "https://en.wikipedia.org/wiki/Moscovium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[290] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F115.png?alt=media&token=29fda224-14d1-4315-a501-25f4a60ea1e5",
+      "trivia_desc": "Moscovium is named for the Moscow Oblast, home of the Dubna Institute.",
       "colors": [
         4285890458,
         4292337128
@@ -1298,6 +1460,8 @@
       "source": "https://en.wikipedia.org/wiki/Thulium",
       "category": "Lanthanide",
       "atomic_weight": "168.934218(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F69.png?alt=media&token=163c7984-f235-4bba-a90f-89569ebf1e01",
+      "trivia_desc": "Thulium has few uses but it is one of the most rare and expensive elements.",
       "colors": [
         4287349578,
         4292141399
@@ -1311,6 +1475,8 @@
       "source": "https://en.wikipedia.org/wiki/Mendelevium",
       "category": "Actinide",
       "atomic_weight": "[258] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F101.png?alt=media&token=7aefce61-0598-4324-8ea9-fafa6d879a8b",
+      "trivia_desc": "Mendelevium was named for Dmitri Mendeleev, inventor of the periodic table.",
       "colors": [
         4279161591,
         4289920762
@@ -1325,6 +1491,8 @@
       "source": "https://en.wikipedia.org/wiki/Oxygen",
       "category": "Reactive Nonmetal",
       "atomic_weight": "15.999 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F08.png?alt=media&token=63132316-e781-427e-9614-af5dac8d7a8a",
+      "trivia_desc": "Pure oxygen comes in the paured form of O2",
       "colors": [
         4283657726,
         4287535603
@@ -1338,6 +1506,8 @@
       "source": "https://en.wikipedia.org/wiki/Sulfur",
       "category": "Reactive Nonmetal",
       "atomic_weight": "32.06 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F16.png?alt=media&token=be38bcd7-fa7c-46bf-990c-ba7283a5b308",
+      "trivia_desc": "Sulfur is a smelly, combative element found in grenades and gunpowder.",
       "colors": [
         4283657726,
         4287535603
@@ -1351,6 +1521,8 @@
       "source": "https://en.wikipedia.org/wiki/Selenium",
       "category": "Reactive Nonmetal",
       "atomic_weight": "78.971(8) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F34.png?alt=media&token=2462794e-60d8-4e93-8ab3-0fb490f51f32",
+      "trivia_desc": "Selenium, when consumed by ccows, can cause them to go into blind staggers.",
       "colors": [
         4283657726,
         4287535603
@@ -1364,6 +1536,8 @@
       "source": "https://en.wikipedia.org/wiki/Tellurium",
       "category": "Metalloid",
       "atomic_weight": "127.60(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F52.png?alt=media&token=fa8981fc-2d35-42ec-8215-927dc74ce255",
+      "trivia_desc": "Tellurium has the ododr of rotten garlic.",
       "colors": [
         4278219519,
         4278241023
@@ -1377,6 +1551,8 @@
       "source": "https://en.wikipedia.org/wiki/Polonium",
       "category": "Post-transition Metal",
       "atomic_weight": "[209] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F84.png?alt=media&token=ed97b87a-75a5-4658-8551-f96403dc7f7b",
+      "trivia_desc": "Polonium is extremely radioactive and one of the deadliest known substances.",
       "colors": [
         4279343502,
         4281921405
@@ -1390,6 +1566,8 @@
       "source": "https://en.wikipedia.org/wiki/Livermorium",
       "category": "Unknown chemical properties",
       "atomic_weight": "[293] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F116.png?alt=media&token=653429d4-1636-4a22-871e-f8b5a2753c3b",
+      "trivia_desc": "Livermorium is named for the Lawrence Livermore National Laboratory.",
       "colors": [
         4285890458,
         4292337128
@@ -1404,6 +1582,8 @@
       "source": "https://en.wikipedia.org/wiki/Ytterbium",
       "category": "Lanthanide",
       "atomic_weight": "173.045(10) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F70.png?alt=media&token=352cace4-d8ae-400f-ad03-8f5aec882d0d",
+      "trivia_desc": "Ytterbium, another Swedish element, is named after the village of Ytterby.",
       "colors": [
         4287349578,
         4292141399
@@ -1417,6 +1597,8 @@
       "source": "https://en.wikipedia.org/wiki/Nobelium",
       "category": "Actinide",
       "atomic_weight": "[259] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F102.png?alt=media&token=4dc0461e-1ba6-4ed4-8e55-f258c3bd2939",
+      "trivia_desc": "Nobelium is named for Alfred Nobel, for whom the Nobel Prize is also named.",
       "colors": [
         4279161591,
         4289920762
@@ -1431,6 +1613,8 @@
       "source": "https://en.wikipedia.org/wiki/Fluorine",
       "category": "Reactive Nonmetal",
       "atomic_weight": "18.998403163(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F09.png?alt=media&token=3b6dde4e-c64c-4ee2-b9e9-bc64a03ba8ea",
+      "trivia_desc": "Fluorine gas is so reactive i will ignite anything it touches.",
       "colors": [
         4283657726,
         4287535603
@@ -1444,6 +1628,8 @@
       "source": "https://en.wikipedia.org/wiki/Chlorine",
       "category": "Reactive Nonmetal",
       "atomic_weight": "35.45 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F17.png?alt=media&token=d8b46a19-99a6-48c2-8765-e6d988eb8962",
+      "trivia_desc": "Inhaling Chlorine gas can cuase burning in the eyes and sinuses.",
       "colors": [
         4283657726,
         4287535603
@@ -1457,6 +1643,8 @@
       "source": "https://en.wikipedia.org/wiki/Bromine",
       "category": "Reactive Nonmetal",
       "atomic_weight": "79.904 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F35.png?alt=media&token=cf118cf5-cda7-4d46-adc4-04d106e9bb0b",
+      "trivia_desc": "Bromine is one of only two elements that is liquid at room temperature.",
       "colors": [
         4283657726,
         4287535603
@@ -1470,6 +1658,8 @@
       "source": "https://en.wikipedia.org/wiki/Iodine",
       "category": "Reactive Nonmetal",
       "atomic_weight": "126.90447(3) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F53.png?alt=media&token=888bf6ac-c2e2-40c5-9d5b-bca56baafdc1",
+      "trivia_desc": "Iodine gives off a violet gas and is used by doctors to disinfect wounds.",
       "colors": [
         4283657726,
         4287535603
@@ -1483,6 +1673,8 @@
       "source": "https://en.wikipedia.org/wiki/Astatine",
       "category": "Metalloid",
       "atomic_weight": "[210] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F85.png?alt=media&token=2cb03cff-d6dc-4d68-95d4-bf213d238905",
+      "trivia_desc": "Astatine is an extremely rare element, has a half-life of only 8.3 hours.",
       "colors": [
         4278219519,
         4278241023
@@ -1496,6 +1688,8 @@
       "source": "https://en.wikipedia.org/wiki/Tennessine",
       "category": "Unknown chemical properties",
       "atomic_weight": "[294] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F117.png?alt=media&token=fab57472-0fe6-4e1c-b163-a26b393d897b",
+      "trivia_desc": "Tennessine is named after Tennessee, home of the Oak Ridge National Laboratory.",
       "colors": [
         4285890458,
         4292337128
@@ -1510,6 +1704,8 @@
       "source": "https://en.wikipedia.org/wiki/Lutetium",
       "category": "Lanthanide",
       "atomic_weight": "174.9668(1) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F71.png?alt=media&token=820d1909-d7be-4b25-a3b0-a851a93fdbd3",
+      "trivia_desc": "Lutetium was originally to be named after the constellation Cassiopeia.",
       "colors": [
         4287349578,
         4292141399
@@ -1523,6 +1719,8 @@
       "source": "https://en.wikipedia.org/wiki/Lawrencium",
       "category": "Actinide",
       "atomic_weight": "[266] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F103.png?alt=media&token=9dc3e41d-8c5d-4f50-9109-89af2e771d5a",
+      "trivia_desc": "Lawrencium is named after Ernest O. Lawrence, the inventor of the cyclotron",
       "colors": [
         4279161591,
         4289920762
@@ -1536,6 +1734,8 @@
       "source": "https://en.wikipedia.org/wiki/Helium",
       "category": "Noble Gas",
       "atomic_weight": "4.002602(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F02.png?alt=media&token=562cca57-72cf-4ac7-ac24-44cc8db76924",
+      "trivia_desc": "Helium is a non-reactive element and the lightest of the noble gases.",
       "colors": [
         4288124656,
         4294690772
@@ -1549,6 +1749,8 @@
       "source": "https://en.wikipedia.org/wiki/Neon",
       "category": "Noble Gas",
       "atomic_weight": "20.1797(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F10.png?alt=media&token=c3028640-6000-4875-adb0-787b754e5aa2",
+      "trivia_desc": "Neon glows red-orange when an electric charge runs through it.",
       "colors": [
         4288124656,
         4294690772
@@ -1562,6 +1764,8 @@
       "source": "https://en.wikipedia.org/wiki/Argon",
       "category": "Noble Gas",
       "atomic_weight": "39.948 u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F18.png?alt=media&token=7e29508b-bb1a-427c-87e0-90beea4735a5",
+      "trivia_desc": "Argon's name means 'inactive' and is commonly found in lightbulbs.",
       "colors": [
         4288124656,
         4294690772
@@ -1575,6 +1779,8 @@
       "source": "https://en.wikipedia.org/wiki/Krypton",
       "category": "Noble Gas",
       "atomic_weight": "83.798(2) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F36.png?alt=media&token=c8d1228b-8c7f-40ce-bda0-1a3eed7e5d28",
+      "trivia_desc": "The noble gas Krypton is commonly known for its role in Superman comics.",
       "colors": [
         4288124656,
         4294690772
@@ -1588,6 +1794,8 @@
       "source": "https://en.wikipedia.org/wiki/Xenon",
       "category": "Noble Gas",
       "atomic_weight": "131.293(6) u(±)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F54.png?alt=media&token=024df058-94d9-4533-974f-105f09526691",
+      "trivia_desc": "Xenon is a rare noble gas with an alien sounding name.",
       "colors": [
         4288124656,
         4294690772
@@ -1601,6 +1809,8 @@
       "source": "https://en.wikipedia.org/wiki/Radon",
       "category": "Noble Gas",
       "atomic_weight": "[222] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F86.png?alt=media&token=846b048e-1b0a-45a4-bce4-9d69bba25c0c",
+      "trivia_desc": "Radon causes lung cancer and is often found in granite bedrock.",
       "colors": [
         4288124656,
         4294690772
@@ -1614,6 +1824,8 @@
       "source": "https://en.wikipedia.org/wiki/Oganesson",
       "category": "Unknown chemical properties",
       "atomic_weight": "[294] (mass number)",
+      "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F118.png?alt=media&token=1912bd2e-61b9-4040-964f-14f41136dfed",
+      "trivia_desc": "Oganesson is named after Yuri Oganessian who helped discover super heavy elements.",
       "colors": [
         4285890458,
         4292337128

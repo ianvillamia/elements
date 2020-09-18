@@ -4,6 +4,7 @@ import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Strings/routes.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
+import 'package:mynewapp/Global/drawer.dart';
 
 class LessonsMain extends StatefulWidget {
   LessonsMain({Key key}) : super(key: key);
@@ -13,11 +14,14 @@ class LessonsMain extends StatefulWidget {
 }
 
 class _LessonsMainState extends State<LessonsMain> {
+  var scaffoldKey = GlobalKey<ScaffoldState>();
   Size size;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
+      key: scaffoldKey,
+      drawer: BuildDrawer(),
       body: Container(
         color: Colors.white,
         width: size.width,
@@ -67,7 +71,7 @@ class _LessonsMainState extends State<LessonsMain> {
         IconButton(
           iconSize: 30,
           icon: Icon(Icons.sort),
-          onPressed: () {},
+          onPressed: () => scaffoldKey.currentState.openDrawer(),
           splashColor: Colors.blue,
         ),
         Text(

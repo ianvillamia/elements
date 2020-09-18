@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:zoom_widget/zoom_widget.dart';
 
 const kRowCount = 10;
 
@@ -84,20 +85,30 @@ class TablePage extends StatelessWidget {
   TablePage(this.gridList);
 
   final Future<List<ElementData>> gridList;
-
+  Size size;
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blueGrey[600],
       appBar: AppBar(
           title: Text('Periodic Table of Elements'),
           centerTitle: true,
           backgroundColor: Colors.blueGrey[800]),
-      body: FutureBuilder(
-        future: gridList,
-        builder: (_, snapshot) => snapshot.hasData
-            ? _buildTable(snapshot.data)
-            : Center(child: CircularProgressIndicator()),
+      body: Zoom(
+        width: size.width * 4,
+        height: size.height * 1.3,
+        canvasColor: Colors.blueGrey[600],
+        backgroundColor: Colors.blueGrey[600],
+        doubleTapZoom: true,
+        centerOnScale: true,
+        zoomSensibility: 2.5,
+        child: FutureBuilder(
+          future: gridList,
+          builder: (_, snapshot) => snapshot.hasData
+              ? _buildTable(snapshot.data)
+              : Center(child: CircularProgressIndicator()),
+        ),
       ),
     );
   }
@@ -151,12 +162,11 @@ class DetailPage extends StatelessWidget {
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 15.0),
           child: Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(element.triviaImage),
-                    fit: BoxFit.contain)),
             height: size.height * .25,
             width: size.width * .05,
+            child: FadeInImage.assetNetwork(
+                placeholder: ('assets/loading.gif'),
+                image: element.triviaImage),
           ),
         ),
       )
