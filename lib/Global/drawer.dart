@@ -38,7 +38,7 @@ class BuildDrawer extends StatelessWidget {
                 size: size,
                 icon: Images.owl,
                 onTap: () {
-                  Navigator.pushNamed(context, 'lessonsMain');
+                  Navigator.pushNamed(context, '/lessonsMain');
                 },
                 buttonText: 'Learning Module',
                 descText: 'Learn more about chemistry',

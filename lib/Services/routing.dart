@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsMain.dart';
+import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Screens/authentication/signUp.dart';

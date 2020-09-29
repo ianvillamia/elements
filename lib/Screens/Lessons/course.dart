@@ -224,7 +224,7 @@ class _CourseState extends State<Course> {
         color: Color.fromRGBO(73, 204, 150, 1),
         child: InkWell(
           onTap: () {
-            print(lesson.lessons_list);
+            print('lessons list ${lesson.lessons_list}');
             Navigator.push(context, MaterialPageRoute(builder: (_) {
               return Lesson(
                 lesson: lesson,

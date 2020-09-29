@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 
 const kRowCount = 10;
@@ -73,11 +74,7 @@ class ElementsApp extends StatelessWidget {
           Typography.whiteMountainView.apply(fontFamily: 'Share Tech Mono'),
     );
 
-    return MaterialApp(
-        title: 'Periodic Table of Elements',
-        debugShowCheckedModeBanner: false,
-        theme: theme,
-        home: TablePage(gridList));
+    return Scaffold(body: TablePage(gridList));
   }
 }
 
@@ -92,11 +89,12 @@ class TablePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey[600],
       appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text('Periodic Table of Elements'),
           centerTitle: true,
           backgroundColor: Colors.blueGrey[800]),
       body: Zoom(
-        width: size.width * 4,
+        width: size.width * 4.05,
         height: size.height * 1.3,
         canvasColor: Colors.blueGrey[600],
         backgroundColor: Colors.blueGrey[600],
@@ -106,7 +104,8 @@ class TablePage extends StatelessWidget {
         child: FutureBuilder(
           future: gridList,
           builder: (_, snapshot) => snapshot.hasData
-              ? _buildTable(snapshot.data)
+              ? Padding(
+                  padding: EdgeInsets.all(8), child: _buildTable(snapshot.data))
               : Center(child: CircularProgressIndicator()),
         ),
       ),
@@ -132,60 +131,6 @@ class TablePage extends StatelessWidget {
   }
 }
 
-class DetailPage extends StatelessWidget {
-  DetailPage(this.element);
-
-  final ElementData element;
-  Size size;
-  @override
-  Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    final listItems = <Widget>[
-      ListTile(
-          leading: Icon(Icons.category),
-          title: Text(element.category.toUpperCase())),
-      ListTile(
-        leading: Icon(Icons.info),
-        title: Text(element.extract),
-        subtitle: Text(element.source),
-      ),
-      ListTile(
-        leading: Icon(Icons.fiber_smart_record),
-        title: Text(element.atomicWeight),
-        subtitle: Text('Atomic Weight'),
-      ),
-      ListTile(
-        leading: Icon(Icons.lightbulb_outline),
-        title: Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-            child: Text("Did you know? \n" + element.triviaDesc)),
-        subtitle: Padding(
-          padding: const EdgeInsets.only(top: 15.0),
-          child: Container(
-            height: size.height * .25,
-            width: size.width * .05,
-            child: FadeInImage.assetNetwork(
-                placeholder: ('assets/loading.gif'),
-                image: element.triviaImage),
-          ),
-        ),
-      )
-    ].expand((widget) => [widget, Divider()]).toList();
-
-    return Scaffold(
-      backgroundColor: Color.lerp(Colors.grey[850], element.colors[0], 0.07),
-      appBar: AppBar(
-        backgroundColor: Color.lerp(Colors.grey[850], element.colors[1], 0.2),
-        bottom: ElementTile(element, isLarge: true),
-      ),
-      body: Container(
-          margin: EdgeInsets.only(top: 30),
-          child: ListView(
-              padding: EdgeInsets.only(top: 24.0), children: listItems)),
-    );
-  }
-}
-
 class ElementTile extends StatelessWidget implements PreferredSizeWidget {
   const ElementTile(this.element, {this.isLarge = false});
 
@@ -200,15 +145,22 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
       Align(
         alignment: AlignmentDirectional.centerStart,
         child: Text('${element.number}',
-            style: TextStyle(fontSize: 10.0, color: Colors.black)),
+            style: TextStyle(
+                fontFamily: 'Share Tech Mono',
+                fontSize: 10.0,
+                color: Colors.black)),
       ),
-      Text(element.symbol, style: TextStyle(fontSize: 20, color: Colors.black)),
+      Text(element.symbol,
+          style: TextStyle(
+              fontFamily: 'Share Tech Mono',
+              fontSize: 20,
+              color: Colors.black)),
       Text(
         element.name,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
         textScaleFactor: isLarge ? 0.65 : 1,
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(fontFamily: 'Roboto Condensed', color: Colors.black),
       ),
     ];
 
@@ -222,8 +174,8 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
       ),
       child: RawMaterialButton(
         onPressed: !isLarge
-            ? () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => DetailPage(element)))
+            ? () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DetailPage(element)))
             : null,
         fillColor: Colors.blueGrey[50],
         disabledElevation: 10.0,
