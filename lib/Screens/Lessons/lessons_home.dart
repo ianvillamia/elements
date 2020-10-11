@@ -1,10 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
+import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Strings/images.dart';
-import 'package:mynewapp/Strings/routes.dart';
+
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:mynewapp/Global/drawer.dart';
+import 'package:provider/provider.dart';
 
 class LessonsMain extends StatefulWidget {
   LessonsMain({Key key}) : super(key: key);
@@ -18,6 +21,8 @@ class _LessonsMainState extends State<LessonsMain> {
   Size size;
   @override
   Widget build(BuildContext context) {
+    final firebaseUser = context.watch<User>();
+    print(firebaseUser.displayName);
     size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
@@ -80,10 +85,15 @@ class _LessonsMainState extends State<LessonsMain> {
               fontSize: FontSizes.large, fontWeight: FontWeight.bold),
         ),
         ClipOval(
-          child: Container(
-            width: 50,
-            height: 50,
-            color: Colors.red,
+          child: GestureDetector(
+            onTap: () {
+              context.read<AuthenticationService>().signOut();
+            },
+            child: Container(
+              width: 50,
+              height: 50,
+              color: Colors.red,
+            ),
           ),
         ),
       ],
@@ -95,7 +105,7 @@ class _LessonsMainState extends State<LessonsMain> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Hey Alex',
+          'Hey',
           style: CustomTextStyles.customText(isBold: true),
         ),
         SizedBox(
@@ -138,7 +148,7 @@ class _LessonsMainState extends State<LessonsMain> {
 
   _card({@required String image}) {
     return Hero(
-      tag: 'imageHero',
+      tag: 'homeHero',
       child: Card(
           elevation: 5,
           child: InkWell(

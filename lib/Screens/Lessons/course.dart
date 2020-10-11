@@ -92,7 +92,7 @@ class _CourseState extends State<Course> {
             Align(
               alignment: Alignment.centerLeft,
               child: Hero(
-                tag: 'imageHero',
+                tag: 'homeHero',
                 child: Material(
                   type: MaterialType.transparency,
                   child: Container(
@@ -111,7 +111,7 @@ class _CourseState extends State<Course> {
                 height: size.height * .55,
                 child: SingleChildScrollView(
                   child: StreamBuilder<QuerySnapshot>(
-                      stream: Firestore.instance
+                      stream: FirebaseFirestore.instance
                           .collection('lessons')
                           .orderBy('sequence')
                           .snapshots(),
@@ -119,7 +119,7 @@ class _CourseState extends State<Course> {
                           AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.hasData) {
                           return Column(
-                              children: snapshot.data.documents
+                              children: snapshot.data.docs
                                   .map((doc) => _lessonCard(
                                         doc: doc,
                                       ))

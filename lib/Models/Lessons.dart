@@ -13,20 +13,19 @@ class LessonModel {
   String question;
   List choices;
   String correctAnswer;
-  static getData({DocumentSnapshot doc}) {
-    var lesson = LessonModel();
-    lesson.ref = doc.data['ref'];
-    lesson.sequence = doc.data['sequence'];
-    lesson.title = doc.data['title'];
-    lesson.video_time = doc.data['video_time'];
-    lesson.video_url = doc.data['video_url'];
-    lesson.header = doc.data['header'];
-    lesson.description = doc.data['description'];
-    lesson.banner_url = doc.data['banner_url'];
-    lesson.lessons_list = doc.data['lessons'];
-    lesson.question = doc.data['question'];
-    lesson.choices = doc.data['choices'];
-    lesson.correctAnswer = doc.data['correctAnswer'];
-    return lesson;
+
+  LessonModel.getData({DocumentSnapshot doc}) {
+    this.ref = doc.data()['ref'];
+    this.sequence = doc.data()['sequence'];
+    this.title = doc.data()['title'];
+    this.video_time = doc.data()['video_time'];
+    this.video_url = doc.data()['video_url'];
+    this.header = doc.data()['header'];
+    this.description = doc.data()['description'];
+    this.banner_url = doc.data()['banner_url'];
+    this.lessons_list = doc.data()['lessons'];
+    this.question = doc.data()['question'];
+    this.choices = doc.data()['choices'];
+    this.correctAnswer = doc.data()['correctAnswer'];
   }
 }
