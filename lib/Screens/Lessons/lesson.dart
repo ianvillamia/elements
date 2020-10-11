@@ -90,44 +90,41 @@ class _LessonState extends State<Lesson> {
   }
 
   _topbar() {
-    return Hero(
-      tag: lesson.ref,
-      child: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(lesson.banner_url), fit: BoxFit.cover)),
-          height: size.height * .3,
-          width: size.width,
-          child: Stack(
-            children: [
-              Positioned(
-                top: size.height * .05,
-                left: 5,
-                child: ClipOval(
-                  child: Material(
-                    color: Colors.white,
-                    elevation: 10,
-                    child: IconButton(
-                        icon: Icon(Icons.arrow_back_ios),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        }),
-                  ),
+    return Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(lesson.banner_url), fit: BoxFit.cover)),
+        height: size.height * .3,
+        width: size.width,
+        child: Stack(
+          children: [
+            Positioned(
+              top: size.height * .05,
+              left: 5,
+              child: ClipOval(
+                child: Material(
+                  color: Colors.white,
+                  elevation: 10,
+                  child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }),
                 ),
               ),
-              Positioned(
-                top: 20,
-                right: 0,
-                child: ClipOval(
-                  child: Material(
-                    color: Colors.transparent,
-                    child: IconButton(icon: Icon(Icons.sort), onPressed: () {}),
-                  ),
+            ),
+            Positioned(
+              top: 20,
+              right: 0,
+              child: ClipOval(
+                child: Material(
+                  color: Colors.transparent,
+                  child: IconButton(icon: Icon(Icons.sort), onPressed: () {}),
                 ),
               ),
-            ],
-          )),
-    );
+            ),
+          ],
+        ));
   }
 
   _body() {

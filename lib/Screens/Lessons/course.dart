@@ -90,47 +90,57 @@ class _CourseState extends State<Course> {
         child: Column(
           children: [
             Align(
-              alignment: Alignment.centerLeft,
-              child: Hero(
-                tag: 'homeHero',
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: Container(
-                    height: size.height * .1,
-                    child: Text(
-                      'Course content',
-                      style: CustomTextStyles.customText(
-                          size: FontSizes.subHeading, isBold: true),
+              alignment: Alignment.topLeft,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Hero(
+                      tag: 'homeHero',
+                      child: Material(
+                        type: MaterialType.transparency,
+                        child: Text(
+                          'Course content',
+                          style: CustomTextStyles.customText(
+                              size: FontSizes.subHeading, isBold: true),
+                        ),
+                      ),
                     ),
-                  ),
+                    Text(
+                      'couse description dsadsadasdsadasdasdas',
+                      style: CustomTextStyles.customText(
+                          size: FontSizes.small, isBold: true),
+                    ),
+                  ],
                 ),
               ),
             ),
-            Container(
-                width: size.width,
-                height: size.height * .55,
+            SizedBox(
+              height: size.height * .01,
+            ),
+            Expanded(
                 child: SingleChildScrollView(
-                  child: StreamBuilder<QuerySnapshot>(
-                      stream: FirebaseFirestore.instance
-                          .collection('lessons')
-                          .orderBy('sequence')
-                          .snapshots(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<QuerySnapshot> snapshot) {
-                        if (snapshot.hasData) {
-                          return Column(
-                              children: snapshot.data.docs
-                                  .map((doc) => _lessonCard(
-                                        doc: doc,
-                                      ))
-                                  .toList());
-                        }
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('lessons')
+                      .orderBy('sequence')
+                      .snapshots(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                      return Column(
+                          children: snapshot.data.docs
+                              .map((doc) => _lessonCard(
+                                    doc: doc,
+                                  ))
+                              .toList());
+                    }
 
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }),
-                ))
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
+            ))
           ],
         ),
       ),
@@ -141,76 +151,73 @@ class _CourseState extends State<Course> {
     //accept data from fs
     LessonModel lesson = LessonModel.getData(doc: doc);
 
-    return Hero(
-      tag: lesson.ref,
-      child: Material(
-        type: MaterialType.transparency,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Card(
-            elevation: 5,
-            child: Container(
-              width: size.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Container(
-                      width: size.width * .4,
-                      height: size.height * .15,
-                      child: FadeInImage.assetNetwork(
-                        placeholder: Images.loading,
-                        image: lesson.banner_url,
-                      ),
+    return Material(
+      type: MaterialType.transparency,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Card(
+          elevation: 5,
+          child: Container(
+            width: size.width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Container(
+                    width: size.width * .4,
+                    height: size.height * .15,
+                    child: FadeInImage.assetNetwork(
+                      placeholder: Images.loading,
+                      image: lesson.banner_url,
                     ),
                   ),
-                  SizedBox(
-                    height: size.height * .05,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        lesson.sequence,
-                        style: CustomTextStyles.customText(
-                            size: FontSizes.heading,
-                            isBold: true,
-                            color: Color.fromRGBO(228, 231, 244, 1)),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            lesson.video_time,
-                            style: CustomTextStyles.customText(
-                                size: FontSizes.medium, color: Colors.red),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 25),
-                            child: Container(
-                              width: size.width * .45,
-                              child: Row(
-                                children: [
-                                  Flexible(
-                                    child: Text(
-                                      lesson.title,
-                                      style: CustomTextStyles.customText(
-                                          size: FontSizes.large, isBold: true),
-                                    ),
+                ),
+                SizedBox(
+                  height: size.height * .05,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      lesson.sequence,
+                      style: CustomTextStyles.customText(
+                          size: FontSizes.heading,
+                          isBold: true,
+                          color: Color.fromRGBO(228, 231, 244, 1)),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          lesson.video_time,
+                          style: CustomTextStyles.customText(
+                              size: FontSizes.medium, color: Colors.red),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 25),
+                          child: Container(
+                            width: size.width * .45,
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    lesson.title,
+                                    style: CustomTextStyles.customText(
+                                        size: FontSizes.large, isBold: true),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          )
-                        ],
-                      ),
-                      _playIcon(lesson: lesson)
-                    ],
-                  ),
-                ],
-              ),
+                          ),
+                        )
+                      ],
+                    ),
+                    _playIcon(lesson: lesson)
+                  ],
+                ),
+              ],
             ),
           ),
         ),
