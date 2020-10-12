@@ -1,13 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Models/UserModel.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
+import 'package:mynewapp/Services/userService.dart';
 import 'package:mynewapp/Strings/images.dart';
-
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:mynewapp/Global/drawer.dart';
 import 'package:provider/provider.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+enum _SelectedTab { home, likes, search, profile }
 
 class LessonsMain extends StatefulWidget {
   LessonsMain({Key key}) : super(key: key);
@@ -17,18 +22,81 @@ class LessonsMain extends StatefulWidget {
 }
 
 class _LessonsMainState extends State<LessonsMain> {
+  var _selectedTab = _SelectedTab.home;
+
+  var selectedColor = Colors.white;
+
+  void _handleIndexChanged(int i) {
+    var color;
+    switch (i) {
+      case 0:
+        color = Colors.white;
+        break;
+      case 1:
+        color = Colors.pink;
+        break;
+      case 2:
+        color = Colors.orange;
+        break;
+      case 3:
+        color = Colors.teal;
+        break;
+      default:
+    }
+    setState(() {
+      _selectedTab = _SelectedTab.values[i];
+      selectedColor = color;
+    });
+  }
+
+  _getUser(firebaseUser) async {
+    var user = await UserService().getUser(user: firebaseUser);
+    print(user);
+  }
+
   var scaffoldKey = GlobalKey<ScaffoldState>();
   Size size;
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-    print(firebaseUser.displayName);
+    //get user cred
+    _getUser(firebaseUser);
     size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
+      bottomNavigationBar: SalomonBottomBar(
+        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+        onTap: _handleIndexChanged,
+        items: [
+          SalomonBottomBarItem(
+            icon: Icon(Icons.home),
+            title: Text("Home"),
+            selectedColor: Colors.purple,
+          ),
+          SalomonBottomBarItem(
+            icon: Icon(Icons.favorite_border),
+            title: Text("Likes"),
+            selectedColor: Colors.pink,
+          ),
+
+          /// Search
+          SalomonBottomBarItem(
+            icon: Icon(Icons.search),
+            title: Text("Search"),
+            selectedColor: Colors.orange,
+          ),
+
+          /// Profile
+          SalomonBottomBarItem(
+            icon: Icon(Icons.person),
+            title: Text("Profile"),
+            selectedColor: Colors.teal,
+          ),
+        ],
+      ),
       drawer: BuildDrawer(),
       body: Container(
-        color: Colors.white,
+        color: selectedColor,
         width: size.width,
         height: size.height,
         child: Padding(

@@ -7,6 +7,7 @@ class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
   AuthenticationService(this._firebaseAuth);
   Stream<User> get authStateChanges => _firebaseAuth.authStateChanges();
+  UserService _userService = UserService();
   Future<String> signIn({String email, String password}) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
@@ -24,7 +25,7 @@ class AuthenticationService {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email.trim(), password: password.trim());
-      await UserService.addUserToCollection(user: user);
+      await _userService.addUserToCollection(user: user);
       return 'Signed Up';
     } on FirebaseAuthException catch (e) {
       return Future.error(e);
