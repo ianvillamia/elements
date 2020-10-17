@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
+
+import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
@@ -66,15 +68,40 @@ class _QuizHomeState extends State<QuizHome> {
             color: Color.fromRGBO(245, 47, 89, 1),
             minWidth: size.width * .8,
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            onPressed: () {},
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Timer()));
+            },
             child: Text('Start',
                 style: GoogleFonts.openSans(
                     color: Colors.white,
                     fontSize: size.height * .08,
                     fontWeight: FontWeight.w700)),
-          )
+          ),
+          SizedBox(
+            height: size.height * .03,
+          ),
+          Container(
+              width: size.width,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [_circles(), _circles(), _circles()],
+              ))
         ],
+      ),
+    );
+  }
+
+  _circles() {
+    return Padding(
+      padding: EdgeInsets.only(right: 5),
+      child: ClipOval(
+        child: Container(
+          height: 30,
+          width: 30,
+          color: Colors.grey,
+        ),
       ),
     );
   }

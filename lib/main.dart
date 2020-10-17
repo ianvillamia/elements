@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         Provider<AuthenticationService>(
           create: (_) => AuthenticationService(FirebaseAuth.instance),
         ),
+        //ChangeNotifierProvider<TimerProvider>(create: (_) => TimerProvider()),
         StreamProvider(
             create: (context) =>
                 context.read<AuthenticationService>().authStateChanges)
