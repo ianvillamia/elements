@@ -12,8 +12,6 @@ import 'package:mynewapp/Global/drawer.dart';
 import 'package:provider/provider.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-enum _SelectedTab { home, likes, search, profile }
-
 class LessonsMain extends StatefulWidget {
   LessonsMain({Key key}) : super(key: key);
 
@@ -22,33 +20,6 @@ class LessonsMain extends StatefulWidget {
 }
 
 class _LessonsMainState extends State<LessonsMain> {
-  var _selectedTab = _SelectedTab.home;
-
-  var selectedColor = Colors.white;
-
-  void _handleIndexChanged(int i) {
-    var color;
-    switch (i) {
-      case 0:
-        color = Colors.white;
-        break;
-      case 1:
-        color = Colors.pink;
-        break;
-      case 2:
-        color = Colors.orange;
-        break;
-      case 3:
-        color = Colors.teal;
-        break;
-      default:
-    }
-    setState(() {
-      _selectedTab = _SelectedTab.values[i];
-      selectedColor = color;
-    });
-  }
-
   _getUser(firebaseUser) async {
     var user = await UserService().getUser(user: firebaseUser);
     print(user);
@@ -64,39 +35,8 @@ class _LessonsMainState extends State<LessonsMain> {
     size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      bottomNavigationBar: SalomonBottomBar(
-        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
-        onTap: _handleIndexChanged,
-        items: [
-          SalomonBottomBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-            selectedColor: Colors.purple,
-          ),
-          SalomonBottomBarItem(
-            icon: Icon(Icons.favorite_border),
-            title: Text("Likes"),
-            selectedColor: Colors.pink,
-          ),
-
-          /// Search
-          SalomonBottomBarItem(
-            icon: Icon(Icons.search),
-            title: Text("Search"),
-            selectedColor: Colors.orange,
-          ),
-
-          /// Profile
-          SalomonBottomBarItem(
-            icon: Icon(Icons.person),
-            title: Text("Profile"),
-            selectedColor: Colors.teal,
-          ),
-        ],
-      ),
       drawer: BuildDrawer(),
       body: Container(
-        color: selectedColor,
         width: size.width,
         height: size.height,
         child: Padding(
