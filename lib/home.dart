@@ -19,7 +19,6 @@ class _HomeState extends State<Home> {
   var selectedColor = Colors.white;
 
   void _handleIndexChanged(int i) {
-    var color;
     switch (i) {
       case 0:
         controller.animateToPage(0,
@@ -28,17 +27,17 @@ class _HomeState extends State<Home> {
       case 1:
         controller.animateToPage(1,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-        color = Colors.pink;
+
         break;
       case 2:
         controller.animateToPage(2,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-        color = Colors.orange;
+
         break;
       case 3:
         controller.animateToPage(3,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
-        color = Colors.teal;
+
         break;
       default:
     }

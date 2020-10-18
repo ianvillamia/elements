@@ -35,7 +35,7 @@ class _LessonState extends State<Lesson> {
           _videoPlayerController.value.duration) {
         print('video Ended');
         Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return Question(lesson: widget.lesson);
+          return QuestionItem(lesson: widget.lesson);
         }));
         //show quiz
       }

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Screens/Quiz/quizQuestion.dart';
+import 'package:mynewapp/Screens/Quiz/quiz_builder.dart';
 
 class Timer extends StatefulWidget {
   Timer({Key key}) : super(key: key);
@@ -31,7 +32,7 @@ class _TimerState extends State<Timer> {
         data = '0';
         Navigator.pop(context);
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => QuizQuestion()));
+            context, MaterialPageRoute(builder: (context) => QuizBuilder()));
       });
     });
   }

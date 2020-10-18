@@ -1,29 +1,37 @@
+import 'package:animate_do/animate_do.dart';
+import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
+import 'package:mynewapp/Models/Question.dart';
 import 'package:mynewapp/Strings/images.dart';
-
-enum SingingCharacter { lafayette, jefferson }
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class QuizQuestion extends StatefulWidget {
+  final DocumentSnapshot doc;
+  QuizQuestion({@required this.doc});
   @override
   _QuestionState createState() => _QuestionState();
 }
 
-class _QuestionState extends State<QuizQuestion> {
+class _QuestionState extends State<QuizQuestion>
+    with AutomaticKeepAliveClientMixin {
   Size size;
-  String selected;
-  SingingCharacter _character = SingingCharacter.lafayette;
-  int group = 1;
+  String selected = '';
+  Question _question;
+  bool isVisible = false;
+  int group = -1;
   @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
+  void initState() {
+    super.initState();
   }
 
   @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
+    _question = Question.set(doc: widget.doc);
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -64,19 +72,41 @@ class _QuestionState extends State<QuizQuestion> {
           SizedBox(
             height: size.height * .15,
           ),
-          Text('What are HydroCarbons?',
+          Text(_question.question,
               style: GoogleFonts.openSans(
                   fontSize: 30, fontWeight: FontWeight.bold)),
           Container(
             width: size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _listTile(text: 'dada', val: 1),
-                _listTile(text: 'dada', val: 2),
-                _listTile(text: 'dada', val: 3)
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.width * .1),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  _listTile(text: _question.choices[0], val: 1),
+                  _listTile(text: _question.choices[1], val: 2),
+                  _listTile(text: _question.choices[2], val: 3),
+                  _listTile(text: _question.choices[3], val: 4),
+                  Visibility(
+                      visible: isVisible,
+                      child: ElasticIn(
+                        child: MaterialButton(
+                          color: Color.fromRGBO(245, 47, 89, 1),
+                          onPressed: () {
+                            if (selected == '') {
+                              //please select something
+                            }
+
+                            print(selected);
+                          },
+                          child: Text(
+                            'Next',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ))
+                ],
+              ),
             ),
           )
         ],
@@ -86,14 +116,16 @@ class _QuestionState extends State<QuizQuestion> {
 
   _listTile({String text, int val}) {
     return ListTile(
-      title: Text(text),
+      title: Text(StringUtils.capitalize(text)),
       leading: Radio(
         value: val,
         groupValue: group,
         onChanged: (i) {
           setState(() {
+            isVisible = true;
             selected = text;
             group = i;
+            print(selected);
           });
         },
       ),

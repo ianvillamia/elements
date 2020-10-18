@@ -3,15 +3,15 @@ import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
-class Question extends StatefulWidget {
+class QuestionItem extends StatefulWidget {
   final lesson;
-  Question({@required this.lesson});
+  QuestionItem({@required this.lesson});
 
   @override
   _QuestionState createState() => _QuestionState();
 }
 
-class _QuestionState extends State<Question> {
+class _QuestionState extends State<QuestionItem> {
   Size size;
   LessonModel lesson;
   @override
