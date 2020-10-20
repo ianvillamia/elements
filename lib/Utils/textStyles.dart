@@ -13,7 +13,7 @@ class CustomTextStyles {
 }
 
 class FontSizes {
-  static double heading = 35;
+  static double heading = 30;
   static double subHeading = 18;
   static double small = 12;
   static double medium = 16;

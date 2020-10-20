@@ -107,7 +107,7 @@ class _CourseState extends State<Course> {
                       ),
                     ),
                     Text(
-                      'couse description dsadsadasdsadasdasdas',
+                      'Course description',
                       style: CustomTextStyles.customText(
                           size: FontSizes.small, isBold: true),
                     ),

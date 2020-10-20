@@ -5,6 +5,8 @@ class Images {
   static String giraffe = 'assets/char-giraffe.png';
   static String hippo = 'assets/char-hippo.png';
   static String city = 'assets/city.png';
+  static String course1 = 'assets/course1.png';
+  static String user = 'assets/user.png';
   static String girl_study = 'assets/girl-study.png';
   static String quiz_time = 'assets/quiz_time.png';
   static String loading = 'assets/loading.gif';

@@ -1,6 +1,8 @@
 {
   "elements": [
+
     {
+      "column_number": "1",
       "number": 1,
       "name": "Hydrogen",
       "symbol": "H",
@@ -16,6 +18,7 @@
       ]
     },
     {
+      "column_number": null,
       "number": 3,
       "name": "Lithium",
       "symbol": "Li",
@@ -30,7 +33,7 @@
         4294932393
       ]
     },
-    {
+    {"column_number": null,
       "number": 11,
       "name": "Sodium",
       "symbol": "Na",
@@ -45,7 +48,7 @@
         4294932393
       ]
     },
-    {
+    {"column_number": null,
       "number": 19,
       "name": "Potassium",
       "symbol": "K",
@@ -60,7 +63,7 @@
         4294932393
       ]
     },
-    {
+    {"column_number": null,
       "number": 37,
       "name": "Rubidium",
       "symbol": "Rb",
@@ -109,7 +112,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "2",
       "number": 4,
       "name": "Beryllium",
       "symbol": "Be",
@@ -207,7 +212,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "3",
       "number": 21,
       "name": "Scandium",
       "symbol": "Sc",
@@ -273,7 +280,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "4",
       "number": 22,
       "name": "Titanium",
       "symbol": "Ti",
@@ -367,7 +376,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "5",
       "number": 23,
       "name": "Vanadium",
       "symbol": "V",
@@ -461,7 +472,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "6",
       "number": 24,
       "name": "Chromium",
       "symbol": "Cr",
@@ -555,7 +568,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "7",
       "number": 25,
       "name": "Manganese",
       "symbol": "Mn",
@@ -649,7 +664,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "8",
       "number": 26,
       "name": "Iron",
       "symbol": "Fe",
@@ -743,7 +760,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "9",
       "number": 27,
       "name": "Cobalt",
       "symbol": "Co",
@@ -837,7 +856,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "10",
       "number": 28,
       "name": "Nickel",
       "symbol": "Ni",
@@ -931,7 +952,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "11",
       "number": 29,
       "name": "Copper",
       "symbol": "Cu",
@@ -1025,7 +1048,9 @@
     null,
     null,
     null,
+
     {
+      "column_number": "12",
       "number": 30,
       "name": "Zinc",
       "symbol": "Zn",
@@ -1036,8 +1061,8 @@
       "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F30.png?alt=media&token=eceeeafb-18c3-4c29-ae15-28cd1f899dd7",
       "trivia_desc": "Because it corrodes quickly, Zinc is added to steel to increase longevity.",
       "colors": [
-        4279343502,
-        4281921405
+        4294953512,
+        4294963811
       ]
     },
     {
@@ -1051,8 +1076,8 @@
       "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F48.png?alt=media&token=22d72f38-fc8a-48f3-bdfd-b8fe1a404664",
       "trivia_desc": "Cadmium can be found in some paint pigments.",
       "colors": [
-        4279343502,
-        4281921405
+        4294953512,
+        4294963811
       ]
     },
     {
@@ -1066,8 +1091,8 @@
       "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F80.png?alt=media&token=62790cac-c394-4cc3-b8a6-74d218070829",
       "trivia_desc": "Mercury is a deadly liquid element that causes damage to the nervous system.",
       "colors": [
-        4279343502,
-        4281921405
+        4294953512,
+        4294963811
       ]
     },
     {
@@ -1081,8 +1106,8 @@
       "trivia_image": "https://firebasestorage.googleapis.com/v0/b/final-elements.appspot.com/o/elements%2F112.png?alt=media&token=ce386b26-40c2-4474-8acc-5ec186cc5504",
       "trivia_desc": "Copernicium is named after Nicolaus Copernicus, the famous astronomer.",
       "colors": [
-        4279343502,
-        4281921405
+        4294953512,
+        4294963811
       ]
     },
     null,
@@ -1117,7 +1142,9 @@
       ]
     },
     null,
+
     {
+      "column_number": "13",
       "number": 5,
       "name": "Boron",
       "symbol": "B",
@@ -1239,7 +1266,9 @@
       ]
     },
     null,
+
     {
+      "column_number": "14",
       "number": 6,
       "name": "Carbon",
       "symbol": "C",
@@ -1361,7 +1390,9 @@
       ]
     },
     null,
+
     {
+      "column_number": "15",
       "number": 7,
       "name": "Nitrogen",
       "symbol": "N",
@@ -1483,7 +1514,9 @@
       ]
     },
     null,
+
     {
+      "column_number": "16",
       "number": 8,
       "name": "Oxygen",
       "symbol": "O",
@@ -1605,7 +1638,9 @@
       ]
     },
     null,
+
     {
+      "column_number": "17",
       "number": 9,
       "name": "Fluorine",
       "symbol": "F",
@@ -1726,7 +1761,9 @@
         4289920762
       ]
     },
+
     {
+      "column_number": "18",
       "number": 2,
       "name": "Helium",
       "symbol": "He",
