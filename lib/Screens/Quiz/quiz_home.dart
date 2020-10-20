@@ -2,12 +2,14 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Global/magicwand.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
 
 import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
+import 'package:flare_flutter/flare_actor.dart';
 
 class QuizHome extends StatefulWidget {
   @override
@@ -55,12 +57,13 @@ class _QuizHomeState extends State<QuizHome> {
       height: size.height * .75,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
-        color: Colors.white,
+        color: Colors.blue,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          MagicWand(),
           Text('Ready?',
               style: GoogleFonts.openSans(
                   fontSize: size.height * .08, fontWeight: FontWeight.w800)),
