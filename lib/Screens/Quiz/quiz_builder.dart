@@ -27,6 +27,9 @@ class _QuizBuilderState extends State<QuizBuilder> {
                     .snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
+                  //set length
+                  _quizProvider.quizLength = snapshot.data.docs.length;
+
                   if (snapshot.hasData) {
                     return PageView.builder(
                         controller: _quizProvider.controller,

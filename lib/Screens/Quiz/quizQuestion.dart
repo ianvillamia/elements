@@ -3,8 +3,10 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/Question.dart';
+import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
 
 class QuizQuestion extends StatefulWidget {
   final DocumentSnapshot doc;
@@ -20,6 +22,7 @@ class _QuestionState extends State<QuizQuestion>
   Question _question;
   bool isVisible = false;
   int group = -1;
+  QuizProvider _quizProvider;
   @override
   void initState() {
     super.initState();
@@ -31,6 +34,7 @@ class _QuestionState extends State<QuizQuestion>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    _quizProvider = Provider.of<QuizProvider>(context, listen: false);
     _question = Question.set(doc: widget.doc);
     size = MediaQuery.of(context).size;
     return Scaffold(
@@ -95,9 +99,24 @@ class _QuestionState extends State<QuizQuestion>
                           onPressed: () {
                             if (selected == '') {
                               //please select something
+
                             }
 
-                            print(selected);
+                            if (_question.sequence ==
+                                _quizProvider.quizLength) {
+                              //compute & show loading
+                              print('end of quiz');
+                            }
+                            if (_question.correctAnswer == selected) {
+                              print('correct');
+                              _quizProvider.score++;
+                              _quizProvider.animateToNextQuestion();
+                            } else {
+                              if (_quizProvider.score != 0) {
+                                _quizProvider.score -= 1;
+                              }
+                              _quizProvider.animateToNextQuestion();
+                            }
                           },
                           child: Text(
                             'Next',
@@ -125,7 +144,6 @@ class _QuestionState extends State<QuizQuestion>
             isVisible = true;
             selected = text;
             group = i;
-            print(selected);
           });
         },
       ),
