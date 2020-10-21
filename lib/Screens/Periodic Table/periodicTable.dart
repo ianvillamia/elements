@@ -3,13 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
-import 'package:zoom_widget/zoom_widget.dart';
+import 'package:mynewapp/Screens/Periodic Table/tablepage.dart';
 
 const kRowCount = 10;
 
-const kContentSize = 75.0;
+const kContentSize = 78.0;
 const kGutterWidth = 2.5;
-
 const kGutterInset = EdgeInsets.all(kGutterWidth);
 
 class PeriodicTable extends StatefulWidget {
@@ -41,7 +40,8 @@ class ElementData {
       source,
       atomicWeight,
       triviaImage,
-      triviaDesc;
+      triviaDesc,
+      columnNumber;
   final int number;
   final List<Color> colors;
 
@@ -52,6 +52,7 @@ class ElementData {
         extract = json['extract'],
         source = json['source'],
         atomicWeight = json['atomic_weight'],
+        columnNumber = json['column_number'],
         number = json['number'],
         triviaImage = json['trivia_image'],
         triviaDesc = json['trivia_desc'],
@@ -78,59 +79,6 @@ class ElementsApp extends StatelessWidget {
   }
 }
 
-class TablePage extends StatelessWidget {
-  TablePage(this.gridList);
-
-  final Future<List<ElementData>> gridList;
-  Size size;
-  @override
-  Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.blueGrey[600],
-      appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text('Periodic Table of Elements'),
-          centerTitle: true,
-          backgroundColor: Colors.blueGrey[800]),
-      body: Zoom(
-        width: size.width * 4.05,
-        height: size.height * 1.3,
-        canvasColor: Colors.blueGrey[600],
-        backgroundColor: Colors.blueGrey[600],
-        doubleTapZoom: true,
-        centerOnScale: true,
-        zoomSensibility: 2.5,
-        child: FutureBuilder(
-          future: gridList,
-          builder: (_, snapshot) => snapshot.hasData
-              ? Padding(
-                  padding: EdgeInsets.all(8), child: _buildTable(snapshot.data))
-              : Center(child: CircularProgressIndicator()),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTable(List<ElementData> elements) {
-    final tiles = elements
-        .map((element) => element != null
-            ? ElementTile(element)
-            : Container(color: Colors.blueGrey[600], margin: kGutterInset))
-        .toList();
-    return SingleChildScrollView(
-      child: SizedBox(
-        height: kRowCount * (kContentSize + (kGutterWidth * 2)),
-        child: GridView.count(
-          crossAxisCount: kRowCount,
-          children: tiles,
-          scrollDirection: Axis.horizontal,
-        ),
-      ),
-    );
-  }
-}
-
 class ElementTile extends StatelessWidget implements PreferredSizeWidget {
   const ElementTile(this.element, {this.isLarge = false});
 
@@ -147,7 +95,7 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
         child: Text('${element.number}',
             style: TextStyle(
                 fontFamily: 'Share Tech Mono',
-                fontSize: 10.0,
+                fontSize: 12.0,
                 color: Colors.black)),
       ),
       Text(element.symbol,
@@ -164,27 +112,31 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
       ),
     ];
 
-    final tile = Container(
-      margin: kGutterInset,
-      width: kContentSize,
-      height: kContentSize,
-      foregroundDecoration: BoxDecoration(
-        gradient: LinearGradient(colors: element.colors),
-        backgroundBlendMode: BlendMode.multiply,
-      ),
-      child: RawMaterialButton(
-        onPressed: !isLarge
-            ? () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DetailPage(element)))
-            : null,
-        fillColor: Colors.blueGrey[50],
-        disabledElevation: 10.0,
-        padding: kGutterInset * 2.0,
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: tileText),
-      ),
-    );
+    final tile =
+        Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      _columnNumber(),
+      Container(
+        margin: kGutterInset,
+        width: kContentSize,
+        height: kContentSize,
+        foregroundDecoration: BoxDecoration(
+          gradient: LinearGradient(colors: element.colors),
+          backgroundBlendMode: BlendMode.multiply,
+        ),
+        child: RawMaterialButton(
+          onPressed: !isLarge
+              ? () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DetailPage(element)))
+              : null,
+          fillColor: Colors.blueGrey[50],
+          disabledElevation: 10.0,
+          padding: kGutterInset * 2.0,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: tileText),
+        ),
+      )
+    ]);
 
     return Hero(
       tag: 'hero-${element.symbol}',
@@ -192,5 +144,14 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
           scale: anim.drive(Tween(begin: 1, end: 1.75)), child: tile),
       child: Transform.scale(scale: isLarge ? 1.75 : 1, child: tile),
     );
+  }
+
+  Widget _columnNumber() {
+    if (element.columnNumber == null) {
+      return SizedBox();
+    } else
+      return Text(element.columnNumber,
+          style:
+              TextStyle(fontFamily: 'Roboto Condensed', color: Colors.black));
   }
 }

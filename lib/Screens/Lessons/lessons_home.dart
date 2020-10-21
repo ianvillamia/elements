@@ -64,7 +64,7 @@ class _LessonsMainState extends State<LessonsMain> {
                   height: size.height * .03,
                 ),
                 Text(
-                  'Categories',
+                  'Courses',
                   style: CustomTextStyles.customText(
                       size: FontSizes.large, isBold: true),
                 ),
@@ -98,10 +98,12 @@ class _LessonsMainState extends State<LessonsMain> {
               context.read<AuthenticationService>().signOut();
             },
             child: Container(
-              width: 50,
-              height: 50,
-              color: Colors.red,
-            ),
+                width: 50,
+                height: 50,
+                child: Image.asset(
+                  Images.user,
+                  fit: BoxFit.fill,
+                )),
           ),
         ),
       ],
@@ -113,7 +115,7 @@ class _LessonsMainState extends State<LessonsMain> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Hey',
+          'Hey!',
           style: CustomTextStyles.customText(isBold: true),
         ),
         SizedBox(
@@ -149,7 +151,7 @@ class _LessonsMainState extends State<LessonsMain> {
   _buildCategories() {
     return Wrap(
       children: [
-        _card(image: Images.city),
+        _card(image: Images.course1),
       ],
     );
   }
@@ -171,7 +173,7 @@ class _LessonsMainState extends State<LessonsMain> {
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(image), fit: BoxFit.fill)),
+                      image: AssetImage(image), fit: BoxFit.cover)),
               width: size.width * .4,
               height: size.height * .2,
             ),

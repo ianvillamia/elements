@@ -12,10 +12,10 @@ class _SpinnerState extends State<Spinner> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(212, 81, 0, 1),
+      backgroundColor: Colors.white,
       body: Center(
         child: SpinKitCubeGrid(
-          color: Colors.white,
+          color: Color.fromRGBO(212, 81, 0, 1),
           size: 200.0,
         ),
       ),
