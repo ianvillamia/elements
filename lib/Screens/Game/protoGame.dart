@@ -1,4 +1,6 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Models/Coordinates.dart';
 
 class ProtoGame extends StatefulWidget {
   ProtoGame({Key key}) : super(key: key);
@@ -9,6 +11,7 @@ class ProtoGame extends StatefulWidget {
 
 class _ProtoGameState extends State<ProtoGame> {
   Size size;
+  List elements = [];
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -29,66 +32,110 @@ class _ProtoGameState extends State<ProtoGame> {
   }
 
   _gameScreen() {
-    print(size.width);
-    print(size.width * .46);
-    print(size.width * .5);
+    Coordinates origin = Coordinates();
+    origin.x = size.width * .3;
+    origin.y = size.height * .367;
+    elements.add(_spawnObject(coordinates: origin));
+    // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
+    // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.right));
+    // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.top));
+    // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
+
     return Expanded(
         child: Container(
-      color: Colors.red,
-      child: Stack(
-        children: [
-          // Align(
-          //   alignment: Alignment.center,
-          //   child: _element(),
-          // ),
-
-          //origin
-          Positioned(
-              top: size.height * .367,
-              left: size.width * .3,
-              child: _element(color: Colors.white)),
-          //right
-          Positioned(
-              top: size.height * .367,
-              left: size.width * .464,
-              child: _element(color: Colors.blue)),
-          //top
-          Positioned(
-              top: size.height * .15,
-              left: size.width * .3,
-              child: _element(color: Colors.grey)),
-          //left
-          Positioned(
-              top: size.height * .367,
-              left: size.width * .15,
-              child: _element(color: Colors.greenAccent)),
-          //bottom
-          Positioned(
-              top: size.height * .6,
-              left: size.width * .3,
-              child: _element(color: Colors.amber)),
-
-          // Positioned(
-          //     top: size.height * .367,
-          //     left: size.width * .6,
-          //     child: _element(color: Colors.white)),
-        ],
-      ),
-    ));
+            color: Colors.red,
+            child: Stack(
+              children: elements.map<Widget>((e) {
+                return e;
+              }).toList(),
+            )));
   }
 
-  _element({Color color}) {
-    return Padding(
-      padding: EdgeInsets.zero,
-      child: ClipOval(
-        child: Container(
-          width: 50,
-          height: 50,
-          decoration: BoxDecoration(
-            color: color ?? Colors.white,
+  _spawnObject({Coordinates coordinates, Spawn spawn}) {
+    if (spawn == Spawn.left) {
+      Coordinates left = Coordinates();
+      left.x = coordinates.x + 102.5;
+      left.y = coordinates.y;
+      return Positioned(
+          top: coordinates.y,
+          left: coordinates.x - 102.5,
+          child: _element(
+              color: Colors.greenAccent, coordinate: left, spawn: Spawn.left));
+    } else if (spawn == Spawn.right) {
+      Coordinates right = Coordinates();
+      right.x = coordinates.x + 112.08;
+      right.y = coordinates.y;
+      return Positioned(
+          top: coordinates.y,
+          left: coordinates.x + 112.08,
+          child: _element(
+              color: Colors.blue, coordinate: right, spawn: Spawn.right));
+    } else if (spawn == Spawn.top) {
+      Coordinates top = Coordinates();
+      top.x = coordinates.x;
+      top.y = coordinates.y - 89.28;
+      return Positioned(
+          top: coordinates.y - 89.28,
+          left: coordinates.x,
+          child:
+              _element(color: Colors.grey, coordinate: top, spawn: Spawn.top));
+    } else if (spawn == Spawn.bottom) {
+      Coordinates bot = Coordinates();
+      bot.x = coordinates.x;
+      bot.y = coordinates.y + 89.28;
+      return Positioned(
+          top: coordinates.y + 89.28,
+          left: coordinates.x,
+          child: _element(
+              color: Colors.amber, coordinate: bot, spawn: Spawn.bottom));
+    } else {
+      return Positioned(
+          top: coordinates.y,
+          left: coordinates.x,
+          child: _element(
+              color: Colors.white,
+              coordinate: coordinates,
+              spawn: Spawn.origin));
+    }
+  }
+
+  _element(
+      {Color color, @required Coordinates coordinate, @required Spawn spawn}) {
+    return GestureDetector(
+      onTap: () => _add(coordinate, spawn),
+      child: ElasticIn(
+        child: Padding(
+          padding: EdgeInsets.zero,
+          child: ClipOval(
+            child: Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                color: color ?? Colors.white,
+              ),
+            ),
           ),
         ),
       ),
     );
+  }
+
+  _add(Coordinates origin, Spawn spawn) {
+    // if (spawn == Spawn.origin) {
+    //   setState(() {
+    //     elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
+    //   });
+    // }
+    // if (spawn == Spawn.left) {
+    //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
+    // }
+    if (spawn == Spawn.origin) {
+      setState(() {
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.right));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.top));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
+      });
+    }
   }
 }
