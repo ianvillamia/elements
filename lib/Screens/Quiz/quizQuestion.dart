@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Global/magicwand.dart';
 import 'package:mynewapp/Models/Question.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -101,12 +102,6 @@ class _QuestionState extends State<QuizQuestion>
                               //please select something
 
                             }
-
-                            if (_question.sequence ==
-                                _quizProvider.quizLength) {
-                              //compute & show loading
-                              print('end of quiz');
-                            }
                             if (_question.correctAnswer == selected) {
                               print('correct');
                               _quizProvider.score++;
@@ -116,6 +111,16 @@ class _QuestionState extends State<QuizQuestion>
                                 _quizProvider.score -= 1;
                               }
                               _quizProvider.animateToNextQuestion();
+                            }
+                            if (_question.sequence ==
+                                _quizProvider.quizLength) {
+                              //compute & show loading
+                              print('end of quiz');
+                              return Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MagicWandSplashScreen()));
                             }
                           },
                           child: Text(

@@ -1469,7 +1469,7 @@
 			],
 			"animations": [
 				{
-					"name": "Untitled",
+					"name": "magic",
 					"fps": 60,
 					"duration": 1.6666666666666667,
 					"isLooping": true,
