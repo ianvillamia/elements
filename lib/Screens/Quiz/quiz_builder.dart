@@ -28,9 +28,18 @@ class _QuizBuilderState extends State<QuizBuilder> {
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
                   //set length
-                  _quizProvider.quizLength = snapshot.data.docs.length;
 
-                  if (snapshot.hasData) {
+                  if (snapshot.data == null ||
+                      snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+
+                  if (snapshot.hasData &&
+                      snapshot.data.docs != null &&
+                      snapshot.connectionState == ConnectionState.active) {
+                    _quizProvider.quizLength = snapshot.data.docs.length;
                     return PageView.builder(
                         controller: _quizProvider.controller,
                         itemCount: snapshot.data.docs.length,
@@ -42,10 +51,6 @@ class _QuizBuilderState extends State<QuizBuilder> {
                           //     subtitle: new Text(document['correctAnswer']));
                         });
                   }
-
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
                 })));
   }
 }
