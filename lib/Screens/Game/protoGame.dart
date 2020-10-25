@@ -10,8 +10,13 @@ class ProtoGame extends StatefulWidget {
 }
 
 class _ProtoGameState extends State<ProtoGame> {
+  Color _color = Colors.white;
+  double sidebarWidth = 100;
+  bool isExpanded = false;
   Size size;
   List elements = [];
+  IconData _icon = Icons.arrow_left;
+  Color _elementContainer = Colors.transparent;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -43,12 +48,103 @@ class _ProtoGameState extends State<ProtoGame> {
 
     return Expanded(
         child: Container(
-            color: Colors.red,
+      child: Stack(
+        children: [
+          InteractiveViewer(
             child: Stack(
               children: elements.map<Widget>((e) {
                 return e;
               }).toList(),
-            )));
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: GestureDetector(
+              onHorizontalDragEnd: (DragEndDetails details) {
+                if (details.primaryVelocity > 0) {
+                  // User swiped Left
+                  setState(() {
+                    isExpanded = false;
+                    _color = Colors.white;
+                    sidebarWidth = 50;
+                    _icon = Icons.arrow_left;
+                    _elementContainer = Colors.transparent;
+                  });
+                } else if (details.primaryVelocity < 0) {
+                  // User swiped Right
+
+                  setState(() {
+                    isExpanded = true;
+                    _color = Colors.white;
+                    sidebarWidth = size.width * .5;
+                    _icon = Icons.arrow_right;
+                    _elementContainer = Colors.pinkAccent;
+                  });
+                }
+              },
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 250),
+                width: sidebarWidth,
+                curve: Curves.easeIn,
+                height: size.height * .35,
+                color: _color,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: size.width * .5 - size.width * .45,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 250),
+                        curve: Curves.ease,
+                        width: size.width * .45,
+                        height: size.height * .35,
+                        color: _elementContainer,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: ClipOval(
+                        child: GestureDetector(
+                          onTap: () {
+                            if (isExpanded) {
+                              setState(() {
+                                isExpanded = false;
+                                _color = Colors.white;
+                                sidebarWidth = 50;
+                                _icon = Icons.arrow_left;
+                                _elementContainer = Colors.transparent;
+                              });
+                            } else {
+                              setState(() {
+                                isExpanded = true;
+                                _color = Colors.white;
+                                sidebarWidth = size.width * .5;
+                                _icon = Icons.arrow_right;
+                                _elementContainer = Colors.pinkAccent;
+                              });
+                            }
+                          },
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 250),
+                            width: 50,
+                            height: 50,
+                            color: Colors.grey,
+                            child: Center(
+                                child: Icon(
+                              _icon,
+                              size: 40,
+                            )),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 
   _spawnObject({Coordinates coordinates, Spawn spawn}) {
@@ -103,16 +199,14 @@ class _ProtoGameState extends State<ProtoGame> {
       {Color color, @required Coordinates coordinate, @required Spawn spawn}) {
     return GestureDetector(
       onTap: () => _add(coordinate, spawn),
-      child: ElasticIn(
-        child: Padding(
-          padding: EdgeInsets.zero,
-          child: ClipOval(
-            child: Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: color ?? Colors.white,
-              ),
+      child: Padding(
+        padding: EdgeInsets.zero,
+        child: ClipOval(
+          child: Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              color: color ?? Colors.white,
             ),
           ),
         ),
@@ -121,14 +215,6 @@ class _ProtoGameState extends State<ProtoGame> {
   }
 
   _add(Coordinates origin, Spawn spawn) {
-    // if (spawn == Spawn.origin) {
-    //   setState(() {
-    //     elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
-    //   });
-    // }
-    // if (spawn == Spawn.left) {
-    //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
-    // }
     if (spawn == Spawn.origin) {
       setState(() {
         elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
