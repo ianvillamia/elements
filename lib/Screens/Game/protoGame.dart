@@ -10,6 +10,9 @@ class ProtoGame extends StatefulWidget {
 }
 
 class _ProtoGameState extends State<ProtoGame> {
+  Color _color = Colors.white;
+  double sidebarWidth = 100;
+  bool isExpanded = false;
   Size size;
   List elements = [];
   @override
@@ -42,13 +45,47 @@ class _ProtoGameState extends State<ProtoGame> {
     // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
 
     return Expanded(
-        child: Container(
-            color: Colors.red,
-            child: Stack(
+        child: InteractiveViewer(
+      child: Container(
+        color: Colors.red,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {
+                  if (isExpanded) {
+                    setState(() {
+                      isExpanded = false;
+                      _color = Colors.white;
+                      sidebarWidth = 50;
+                    });
+                  } else {
+                    setState(() {
+                      isExpanded = true;
+                      _color = Colors.amber;
+                      sidebarWidth = 150;
+                    });
+                  }
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 250),
+                  width: sidebarWidth,
+                  curve: Curves.easeIn,
+                  height: 100,
+                  color: _color,
+                ),
+              ),
+            ),
+            Stack(
               children: elements.map<Widget>((e) {
                 return e;
               }).toList(),
-            )));
+            )
+          ],
+        ),
+      ),
+    ));
   }
 
   _spawnObject({Coordinates coordinates, Spawn spawn}) {
@@ -121,14 +158,6 @@ class _ProtoGameState extends State<ProtoGame> {
   }
 
   _add(Coordinates origin, Spawn spawn) {
-    // if (spawn == Spawn.origin) {
-    //   setState(() {
-    //     elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
-    //   });
-    // }
-    // if (spawn == Spawn.left) {
-    //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
-    // }
     if (spawn == Spawn.origin) {
       setState(() {
         elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
