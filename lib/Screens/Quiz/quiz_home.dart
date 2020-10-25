@@ -64,6 +64,7 @@ class _QuizHomeState extends State<QuizHome> {
           Text('Ready?',
               style: GoogleFonts.openSans(
                   fontSize: size.height * .08, fontWeight: FontWeight.w800)),
+          SizedBox(height: size.height * 0.08),
           MaterialButton(
             color: Color.fromRGBO(245, 47, 89, 1),
             minWidth: size.width * .8,
@@ -98,8 +99,8 @@ class _QuizHomeState extends State<QuizHome> {
       padding: EdgeInsets.only(right: 5),
       child: ClipOval(
         child: Container(
-          height: 30,
-          width: 30,
+          height: 20,
+          width: 20,
           color: Colors.grey,
         ),
       ),

@@ -6,8 +6,9 @@ import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Screens/authentication/signUp.dart';
-import 'package:mynewapp/Screens/Home/home.dart';
+//import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Strings/routes.dart';
+import 'package:mynewapp/home.dart';
 
 class FluroRouter {
   static Router router = Router();

@@ -8,7 +8,7 @@
 				0
 			],
 			"width": 1024,
-			"height": 768,
+			"height": 900,
 			"origin": [
 				0,
 				0
@@ -21,6 +21,26 @@
 				1
 			],
 			"nodes": [
+				{
+					"name": "Untitled-1",
+					"translation": [
+						515.2141723632812,
+						799.039306640625
+					],
+					"rotation": 0,
+					"scale": [
+						0.8042125701904297,
+						0.8042125701904297
+					],
+					"opacity": 20,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": false,
+					"blendMode": 14,
+					"drawOrder": 13,
+					"bones": [],
+					"type": "image"
+				},
 				{
 					"name": "right +",
 					"translation": [
@@ -43,7 +63,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 0,
+					"parent": 1,
 					"translation": [
 						0,
 						0
@@ -291,7 +311,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -307,7 +327,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -320,7 +340,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 0,
+					"parent": 1,
 					"translation": [
 						0,
 						0
@@ -341,7 +361,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -357,7 +377,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 0,
+					"parent": 1,
 					"translation": [
 						0,
 						0
@@ -378,7 +398,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -394,7 +414,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 0,
+					"parent": 1,
 					"translation": [
 						0,
 						0
@@ -415,7 +435,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -431,7 +451,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 0,
+					"parent": 1,
 					"translation": [
 						0,
 						0
@@ -452,7 +472,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 0,
+					"parent": 1,
 					"opacity": 1,
 					"color": [
 						1,
@@ -488,7 +508,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 12,
+					"parent": 13,
 					"translation": [
 						0,
 						0
@@ -736,7 +756,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -752,7 +772,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -765,7 +785,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 12,
+					"parent": 13,
 					"translation": [
 						0,
 						0
@@ -786,7 +806,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -802,7 +822,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 12,
+					"parent": 13,
 					"translation": [
 						0,
 						0
@@ -823,7 +843,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -839,7 +859,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 12,
+					"parent": 13,
 					"translation": [
 						0,
 						0
@@ -860,7 +880,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -876,7 +896,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 12,
+					"parent": 13,
 					"translation": [
 						0,
 						0
@@ -897,7 +917,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 12,
+					"parent": 13,
 					"opacity": 1,
 					"color": [
 						1,
@@ -933,7 +953,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 24,
+					"parent": 25,
 					"translation": [
 						0,
 						0
@@ -987,7 +1007,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 24,
+					"parent": 25,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1003,7 +1023,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 24,
+					"parent": 25,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1019,7 +1039,7 @@
 				},
 				{
 					"name": "Path",
-					"parent": 24,
+					"parent": 25,
 					"translation": [
 						0,
 						0
@@ -1057,7 +1077,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 24,
+					"parent": 25,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1093,7 +1113,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 30,
+					"parent": 31,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1109,7 +1129,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 30,
+					"parent": 31,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1122,7 +1142,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 30,
+					"parent": 31,
 					"translation": [
 						0,
 						0
@@ -1161,7 +1181,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 34,
+					"parent": 35,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1177,7 +1197,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 34,
+					"parent": 35,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1190,7 +1210,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 34,
+					"parent": 35,
 					"translation": [
 						0,
 						0
@@ -1229,7 +1249,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 38,
+					"parent": 39,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1245,7 +1265,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 38,
+					"parent": 39,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1258,7 +1278,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 38,
+					"parent": 39,
 					"translation": [
 						0,
 						0
@@ -1297,7 +1317,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 42,
+					"parent": 43,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1313,7 +1333,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 42,
+					"parent": 43,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1326,7 +1346,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 42,
+					"parent": 43,
 					"translation": [
 						0,
 						0
@@ -1365,7 +1385,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 46,
+					"parent": 47,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1381,7 +1401,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 46,
+					"parent": 47,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1394,7 +1414,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 46,
+					"parent": 47,
 					"translation": [
 						0,
 						0
@@ -1433,7 +1453,7 @@
 				},
 				{
 					"name": "Color",
-					"parent": 50,
+					"parent": 51,
 					"opacity": 1,
 					"color": [
 						1,
@@ -1449,7 +1469,7 @@
 				},
 				{
 					"name": "Ellipse Path",
-					"parent": 50,
+					"parent": 51,
 					"translation": [
 						0,
 						0
@@ -1465,6 +1485,2767 @@
 					"width": 70,
 					"height": 70,
 					"type": "ellipse"
+				},
+				{
+					"name": "L",
+					"translation": [
+						119.51727294921875,
+						720.2496337890625
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 100,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 1,
+					"drawOrder": 10,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 54,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								-5.404205322265625,
+								9.1400146484375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-5.400001525878906,
+								123.25
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								79.22000122070312,
+								123.25341796875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								79.21672058105469,
+								94.8499755859375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								27.80999755859375,
+								94.84942626953125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								27.807907104492188,
+								9.1400146484375
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 54,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "o",
+					"translation": [
+						245.441650390625,
+						771.029052734375
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 1,
+					"drawOrder": 11,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 57,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 3,
+							"translation": [
+								-9.624649047851562,
+								32.58380126953125
+							],
+							"in": [
+								-9.513092041015625,
+								23.22552490234375
+							],
+							"out": [
+								-9.767952919006348,
+								44.60528564453125
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								1.7112579345703125,
+								57.8671875
+							],
+							"in": [
+								-6.1195526123046875,
+								51.09417724609375
+							],
+							"out": [
+								5.9363555908203125,
+								61.52154541015625
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								23.014251708984375,
+								63.530029296875
+							],
+							"in": [
+								12.636520385742188,
+								63.5120849609375
+							],
+							"out": [
+								33.6239013671875,
+								63.734130859375
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								45.4681396484375,
+								56.04010009765625
+							],
+							"in": [
+								40.605072021484375,
+								60.30572509765625
+							],
+							"out": [
+								51.685211181640625,
+								50.58685302734375
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								53.838531494140625,
+								30.42156982421875
+							],
+							"in": [
+								54.60797119140625,
+								42.25250244140625
+							],
+							"out": [
+								53.16522979736328,
+								20.068878173828125
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								46.28289794921875,
+								12.277099609375
+							],
+							"in": [
+								48.067962646484375,
+								14.630859375
+							],
+							"out": [
+								42.384552001953125,
+								7.13671875
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								24.314544677734375,
+								2.55426025390625
+							],
+							"in": [
+								33.796295166015625,
+								3.0418701171875
+							],
+							"out": [
+								11.377391815185547,
+								1.888952374458313
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								-1.54840087890625,
+								11.50714111328125
+							],
+							"in": [
+								3.0679931640625,
+								5.81085205078125
+							],
+							"out": [
+								-7.073822021484375,
+								18.3250732421875
+							]
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 57,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 25,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "a",
+					"translation": [
+						373.8427734375,
+						787.6752319335938
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 12,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 60,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 2,
+							"translation": [
+								-35.77008056640625,
+								15.87701416015625
+							],
+							"in": [
+								-27.125,
+								10.875
+							],
+							"out": [
+								-42.125,
+								20.5
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-43.60736083984375,
+								27.89947509765625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-41.869598388671875,
+								44.760498046875
+							],
+							"in": [
+								-45.402252197265625,
+								40.257080078125
+							],
+							"out": [
+								-39.86419677734375,
+								48.90411376953125
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-34.731536865234375,
+								53.05401611328125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-20.868988037109375,
+								57.29034423828125
+							],
+							"in": [
+								-28.060699462890625,
+								56.45233154296875
+							],
+							"out": [
+								-16.185699462890625,
+								57.07733154296875
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-1.09344482421875,
+								56.04339599609375
+							],
+							"in": [
+								-13.20416259765625,
+								59.37518310546875
+							],
+							"out": [
+								6.2431640625,
+								54.60101318359375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								13.36932373046875,
+								45.68646240234375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								17.366424560546875,
+								56.28179931640625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								45.8115234375,
+								55.94134521484375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								42.90521240234375,
+								50.478515625
+							],
+							"in": [
+								43.91937255859375,
+								54.04498291015625
+							],
+							"out": [
+								41.003021240234375,
+								46.6317138671875
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								41.323516845703125,
+								38.72235107421875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								41.2353515625,
+								29.545654296875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								41.701751708984375,
+								2.98834228515625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								38.051239013671875,
+								-13.6058349609375
+							],
+							"in": [
+								41.302154541015625,
+								-5.994873046875
+							],
+							"out": [
+								34.365447998046875,
+								-21.1517333984375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								27.587432861328125,
+								-24.46282958984375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								14.22552490234375,
+								-27.83673095703125
+							],
+							"in": [
+								20.775146484375,
+								-27.53228759765625
+							],
+							"out": [
+								-2.344085693359375,
+								-29.31097412109375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-8.488800048828125,
+								-28.3670654296875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-33.13525390625,
+								-19.70111083984375
+							],
+							"in": [
+								-25.5948486328125,
+								-27.9525146484375
+							],
+							"out": [
+								-41.0506591796875,
+								-11.44970703125
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-41.430877685546875,
+								-2.3538818359375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-13.56524658203125,
+								0.30950927734375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-7.708160400390625,
+								-7.47686767578125
+							],
+							"in": [
+								-10.66046142578125,
+								-5.19219970703125
+							],
+							"out": [
+								-5.755859375,
+								-8.38653564453125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								0.914703369140625,
+								-9.58868408203125
+							],
+							"in": [
+								-3.022125244140625,
+								-9.3043212890625
+							],
+							"out": [
+								2.998260498046875,
+								-9.340087890625
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								8.044036865234375,
+								-8.27349853515625
+							],
+							"in": [
+								6.150238037109375,
+								-9.382568359375
+							],
+							"out": [
+								13.812835693359375,
+								-5.6644287109375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								11.889190673828125,
+								2.17462158203125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-14.20574951171875,
+								8.8153076171875
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 60,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 60,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 2,
+							"translation": [
+								-0.18865966796875,
+								21.22637939453125
+							],
+							"in": [
+								6.22381591796875,
+								19.91766357421875
+							],
+							"out": [
+								-8.738525390625,
+								23.29864501953125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-13.471099853515625,
+								27.333251953125
+							],
+							"in": [
+								-11.602996826171875,
+								24.82574462890625
+							],
+							"out": [
+								-15.644561767578125,
+								34.8790283203125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-12.402374267578125,
+								37.40966796875
+							],
+							"in": [
+								-13.8385009765625,
+								34.6832275390625
+							],
+							"out": [
+								-9.43951416015625,
+								40.1361083984375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-4.616119384765625,
+								40.3104248046875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								10.04034423828125,
+								33.2874755859375
+							],
+							"in": [
+								3.842987060546875,
+								40.228759765625
+							],
+							"out": [
+								14.405670166015625,
+								27.26226806640625
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								12.483123779296875,
+								17.2569580078125
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 60,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Color",
+					"parent": 60,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "d",
+					"translation": [
+						495.1038818359375,
+						729.6712646484375
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 14,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 66,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								0
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								30.25,
+								-0.125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								30.5321044921875,
+								114.0968017578125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								2.6373291015625,
+								114.0968017578125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								2.24261474609375,
+								102.25469970703125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-10.783721923828125,
+								113.57049560546875
+							],
+							"in": [
+								-4.9942626953125,
+								111.9915771484375
+							],
+							"out": [
+								-16.57318115234375,
+								115.1494140625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-33.810028076171875,
+								113.8336181640625
+							],
+							"in": [
+								-25.915283203125,
+								116.0704345703125
+							],
+							"out": [
+								-41.70477294921875,
+								111.5968017578125
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-51.967926025390625,
+								93.70208740234375
+							],
+							"in": [
+								-50.652130126953125,
+								96.59686279296875
+							],
+							"out": [
+								-53.283721923828125,
+								90.80731201171875
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-54.8626708984375,
+								66.8599853515625
+							],
+							"in": [
+								-55.65216064453125,
+								78.17578125
+							],
+							"out": [
+								-54.07318115234375,
+								55.544189453125
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-33.810028076171875,
+								32.25469970703125
+							],
+							"in": [
+								-48.94158935546875,
+								37.12310791015625
+							],
+							"out": [
+								-18.678466796875,
+								27.38629150390625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-5.915283203125,
+								33.7020263671875
+							],
+							"in": [
+								-8.158721923828125,
+								31.89935302734375
+							],
+							"out": [
+								-3.671844482421875,
+								35.50469970703125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								0.18212890625,
+								39.27313232421875
+							],
+							"in": [
+								-3.5020751953125,
+								36.510009765625
+							],
+							"out": [
+								0.605224609375,
+								38.3426513671875
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								0.4005126953125,
+								20.4359130859375
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 66,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								-13.409759521484375,
+								53.44775390625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-21.7091064453125,
+								57.6654052734375
+							],
+							"in": [
+								-19.12408447265625,
+								53.44769287109375
+							],
+							"out": [
+								-24.29412841796875,
+								61.88311767578125
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-25.110443115234375,
+								67.05316162109375
+							],
+							"in": [
+								-24.974365234375,
+								64.33209228515625
+							],
+							"out": [
+								-25.24652099609375,
+								69.77423095703125
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-24.974395751953125,
+								75.488525390625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-24.1580810546875,
+								82.291259765625
+							],
+							"in": [
+								-24.838348388671875,
+								80.794677734375
+							],
+							"out": [
+								-23.477813720703125,
+								83.787841796875
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-20.484588623046875,
+								88.8218994140625
+							],
+							"in": [
+								-22.525390625,
+								87.46136474609375
+							],
+							"out": [
+								-18.44378662109375,
+								90.18243408203125
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-12.32135009765625,
+								91.95111083984375
+							],
+							"in": [
+								-18.17169189453125,
+								91.95111083984375
+							],
+							"out": [
+								-6.47100830078125,
+								91.95111083984375
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-4.838348388671875,
+								89.50213623046875
+							],
+							"in": [
+								-6.879180908203125,
+								91.27081298828125
+							],
+							"out": [
+								-2.797515869140625,
+								87.73345947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								0.33172607421875,
+								79.43414306640625
+							],
+							"in": [
+								0.33172607421875,
+								83.9239501953125
+							],
+							"out": [
+								0.33172607421875,
+								74.9443359375
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-0.89276123046875,
+								61.88311767578125
+							],
+							"in": [
+								0.875946044921875,
+								65.82867431640625
+							],
+							"out": [
+								-2.661468505859375,
+								57.93756103515625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-7.559417724609375,
+								55.08038330078125
+							],
+							"in": [
+								-3.61383056640625,
+								57.1212158203125
+							],
+							"out": [
+								-11.5050048828125,
+								53.03955078125
+							]
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 66,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": false,
+					"points": [],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Path",
+					"parent": 66,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": false,
+					"points": [],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "i",
+					"translation": [
+						555.6439819335938,
+						729.5632934570312
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 15,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 76,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								0
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								21.77777099609375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.3333740234375,
+								21.780029296875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.3333740234375,
+								0
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 76,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 76,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								31.77777099609375
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								114
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.11114501953125,
+								114
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.1099853515625,
+								31.77001953125
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 76,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Color",
+					"parent": 76,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "n",
+					"translation": [
+						614.1995849609375,
+						761.1187744140625
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 16,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 82,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								0
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								0.22222900390625,
+								82.888916015625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.5555419921875,
+								82.4444580078125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								29.77789306640625,
+								38.666748046875
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								37.375,
+								23.9305419921875
+							],
+							"in": [
+								31.013916015625,
+								25.7777099609375
+							],
+							"out": [
+								41.861083984375,
+								23.0833740234375
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								48.4444580078125,
+								24.763916015625
+							],
+							"in": [
+								44.2222900390625,
+								23.37506103515625
+							],
+							"out": [
+								52.4166259765625,
+								27.52777099609375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								52.22222900390625,
+								39.11114501953125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								52.44439697265625,
+								82.888916015625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								82.22222900390625,
+								82.22222900390625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								81.33331298828125,
+								21.125
+							],
+							"in": [
+								81.7440185546875,
+								41.12298583984375
+							],
+							"out": [
+								80.422607421875,
+								15.87701416015625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								70.6666259765625,
+								2
+							],
+							"in": [
+								79.333251953125,
+								7.5555419921875
+							],
+							"out": [
+								62,
+								-3.5555419921875
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								45.5555419921875,
+								-0.4444580078125
+							],
+							"in": [
+								47.77777099609375,
+								-1.11114501953125
+							],
+							"out": [
+								43.33331298828125,
+								0.22222900390625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								34.6666259765625,
+								5.3333740234375
+							],
+							"in": [
+								37.11102294921875,
+								2.88897705078125
+							],
+							"out": [
+								32.22222900390625,
+								7.77777099609375
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								27.99993896484375,
+								12.4444580078125
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								27.77777099609375,
+								-0.22222900390625
+							],
+							"radius": 0
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 82,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Color",
+					"parent": 82,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "g",
+					"translation": [
+						741.0842895507812,
+						760.8150024414062
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 17,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Path",
+					"parent": 86,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								0,
+								0
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-15.34161376953125,
+								12.6522216796875
+							],
+							"in": [
+								-10.39239501953125,
+								3.3465576171875
+							],
+							"out": [
+								-18.54083251953125,
+								19.2078857421875
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-20.39605712890625,
+								26.53466796875
+							],
+							"in": [
+								-20.19805908203125,
+								24.55450439453125
+							],
+							"out": [
+								-20.59405517578125,
+								28.51483154296875
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-20.7921142578125,
+								34.4554443359375
+							],
+							"in": [
+								-20.7921142578125,
+								32.67327880859375
+							],
+							"out": [
+								-20.7921142578125,
+								36.23760986328125
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-20.8905029296875,
+								44.04595947265625
+							],
+							"in": [
+								-20.8905029296875,
+								41.92095947265625
+							],
+							"out": [
+								-20.8905029296875,
+								46.17095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-20.2655029296875,
+								51.17095947265625
+							],
+							"in": [
+								-20.7655029296875,
+								50.54595947265625
+							],
+							"out": [
+								-19.7655029296875,
+								51.79595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-19.0155029296875,
+								56.17095947265625
+							],
+							"in": [
+								-19.3905029296875,
+								55.54595947265625
+							],
+							"out": [
+								-18.6405029296875,
+								56.79595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-16.1405029296875,
+								62.17095947265625
+							],
+							"in": [
+								-16.3905029296875,
+								61.67095947265625
+							],
+							"out": [
+								-15.8905029296875,
+								62.67095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-13.5155029296875,
+								66.17095947265625
+							],
+							"in": [
+								-14.2655029296875,
+								65.17095947265625
+							],
+							"out": [
+								-12.7655029296875,
+								67.17095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-8.8905029296875,
+								71.42095947265625
+							],
+							"in": [
+								-9.2655029296875,
+								71.17095947265625
+							],
+							"out": [
+								-8.5155029296875,
+								71.67095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-4.6405029296875,
+								74.79595947265625
+							],
+							"in": [
+								-5.7655029296875,
+								74.17095947265625
+							],
+							"out": [
+								-3.5155029296875,
+								75.42095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								2.6094970703125,
+								77.92095947265625
+							],
+							"in": [
+								1.2344970703125,
+								77.54595947265625
+							],
+							"out": [
+								3.9844970703125,
+								78.29595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								9.8594970703125,
+								78.92095947265625
+							],
+							"in": [
+								8.2344970703125,
+								78.92095947265625
+							],
+							"out": [
+								11.4844970703125,
+								78.92095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								19.2344970703125,
+								78.04595947265625
+							],
+							"in": [
+								15.7344970703125,
+								79.04595947265625
+							],
+							"out": [
+								22.7344970703125,
+								77.04595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								28.2344970703125,
+								73.92095947265625
+							],
+							"in": [
+								26.2344970703125,
+								75.67095947265625
+							],
+							"out": [
+								30.2344970703125,
+								72.17095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								34.2344970703125,
+								67.79595947265625
+							],
+							"in": [
+								33.9844970703125,
+								67.79595947265625
+							],
+							"out": [
+								34.4844970703125,
+								67.79595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								34.4844970703125,
+								76.29595947265625
+							],
+							"in": [
+								34.6094970703125,
+								73.29595947265625
+							],
+							"out": [
+								34.3594970703125,
+								79.29595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								34.4844970703125,
+								83.54595947265625
+							],
+							"in": [
+								34.7344970703125,
+								81.04595947265625
+							],
+							"out": [
+								34.2344970703125,
+								86.04595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								31.2344970703125,
+								92.67095947265625
+							],
+							"in": [
+								33.8594970703125,
+								90.67095947265625
+							],
+							"out": [
+								28.6094970703125,
+								94.67095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								25.1094970703125,
+								96.17095947265625
+							],
+							"in": [
+								27.9844970703125,
+								95.79595947265625
+							],
+							"out": [
+								22.2344970703125,
+								96.54595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								18.9844970703125,
+								96.42095947265625
+							],
+							"in": [
+								21.2344970703125,
+								97.29595947265625
+							],
+							"out": [
+								16.7344970703125,
+								95.54595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								14.2344970703125,
+								94.04595947265625
+							],
+							"in": [
+								15.6094970703125,
+								95.29595947265625
+							],
+							"out": [
+								12.8594970703125,
+								92.79595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								10.9844970703125,
+								89.67095947265625
+							],
+							"in": [
+								11.3594970703125,
+								90.92095947265625
+							],
+							"out": [
+								10.6094970703125,
+								88.42095947265625
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								10.2344970703125,
+								87.17095947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								4.3594970703125,
+								87.04595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-2.8905029296875,
+								86.42095947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-8.5155029296875,
+								85.79595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-15.0155029296875,
+								85.17095947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-19.0155029296875,
+								84.79595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-18.7655029296875,
+								94.04595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-16.0155029296875,
+								101.54595947265625
+							],
+							"in": [
+								-17.5155029296875,
+								99.04595947265625
+							],
+							"out": [
+								-14.5155029296875,
+								104.04595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								-9.1405029296875,
+								110.17095947265625
+							],
+							"in": [
+								-12.2655029296875,
+								108.04595947265625
+							],
+							"out": [
+								-6.0155029296875,
+								112.29595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								0.7344970703125,
+								114.67095947265625
+							],
+							"in": [
+								-3.7655029296875,
+								113.67095947265625
+							],
+							"out": [
+								5.2344970703125,
+								115.67095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								10.4844970703125,
+								116.17095947265625
+							],
+							"in": [
+								6.4844970703125,
+								115.92095947265625
+							],
+							"out": [
+								14.4844970703125,
+								116.42095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								21.8594970703125,
+								116.42095947265625
+							],
+							"in": [
+								20.3594970703125,
+								116.42095947265625
+							],
+							"out": [
+								23.3594970703125,
+								116.42095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								28.2344970703125,
+								116.42095947265625
+							],
+							"in": [
+								24.4844970703125,
+								116.54595947265625
+							],
+							"out": [
+								31.9844970703125,
+								116.29595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								38.4844970703125,
+								115.29595947265625
+							],
+							"in": [
+								36.1094970703125,
+								115.79595947265625
+							],
+							"out": [
+								40.8594970703125,
+								114.79595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								47.3594970703125,
+								112.42095947265625
+							],
+							"in": [
+								45.3594970703125,
+								113.42095947265625
+							],
+							"out": [
+								49.3594970703125,
+								111.42095947265625
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								52.9844970703125,
+								108.67095947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								56.4844970703125,
+								104.92095947265625
+							],
+							"in": [
+								55.2344970703125,
+								106.67095947265625
+							],
+							"out": [
+								57.7344970703125,
+								103.17095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								59.6094970703125,
+								100.54595947265625
+							],
+							"in": [
+								58.7344970703125,
+								102.17095947265625
+							],
+							"out": [
+								60.4844970703125,
+								98.92095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								61.7344970703125,
+								95.92095947265625
+							],
+							"in": [
+								61.1094970703125,
+								97.17095947265625
+							],
+							"out": [
+								62.3594970703125,
+								94.67095947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								63.1094970703125,
+								92.17095947265625
+							],
+							"in": [
+								62.6094970703125,
+								93.79595947265625
+							],
+							"out": [
+								63.6094970703125,
+								90.54595947265625
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								64.3594970703125,
+								86.17095947265625
+							],
+							"in": [
+								64.2344970703125,
+								88.67095947265625
+							],
+							"out": [
+								64.4844970703125,
+								83.67095947265625
+							]
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								64.1094970703125,
+								0.04595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								36.4844970703125,
+								0.29595947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								36.3594970703125,
+								11.67095947265625
+							],
+							"radius": 0
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								25.2344970703125,
+								1.42095947265625
+							],
+							"in": [
+								30.8594970703125,
+								4.04595947265625
+							],
+							"out": [
+								19.6094970703125,
+								-1.20404052734375
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								12.3594970703125,
+								-1.45404052734375
+							],
+							"in": [
+								15.7344970703125,
+								-1.32904052734375
+							],
+							"out": [
+								8.9844970703125,
+								-1.57904052734375
+							]
+						},
+						{
+							"pointType": 1,
+							"translation": [
+								5.2344970703125,
+								-1.20404052734375
+							],
+							"in": [
+								7.4844970703125,
+								-1.57904052734375
+							],
+							"out": [
+								2.9844970703125,
+								-0.82904052734375
+							]
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 86,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 86,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 86,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 86,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 86,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Path",
+					"parent": 86,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 3,
+							"translation": [
+								21.4046630859375,
+								21.60821533203125
+							],
+							"in": [
+								28.6116943359375,
+								21.86181640625
+							],
+							"out": [
+								14.047142028808594,
+								21.349319458007812
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								11.9046630859375,
+								26.48321533203125
+							],
+							"in": [
+								13.17144775390625,
+								24.47052001953125
+							],
+							"out": [
+								9.33746337890625,
+								30.56207275390625
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								8.4046630859375,
+								39.35821533203125
+							],
+							"in": [
+								8.53326416015625,
+								35.07440185546875
+							],
+							"out": [
+								8.157673835754395,
+								47.585655212402344
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								11.7796630859375,
+								53.23321533203125
+							],
+							"in": [
+								8.85614013671875,
+								49.12420654296875
+							],
+							"out": [
+								14.88658618927002,
+								57.59999084472656
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								22.0296630859375,
+								58.10821533203125
+							],
+							"in": [
+								18.08514404296875,
+								58.40838623046875
+							],
+							"out": [
+								26.816404342651367,
+								57.743953704833984
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								29.6546630859375,
+								54.10821533203125
+							],
+							"in": [
+								27.682464599609375,
+								55.840065002441406
+							],
+							"out": [
+								33.09735107421875,
+								51.0850830078125
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								34.6546630859375,
+								40.60821533203125
+							],
+							"in": [
+								33.98382568359375,
+								49.57696533203125
+							],
+							"out": [
+								35.055267333984375,
+								35.252323150634766
+							]
+						},
+						{
+							"pointType": 3,
+							"translation": [
+								31.4046630859375,
+								27.23321533203125
+							],
+							"in": [
+								34.5794677734375,
+								32.7952880859375
+							],
+							"out": [
+								30.120670318603516,
+								24.983736038208008
+							]
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Color",
+					"parent": 86,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"width": 1,
+					"cap": 0,
+					"join": 0,
+					"trim": 0,
+					"type": "colorStroke"
+				},
+				{
+					"name": "Color",
+					"parent": 86,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "dot 1",
+					"translation": [
+						839.5880126953125,
+						835.2802734375
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 20,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 96,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 1,
+					"type": "colorFill"
+				},
+				{
+					"name": "Ellipse Path",
+					"parent": 96,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 23,
+					"height": 23,
+					"type": "ellipse"
+				},
+				{
+					"name": "dot 2",
+					"translation": [
+						886.8478393554688,
+						834.108642578125
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 18,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 99,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 1,
+					"type": "colorFill"
+				},
+				{
+					"name": "Ellipse Path",
+					"parent": 99,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 23,
+					"height": 23,
+					"type": "ellipse"
+				},
+				{
+					"name": "dot 3",
+					"translation": [
+						939.7174072265625,
+						834.3260498046875
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 19,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 102,
+					"opacity": 1,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"fillRule": 1,
+					"type": "colorFill"
+				},
+				{
+					"name": "Ellipse Path",
+					"parent": 102,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 23,
+					"height": 23,
+					"type": "ellipse"
 				}
 			],
 			"animations": [
@@ -1475,7 +4256,7 @@
 					"isLooping": true,
 					"keyed": [
 						{
-							"component": 0,
+							"component": 1,
 							"scaleX": [
 								[
 									{
@@ -1565,7 +4346,7 @@
 							]
 						},
 						{
-							"component": 12,
+							"component": 13,
 							"scaleX": [
 								[
 									{
@@ -1680,7 +4461,7 @@
 							]
 						},
 						{
-							"component": 24,
+							"component": 25,
 							"posX": [
 								[
 									{
@@ -1736,7 +4517,7 @@
 							]
 						},
 						{
-							"component": 30,
+							"component": 31,
 							"scaleX": [
 								[
 									{
@@ -1826,7 +4607,7 @@
 							]
 						},
 						{
-							"component": 34,
+							"component": 35,
 							"scaleX": [
 								[
 									{
@@ -1901,7 +4682,7 @@
 							]
 						},
 						{
-							"component": 38,
+							"component": 39,
 							"scaleX": [
 								[
 									{
@@ -1946,7 +4727,7 @@
 							]
 						},
 						{
-							"component": 42,
+							"component": 43,
 							"scaleX": [
 								[
 									{
@@ -1991,7 +4772,7 @@
 							]
 						},
 						{
-							"component": 46,
+							"component": 47,
 							"scaleX": [
 								[
 									{
@@ -2036,7 +4817,7 @@
 							]
 						},
 						{
-							"component": 50,
+							"component": 51,
 							"scaleX": [
 								[
 									{
@@ -2091,13 +4872,2378 @@
 										"time": 0.3,
 										"interpolatorType": 1,
 										"value": 1
+									}
+								]
+							]
+						},
+						{
+							"component": 54,
+							"posY": [
+								[
+									{
+										"time": 0.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 0.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 0.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 0.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 0.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 702.2496337890625
+									},
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.2496337890625
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.2496337890625
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.2496337890625
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 0.7,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 0.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 0.7999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 0.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 0.8999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 702.2496337890625
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.2496337890625
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.2496337890625
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.2496337890625
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 1.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 1.4000000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 1.4500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 1.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 1.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 702.2496337890625
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 705.2496337890625
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.2496337890625
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.2496337890625
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.2496337890625
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.2496337890625
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.2496337890625
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.2496337890625
+									}
+								]
+							]
+						},
+						{
+							"component": 57,
+							"posY": [
+								[
+									{
+										"time": 0.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									},
+									{
+										"time": 0.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 0.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 0.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 753.029052734375
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 768.029052734375
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									},
+									{
+										"time": 0.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									},
+									{
+										"time": 0.7999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 0.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 0.8999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 753.029052734375
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 768.029052734375
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									},
+									{
+										"time": 1.4000000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									},
+									{
+										"time": 1.4500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 1.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 1.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 753.029052734375
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 756.029052734375
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 759.029052734375
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 762.029052734375
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 765.029052734375
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 768.029052734375
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 771.029052734375
+									}
+								]
+							]
+						},
+						{
+							"component": 60,
+							"posY": [
+								[
+									{
+										"time": 0.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 787.6752319335938
+									},
+									{
+										"time": 0.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 0.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 773.6752319335938
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 767.6752319335938
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 774.6752319335938
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 783.6752319335938
+									},
+									{
+										"time": 0.7999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 787.6752319335938
+									},
+									{
+										"time": 0.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 0.8999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 773.6752319335938
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 767.6752319335938
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 774.6752319335938
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 783.6752319335938
+									},
+									{
+										"time": 1.4500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 787.6752319335938
+									},
+									{
+										"time": 1.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 1.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 773.6752319335938
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 767.6752319335938
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 770.6752319335938
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 774.6752319335938
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 777.6752319335938
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 780.6752319335938
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 783.6752319335938
+									}
+								]
+							]
+						},
+						{
+							"component": 66,
+							"posY": [
+								[
+									{
+										"time": 0.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.6712646484375
+									},
+									{
+										"time": 0.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.6712646484375
+									},
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.6712646484375
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.6712646484375
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.6712646484375
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.6712646484375
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.6712646484375
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 721.6712646484375
+									},
+									{
+										"time": 0.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.6712646484375
+									},
+									{
+										"time": 0.8999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.6712646484375
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.6712646484375
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.6712646484375
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.6712646484375
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.6712646484375
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.6712646484375
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 721.6712646484375
+									},
+									{
+										"time": 1.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.6712646484375
+									},
+									{
+										"time": 1.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.6712646484375
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 720.6712646484375
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 717.6712646484375
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.6712646484375
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 708.6712646484375
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 711.6712646484375
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.6712646484375
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 721.6712646484375
+									}
+								]
+							]
+						},
+						{
+							"component": 76,
+							"posY": [
+								[
+									{
+										"time": 0.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.5632934570312
+									},
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.5632934570312
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 719.5632934570312
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.5632934570312
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 713.5632934570312
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 707.5632934570312
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.5632934570312
+									},
+									{
+										"time": 0.8999999999999999,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.5632934570312
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.5632934570312
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 719.5632934570312
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.5632934570312
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 713.5632934570312
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 707.5632934570312
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.5632934570312
+									},
+									{
+										"time": 1.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 729.5632934570312
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 723.5632934570312
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 719.5632934570312
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 716.5632934570312
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 713.5632934570312
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 707.5632934570312
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 710.5632934570312
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 714.5632934570312
+									}
+								]
+							]
+						},
+						{
+							"component": 82,
+							"posY": [
+								[
+									{
+										"time": 0.3,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 761.1187744140625
+									},
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 758.1187744140625
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 755.1187744140625
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.1187744140625
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 745.1187744140625
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 739.1187744140625
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									},
+									{
+										"time": 0.95,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 761.1187744140625
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 758.1187744140625
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 755.1187744140625
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.1187744140625
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 745.1187744140625
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 739.1187744140625
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									},
+									{
+										"time": 1.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 761.1187744140625
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 758.1187744140625
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 755.1187744140625
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.1187744140625
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 745.1187744140625
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 739.1187744140625
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 742.1187744140625
+									}
+								]
+							]
+						},
+						{
+							"component": 86,
+							"posY": [
+								[
+									{
+										"time": 0.35,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 760.8150024414062
+									},
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 754.8150024414062
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.8150024414062
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 746.8150024414062
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 743.8150024414062
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 740.8150024414062
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 737.8150024414062
+									},
+									{
+										"time": 1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 760.8150024414062
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 754.8150024414062
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.8150024414062
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 746.8150024414062
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 743.8150024414062
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 740.8150024414062
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 737.8150024414062
+									},
+									{
+										"time": 1.6500000000000001,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 760.8150024414062
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 754.8150024414062
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 750.8150024414062
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 746.8150024414062
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 743.8150024414062
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 740.8150024414062
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 737.8150024414062
+									}
+								]
+							]
+						},
+						{
+							"component": 96,
+							"posY": [
+								[
+									{
+										"time": 0.4,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 835.2802734375
+									},
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 832.2802734375
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 828.2802734375
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 825.2802734375
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 820.2802734375
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 816.2802734375
+									},
+									{
+										"time": 1.05,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 835.2802734375
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 832.2802734375
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 828.2802734375
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 825.2802734375
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 820.2802734375
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 816.2802734375
+									},
+									{
+										"time": 1.7000000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 835.2802734375
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 832.2802734375
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 828.2802734375
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 825.2802734375
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 820.2802734375
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 816.2802734375
+									}
+								]
+							]
+						},
+						{
+							"component": 99,
+							"posY": [
+								[
+									{
+										"time": 0.45,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.108642578125
+									},
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.108642578125
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.108642578125
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 822.108642578125
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 819.108642578125
+									},
+									{
+										"time": 1.1,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.108642578125
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.108642578125
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.108642578125
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 822.108642578125
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 819.108642578125
+									},
+									{
+										"time": 1.75,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.108642578125
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.108642578125
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.108642578125
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 822.108642578125
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 819.108642578125
+									}
+								]
+							]
+						},
+						{
+							"component": 102,
+							"posY": [
+								[
+									{
+										"time": 0.5,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.3260498046875
+									},
+									{
+										"time": 0.55,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.3260498046875
+									},
+									{
+										"time": 0.6,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.3260498046875
+									},
+									{
+										"time": 0.65,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 823.3260498046875
+									},
+									{
+										"time": 1.15,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.3260498046875
+									},
+									{
+										"time": 1.2,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.3260498046875
+									},
+									{
+										"time": 1.25,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.3260498046875
+									},
+									{
+										"time": 1.2999999999999998,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 823.3260498046875
+									},
+									{
+										"time": 1.8,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 834.3260498046875
+									},
+									{
+										"time": 1.85,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 829.3260498046875
+									},
+									{
+										"time": 1.9,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 826.3260498046875
+									},
+									{
+										"time": 1.9500000000000002,
+										"interpolatorType": 2,
+										"cubicX1": 0.9838709677419355,
+										"cubicY1": 0.009408602150537626,
+										"cubicX2": 0.026881720430107527,
+										"cubicY2": 0.9838709677419355,
+										"value": 823.3260498046875
 									}
 								]
 							]
 						}
 					],
 					"animationStart": 0,
-					"animationEnd": 1.6666666666666667,
+					"animationEnd": 1.9500000000000002,
 					"type": "animation"
 				}
 			],
