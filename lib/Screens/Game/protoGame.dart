@@ -16,6 +16,7 @@ class _ProtoGameState extends State<ProtoGame> {
   Size size;
   List elements = [];
   IconData _icon = Icons.arrow_left;
+  Color _elementContainer = Colors.transparent;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -46,91 +47,102 @@ class _ProtoGameState extends State<ProtoGame> {
     // elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
 
     return Expanded(
-        child: InteractiveViewer(
-      child: Container(
-        child: Stack(
-          children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: GestureDetector(
-                onHorizontalDragEnd: (DragEndDetails details) {
-                  if (details.primaryVelocity > 0) {
-                    // User swiped Left
-                    setState(() {
-                      isExpanded = false;
-                      _color = Colors.white;
-                      sidebarWidth = 50;
-                      _icon = Icons.arrow_left;
-                    });
-                  } else if (details.primaryVelocity < 0) {
-                    // User swiped Right
-
-                    setState(() {
-                      isExpanded = true;
-                      _color = Colors.white;
-                      sidebarWidth = 150;
-                      _icon = Icons.arrow_right;
-                    });
-                  }
-                },
-                // onTap: () {
-                //   if (isExpanded) {
-                //     setState(() {
-                //       isExpanded = false;
-                //       _color = Colors.white;
-                //       sidebarWidth = 50;
-                //       _icon = Icons.arrow_left;
-                //     });
-                //   } else {
-                //     setState(() {
-                //       isExpanded = true;
-                //       _color = Colors.white;
-                //       sidebarWidth = 150;
-                //       _icon = Icons.arrow_right;
-                //     });
-                //   }
-                // },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 250),
-                  width: sidebarWidth,
-                  curve: Curves.easeIn,
-                  height: 100,
-                  color: _color,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: 20,
-                        child: ClipOval(
-                          child: AnimatedContainer(
-                            duration: Duration(milliseconds: 250),
-                            width: 20,
-                            height: 20,
-                            color: Colors.grey,
-                            child: Center(child: Icon(_icon)),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 50,
-                        top: 20,
-                        child: Container(
-                          width: 150,
-                          height: 50,
-                          color: Colors.pinkAccent,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            Stack(
+        child: Container(
+      child: Stack(
+        children: [
+          InteractiveViewer(
+            child: Stack(
               children: elements.map<Widget>((e) {
                 return e;
               }).toList(),
-            )
-          ],
-        ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: GestureDetector(
+              onHorizontalDragEnd: (DragEndDetails details) {
+                if (details.primaryVelocity > 0) {
+                  // User swiped Left
+                  setState(() {
+                    isExpanded = false;
+                    _color = Colors.white;
+                    sidebarWidth = 50;
+                    _icon = Icons.arrow_left;
+                    _elementContainer = Colors.transparent;
+                  });
+                } else if (details.primaryVelocity < 0) {
+                  // User swiped Right
+
+                  setState(() {
+                    isExpanded = true;
+                    _color = Colors.white;
+                    sidebarWidth = size.width * .5;
+                    _icon = Icons.arrow_right;
+                    _elementContainer = Colors.pinkAccent;
+                  });
+                }
+              },
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 250),
+                width: sidebarWidth,
+                curve: Curves.easeIn,
+                height: size.height * .35,
+                color: _color,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: size.width * .5 - size.width * .45,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 250),
+                        curve: Curves.ease,
+                        width: size.width * .45,
+                        height: size.height * .35,
+                        color: _elementContainer,
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: ClipOval(
+                        child: GestureDetector(
+                          onTap: () {
+                            if (isExpanded) {
+                              setState(() {
+                                isExpanded = false;
+                                _color = Colors.white;
+                                sidebarWidth = 50;
+                                _icon = Icons.arrow_left;
+                                _elementContainer = Colors.transparent;
+                              });
+                            } else {
+                              setState(() {
+                                isExpanded = true;
+                                _color = Colors.white;
+                                sidebarWidth = size.width * .5;
+                                _icon = Icons.arrow_right;
+                                _elementContainer = Colors.pinkAccent;
+                              });
+                            }
+                          },
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 250),
+                            width: 50,
+                            height: 50,
+                            color: Colors.grey,
+                            child: Center(
+                                child: Icon(
+                              _icon,
+                              size: 40,
+                            )),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     ));
   }
