@@ -15,6 +15,7 @@ class _ProtoGameState extends State<ProtoGame> {
   bool isExpanded = false;
   Size size;
   List elements = [];
+  IconData _icon = Icons.arrow_left;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
@@ -47,33 +48,79 @@ class _ProtoGameState extends State<ProtoGame> {
     return Expanded(
         child: InteractiveViewer(
       child: Container(
-        color: Colors.red,
         child: Stack(
           children: [
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () {
-                  if (isExpanded) {
+                onHorizontalDragEnd: (DragEndDetails details) {
+                  if (details.primaryVelocity > 0) {
+                    // User swiped Left
                     setState(() {
                       isExpanded = false;
                       _color = Colors.white;
                       sidebarWidth = 50;
+                      _icon = Icons.arrow_left;
                     });
-                  } else {
+                  } else if (details.primaryVelocity < 0) {
+                    // User swiped Right
+
                     setState(() {
                       isExpanded = true;
-                      _color = Colors.amber;
+                      _color = Colors.white;
                       sidebarWidth = 150;
+                      _icon = Icons.arrow_right;
                     });
                   }
                 },
+                // onTap: () {
+                //   if (isExpanded) {
+                //     setState(() {
+                //       isExpanded = false;
+                //       _color = Colors.white;
+                //       sidebarWidth = 50;
+                //       _icon = Icons.arrow_left;
+                //     });
+                //   } else {
+                //     setState(() {
+                //       isExpanded = true;
+                //       _color = Colors.white;
+                //       sidebarWidth = 150;
+                //       _icon = Icons.arrow_right;
+                //     });
+                //   }
+                // },
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 250),
                   width: sidebarWidth,
                   curve: Curves.easeIn,
                   height: 100,
                   color: _color,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 20,
+                        child: ClipOval(
+                          child: AnimatedContainer(
+                            duration: Duration(milliseconds: 250),
+                            width: 20,
+                            height: 20,
+                            color: Colors.grey,
+                            child: Center(child: Icon(_icon)),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 50,
+                        top: 20,
+                        child: Container(
+                          width: 150,
+                          height: 50,
+                          color: Colors.pinkAccent,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -140,16 +187,14 @@ class _ProtoGameState extends State<ProtoGame> {
       {Color color, @required Coordinates coordinate, @required Spawn spawn}) {
     return GestureDetector(
       onTap: () => _add(coordinate, spawn),
-      child: ElasticIn(
-        child: Padding(
-          padding: EdgeInsets.zero,
-          child: ClipOval(
-            child: Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: color ?? Colors.white,
-              ),
+      child: Padding(
+        padding: EdgeInsets.zero,
+        child: ClipOval(
+          child: Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              color: color ?? Colors.white,
             ),
           ),
         ),
