@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
               color: Colors.blueAccent),
 
           _buildBottomBarItem(
-              icon: Icons.search, text: 'Search', color: Colors.orange),
+              icon: Icons.games, text: 'Elements', color: Colors.orange),
           _buildBottomBarItem(
               icon: Icons.person, text: 'Profile', color: Colors.teal),
 

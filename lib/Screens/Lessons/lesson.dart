@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/questionItem.dart';
@@ -33,31 +34,13 @@ class _LessonState extends State<Lesson> {
     _videoPlayerController.addListener(() {
       if (_videoPlayerController.value.position ==
           _videoPlayerController.value.duration) {
-        print('video Ended');
-        Navigator.push(context, MaterialPageRoute(builder: (_) {
-          return QuestionItem(lesson: widget.lesson);
-        }));
-        //show quiz
+        _showOnCompleteModal();
       }
     });
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController,
       aspectRatio: 3 / 2,
       autoPlay: true,
-
-      // Try playing around with some of these other options:
-
-      // showControls: false,
-      // materialProgressColors: ChewieProgressColors(
-      //   playedColor: Colors.red,
-      //   handleColor: Colors.blue,
-      //   backgroundColor: Colors.grey,
-      //   bufferedColor: Colors.lightGreen,
-      // ),
-      // placeholder: Container(
-      //   color: Colors.grey,
-      // ),
-      // autoInitialize: true,
     );
   }
 
@@ -69,9 +52,43 @@ class _LessonState extends State<Lesson> {
     super.dispose();
   }
 
-// Chewie(
-//               controller: _chewieController,
-//             ),
+  void _showOnCompleteModal() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await showModalBottomSheet(
+          context: context,
+          builder: (builder) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+              child: Container(
+                  height: size.height * .3,
+                  decoration: new BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ElasticIn(
+                          child: Image.asset(
+                            Images.success,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Lesson Completed',
+                        style: CustomTextStyles.customText(
+                            isBold: true, size: FontSizes.large),
+                      ),
+                    ],
+                  )),
+            );
+          });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;

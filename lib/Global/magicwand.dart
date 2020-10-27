@@ -36,7 +36,7 @@ class _MagicWandSplashScreenState extends State<MagicWandSplashScreen> {
       name: 'assets/magicwand.flr',
       next: (context) => _quizScore(),
       startAnimation: 'magic',
-      until: () => Future.delayed(Duration(seconds: 4)),
+      until: () => Future.delayed(Duration(seconds: 2)),
       backgroundColor: Colors.yellowAccent[700],
       loopAnimation: 'magic',
     );

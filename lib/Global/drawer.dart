@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/Screens/Home/stars.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
@@ -27,7 +28,13 @@ class BuildDrawer extends StatelessWidget {
             _leftIconcategoryBuilder(
               size: size,
               icon: Images.elephant,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProtoGame(),
+                    ));
+              },
               buttonText: 'Compound Simulation',
               descText:
                   'Learn organic compounds through this  simulation game.',

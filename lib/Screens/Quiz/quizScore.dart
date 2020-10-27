@@ -74,36 +74,36 @@ class _QuizScoreState extends State<QuizScore> {
             SizedBox(
               height: size.height * 0.08,
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: MaterialButton(
-                  color: Color.fromRGBO(245, 47, 89, 1),
-                  child: Text('Back'),
-                  onPressed: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                        '/home', (Route<dynamic> route) => false);
-                  },
-                ),
+            MaterialButton(
+              color: Color.fromRGBO(245, 47, 89, 1),
+              child: Text(
+                'Proceed',
+                style: TextStyle(color: Colors.white),
               ),
+              onPressed: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    '/home', (Route<dynamic> route) => false);
+              },
             )
           ]),
     );
   }
 
   _score() {
+    print(_quizProvider.score);
+    print(_quizProvider.quizLength);
+    print(_quizProvider.score / _quizProvider.quizLength);
     return Container(
       child: CircularPercentIndicator(
         radius: 130.0,
         animation: true,
         animationDuration: 1200,
         lineWidth: 15.0,
-        percent: _quizProvider.score.toDouble() / _question.choices.length,
+        percent: _quizProvider.score / _quizProvider.quizLength,
         center: new Text(
           _quizProvider.score.toString() +
               "/" +
-              _question.choices.length.toString(),
+              _quizProvider.quizLength.toString(),
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         circularStrokeCap: CircularStrokeCap.butt,
@@ -114,13 +114,13 @@ class _QuizScoreState extends State<QuizScore> {
   }
 
   _message() {
-    if (_quizProvider.score == 2) {
+    if (_quizProvider.score / _quizProvider.quizLength == 1) {
       return Text(
         "You Did Very Well..",
         style:
             TextStyle(fontSize: size.height * .03, fontWeight: FontWeight.w800),
       );
-    } else if (_quizProvider.score == 1) {
+    } else if (_quizProvider.score / _quizProvider.quizLength == 0.5) {
       return Text("You Can Do Better..");
     } else {
       return Text("You Should Try Hard..");

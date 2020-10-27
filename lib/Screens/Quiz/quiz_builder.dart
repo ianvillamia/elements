@@ -40,6 +40,7 @@ class _QuizBuilderState extends State<QuizBuilder> {
                       snapshot.data.docs != null &&
                       snapshot.connectionState == ConnectionState.active) {
                     _quizProvider.quizLength = snapshot.data.docs.length;
+                    print('length' + snapshot.data.docs.length.toString());
                     return PageView.builder(
                         controller: _quizProvider.controller,
                         itemCount: snapshot.data.docs.length,

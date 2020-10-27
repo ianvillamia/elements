@@ -104,19 +104,26 @@ class _QuestionState extends State<QuizQuestion>
                             }
                             if (_question.correctAnswer == selected) {
                               print('correct');
-                              _quizProvider.score++;
+
+                              _quizProvider.score += 1;
                               _quizProvider.animateToNextQuestion();
+                              print(_quizProvider.score);
                             } else {
-                              if (_quizProvider.score != 0) {
-                                _quizProvider.score -= 1;
-                              }
                               _quizProvider.animateToNextQuestion();
                             }
                             if (_question.sequence ==
                                 _quizProvider.quizLength) {
                               //compute & show loading
+                              print(_quizProvider.score);
                               print('end of quiz');
-                              return Navigator.push(
+                              for (var i = 1;
+                                  i < _quizProvider.quizLength;
+                                  i++) {
+                                print('pop' + i.toString());
+                                Navigator.pop(context);
+                              }
+
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>

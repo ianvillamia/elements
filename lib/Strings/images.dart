@@ -10,7 +10,7 @@ class Images {
   static String girl_study = 'assets/girl-study.png';
   static String quiz_time = 'assets/quiz_time.png';
   static String loading = 'assets/loading.gif';
-
+  static String success = 'assets/success.jpg';
   //Elements
   static String hydrogen = 'assets/elements/01.png';
 }

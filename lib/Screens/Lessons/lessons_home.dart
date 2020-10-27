@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -151,7 +152,7 @@ class _LessonsMainState extends State<LessonsMain> {
   _buildCategories() {
     return Wrap(
       children: [
-        _card(image: Images.course1),
+        _card(image: Images.city),
       ],
     );
   }
