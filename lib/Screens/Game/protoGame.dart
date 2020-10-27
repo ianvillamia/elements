@@ -1,7 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
+import 'package:mynewapp/Models/Element.dart';
+import 'package:mynewapp/Providers/gameProvider.dart';
+import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Screens/Game/elementContainer.dart';
+import 'package:provider/provider.dart';
 
 class ProtoGame extends StatefulWidget {
   ProtoGame({Key key}) : super(key: key);
@@ -19,10 +23,14 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
   IconData _icon = Icons.arrow_left;
   Color _elementContainer = Colors.transparent;
   bool isInit = false;
+
+  GameProvider _gameProvider;
+
   final TransformationController _transformationController =
       TransformationController();
   Animation<Matrix4> _animationReset;
   AnimationController _controllerReset;
+
   void _onAnimateReset() {
     _transformationController.value = _animationReset.value;
     if (!_controllerReset.isAnimating) {
@@ -66,10 +74,17 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
       vsync: this,
       duration: const Duration(milliseconds: 400),
     );
+    _gameProvider = Provider.of<GameProvider>(context, listen: false);
+    // _gameProvider.element.element = 'H';
+
+    // _gameProvider.element.elementColor = Colors.red;
+    // _gameProvider.element.fontColor = Colors.white;
   }
 
   @override
   Widget build(BuildContext context) {
+    _gameProvider = Provider.of<GameProvider>(context);
+
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -123,11 +138,19 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text('Selected'),
-                  ClipOval(
-                    child: Container(
-                      width: 50,
-                      height: 50,
-                      color: Colors.red,
+                  ElasticIn(
+                    key: ObjectKey(_gameProvider.element.element),
+                    child: ClipOval(
+                      child: Container(
+                          width: 50,
+                          height: 50,
+                          color: _gameProvider.element.elementColor,
+                          child: Center(
+                            child: Text(_gameProvider.element.element,
+                                style: TextStyle(
+                                  color: _gameProvider.element.fontColor,
+                                )),
+                          )),
                     ),
                   )
                 ],

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
           create: (_) => AuthenticationService(FirebaseAuth.instance),
         ),
         ChangeNotifierProvider<QuizProvider>(create: (_) => QuizProvider()),
+        ChangeNotifierProvider<GameProvider>(create: (_) => GameProvider()),
         StreamProvider(
             create: (context) =>
                 context.read<AuthenticationService>().authStateChanges)

@@ -1,8 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
+import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
+import 'package:provider/provider.dart';
 import 'package:splash_tap/splash_tap.dart';
+import 'package:mynewapp/Models/Element.dart';
 
 class ElementContainer extends StatefulWidget {
   ElementContainer({Key key}) : super(key: key);
@@ -19,9 +22,10 @@ class _ElementContainerState extends State<ElementContainer> {
   IconData _icon = Icons.arrow_left;
   Color _elementContainer = Colors.transparent;
   bool isInit = false;
-
+  GameProvider _gameProvider;
   @override
   Widget build(BuildContext context) {
+    _gameProvider = Provider.of<GameProvider>(context, listen: false);
     size = MediaQuery.of(context).size;
     return Align(
       alignment: Alignment.centerRight,
@@ -49,7 +53,7 @@ class _ElementContainerState extends State<ElementContainer> {
           }
         },
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 250),
+          duration: Duration(milliseconds: 130),
           width: sidebarWidth,
           curve: Curves.easeIn,
           height: size.height * .35,
@@ -58,42 +62,61 @@ class _ElementContainerState extends State<ElementContainer> {
               Positioned(
                 left: size.width * .5 - size.width * .45,
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 250),
+                  duration: Duration(milliseconds: 130),
                   curve: Curves.easeIn,
                   width: size.width * .5,
                   height: size.height * .35,
                   decoration: BoxDecoration(
                       color: _elementContainer,
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30))),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          topLeft: Radius.circular(15),
+                          bottomLeft: Radius.circular(15))),
+                  child: Stack(
                     children: [
-                      _element(
-                          element: 'C',
-                          elementColor: Colors.red,
-                          fontColor: Colors.white),
-                      _element(
-                          element: 'H',
-                          elementColor: Colors.red,
-                          fontColor: Colors.white),
-                      _element(
-                          element: 'O',
-                          elementColor: Colors.red,
-                          fontColor: Colors.white),
-                      MaterialButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProtoGame(),
-                              ));
-                        },
-                        child: Text('Reset'),
-                      )
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          width: size.width * .48,
+                          height: size.height * .32,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  bottomLeft: Radius.circular(15))),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            _element(
+                                element: 'C',
+                                elementColor: Colors.red,
+                                fontColor: Colors.white),
+                            _element(
+                                element: 'H',
+                                elementColor: Colors.greenAccent,
+                                fontColor: Colors.black),
+                            _element(
+                                element: 'O',
+                                elementColor: Colors.blueAccent,
+                                fontColor: Colors.white),
+                            MaterialButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ProtoGame(),
+                                    ));
+                              },
+                              child: Text('Reset'),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -122,7 +145,7 @@ class _ElementContainerState extends State<ElementContainer> {
                       }
                     },
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 250),
+                      duration: Duration(milliseconds: 130),
                       width: 50,
                       height: 50,
                       child: Center(
@@ -146,8 +169,15 @@ class _ElementContainerState extends State<ElementContainer> {
       @required Color elementColor,
       @required Color fontColor}) {
     return Splash(
-      onTap: () {},
-      splashColor: Colors.blue,
+      onTap: () {
+        //make selected element this
+        ElementModel _element = ElementModel();
+        _element.element = element;
+        _element.elementColor = elementColor;
+        _element.fontColor = fontColor;
+        _gameProvider.changeSelectedElement(element: _element);
+      },
+      splashColor: elementColor,
       child: ElasticIn(
         child: ClipOval(
           child: Container(
@@ -159,7 +189,7 @@ class _ElementContainerState extends State<ElementContainer> {
             child: Center(
                 child: Text(
               element,
-              style: TextStyle(color: fontColor),
+              style: TextStyle(color: fontColor, fontWeight: FontWeight.bold),
             )),
           ),
         ),
