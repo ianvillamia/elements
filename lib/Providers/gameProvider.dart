@@ -4,7 +4,7 @@ import 'package:mynewapp/Models/Element.dart';
 
 class GameProvider extends ChangeNotifier {
   ElementModel element;
-  void initialize() {
+  GameProvider() {
     ElementModel _element = ElementModel();
     _element.element = 'H';
     _element.elementColor = Colors.red;
