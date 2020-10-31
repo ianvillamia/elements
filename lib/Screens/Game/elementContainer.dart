@@ -5,7 +5,7 @@ import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:provider/provider.dart';
 import 'package:splash_tap/splash_tap.dart';
-import 'package:mynewapp/Models/Element.dart';
+import 'package:mynewapp/Models/ElementModel.dart';
 
 class ElementContainer extends StatefulWidget {
   ElementContainer({Key key}) : super(key: key);
@@ -171,11 +171,11 @@ class _ElementContainerState extends State<ElementContainer> {
     return Splash(
       onTap: () {
         //make selected element this
-        ElementModel _element = ElementModel();
-        _element.element = element;
-        _element.elementColor = elementColor;
-        _element.fontColor = fontColor;
-        _gameProvider.changeSelectedElement(element: _element);
+        // ElementModel _element = ElementModel();
+        // _element.element = element;
+        // _element.elementColor = elementColor;
+        // _element.fontColor = fontColor;
+        // _gameProvider.changeSelectedElement(element: _element);
       },
       splashColor: elementColor,
       child: ElasticIn(
