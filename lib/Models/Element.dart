@@ -4,4 +4,5 @@ class ElementModel {
   String element;
   Color elementColor;
   Color fontColor;
+  int covalentBond;
 }
