@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
-import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
@@ -71,6 +70,6 @@ class AuthenticationWrapper extends StatelessWidget {
       return Home();
     }
 
-    return ProtoGame();
+    return Home();
   }
 }

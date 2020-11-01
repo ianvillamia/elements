@@ -1,10 +1,9 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
-
+import 'package:mynewapp/Models/Element.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
-import 'package:mynewapp/Models/ElementModel.dart';
+import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Screens/Game/elementContainer.dart';
 import 'package:provider/provider.dart';
 
@@ -108,7 +107,7 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
       Coordinates origin = Coordinates();
       origin.x = size.width * .3;
       origin.y = size.height * .367;
-      // elements.add(_spawnObject(coordinates: origin));
+      elements.add(_spawnObject(coordinates: origin));
       setState(() {
         isInit = true;
       });
@@ -123,30 +122,13 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
             boundaryMargin: EdgeInsets.all(900),
             maxScale: 10.0,
             minScale: 0.1,
-            child: StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance
-                    .collection('elementsCollection')
-                    .snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasData) {
-                    return Stack(
-                        children: snapshot.data.docs
-                            .map((doc) => _buildElements(doc: doc))
-                            .toList());
-                  }
-
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }),
+            child: Stack(
+              children: elements.map<Widget>((e) {
+                return e;
+              }).toList(),
+            ),
           ),
-
           ElementContainer(),
-          // Align(
-          //   alignment: Alignment.bottomRight,
-          //   child: ElementCalculator(),
-          // ),
           Align(
             alignment: Alignment.bottomLeft,
             child: Container(
@@ -174,68 +156,56 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     ));
   }
 
-  Widget _buildElements({DocumentSnapshot doc}) {
-    ElementModel ele = ElementModel.getData(doc: doc);
-    print(ele.element);
-    print(ele.x);
-    // return Positioned(child: null)
-
-    return _spawnObject(element: ele);
-  }
-
-  _spawnObject({ElementModel element}) {
-    if (element.spawn == Spawn.left) {
+  _spawnObject({Coordinates coordinates, Spawn spawn}) {
+    if (spawn == Spawn.left) {
       Coordinates left = Coordinates();
-      left.x = element.x + 102.5;
-      left.y = element.y;
+      left.x = coordinates.x + 102.5;
+      left.y = coordinates.y;
       return Positioned(
-          top: element.y,
-          left: element.x - 102.5,
+          top: coordinates.y,
+          left: coordinates.x - 102.5,
           child: _element(
               color: Colors.greenAccent, coordinate: left, spawn: Spawn.left));
-    } else if (element.spawn == Spawn.right) {
+    } else if (spawn == Spawn.right) {
       Coordinates right = Coordinates();
-      right.x = element.x + 112.08;
-      right.y = element.y;
+      right.x = coordinates.x + 112.08;
+      right.y = coordinates.y;
       return Positioned(
-          top: element.y,
-          left: element.x + 112.08,
+          top: coordinates.y,
+          left: coordinates.x + 112.08,
           child: _element(
               color: Colors.blue, coordinate: right, spawn: Spawn.right));
-    } else if (element.spawn == Spawn.top) {
+    } else if (spawn == Spawn.top) {
       Coordinates top = Coordinates();
-      top.x = element.x;
-      top.y = element.y - 89.28;
+      top.x = coordinates.x;
+      top.y = coordinates.y - 89.28;
       return Positioned(
-          top: element.y - 89.28,
-          left: element.x,
+          top: coordinates.y - 89.28,
+          left: coordinates.x,
           child:
               _element(color: Colors.grey, coordinate: top, spawn: Spawn.top));
-    } else if (element.spawn == Spawn.bottom) {
+    } else if (spawn == Spawn.bottom) {
       Coordinates bot = Coordinates();
-      bot.x = element.x;
-      bot.y = element.y + 89.28;
+      bot.x = coordinates.x;
+      bot.y = coordinates.y + 89.28;
       return Positioned(
-          top: element.y + 89.28,
-          left: element.x,
+          top: coordinates.y + 89.28,
+          left: coordinates.x,
           child: _element(
               color: Colors.amber, coordinate: bot, spawn: Spawn.bottom));
     } else {
-      Coordinates coordinate = Coordinates();
-      coordinate.x = element.x;
-      coordinate.y = element.y;
       return Positioned(
-          top: element.y,
-          left: element.x,
+          top: coordinates.y,
+          left: coordinates.x,
           child: _element(
               color: Colors.deepOrange,
-              coordinate: coordinate,
+              coordinate: coordinates,
               spawn: Spawn.origin));
     }
   }
@@ -260,13 +230,12 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
 
   _add(Coordinates origin, Spawn spawn) {
     if (spawn == Spawn.origin) {
-      // setState(() {
-      //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
-      //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.right));
-      //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.top));
-      //   elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
-      // });
-
+      setState(() {
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.left));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.right));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.top));
+        elements.add(_spawnObject(coordinates: origin, spawn: Spawn.bottom));
+      });
     }
   }
 }
