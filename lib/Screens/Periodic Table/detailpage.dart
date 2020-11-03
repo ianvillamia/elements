@@ -56,7 +56,7 @@ class DetailPage extends StatelessWidget {
     ].expand((widget) => [widget, Divider()]).toList();
 
     return Scaffold(
-      backgroundColor: Color.lerp(Colors.grey[850], element.colors[0], 0.07),
+      backgroundColor: Color.lerp(Colors.grey[700], element.colors[0], 0.07),
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),

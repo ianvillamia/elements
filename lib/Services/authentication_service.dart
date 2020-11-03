@@ -8,6 +8,7 @@ class AuthenticationService {
   AuthenticationService(this._firebaseAuth);
   Stream<User> get authStateChanges => _firebaseAuth.authStateChanges();
   UserService _userService = UserService();
+
   Future<String> signIn({String email, String password}) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
@@ -40,3 +41,51 @@ class AuthenticationService {
     await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 }
+
+// class AuthenticationService {
+//   FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+//   AuthenticationService(this._firebaseAuth);
+//   UserService _userService = UserService();
+
+//   Stream<String> get onAuthStateChanged => _firebaseAuth.authStateChanges().map(
+//         (User user) => user?.uid,
+//       );
+
+//   Future<String> getCurrentUID() async {
+//     return (_firebaseAuth.currentUser).uid;
+//   }
+
+//   Future getCurrentUser() async {
+//     return _firebaseAuth.currentUser;
+//   }
+
+//   Future<String> signIn({String email, String password}) async {
+//     try {
+//       (await _firebaseAuth.signInWithEmailAndPassword(
+//               email: email, password: password))
+//           .user
+//           .uid;
+//       return 'Signed in';
+//     } on FirebaseAuthException catch (e) {
+//       return Future.error(e.message);
+//     }
+//   }
+
+//   Future<String> signUp(
+//       {@required String email,
+//       @required String password,
+//       @required UserModel user}) async {
+//     try {
+//       await _firebaseAuth.createUserWithEmailAndPassword(
+//           email: email.trim(), password: password.trim());
+//       await _userService.addUserToCollection(user: user);
+//       return 'Signed Up';
+//     } on FirebaseAuthException catch (e) {
+//       return Future.error(e);
+//     }
+//   }
+
+//   signOut() {
+//     return _firebaseAuth.signOut();
+//   }
+// }

@@ -78,12 +78,14 @@ class _TablePageState extends State<TablePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.blueGrey[600],
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text('Periodic Table of Elements'),
+          title: Text('Periodic Table of Elements',
+              style: TextStyle(color: Colors.black)),
           centerTitle: true,
-          backgroundColor: Colors.blueGrey[800]),
+          elevation: 1,
+          backgroundColor: Colors.grey[200]),
       floatingActionButton: FloatingActionButton(
         onPressed: _animateResetInitialize,
         tooltip: 'Reset',
@@ -132,7 +134,6 @@ class _TablePageState extends State<TablePage> with TickerProviderStateMixin {
                 width: orientation == Orientation.landscape
                     ? size.width * .8
                     : size.width * 1.2,
-                color: Colors.blueGrey[700],
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
