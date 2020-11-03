@@ -128,8 +128,8 @@ class _ProtoGameState extends State<ProtoGame> with TickerProviderStateMixin {
                     key: ObjectKey(_gameProvider.element.element),
                     child: GestureDetector(
                       onTap: () {
-                        String element = 'CH3 CH2 CH3';
-
+                        String element = 'CH2 CH2';
+                        print(_gameProvider.elementStack);
                         GameLogic().identifyGroup(
                             element: element, gameProvider: _gameProvider);
                       },
