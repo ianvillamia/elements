@@ -23,11 +23,16 @@ class AuthenticationService {
       @required String password,
       @required UserModel user}) async {
     try {
-      await _firebaseAuth.createUserWithEmailAndPassword(
-          email: email.trim(), password: password.trim());
-      await _userService.addUserToCollection(user: user);
+      await _firebaseAuth
+          .createUserWithEmailAndPassword(
+              email: email.trim(), password: password.trim())
+          .then((doc) async {
+        await _userService.addUserToCollection(user: user, uid: doc.user.uid);
+      });
+
       return 'Signed Up';
     } on FirebaseAuthException catch (e) {
+      print(e);
       return Future.error(e);
     }
   }

@@ -4,8 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class UserService {
   CollectionReference users = FirebaseFirestore.instance.collection('users');
-  addUserToCollection({UserModel user}) {
-    this.users.add(user.toMap());
+  addUserToCollection({UserModel user, String uid}) {
+    user.ref = uid;
+    this.users.doc(uid).set(user.toMap());
+    // this.users.add(user.toMap());
   }
 
   getUser({User user}) async {

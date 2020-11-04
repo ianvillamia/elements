@@ -14,6 +14,11 @@ class UserModel {
   }
   UserModel() {}
   toMap() {
-    return {'firstName': this.firstName, 'lastName': this.lastName, 'ref': ref};
+    return {
+      'firstName': this.firstName,
+      'lastName': this.lastName,
+      'ref': this.ref,
+      'email': this.email
+    };
   }
 }

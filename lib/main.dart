@@ -71,6 +71,6 @@ class AuthenticationWrapper extends StatelessWidget {
       return Home();
     }
 
-    return ProtoGame();
+    return SignIn();
   }
 }
