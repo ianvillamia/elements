@@ -31,7 +31,6 @@ class _LessonsMainState extends State<LessonsMain> {
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
-
     //get user cred
     _getUser(firebaseUser);
     size = MediaQuery.of(context).size;
@@ -113,12 +112,11 @@ class _LessonsMainState extends State<LessonsMain> {
   }
 
   _greeting() {
-    FirebaseAuth db = FirebaseAuth.instance;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Hey!" + db.currentUser.uid,
+          'Hey!',
           style: CustomTextStyles.customText(isBold: true),
         ),
         SizedBox(

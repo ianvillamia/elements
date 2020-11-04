@@ -4,7 +4,7 @@ import 'package:mynewapp/Utils/textStyles.dart';
 class ElementLegends extends StatelessWidget {
   ElementLegends({this.legends, this.color});
   final String legends;
-  final BoxDecoration color;
+  final LinearGradient color;
   @override
   Widget build(BuildContext context) {
     Orientation orientation = MediaQuery.of(context).orientation;
@@ -20,13 +20,14 @@ class ElementLegends extends StatelessWidget {
             width: orientation == Orientation.landscape
                 ? size.width * .04
                 : size.width * .07,
-            foregroundDecoration: color),
+            decoration: BoxDecoration(gradient: color)),
         SizedBox(
           width: 15,
         ),
         Text(
           legends,
-          style: CustomTextStyles.customText(size: FontSizes.medium),
+          style: CustomTextStyles.customText(
+              size: FontSizes.medium, color: Colors.white),
         ),
       ],
     );
@@ -34,41 +35,24 @@ class ElementLegends extends StatelessWidget {
 }
 
 class LegendsColors {
-  static const alkaliMetals = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFFD32F2F), Color(0xFFFF77A9)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-  static const alkalineEarthMetals = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFFF46B45), Color(0xFFEEA849)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-  static const lanthanides = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF8BC34A), Color(0xFFD4E157)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const actinides = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF0ED2F7), Color(0xFFB2FEFA)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const transitionMetals = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFFFFCA28), Color(0xFFFFF263)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const postTransitionMetals = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF11998E), Color(0xFF38EF7D)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const metalloids = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF0072FF), Color(0xFF00C6FF)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const reactiveNonmetals = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF536DFE), Color(0xFF8E99F3)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const nobleGases = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF9796F0), Color(0xFFFBC7D4)]),
-      backgroundBlendMode: BlendMode.colorBurn);
-
-  static const unknown = BoxDecoration(
-      gradient: LinearGradient(colors: [Color(0xFF757F9A), Color(0xFFD7DDE8)]),
-      backgroundBlendMode: BlendMode.colorBurn);
+  static const alkaliMetals =
+      LinearGradient(colors: [Color(0xFFD32F2F), Color(0xFFFF77A9)]);
+  static const alkalineEarthMetals =
+      LinearGradient(colors: [Color(0xFFF46B45), Color(0xFFEEA849)]);
+  static const lanthanides =
+      LinearGradient(colors: [Color(0xFF8BC34A), Color(0xFFD4E157)]);
+  static const actinides =
+      LinearGradient(colors: [Color(0xFF0ED2F7), Color(0xFFB2FEFA)]);
+  static const transitionMetals =
+      LinearGradient(colors: [Color(0xFFFFCA28), Color(0xFFFFF263)]);
+  static const postTransitionMetals =
+      LinearGradient(colors: [Color(0xFF11998E), Color(0xFF38EF7D)]);
+  static const metalloids =
+      LinearGradient(colors: [Color(0xFF0072FF), Color(0xFF00C6FF)]);
+  static const reactiveNonmetals =
+      LinearGradient(colors: [Color(0xFF536DFE), Color(0xFF8E99F3)]);
+  static const nobleGases =
+      LinearGradient(colors: [Color(0xFF9796F0), Color(0xFFFBC7D4)]);
+  static const unknown =
+      LinearGradient(colors: [Color(0xFF757F9A), Color(0xFFD7DDE8)]);
 }

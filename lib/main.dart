@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
-import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
@@ -62,52 +60,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class AuthenticationWrapper extends StatelessWidget {
-//   const AuthenticationWrapper({Key key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final firebaseUser = context.watch<User>();
-
-//     if (firebaseUser != null) {
-//       return Home();
-//     }
-
-//     return SignIn();
-//   }
-// }
-
-class AuthenticationWrapper extends StatefulWidget {
-  AuthenticationWrapper({Key key}) : super(key: key);
-  @override
-  _AuthenticationWrapperState createState() => _AuthenticationWrapperState();
-}
-
-class _AuthenticationWrapperState extends State<AuthenticationWrapper> {
-  FirebaseAuth auth = FirebaseAuth.instance;
+class AuthenticationWrapper extends StatelessWidget {
+  const AuthenticationWrapper({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (auth.currentUser != null) {
-      print('Current User: ' + auth.currentUser.uid);
+    final firebaseUser = context.watch<User>();
+
+    if (firebaseUser != null) {
       return Home();
-    } else {
-      return SignIn();
     }
+
+    return ProtoGame();
   }
 }
-
-// test() {
-//   FirebaseAuth auth = FirebaseAuth.instance;
-//   return FirebaseFirestore.instance
-//       .collection('users')
-//       .doc('auth.currentUser.uid')
-//       .get()
-//       .then((DocumentSnapshot snapshot) => Navigator.pushReplacement(
-//           context,
-//           MaterialPageRoute(
-//               builder: (context) => Home(
-//                     names: snapshot["firstName"],
-//                     uids: auth.currentUser.uid,
-//                   ))));
-// }
