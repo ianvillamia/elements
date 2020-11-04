@@ -5,14 +5,14 @@ import 'package:mynewapp/Screens/Home/stars.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
-class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+class DrawerItem extends StatefulWidget {
+  DrawerItem({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<DrawerItem> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;

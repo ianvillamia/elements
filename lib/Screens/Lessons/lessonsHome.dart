@@ -4,7 +4,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/UserModel.dart';
+import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
+import 'package:mynewapp/Screens/Lessons/testing.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Services/userService.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -13,20 +15,25 @@ import 'package:mynewapp/Global/drawer.dart';
 import 'package:provider/provider.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-class LessonsMain extends StatefulWidget {
-  LessonsMain({Key key}) : super(key: key);
+class LessonsHome extends StatefulWidget {
+  LessonsHome({Key key}) : super(key: key);
 
   @override
   _LessonsMainState createState() => _LessonsMainState();
 }
 
-class _LessonsMainState extends State<LessonsMain> {
+class _LessonsMainState extends State<LessonsHome> {
   _getUser(firebaseUser) async {
     var user = await UserService().getUser(user: firebaseUser);
     print(user);
   }
 
   var scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  void initState() {
+    super.initState();
+  }
+
   Size size;
   @override
   Widget build(BuildContext context) {
@@ -150,16 +157,32 @@ class _LessonsMainState extends State<LessonsMain> {
   }
 
   _buildCategories() {
-    return Wrap(
-      children: [
-        _card(image: Images.city),
-      ],
-    );
+    return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('users')
+            .doc('NwsYI4qbvveQ5fvGrolUWQqhfw53')
+            .collection('courses')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasData) {
+            return Wrap(
+                children: snapshot.data.docs
+                    .map<Widget>((doc) => _card(
+                          doc: doc,
+                        ))
+                    .toList());
+          }
+
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        });
   }
 
-  _card({@required String image}) {
+  _card({@required DocumentSnapshot doc}) {
+    CourseModel course = CourseModel.getData(doc: doc);
     return Hero(
-      tag: 'homeHero',
+      tag: course.title,
       child: Card(
           elevation: 5,
           child: InkWell(
@@ -167,14 +190,16 @@ class _LessonsMainState extends State<LessonsMain> {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
                 return Course(
-                  image: image,
-                );
+                    image: course.courseImageUrl,
+                    lessons: course.lessons,
+                    course: course);
               }));
             },
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(image), fit: BoxFit.cover)),
+                      image: NetworkImage(course.courseImageUrl),
+                      fit: BoxFit.cover)),
               width: size.width * .4,
               height: size.height * .2,
             ),

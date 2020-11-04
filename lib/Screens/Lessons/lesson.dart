@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Lessons.dart';
-import 'package:mynewapp/Screens/Lessons/questionItem.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:chewie/chewie.dart';
@@ -30,7 +29,7 @@ class _LessonState extends State<Lesson> {
     super.initState();
     lesson = widget.lesson;
 
-    _videoPlayerController = VideoPlayerController.network(lesson.video_url);
+    _videoPlayerController = VideoPlayerController.network(lesson.videoUrl);
     _videoPlayerController.addListener(() {
       if (_videoPlayerController.value.position ==
           _videoPlayerController.value.duration) {
@@ -110,7 +109,7 @@ class _LessonState extends State<Lesson> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(lesson.banner_url), fit: BoxFit.cover)),
+                image: NetworkImage(lesson.imageUrl), fit: BoxFit.cover)),
         height: size.height * .3,
         width: size.width,
         child: Stack(
@@ -170,7 +169,7 @@ class _LessonState extends State<Lesson> {
                         height: size.height * .05,
                       ),
                       Text(
-                        lesson.header ?? 'Error getting',
+                        lesson.title ?? 'Error getting',
                         style:
                             CustomTextStyles.customText(size: FontSizes.large),
                       ),

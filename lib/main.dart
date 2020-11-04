@@ -6,7 +6,7 @@ import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/home.dart';
-import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
+import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Services/routing.dart';

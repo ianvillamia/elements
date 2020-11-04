@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
-import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
+import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_home.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
         physics: BouncingScrollPhysics(),
         controller: controller,
         children: [
-          LessonsMain(),
+          LessonsHome(),
           QuizHome(),
           ProtoGame(),
           Container(

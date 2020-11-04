@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -8,7 +9,9 @@ import 'package:mynewapp/Utils/textStyles.dart';
 
 class Course extends StatefulWidget {
   final String image;
-  Course({@required this.image});
+  final List lessons;
+  final CourseModel course;
+  Course({@required this.image, @required this.lessons, @required this.course});
 
   @override
   _CourseState createState() => _CourseState();
@@ -43,7 +46,7 @@ class _CourseState extends State<Course> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(widget.image), fit: BoxFit.fill)),
+                image: NetworkImage(widget.image), fit: BoxFit.fill)),
         height: size.height * .3,
         width: size.width,
         child: Stack(
@@ -96,7 +99,7 @@ class _CourseState extends State<Course> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Hero(
-                      tag: 'homeHero',
+                      tag: widget.course.title,
                       child: Material(
                         type: MaterialType.transparency,
                         child: Text(
@@ -120,37 +123,22 @@ class _CourseState extends State<Course> {
             ),
             Expanded(
                 child: SingleChildScrollView(
-              child: StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance
-                      .collection('lessons')
-                      .orderBy('sequence')
-                      .snapshots(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (snapshot.hasData) {
-                      return Column(
-                          children: snapshot.data.docs
-                              .map((doc) => _lessonCard(
-                                    doc: doc,
-                                  ))
-                              .toList());
-                    }
-
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }),
-            ))
+                    child: Column(
+                        children: widget.lessons
+                            .map((lesson) => _lessonCard(lessonTemp: lesson))
+                            .toList())))
           ],
         ),
       ),
     );
   }
 
-  Widget _lessonCard({DocumentSnapshot doc}) {
+  Widget _lessonCard({LessonModel lessonTemp}) {
     //accept data from fs
-    LessonModel lesson = LessonModel.getData(doc: doc);
-
+    print(lessonTemp);
+    //  LessonModel lesson = LessonModel.getData(doc: doc);
+    // return Container();
+    print(lessonTemp.imageUrl);
     return Material(
       type: MaterialType.transparency,
       child: Padding(
@@ -168,9 +156,8 @@ class _CourseState extends State<Course> {
                     width: size.width * .4,
                     height: size.height * .15,
                     child: FadeInImage.assetNetwork(
-                      placeholder: Images.loading,
-                      image: lesson.banner_url,
-                    ),
+                        placeholder: Images.loading,
+                        image: lessonTemp.imageUrl),
                   ),
                 ),
                 SizedBox(
@@ -180,7 +167,7 @@ class _CourseState extends State<Course> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      lesson.sequence,
+                      lessonTemp.sequence.toString(),
                       style: CustomTextStyles.customText(
                           size: FontSizes.heading,
                           isBold: true,
@@ -190,11 +177,11 @@ class _CourseState extends State<Course> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          lesson.video_time,
-                          style: CustomTextStyles.customText(
-                              size: FontSizes.medium, color: Colors.red),
-                        ),
+                        // Text(
+                        //   lesson.video_time,
+                        //   style: CustomTextStyles.customText(
+                        //       size: FontSizes.medium, color: Colors.red),
+                        // ),
                         Padding(
                           padding: EdgeInsets.only(bottom: 25),
                           child: Container(
@@ -203,7 +190,7 @@ class _CourseState extends State<Course> {
                               children: [
                                 Flexible(
                                   child: Text(
-                                    lesson.title,
+                                    lessonTemp.title,
                                     style: CustomTextStyles.customText(
                                         size: FontSizes.large, isBold: true),
                                   ),
@@ -214,7 +201,7 @@ class _CourseState extends State<Course> {
                         )
                       ],
                     ),
-                    _playIcon(lesson: lesson)
+                    _playIcon(lesson: lessonTemp)
                   ],
                 ),
               ],
@@ -231,7 +218,6 @@ class _CourseState extends State<Course> {
         color: Color.fromRGBO(73, 204, 150, 1),
         child: InkWell(
           onTap: () {
-            print('lessons list ${lesson.lessons_list}');
             Navigator.push(context, MaterialPageRoute(builder: (_) {
               return Lesson(
                 lesson: lesson,

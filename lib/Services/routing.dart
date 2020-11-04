@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
-import 'package:mynewapp/Screens/Lessons/lessons_home.dart';
+import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
@@ -24,7 +24,7 @@ class FluroRouter {
           Home());
   static Handler _lessonsMainHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-          LessonsMain());
+          LessonsHome());
   static Handler _periodicTableHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PeriodicTable());
