@@ -123,8 +123,9 @@ class _SignInState extends State<SignIn> {
                                 context
                                     .read<AuthenticationService>()
                                     .signIn(
-                                        email: emailController.text,
-                                        password: passwordController.text)
+                                        email: emailController.text.trim(),
+                                        password:
+                                            passwordController.text.trim())
                                     .catchError((error) {
                                   print(error);
                                   setState(() {
