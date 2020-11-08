@@ -26,43 +26,54 @@ class _Element1State extends State<Element1> {
           child: Text('CH3-O-CH3'),
         ),
         Positioned(
-            top: 170.99428571428572, left: 120.02857142857144, child: Temp()),
+            top: Element1Values.getCoordinate(order: 1).y,
+            left: Element1Values.getCoordinate(order: 1).x,
+            child: Temp()),
 
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 2),
-          element: GiveElement.carbon(),
-        ),
-
-        //children
         Positioned(
-            top: 90.994285714285722, left: 200.02857142857144, child: Temp()),
+            top: Element1Values.getCoordinate(order: 2).y,
+            left: Element1Values.getCoordinate(order: 2).x,
+            child: Temp()),
 
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 2.2),
-          element: GiveElement.hydrogen(),
-        ),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 2.1).y,
+            left: Element1Values.getCoordinate(order: 2.1).x,
+            child: Temp()),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 2.2).y,
+            left: Element1Values.getCoordinate(order: 2.2).x,
+            child: Temp()),
 
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 3),
-          element: GiveElement.oxygen(),
-        ),
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 4),
-          element: GiveElement.carbon(),
-        ),
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 4.1),
-          element: GiveElement.hydrogen(),
-        ),
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 4.2),
-          element: GiveElement.hydrogen(),
-        ),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 3).y,
+            left: Element1Values.getCoordinate(order: 3).x,
+            child: Temp()),
+        // ElementItem(
+        //   coordinate: Element1Values.getCoordinate(order: 3),
+        //   element: GiveElement.oxygen(),
+        // ),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 4).y,
+            left: Element1Values.getCoordinate(order: 4).x,
+            child: Temp()),
 
-        ElementItem(
-          coordinate: Element1Values.getCoordinate(order: 5),
-          element: GiveElement.hydrogen(),
-        ),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 4.1).y,
+            left: Element1Values.getCoordinate(order: 4.1).x,
+            child: Temp()),
+
+        Positioned(
+            top: Element1Values.getCoordinate(order: 4.2).y,
+            left: Element1Values.getCoordinate(order: 4.2).x,
+            child: Temp()),
+        Positioned(
+            top: Element1Values.getCoordinate(order: 5).y,
+            left: Element1Values.getCoordinate(order: 5).x,
+            child: Temp()),
+        // ElementItem(
+        //   coordinate: Element1Values.getCoordinate(order: 5),
+        //   element: GiveElement.hydrogen(),
+        // ),
       ],
     );
   }
