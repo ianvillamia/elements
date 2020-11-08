@@ -115,6 +115,7 @@ class _TempState extends State<Temp> {
                 ),
               )
             : ElasticIn(
+                key: UniqueKey(),
                 child: ClipOval(
                   child: Container(
                     width: 50,
@@ -146,6 +147,44 @@ class _TempState extends State<Temp> {
         });
       },
     );
+  }
+}
+
+class ElementReader {
+  bool condition1 = false;
+  bool condition2 = false;
+  bool condition21 = false;
+  bool condition22 = false;
+  bool condition3 = false;
+  bool condition4 = false;
+  bool condition41 = false;
+  bool condition42 = false;
+  bool condition5 = false;
+  bool elementCorrect = false;
+  change({double targetElement, ElementModel element}) {
+    if (targetElement == 1 && element.element == 'H') {
+      this.condition1 = true;
+    } else if (targetElement == 2) {
+    } else if (targetElement == 2.1) {
+    } else if (targetElement == 2.2) {
+    } else if (targetElement == 3) {
+    } else if (targetElement == 4) {
+    } else if (targetElement == 4.1) {
+    } else if (targetElement == 4.2) {}
+  }
+
+  checkIfCorrect() {
+    if (condition1 == true &&
+        condition2 == true &&
+        condition21 == true &&
+        condition22 == true &&
+        condition3 == true &&
+        condition4 == true &&
+        condition41 == true &&
+        condition42 == true &&
+        condition5 == true) {
+      elementCorrect = true;
+    }
   }
 }
 
