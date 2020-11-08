@@ -150,8 +150,11 @@ class _SignUpState extends State<SignUp> {
                                     : Icon(Icons.visibility, size: 20)),
                           ),
                           validator: (val) {
-                            if (val != passwordController.text || val == null) {
-                              return 'passwords dont match';
+                            if (val != passwordController.text) {
+                              return "Password don't match";
+                            }
+                            if (val == null) {
+                              return "Please enter your password";
                             }
                             return null;
                           },

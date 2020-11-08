@@ -48,7 +48,7 @@ class _LessonsMainState extends State<LessonsHome> {
         width: size.width,
         height: size.height,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 40),
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/element1.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
@@ -102,6 +103,7 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
   }
 
   _gameScreen() {
+    String _animation = "Tadaaah";
     return Expanded(
         child: Container(
       child: Stack(
@@ -112,6 +114,14 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
             maxScale: 10.0,
             minScale: 0.1,
             child: Element1(),
+          ),
+          Center(
+            child: FlareActor(
+              "assets/Tadaaah.flr",
+              alignment: Alignment.center,
+              //fit: BoxFit.contain,
+              animation: _animation,
+            ),
           ),
           ElementContainer(),
           Align(
@@ -127,6 +137,10 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                   onPressed: () {
                     _gameProvider.elementReader.checkIfCorrect();
                     print(_gameProvider.elementReader.elementCorrect);
+
+                    setState(() {
+                      _animation = "Tadaaah";
+                    });
                   },
                   child: Text(
                     'Submit',
