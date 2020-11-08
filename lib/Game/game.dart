@@ -8,6 +8,7 @@ import 'package:mynewapp/Providers/gameProvider.dart';
 
 import 'package:mynewapp/Screens/Game/elementContainer.dart';
 import 'package:mynewapp/Screens/Game/gameLogic.dart';
+import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:provider/provider.dart';
 
 class Game extends StatefulWidget {
@@ -114,6 +115,27 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
           ),
           ElementContainer(),
           Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+                width: size.width * .25,
+                height: size.height * .15,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(25)),
+                child: MaterialButton(
+                  elevation: 10,
+                  color: Colors.amber,
+                  onPressed: () {
+                    _gameProvider.elementReader.checkIfCorrect();
+                    print(_gameProvider.elementReader.elementCorrect);
+                  },
+                  child: Text(
+                    'Submit',
+                    style: CustomTextStyles.customText(
+                        isBold: true, size: FontSizes.medium),
+                  ),
+                )),
+          ),
+          Align(
             alignment: Alignment.bottomLeft,
             child: Container(
               width: size.width * .2,
@@ -125,10 +147,7 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                   ElasticIn(
                     key: ObjectKey(_gameProvider.element.element),
                     child: GestureDetector(
-                      onTap: () {
-                        _gameProvider.elementReader.checkIfCorrect();
-                        print(_gameProvider.elementReader.elementCorrect);
-                      },
+                      onTap: () {},
                       child: Draggable(
                         feedback: ClipOval(
                           child: Container(

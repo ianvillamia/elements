@@ -41,33 +41,60 @@ class ElementReader {
   bool condition5 = false;
   bool elementCorrect = false;
   change({double targetElement, String element}) {
-    if (targetElement == 1 && element == 'H') {
-      print('correct');
-      this.condition1 = true;
-    } else if (targetElement == 2 && element == 'C') {
-      print('correct');
-      this.condition2 = true;
-    } else if (targetElement == 2.1 && element == 'H') {
-      print('correct');
-      this.condition21 = true;
-    } else if (targetElement == 2.2 && element == 'H') {
-      print('correct');
-      this.condition22 = true;
+    if (targetElement == 1) {
+      if (element == 'H') {
+        this.condition1 = true;
+      } else {
+        this.condition1 = false;
+      }
+    } else if (targetElement == 2) {
+      if (element == 'C') {
+        this.condition2 = true;
+      } else {
+        this.condition2 = false;
+      }
+    } else if (targetElement == 2.1) {
+      if (element == 'H') {
+        this.condition21 = true;
+      } else {
+        this.condition21 = false;
+      }
+    } else if (targetElement == 2.2) {
+      if (element == 'H') {
+        this.condition22 = true;
+      } else {
+        this.condition22 = false;
+      }
     } else if (targetElement == 3 && element == 'O') {
-      print('correct');
-      this.condition3 = true;
-    } else if (targetElement == 4 && element == 'C') {
-      print('correct');
-      this.condition4 = true;
-    } else if (targetElement == 4.1 && element == 'H') {
-      print('correct');
-      this.condition41 = true;
-    } else if (targetElement == 4.2 && element == 'H') {
-      print('correct');
-      this.condition42 = true;
+      if (element == 'O') {
+        this.condition3 = true;
+      } else {
+        this.condition3 = false;
+      }
+    } else if (targetElement == 4) {
+      if (element == 'C') {
+        this.condition4 = true;
+      } else {
+        this.condition4 = false;
+      }
+    } else if (targetElement == 4.1) {
+      if (element == 'H') {
+        this.condition41 = true;
+      } else {
+        this.condition42 = false;
+      }
+    } else if (targetElement == 4.2) {
+      if (element == 'H') {
+        this.condition42 = true;
+      } else {
+        this.condition42 = false;
+      }
     } else if (targetElement == 5 && element == 'H') {
-      print('correct');
-      this.condition5 = true;
+      if (element == 'H') {
+        this.condition5 = true;
+      } else {
+        this.condition5 = false;
+      }
     }
   }
 
