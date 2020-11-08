@@ -98,7 +98,7 @@ class _ElementContainerState extends State<ElementContainer> {
                             _element(
                                 element: 'H',
                                 elementColor: Colors.greenAccent,
-                                fontColor: Colors.black),
+                                fontColor: Colors.white),
                             _element(
                                 element: 'O',
                                 elementColor: Colors.blueAccent,
