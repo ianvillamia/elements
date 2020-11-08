@@ -125,10 +125,9 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                   ElasticIn(
                     key: ObjectKey(_gameProvider.element.element),
                     child: GestureDetector(
-                      onLongPress: () {
-                        // AudioCache player = new AudioCache();
-                        // const alarmAudioPath = "UP.mp3";
-                        // player.play(alarmAudioPath);
+                      onTap: () {
+                        _gameProvider.elementReader.checkIfCorrect();
+                        print(_gameProvider.elementReader.elementCorrect);
                       },
                       child: Draggable(
                         feedback: ClipOval(
@@ -148,9 +147,9 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                         data: 'boom',
                         onDragStarted: () {
                           print('this');
-                          AudioCache player = new AudioCache();
-                          const alarmAudioPath = "UP.mp3";
-                          player.play(alarmAudioPath);
+                          // AudioCache player = new AudioCache();
+                          // const alarmAudioPath = "UP.mp3";
+                          // player.play(alarmAudioPath);
                         },
                         child: ClipOval(
                           child: Container(

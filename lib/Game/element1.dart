@@ -28,52 +28,66 @@ class _Element1State extends State<Element1> {
         Positioned(
             top: Element1Values.getCoordinate(order: 1).y,
             left: Element1Values.getCoordinate(order: 1).x,
-            child: Temp()),
-
+            child: Temp(
+              correctElement: 'H',
+              place: 1,
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 2).y,
             left: Element1Values.getCoordinate(order: 2).x,
-            child: Temp()),
-
+            child: Temp(
+              place: 2,
+              correctElement: 'C',
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 2.1).y,
             left: Element1Values.getCoordinate(order: 2.1).x,
-            child: Temp()),
+            child: Temp(
+              place: 2.1,
+              correctElement: 'H',
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 2.2).y,
             left: Element1Values.getCoordinate(order: 2.2).x,
-            child: Temp()),
-
+            child: Temp(
+              place: 2.2,
+              correctElement: 'H',
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 3).y,
             left: Element1Values.getCoordinate(order: 3).x,
-            child: Temp()),
-        // ElementItem(
-        //   coordinate: Element1Values.getCoordinate(order: 3),
-        //   element: GiveElement.oxygen(),
-        // ),
+            child: Temp(
+              place: 3,
+              correctElement: 'O',
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 4).y,
             left: Element1Values.getCoordinate(order: 4).x,
-            child: Temp()),
-
+            child: Temp(
+              place: 4,
+              correctElement: 'C',
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 4.1).y,
             left: Element1Values.getCoordinate(order: 4.1).x,
-            child: Temp()),
-
+            child: Temp(
+              correctElement: 'H',
+              place: 4.1,
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 4.2).y,
             left: Element1Values.getCoordinate(order: 4.2).x,
-            child: Temp()),
+            child: Temp(
+              correctElement: 'H',
+              place: 4.2,
+            )),
         Positioned(
             top: Element1Values.getCoordinate(order: 5).y,
             left: Element1Values.getCoordinate(order: 5).x,
-            child: Temp()),
-        // ElementItem(
-        //   coordinate: Element1Values.getCoordinate(order: 5),
-        //   element: GiveElement.hydrogen(),
-        // ),
+            child: Temp(
+              correctElement: 'H',
+              place: 5,
+            )),
       ],
     );
   }
@@ -81,7 +95,8 @@ class _Element1State extends State<Element1> {
 
 class Temp extends StatefulWidget {
   final double place;
-  Temp({this.place});
+  final String correctElement;
+  Temp({@required this.place, @required this.correctElement});
 
   @override
   _TempState createState() => _TempState();
@@ -132,13 +147,22 @@ class _TempState extends State<Temp> {
               );
       },
       onWillAccept: (data) {
+        AudioCache player = new AudioCache();
+        const alarmAudioPath = "boop.mp3";
+        player.play(alarmAudioPath);
         return true;
       },
+      onLeave: (data) {
+        AudioCache player = new AudioCache();
+        player.clearCache();
+      },
       onAccept: (data) {
-        setState(() {});
         AudioCache player = new AudioCache();
         const alarmAudioPath = "DOWN.mp3";
         player.play(alarmAudioPath);
+        _gameProvider.elementReader.change(
+            element: widget.correctElement, targetElement: widget.place);
+
         setState(() {
           accepted = true;
           _element.element = _gameProvider.element.element;
@@ -147,44 +171,6 @@ class _TempState extends State<Temp> {
         });
       },
     );
-  }
-}
-
-class ElementReader {
-  bool condition1 = false;
-  bool condition2 = false;
-  bool condition21 = false;
-  bool condition22 = false;
-  bool condition3 = false;
-  bool condition4 = false;
-  bool condition41 = false;
-  bool condition42 = false;
-  bool condition5 = false;
-  bool elementCorrect = false;
-  change({double targetElement, ElementModel element}) {
-    if (targetElement == 1 && element.element == 'H') {
-      this.condition1 = true;
-    } else if (targetElement == 2) {
-    } else if (targetElement == 2.1) {
-    } else if (targetElement == 2.2) {
-    } else if (targetElement == 3) {
-    } else if (targetElement == 4) {
-    } else if (targetElement == 4.1) {
-    } else if (targetElement == 4.2) {}
-  }
-
-  checkIfCorrect() {
-    if (condition1 == true &&
-        condition2 == true &&
-        condition21 == true &&
-        condition22 == true &&
-        condition3 == true &&
-        condition4 == true &&
-        condition41 == true &&
-        condition42 == true &&
-        condition5 == true) {
-      elementCorrect = true;
-    }
   }
 }
 
