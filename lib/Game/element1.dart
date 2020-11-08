@@ -23,7 +23,7 @@ class _Element1State extends State<Element1> {
       children: [
         Align(
           alignment: Alignment.topCenter,
-          child: Text('CH3-O-CH3'),
+          child: Text('METHOXYMETHANE'),
         ),
         Positioned(
             top: Element1Values.getCoordinate(order: 1).y,
@@ -80,7 +80,8 @@ class _Element1State extends State<Element1> {
 }
 
 class Temp extends StatefulWidget {
-  Temp({Key key}) : super(key: key);
+  final double place;
+  Temp({this.place});
 
   @override
   _TempState createState() => _TempState();
@@ -98,6 +99,7 @@ class _TempState extends State<Temp> {
         _gameProvider = Provider.of<GameProvider>(context, listen: false);
         return accepted
             ? ElasticIn(
+                key: UniqueKey(),
                 child: ClipOval(
                   child: Container(
                     width: 50,
@@ -132,6 +134,7 @@ class _TempState extends State<Temp> {
         return true;
       },
       onAccept: (data) {
+        setState(() {});
         AudioCache player = new AudioCache();
         const alarmAudioPath = "DOWN.mp3";
         player.play(alarmAudioPath);
