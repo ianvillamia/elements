@@ -73,6 +73,6 @@ class AuthenticationWrapper extends StatelessWidget {
     }
 
     //  return SignIn();
-    return Game();
+    return SignIn();
   }
 }

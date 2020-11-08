@@ -119,13 +119,28 @@ class _LessonsMainState extends State<LessonsHome> {
   }
 
   _greeting() {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    var user = FirebaseAuth.instance.currentUser;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Hey!',
-          style: CustomTextStyles.customText(isBold: true),
-        ),
+        StreamBuilder<DocumentSnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection('users')
+                .doc(user.uid)
+                .snapshots(),
+            builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+              if (snapshot.hasError) {
+                print(snapshot.error);
+                return Text('Hey!');
+              } else if (snapshot.hasData) {
+                return Text(
+                  'Hey ${snapshot.data['firstName']}!',
+                  style: CustomTextStyles.customText(isBold: true),
+                );
+              }
+              return Center();
+            }),
         SizedBox(
           height: size.height * .02,
         ),
@@ -157,10 +172,11 @@ class _LessonsMainState extends State<LessonsHome> {
   }
 
   _buildCategories() {
+    FirebaseAuth auth = FirebaseAuth.instance;
     return StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
             .collection('users')
-            .doc('NwsYI4qbvveQ5fvGrolUWQqhfw53')
+            .doc(auth.currentUser.uid)
             .collection('courses')
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

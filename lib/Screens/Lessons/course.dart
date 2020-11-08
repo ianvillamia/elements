@@ -103,14 +103,14 @@ class _CourseState extends State<Course> {
                       child: Material(
                         type: MaterialType.transparency,
                         child: Text(
-                          'Course content',
+                          'Chemistry for Beginners',
                           style: CustomTextStyles.customText(
                               size: FontSizes.subHeading, isBold: true),
                         ),
                       ),
                     ),
                     Text(
-                      'Course description',
+                      'Lessons in chemistry for beginners is to learn chemisty and more about the stuff and more stuff',
                       style: CustomTextStyles.customText(
                           size: FontSizes.small, isBold: true),
                     ),
