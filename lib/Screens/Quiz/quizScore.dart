@@ -77,7 +77,7 @@ class _QuizScoreState extends State<QuizScore> {
             MaterialButton(
               color: Color.fromRGBO(245, 47, 89, 1),
               child: Text(
-                'Proceed',
+                'End',
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
@@ -93,13 +93,14 @@ class _QuizScoreState extends State<QuizScore> {
     print(_quizProvider.score);
     print(_quizProvider.quizLength);
     print(_quizProvider.score / _quizProvider.quizLength);
+    double score = (_quizProvider.score / _quizProvider.quizLength);
     return Container(
       child: CircularPercentIndicator(
         radius: 130.0,
         animation: true,
         animationDuration: 1200,
         lineWidth: 15.0,
-        percent: _quizProvider.score / _quizProvider.quizLength,
+        percent: score,
         center: new Text(
           _quizProvider.score.toString() +
               "/" +
@@ -107,8 +108,8 @@ class _QuizScoreState extends State<QuizScore> {
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         circularStrokeCap: CircularStrokeCap.butt,
-        backgroundColor: Colors.yellow,
-        progressColor: Colors.red,
+        backgroundColor: Colors.red[100],
+        progressColor: Colors.red[700],
       ),
     );
   }
@@ -120,10 +121,15 @@ class _QuizScoreState extends State<QuizScore> {
         style:
             TextStyle(fontSize: size.height * .03, fontWeight: FontWeight.w800),
       );
-    } else if (_quizProvider.score / _quizProvider.quizLength == 0.5) {
-      return Text("You Can Do Better..");
+    } else if (_quizProvider.score / _quizProvider.quizLength >= 0.5 &&
+        _quizProvider.score / _quizProvider.quizLength <= 0.99) {
+      return Text("You Can Do Better..",
+          style: TextStyle(
+              fontSize: size.height * .03, fontWeight: FontWeight.w800));
     } else {
-      return Text("You Should Try Hard..");
+      return Text("You Should Try Hard..",
+          style: TextStyle(
+              fontSize: size.height * .03, fontWeight: FontWeight.w800));
     }
   }
 }

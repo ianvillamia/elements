@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Global/magicwand.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
@@ -28,6 +29,9 @@ class FluroRouter {
   static Handler _periodicTableHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PeriodicTable());
+  static Handler _quizLoadingHandler = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          MagicWandSplashScreen());
 
 //-----------------------Routenames----------------------------------------//
   static void setupRouter() {
@@ -42,5 +46,7 @@ class FluroRouter {
     router.define(Routes.periodicTable,
         handler: _periodicTableHandler,
         transitionType: TransitionType.cupertino);
+    router.define(Routes.quizLoading,
+        handler: _quizLoadingHandler, transitionType: TransitionType.cupertino);
   }
 }

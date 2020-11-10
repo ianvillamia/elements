@@ -43,7 +43,7 @@ class ElementData {
       triviaDesc,
       columnNumber;
   final int number;
-  final List<Color> colors;
+  final int colors;
 
   ElementData.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -56,7 +56,7 @@ class ElementData {
         number = json['number'],
         triviaImage = json['trivia_image'],
         triviaDesc = json['trivia_desc'],
-        colors = (json['colors'] as List).map((value) => Color(value)).toList();
+        colors = json['colors'];
 }
 
 class ElementsApp extends StatelessWidget {
@@ -120,7 +120,7 @@ class ElementTile extends StatelessWidget implements PreferredSizeWidget {
         width: kContentSize,
         height: kContentSize,
         foregroundDecoration: BoxDecoration(
-          gradient: LinearGradient(colors: element.colors),
+          color: Color(element.colors),
           backgroundBlendMode: BlendMode.multiply,
         ),
         child: RawMaterialButton(

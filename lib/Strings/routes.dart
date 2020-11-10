@@ -5,4 +5,5 @@ class Routes {
   static String lessonsMain = '/lessonsMain';
   static String periodicTable = '/periodicTable';
   static String lesson1 = '/lesson1';
+  static String quizLoading = '/quizLoading';
 }

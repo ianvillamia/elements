@@ -7,6 +7,7 @@ import 'package:mynewapp/Models/Question.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mynewapp/Strings/routes.dart';
 import 'package:provider/provider.dart';
 
 class QuizQuestion extends StatefulWidget {
@@ -45,7 +46,7 @@ class _QuestionState extends State<QuizQuestion>
         child: Stack(
           children: [
             Positioned(child: _topbar()),
-            Positioned(top: size.height * .25, child: _body())
+            Positioned(top: size.height * .27, child: _body())
           ],
         ),
       ),
@@ -65,7 +66,7 @@ class _QuestionState extends State<QuizQuestion>
   _body() {
     return Container(
       width: size.width,
-      height: size.height * .75,
+      height: size.height * .7,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: Colors.white,
@@ -74,12 +75,18 @@ class _QuestionState extends State<QuizQuestion>
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: size.height * .15,
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(22, 30, 22, 0),
+              child: Text(_question.question,
+                  textAlign: TextAlign.justify,
+                  style: GoogleFonts.openSans(
+                      fontSize: 22, fontWeight: FontWeight.bold)),
+            ),
           ),
-          Text(_question.question,
-              style: GoogleFonts.openSans(
-                  fontSize: 30, fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: size.height * .02,
+          ),
           Container(
             width: size.width,
             child: Padding(
@@ -120,14 +127,15 @@ class _QuestionState extends State<QuizQuestion>
                                   i < _quizProvider.quizLength;
                                   i++) {
                                 print('pop' + i.toString());
-                                Navigator.pop(context);
                               }
 
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          MagicWandSplashScreen()));
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  settings:
+                                      RouteSettings(name: Routes.quizLoading),
+                                  builder: (context) => MagicWandSplashScreen(),
+                                ),
+                              );
                             }
                           },
                           child: Text(
