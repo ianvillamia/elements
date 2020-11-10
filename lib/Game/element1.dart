@@ -5,6 +5,7 @@ import 'package:mynewapp/Models/Coordinates.dart';
 import 'package:mynewapp/Models/Element.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
+import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:provider/provider.dart';
 import './gameItems.dart';
 
@@ -23,7 +24,11 @@ class _Element1State extends State<Element1> {
       children: [
         Align(
           alignment: Alignment.topCenter,
-          child: Text('METHOXYMETHANE'),
+          child: Text(
+            'METHOXYMETHANE',
+            style: CustomTextStyles.customText(
+                isBold: true, size: FontSizes.large),
+          ),
         ),
         Positioned(
             top: Element1Values.getCoordinate(order: 1).y,
