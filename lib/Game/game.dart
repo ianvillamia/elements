@@ -4,6 +4,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/element1.dart';
 import 'package:mynewapp/Game/error.dart';
+import 'package:mynewapp/Game/portrait.dart';
 import 'package:mynewapp/Game/success.dart';
 import 'package:mynewapp/Game/temp.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
@@ -90,19 +91,22 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     _gameProvider = Provider.of<GameProvider>(context, listen: true);
     size = MediaQuery.of(context).size;
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        width: size.width,
-        height: size.height,
-        child: Column(
-          children: <Widget>[
-            // Text('CH3-O-CH3'),
-            _gameScreen()
-            //enter widgets here
-          ],
-        ),
-      ),
+      body: isPortrait
+          ? Portrait()
+          : Container(
+              color: Colors.white,
+              width: size.width,
+              height: size.height,
+              child: Column(
+                children: <Widget>[
+                  // Text('CH3-O-CH3'),
+                  _gameScreen()
+                  //enter widgets here
+                ],
+              ),
+            ),
     );
   }
 
@@ -138,10 +142,8 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                           MaterialPageRoute(builder: (context) => Success()));
                     } else {
                       //shake screen
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ErrorScreen()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Temporary()));
                     }
                   },
                   child: Text(

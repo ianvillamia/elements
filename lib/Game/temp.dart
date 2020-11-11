@@ -20,12 +20,8 @@ class _TemporaryState extends State<Temporary> {
                   alignment: Alignment.center,
                   fit: BoxFit.contain,
                   animation: _animationName,
-                  mixSeconds: 0.5, completed: (String animationName) {
-            setState(() {
-              // Return to idle.
-              _animationName = "idle";
-            });
-          })),
+                  mixSeconds: 0.5,
+                  completed: (String animationName) {})),
           Positioned.fill(
               child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,

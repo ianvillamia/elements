@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Game/game.dart';
+import 'package:mynewapp/Game/preludeToGame.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_home.dart';
@@ -62,7 +62,8 @@ class _HomeState extends State<Home> {
         children: [
           LessonsHome(),
           QuizHome(),
-          Game(),
+          PreludeToGame(),
+          // ProtoGame(),
           Container(
             color: Colors.pink,
           )
