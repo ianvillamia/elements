@@ -42,10 +42,6 @@ class _SuccessState extends State<Success> {
               //fit: BoxFit.contain,
               animation: _animation,
             ),
-            NimaActor("assets/robo2",
-                alignment: Alignment.center,
-                fit: BoxFit.contain,
-                animation: "Flight"),
             Align(
               alignment: Alignment.center,
               child: JelloIn(
