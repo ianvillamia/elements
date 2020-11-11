@@ -62,35 +62,30 @@ class _LessonsMainState extends State<LessonsHome> {
               SizedBox(
                 height: size.height * .03,
               ),
-              Align(
-                alignment: Alignment.center,
-                child: _searchBar(),
-              ),
+              // Align(
+              //   alignment: Alignment.center,
+              //   child: _searchBar(),
+              // ),
               NavigationCarousel(),
-              Container(
-                  color: Colors.blue,
-                  height: size.height * 0.5,
-                  child: ListView(children: [
-                    SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          //enter widgets here
-                          //topbar
+              Text(
+                'Courses',
+                style: CustomTextStyles.customText(
+                    size: FontSizes.large, isBold: true),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      //enter widgets here
+                      //topbar
 
-                          SizedBox(
-                            height: size.height * .03,
-                          ),
-                          Text(
-                            'Courses',
-                            style: CustomTextStyles.customText(
-                                size: FontSizes.large, isBold: true),
-                          ),
-                          _buildCategories()
-                        ],
-                      ),
-                    ),
-                  ])),
+                      _buildCategories(),
+                      _buildCategories()
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

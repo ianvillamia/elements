@@ -142,8 +142,10 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                           MaterialPageRoute(builder: (context) => Success()));
                     } else {
                       //shake screen
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Temporary()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ErrorScreen()));
                     }
                   },
                   child: Text(
