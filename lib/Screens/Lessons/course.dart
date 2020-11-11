@@ -46,8 +46,8 @@ class _CourseState extends State<Course> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(widget.image), fit: BoxFit.fill)),
-        height: size.height * .3,
+                image: NetworkImage(widget.image), fit: BoxFit.cover)),
+        height: size.height * .35,
         width: size.width,
         child: Stack(
           children: [
@@ -103,14 +103,17 @@ class _CourseState extends State<Course> {
                       child: Material(
                         type: MaterialType.transparency,
                         child: Text(
-                          'Chemistry for Beginners',
+                          widget.course.title,
                           style: CustomTextStyles.customText(
                               size: FontSizes.subHeading, isBold: true),
                         ),
                       ),
                     ),
+                    SizedBox(height: size.height * .01),
                     Text(
-                      'Lessons in chemistry for beginners is to learn chemisty and more about the stuff and more stuff',
+                      widget.course.description,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                       style: CustomTextStyles.customText(
                           size: FontSizes.small, isBold: true),
                     ),
@@ -173,35 +176,37 @@ class _CourseState extends State<Course> {
                           isBold: true,
                           color: Color.fromRGBO(228, 231, 244, 1)),
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // Text(
-                        //   lesson.video_time,
-                        //   style: CustomTextStyles.customText(
-                        //       size: FontSizes.medium, color: Colors.red),
-                        // ),
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 25),
-                          child: Container(
-                            width: size.width * .45,
-                            child: Row(
-                              children: [
-                                Flexible(
-                                  child: Text(
-                                    lessonTemp.title,
-                                    style: CustomTextStyles.customText(
-                                        size: FontSizes.large, isBold: true),
-                                  ),
-                                ),
-                              ],
+                    //Column(
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    //children: [
+                    // Text(
+                    //   lesson.video_time,
+                    //   style: CustomTextStyles.customText(
+                    //       size: FontSizes.medium, color: Colors.red),
+                    // ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: size.height * .005),
+                      child: Container(
+                        width: size.width * .45,
+                        child: Row(
+                          children: [
+                            Flexible(
+                              child: Text(
+                                lessonTemp.title,
+                                style: CustomTextStyles.customText(
+                                    size: FontSizes.large, isBold: true),
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          ],
+                        ),
+                      ),
                     ),
-                    _playIcon(lesson: lessonTemp)
+                    //],
+                    //),
+                    Padding(
+                        padding: EdgeInsets.only(bottom: size.height * .02),
+                        child: _playIcon(lesson: lessonTemp))
                   ],
                 ),
               ],

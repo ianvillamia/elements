@@ -109,7 +109,9 @@ class _LessonState extends State<Lesson> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(lesson.imageUrl), fit: BoxFit.cover)),
+          image: NetworkImage(lesson.imageUrl),
+          fit: BoxFit.fitWidth,
+        )),
         height: size.height * .3,
         width: size.width,
         child: Stack(

@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Models/UserModel.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
@@ -45,40 +46,52 @@ class _LessonsMainState extends State<LessonsHome> {
       key: scaffoldKey,
       drawer: BuildDrawer(),
       body: Container(
+        color: Colors.yellow,
         width: size.width,
         height: size.height,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                //enter widgets here
-                //topbar
-                _topbar(),
-                SizedBox(
-                  height: size.height * .05,
-                ),
-                _greeting(),
+          padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _topbar(),
+              SizedBox(
+                height: size.height * .05,
+              ),
+              _greeting(),
+              SizedBox(
+                height: size.height * .03,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: _searchBar(),
+              ),
+              NavigationCarousel(),
+              Container(
+                  color: Colors.blue,
+                  height: size.height * 0.5,
+                  child: ListView(children: [
+                    SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          //enter widgets here
+                          //topbar
 
-                SizedBox(
-                  height: size.height * .03,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: _searchBar(),
-                ),
-                SizedBox(
-                  height: size.height * .03,
-                ),
-                Text(
-                  'Courses',
-                  style: CustomTextStyles.customText(
-                      size: FontSizes.large, isBold: true),
-                ),
-                _buildCategories()
-              ],
-            ),
+                          SizedBox(
+                            height: size.height * .03,
+                          ),
+                          Text(
+                            'Courses',
+                            style: CustomTextStyles.customText(
+                                size: FontSizes.large, isBold: true),
+                          ),
+                          _buildCategories()
+                        ],
+                      ),
+                    ),
+                  ])),
+            ],
           ),
         ),
       ),
@@ -197,29 +210,38 @@ class _LessonsMainState extends State<LessonsHome> {
 
   _card({@required DocumentSnapshot doc}) {
     CourseModel course = CourseModel.getData(doc: doc);
-    return Hero(
-      tag: course.title,
-      child: Card(
-          elevation: 5,
-          child: InkWell(
-            splashColor: Colors.blue.withAlpha(30),
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return Course(
-                    image: course.courseImageUrl,
-                    lessons: course.lessons,
-                    course: course);
-              }));
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(course.courseImageUrl),
-                      fit: BoxFit.cover)),
-              width: size.width * .4,
-              height: size.height * .2,
-            ),
-          )),
+    return Column(
+      children: [
+        Hero(
+          tag: course.title,
+          child: Card(
+              elevation: 5,
+              child: InkWell(
+                splashColor: Colors.blue.withAlpha(30),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return Course(
+                        image: course.courseImageUrl,
+                        lessons: course.lessons,
+                        course: course);
+                  }));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(course.courseImageUrl),
+                          fit: BoxFit.cover)),
+                  width: size.width * .4,
+                  height: size.height * .2,
+                ),
+              )),
+        ),
+        Text(
+          course.title,
+          style:
+              CustomTextStyles.customText(isBold: true, size: FontSizes.small),
+        ),
+      ],
     );
   }
 }

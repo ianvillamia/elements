@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Game/game.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/Screens/Home/stars.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -32,7 +33,7 @@ class BuildDrawer extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProtoGame(),
+                      builder: (context) => Game(),
                     ));
               },
               buttonText: 'Compound Simulation',
