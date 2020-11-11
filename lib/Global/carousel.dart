@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mynewapp/Utils/carouselcard.dart';
+import 'package:mynewapp/Strings/images.dart';
 
 class NavigationCarousel extends StatefulWidget {
   @override
@@ -8,7 +10,8 @@ class NavigationCarousel extends StatefulWidget {
 
 class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
-  List cardList = [item1(), item2(), item3(), item4()];
+  List cardList = [Item1(), Item2(), Item3(), Item4()];
+
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
@@ -18,140 +21,109 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
   }
 
   Size size;
+
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Container(
-      child: Column(
-        children: [
-          CarouselSlider(
-            options: CarouselOptions(
-              height: size.height * .25,
-              aspectRatio: 2.0,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
-            items: cardList.map((card) {
-              return Builder(builder: (BuildContext context) {
-                return Container(
-                  height: MediaQuery.of(context).size.height * 0.30,
-                  width: MediaQuery.of(context).size.width,
-                  child: Card(
-                    color: Colors.blueAccent,
-                    child: card,
-                  ),
-                );
-              });
-            }).toList(),
-          ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: map<Widget>(cardList, (index, url) {
-          //     return Container(
-          //       width: 10.0,
-          //       height: 10.0,
-          //       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-          //       decoration: BoxDecoration(
-          //         shape: BoxShape.circle,
-          //         color:
-          //             _currentIndex == index ? Colors.blueAccent : Colors.grey,
-          //       ),
-          //     );
-          //   }),
-          // ),
-        ],
-      ),
-    );
-  }
-
-  static item1() {
-    return Container(
-      child: MaterialButton(
-        onPressed: () {},
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Text("Compound Simulation",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold)),
-            Text("Learn organic compounds through this  simulation game.",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w600)),
-          ],
+      child: CarouselSlider(
+        options: CarouselOptions(
+          viewportFraction: 0.75,
+          height: size.height * .25,
+          enlargeCenterPage: true,
+          onPageChanged: (index, reason) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
         ),
+        items: cardList.map((card) {
+          return Builder(builder: (BuildContext context) {
+            return Container(
+                height: size.height * 0.40,
+                width: size.width,
+                decoration: BoxDecoration(
+                  //color: Colors.yellow,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Stack(
+                  children: [
+                    Card(
+                      color: Colors.transparent,
+                      elevation: 0,
+                      child: card,
+                    ),
+                    //CarouselCard.navImage(size: size, image: Images.giraffe)
+                  ],
+                ));
+          });
+        }).toList(),
       ),
     );
   }
+}
 
-  static item2() {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Text("Learning Module",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold)),
-          Text("Learn more about chemistry",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w600)),
-        ],
-      ),
-    );
+class Item1 extends StatelessWidget {
+  Size size;
+  @override
+  Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    return CarouselCard.buildCategories(
+        title: 'Compound Simulation',
+        desc: 'Learn organic compounds through this  simulation game.',
+        color1: Colors.deepPurple[300],
+        color2: Colors.deepPurple[200],
+        onTap: () {},
+        size: size,
+        image: Images.elephant);
   }
+}
 
-  static item3() {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Text("Lewis Structure Calculator",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold)),
-          Text("Get your naming problem solve",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w600)),
-        ],
-      ),
-    );
+class Item2 extends StatelessWidget {
+  Size size;
+  @override
+  Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    return CarouselCard.buildCategories(
+        title: 'Learning Module',
+        desc: 'Learn more about chemistry',
+        color1: Colors.blue[400],
+        color2: Colors.blue[200],
+        onTap: () {},
+        size: size,
+        image: Images.giraffe);
   }
+}
 
-  static item4() {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Text("Interactive Periodic Table of Elements",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold)),
-          Text(
-              "a well-organized view of elements according to its properties and characteristics.",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w600)),
-        ],
-      ),
-    );
+class Item3 extends StatelessWidget {
+  Size size;
+  @override
+  Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    return CarouselCard.buildCategories(
+        title: 'Lewis Structure Calculator',
+        desc: 'Get your naming problem solve',
+        color1: Colors.yellow[800],
+        color2: Colors.yellow[600],
+        onTap: () {},
+        size: size,
+        image: Images.owl);
+  }
+}
+
+class Item4 extends StatelessWidget {
+  Size size;
+  @override
+  Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    return CarouselCard.buildCategories(
+        title: 'Interactive Periodic Table of Elements',
+        desc:
+            'a well-organized view of elements according to its properties and characteristics.',
+        color1: Colors.green[300],
+        color2: Colors.green[200],
+        onTap: () {},
+        size: size,
+        image: Images.hippo);
   }
 }

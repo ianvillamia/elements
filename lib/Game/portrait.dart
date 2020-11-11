@@ -25,10 +25,10 @@ class _PortraitState extends State<Portrait> {
           Center(
             child: Container(
               width: size.width * .8,
-              height: size.height * .5,
+              height: size.height * .7,
               child: NimaActor("assets/monkey.nma",
-                  alignment: Alignment.center,
-                  fit: BoxFit.contain,
+                  alignment: Alignment.bottomCenter,
+                  fit: BoxFit.fitWidth,
                   animation: "Idle"),
             ),
           ),

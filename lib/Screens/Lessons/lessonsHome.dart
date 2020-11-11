@@ -46,7 +46,6 @@ class _LessonsMainState extends State<LessonsHome> {
       key: scaffoldKey,
       drawer: BuildDrawer(),
       body: Container(
-        color: Colors.yellow,
         width: size.width,
         height: size.height,
         child: Padding(
@@ -67,22 +66,25 @@ class _LessonsMainState extends State<LessonsHome> {
               //   child: _searchBar(),
               // ),
               NavigationCarousel(),
+              SizedBox(height: size.height * .03),
               Text(
                 'Courses',
                 style: CustomTextStyles.customText(
                     size: FontSizes.large, isBold: true),
               ),
               Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      //enter widgets here
-                      //topbar
+                child: Align(
+                  alignment: Alignment.center,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        //enter widgets here
+                        //topbar
 
-                      _buildCategories(),
-                      _buildCategories()
-                    ],
+                        _buildCategories(),
+                      ],
+                    ),
                   ),
                 ),
               )
