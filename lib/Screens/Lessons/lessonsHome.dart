@@ -44,7 +44,7 @@ class _LessonsMainState extends State<LessonsHome> {
     size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      drawer: BuildDrawer(),
+      // drawer: BuildDrawer(),
       body: Container(
         width: size.width,
         height: size.height,
@@ -61,33 +61,29 @@ class _LessonsMainState extends State<LessonsHome> {
               SizedBox(
                 height: size.height * .03,
               ),
-              // Align(
-              //   alignment: Alignment.center,
-              //   child: _searchBar(),
-              // ),
               NavigationCarousel(),
               SizedBox(height: size.height * .03),
-              Text(
-                'Courses',
-                style: CustomTextStyles.customText(
-                    size: FontSizes.large, isBold: true),
-              ),
-              Expanded(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        //enter widgets here
-                        //topbar
+              // Text(
+              //   'Courses',
+              //   style: CustomTextStyles.customText(
+              //       size: FontSizes.large, isBold: true),
+              // ),
+              // Expanded(
+              //   child: Align(
+              //     alignment: Alignment.center,
+              //     child: SingleChildScrollView(
+              //       child: Column(
+              //         crossAxisAlignment: CrossAxisAlignment.start,
+              //         children: <Widget>[
+              //           //enter widgets here
+              //           //topbar
 
-                        _buildCategories(),
-                      ],
-                    ),
-                  ),
-                ),
-              )
+              //           _buildCategories(),
+              //         ],
+              //       ),
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
@@ -155,30 +151,13 @@ class _LessonsMainState extends State<LessonsHome> {
           height: size.height * .02,
         ),
         Text(
-          'Find a course you want to learn',
+          'Lets Get Started try one of these items ',
           style: CustomTextStyles.customText(
               color: Color.fromRGBO(129, 134, 163, 1),
               size: FontSizes.subHeading),
         ),
       ],
     );
-  }
-
-  _searchBar() {
-    return Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50), color: Colors.transparent),
-        width: size.width * .8,
-        height: size.height * .08,
-        child: TextField(
-            decoration: InputDecoration(
-                filled: true,
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Search something ...',
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide.none),
-                contentPadding: EdgeInsets.zero)));
   }
 
   _buildCategories() {

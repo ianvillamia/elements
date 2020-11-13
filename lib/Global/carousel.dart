@@ -10,7 +10,47 @@ class NavigationCarousel extends StatefulWidget {
 
 class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
-  List cardList = [Item1(), Item2(), Item3(), Item4()];
+  List cardList = [
+    CarouselItem(
+      ontap: () {},
+      title: 'Compound Simulation Game',
+      description:
+          "Who say's learning needs to be boring? Have fun using our compound simulation Game",
+      image: Images.owl,
+      color1: Colors.yellow[800],
+      color2: Colors.yellow[600],
+      textColor: Colors.black,
+    ),
+    CarouselItem(
+      ontap: () {},
+      title: 'Learning Module',
+      description:
+          'A collective set of lessons in which you could learn a lot through watching videos',
+      image: Images.giraffe,
+      color1: Colors.blue[400],
+      color2: Colors.blue[200],
+      textColor: Colors.white,
+    ),
+    // CarouselItem(
+    //   ontap: () {},
+    //   title: 'Lewis Structure Calculator',
+    //   description: 'Get your naming problem solve',
+    //   image: Images.owl,
+    //   color1: Colors.yellow[800],
+    //   color2: Colors.yellow[600],
+    //   textColor: Colors.black,
+    // ),
+    CarouselItem(
+      ontap: () {},
+      title: 'Interactive Periodic Table of Elements',
+      description:
+          'a well-organized view of elements according to its properties and characteristics.',
+      image: Images.hippo,
+      color1: Colors.green[300],
+      color2: Colors.green[200],
+      textColor: Colors.white,
+    ),
+  ];
 
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -29,7 +69,7 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
       child: CarouselSlider(
         options: CarouselOptions(
           viewportFraction: 0.75,
-          height: size.height * .25,
+          height: size.height * .32,
           enlargeCenterPage: true,
           onPageChanged: (index, reason) {
             setState(() {
@@ -63,67 +103,101 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
   }
 }
 
-class Item1 extends StatelessWidget {
-  Size size;
+class CarouselItem extends StatefulWidget {
+  final Function ontap;
+
+  final String title, description, image;
+  final Color color1, color2, textColor;
+  CarouselItem(
+      {@required this.ontap,
+      @required this.title,
+      @required this.description,
+      @required this.image,
+      @required this.color1,
+      @required this.color2,
+      @required this.textColor});
+
   @override
-  Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    return CarouselCard.buildCategories(
-        title: 'Compound Simulation',
-        desc: 'Learn organic compounds through this  simulation game.',
-        color1: Colors.deepPurple[300],
-        color2: Colors.deepPurple[200],
-        onTap: () {},
-        size: size,
-        image: Images.elephant);
-  }
+  _CarouselItemState createState() => _CarouselItemState();
 }
 
-class Item2 extends StatelessWidget {
-  Size size;
+class _CarouselItemState extends State<CarouselItem> {
   @override
+  Size size;
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return CarouselCard.buildCategories(
-        title: 'Learning Module',
-        desc: 'Learn more about chemistry',
-        color1: Colors.blue[400],
-        color2: Colors.blue[200],
-        onTap: () {},
-        size: size,
-        image: Images.giraffe);
-  }
-}
-
-class Item3 extends StatelessWidget {
-  Size size;
-  @override
-  Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    return CarouselCard.buildCategories(
-        title: 'Lewis Structure Calculator',
-        desc: 'Get your naming problem solve',
-        color1: Colors.yellow[800],
-        color2: Colors.yellow[600],
-        onTap: () {},
-        size: size,
-        image: Images.owl);
-  }
-}
-
-class Item4 extends StatelessWidget {
-  Size size;
-  @override
-  Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    return CarouselCard.buildCategories(
-        title: 'Interactive Periodic Table of Elements',
-        desc:
-            'a well-organized view of elements according to its properties and characteristics.',
-        color1: Colors.green[300],
-        color2: Colors.green[200],
-        onTap: () {},
-        size: size,
-        image: Images.hippo);
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [widget.color1, widget.color2],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                stops: [0.2, 0.65]),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 3,
+                blurRadius: 7,
+                offset: Offset(3, 3),
+              )
+            ],
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Stack(
+            children: [
+              Container(
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: Container(
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                              flex: 40,
+                              child: Text(widget.title,
+                                  style: TextStyle(
+                                      color: widget.textColor,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            Expanded(
+                              flex: 60,
+                              child: Padding(
+                                padding:
+                                    EdgeInsets.only(right: size.width * .3),
+                                child: Text(widget.description,
+                                    style: TextStyle(
+                                      color: widget.textColor,
+                                      fontSize: 13.0,
+                                    )),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: -10,
+                        child: Container(
+                          width: size.width * .3,
+                          height: size.height * .2,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(widget.image),
+                                  fit: BoxFit.fitWidth)),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          )),
+    );
   }
 }
