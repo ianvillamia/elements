@@ -15,6 +15,8 @@ import 'package:mynewapp/Services/routing.dart';
 import 'package:mynewapp/Strings/routes.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +26,7 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.light));
+
   runApp(MyApp());
 }
 
@@ -44,6 +47,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         //setup fluro
+
         onGenerateRoute: FluroRouter.router.generator,
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.def,

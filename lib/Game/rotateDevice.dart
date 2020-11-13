@@ -5,14 +5,14 @@ import 'package:mynewapp/Game/game.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:nima/nima_actor.dart';
 
-class Portrait extends StatefulWidget {
-  Portrait({Key key}) : super(key: key);
+class RotateDevice extends StatefulWidget {
+  RotateDevice({Key key}) : super(key: key);
 
   @override
   _PortraitState createState() => _PortraitState();
 }
 
-class _PortraitState extends State<Portrait> {
+class _PortraitState extends State<RotateDevice> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -28,7 +28,7 @@ class _PortraitState extends State<Portrait> {
               height: size.height * .7,
               child: NimaActor("assets/monkey.nma",
                   alignment: Alignment.bottomCenter,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.contain,
                   animation: "Idle"),
             ),
           ),
@@ -41,11 +41,6 @@ class _PortraitState extends State<Portrait> {
                   children: [
                     Text(
                       'Please Rotate Device',
-                      style: GoogleFonts.indieFlower(
-                          fontSize: 40, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'to see the game',
                       style: GoogleFonts.indieFlower(
                           fontSize: 40, fontWeight: FontWeight.bold),
                     ),

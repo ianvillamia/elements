@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Game/rotateDevice.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
 
@@ -25,17 +26,20 @@ class _QuizHomeState extends State<QuizHome> {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: Stack(
-          children: [
-            Positioned(child: _topbar()),
-            Positioned(top: size.height * .25, child: _body())
-          ],
-        ),
-      ),
+      body: isPortrait
+          ? Container(
+              width: size.width,
+              height: size.height,
+              child: Stack(
+                children: [
+                  Positioned(child: _topbar()),
+                  Positioned(top: size.height * .25, child: _body())
+                ],
+              ),
+            )
+          : RotateDevice(),
     );
   }
 

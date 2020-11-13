@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Game/rotateDevice.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -18,32 +19,36 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Size size;
+
   @override
   Widget build(BuildContext context) {
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _topbar(),
-              SizedBox(
-                height: size.height * .05,
+      body: isPortrait
+          ? Container(
+              width: size.width,
+              height: size.height,
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _topbar(),
+                    SizedBox(
+                      height: size.height * .05,
+                    ),
+                    _greeting(),
+                    SizedBox(
+                      height: size.height * .1,
+                    ),
+                    NavigationCarousel(),
+                    SizedBox(height: size.height * .03),
+                  ],
+                ),
               ),
-              _greeting(),
-              SizedBox(
-                height: size.height * .03,
-              ),
-              NavigationCarousel(),
-              SizedBox(height: size.height * .03),
-            ],
-          ),
-        ),
-      ),
+            )
+          : RotateDevice(),
     );
   }
 
@@ -98,6 +103,7 @@ class _HomeState extends State<Home> {
               } else if (snapshot.hasData) {
                 return Text(
                   'Hey ${snapshot.data['firstName']}!',
+                  overflow: TextOverflow.ellipsis,
                   style: CustomTextStyles.customText(isBold: true),
                 );
               }
@@ -107,10 +113,17 @@ class _HomeState extends State<Home> {
           height: size.height * .02,
         ),
         Text(
-          'Lets Get Started try one of these items ',
+          'Lets get started try one of these items',
           style: CustomTextStyles.customText(
-              color: Color.fromRGBO(129, 134, 163, 1),
-              size: FontSizes.subHeading),
+              color: Color.fromRGBO(129, 134, 163, 1), size: FontSizes.large),
+        ),
+        SizedBox(
+          height: size.height * .02,
+        ),
+        Text(
+          'just click on an item to continue...',
+          style: CustomTextStyles.customText(
+              color: Color.fromRGBO(129, 134, 163, 1), size: FontSizes.medium),
         ),
       ],
     );
