@@ -9,7 +9,7 @@ import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Screens/authentication/signUp.dart';
 //import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Strings/routes.dart';
-import 'package:mynewapp/home.dart';
+import 'package:mynewapp/parent.dart';
 
 class FluroRouter {
   static Router router = Router();
@@ -22,7 +22,7 @@ class FluroRouter {
           SignUp());
   static Handler _homeHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-          Home());
+          Parent());
   static Handler _lessonsMainHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           LessonsHome());

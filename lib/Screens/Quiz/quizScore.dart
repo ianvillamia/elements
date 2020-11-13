@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/Question.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Strings/images.dart';
-import 'package:mynewapp/home.dart';
+import 'package:mynewapp/parent.dart';
 import 'package:provider/provider.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 

@@ -7,7 +7,7 @@ import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
-import 'package:mynewapp/home.dart';
+import 'package:mynewapp/parent.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
@@ -70,7 +70,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseUser = context.watch<User>();
 
     if (firebaseUser != null) {
-      return Home();
+      return Parent();
     }
 
     //  return SignIn();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:mynewapp/Utils/carouselcard.dart';
+
 import 'package:mynewapp/Strings/images.dart';
 
 class NavigationCarousel extends StatefulWidget {

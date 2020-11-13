@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/preludeToGame.dart';
 import 'package:mynewapp/Screens/Game/protoGame.dart';
+import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_home.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 enum _SelectedTab { home, likes, search, profile }
 
-class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+class Parent extends StatefulWidget {
+  Parent({Key key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Parent> {
   final controller = PageController(initialPage: 0);
   var _selectedTab = _SelectedTab.home;
 
@@ -60,7 +61,8 @@ class _HomeState extends State<Home> {
         physics: BouncingScrollPhysics(),
         controller: controller,
         children: [
-          LessonsHome(),
+          Home(),
+
           QuizHome(),
           PreludeToGame(),
           // ProtoGame(),
