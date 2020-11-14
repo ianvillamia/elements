@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
 import 'package:mynewapp/Models/Element.dart';
-import 'package:mynewapp/Screens/Game/gameItems.dart';
 
 class GameProvider extends ChangeNotifier {
   ElementModel element;

@@ -1,7 +1,7 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mynewapp/Game/game.dart';
+import 'package:mynewapp/Game/elementBuilder.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:nima/nima_actor.dart';
 

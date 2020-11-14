@@ -1,14 +1,16 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Game/elementBuilder.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
-import 'package:mynewapp/Screens/Game/protoGame.dart';
+
 import 'package:provider/provider.dart';
 import 'package:splash_tap/splash_tap.dart';
 import 'package:mynewapp/Models/Element.dart';
 
 class ElementContainer extends StatefulWidget {
-  ElementContainer({Key key}) : super(key: key);
+  final Widget element;
+  ElementContainer({@required this.element});
 
   @override
   _ElementContainerState createState() => _ElementContainerState();
@@ -109,7 +111,9 @@ class _ElementContainerState extends State<ElementContainer> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => ProtoGame(),
+                                      builder: (context) => Game(
+                                        element: widget.element,
+                                      ),
                                     ));
                               },
                               child: Text('Reset'),

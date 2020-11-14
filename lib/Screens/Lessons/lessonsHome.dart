@@ -7,7 +7,7 @@ import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Models/UserModel.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
-import 'package:mynewapp/Screens/Lessons/testing.dart';
+
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Services/userService.dart';
 import 'package:mynewapp/Strings/images.dart';

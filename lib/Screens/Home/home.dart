@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Game/rotateDevice.dart';
+import 'package:mynewapp/Widgets/rotateDevice.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Strings/images.dart';

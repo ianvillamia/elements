@@ -2,22 +2,24 @@ import 'package:animate_do/animate_do.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:mynewapp/Game/element1.dart';
-import 'package:mynewapp/Game/error.dart';
-import 'package:mynewapp/Game/rotateDevice.dart';
-import 'package:mynewapp/Game/success.dart';
-import 'package:mynewapp/Game/temp.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Game/elements/Methoxymethane.dart';
+import 'package:mynewapp/Game/miniItems/error.dart';
+import 'package:mynewapp/Widgets/rotateDevice.dart';
+import 'package:mynewapp/Game/miniItems/success.dart';
+
 import 'package:mynewapp/Models/Coordinates.dart';
 
 import 'package:mynewapp/Providers/gameProvider.dart';
 
-import 'package:mynewapp/Screens/Game/elementContainer.dart';
-import 'package:mynewapp/Screens/Game/gameLogic.dart';
+import 'package:mynewapp/Game/miniItems/elementContainer.dart';
+
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:provider/provider.dart';
 
 class Game extends StatefulWidget {
-  Game({Key key}) : super(key: key);
+  final Widget element;
+  Game({@required this.element});
 
   @override
   _ProtoGameState createState() => _ProtoGameState();
@@ -116,13 +118,14 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
       child: Stack(
         children: [
           InteractiveViewer(
-            transformationController: _transformationController,
-            boundaryMargin: EdgeInsets.all(900),
-            maxScale: 10.0,
-            minScale: 0.1,
-            child: Element1(),
+              transformationController: _transformationController,
+              boundaryMargin: EdgeInsets.all(900),
+              maxScale: 1.5,
+              minScale: 1,
+              child: widget.element),
+          ElementContainer(
+            element: widget.element,
           ),
-          ElementContainer(),
           Align(
             alignment: Alignment.bottomRight,
             child: Container(
@@ -186,9 +189,6 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                         data: 'boom',
                         onDragStarted: () {
                           print('this');
-                          // AudioCache player = new AudioCache();
-                          // const alarmAudioPath = "UP.mp3";
-                          // player.play(alarmAudioPath);
                         },
                         child: ClipOval(
                           child: Container(
@@ -208,7 +208,15 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
                 ],
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              widget.element.toString(),
+              style: GoogleFonts.indieFlower(
+                  fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+          ),
         ],
       ),
     ));

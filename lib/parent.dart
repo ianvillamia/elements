@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/preludeToGame.dart';
-import 'package:mynewapp/Screens/Game/protoGame.dart';
 import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_home.dart';
@@ -22,6 +21,7 @@ class _HomeState extends State<Parent> {
   var selectedColor = Colors.white;
 
   void _handleIndexChanged(int i) {
+    print(i);
     switch (i) {
       case 0:
         controller.animateToPage(0,
@@ -38,12 +38,12 @@ class _HomeState extends State<Parent> {
 
         break;
       case 3:
-        controller.animateToPage(2,
+        controller.animateToPage(3,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 4:
-        controller.animateToPage(3,
+        controller.animateToPage(4,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
@@ -70,10 +70,6 @@ class _HomeState extends State<Parent> {
           LessonsHome(),
           QuizHome(),
           PreludeToGame(),
-          // ProtoGame(),
-          Container(
-            color: Colors.pink,
-          )
         ],
       ),
       bottomNavigationBar: SalomonBottomBar(
@@ -88,13 +84,8 @@ class _HomeState extends State<Parent> {
               icon: Icons.videogame_asset,
               text: 'Quiz',
               color: Colors.blueAccent),
-
           _buildBottomBarItem(
               icon: Icons.games, text: 'Elements', color: Colors.orange),
-          _buildBottomBarItem(
-              icon: Icons.person, text: 'Profile', color: Colors.teal),
-
-          /// Profile
         ],
       ),
     );

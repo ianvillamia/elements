@@ -1,180 +1,100 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Game/miniItems/arrows.dart';
+import 'package:mynewapp/Game/miniItems/element.dart';
 import 'package:mynewapp/Models/Coordinates.dart';
 import 'package:mynewapp/Models/Element.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:provider/provider.dart';
-import './gameItems.dart';
 
-class Element1 extends StatefulWidget {
-  Element1({Key key}) : super(key: key);
+class Methoxymethane extends StatefulWidget {
+  Methoxymethane({Key key}) : super(key: key);
 
   @override
   _Element1State createState() => _Element1State();
 }
 
-class _Element1State extends State<Element1> {
+class _Element1State extends State<Methoxymethane> {
   @override
   Widget build(BuildContext context) {
     // CH3-O-CH3
     return Stack(
       children: [
-        Align(
-          alignment: Alignment.topCenter,
-          child: Text(
-            'METHOXYMETHANE',
-            style: CustomTextStyles.customText(
-                isBold: true, size: FontSizes.large),
-          ),
-        ),
         Positioned(
             top: Element1Values.getCoordinate(order: 1).y,
             left: Element1Values.getCoordinate(order: 1).x,
-            child: Temp(
+            child: ElementItem(
               correctElement: 'H',
               place: 1,
             )),
+        Arrows.horizontalLine(x: 170, y: 190),
         Positioned(
             top: Element1Values.getCoordinate(order: 2).y,
             left: Element1Values.getCoordinate(order: 2).x,
-            child: Temp(
+            child: ElementItem(
               place: 2,
               correctElement: 'C',
             )),
+        Arrows.horizontalLine(x: 250, y: 190),
+        Arrows.verticalLine(x: 220, y: 141),
+        Arrows.verticalLine(x: 220, y: 221),
         Positioned(
             top: Element1Values.getCoordinate(order: 2.1).y,
             left: Element1Values.getCoordinate(order: 2.1).x,
-            child: Temp(
+            child: ElementItem(
               place: 2.1,
               correctElement: 'H',
             )),
         Positioned(
             top: Element1Values.getCoordinate(order: 2.2).y,
             left: Element1Values.getCoordinate(order: 2.2).x,
-            child: Temp(
+            child: ElementItem(
               place: 2.2,
               correctElement: 'H',
             )),
         Positioned(
             top: Element1Values.getCoordinate(order: 3).y,
             left: Element1Values.getCoordinate(order: 3).x,
-            child: Temp(
+            child: ElementItem(
               place: 3,
               correctElement: 'O',
             )),
+        Arrows.horizontalLine(x: 330, y: 190),
         Positioned(
             top: Element1Values.getCoordinate(order: 4).y,
             left: Element1Values.getCoordinate(order: 4).x,
-            child: Temp(
+            child: ElementItem(
               place: 4,
               correctElement: 'C',
             )),
+        Arrows.horizontalLine(x: 410, y: 190),
+        Arrows.verticalLine(x: 380, y: 141),
+        Arrows.verticalLine(x: 380, y: 221),
         Positioned(
             top: Element1Values.getCoordinate(order: 4.1).y,
             left: Element1Values.getCoordinate(order: 4.1).x,
-            child: Temp(
+            child: ElementItem(
               correctElement: 'H',
               place: 4.1,
             )),
         Positioned(
             top: Element1Values.getCoordinate(order: 4.2).y,
             left: Element1Values.getCoordinate(order: 4.2).x,
-            child: Temp(
+            child: ElementItem(
               correctElement: 'H',
               place: 4.2,
             )),
         Positioned(
             top: Element1Values.getCoordinate(order: 5).y,
             left: Element1Values.getCoordinate(order: 5).x,
-            child: Temp(
+            child: ElementItem(
               correctElement: 'H',
               place: 5,
             )),
       ],
-    );
-  }
-}
-
-class Temp extends StatefulWidget {
-  final double place;
-  final String correctElement;
-  Temp({@required this.place, @required this.correctElement});
-
-  @override
-  _TempState createState() => _TempState();
-}
-
-class _TempState extends State<Temp> {
-  @override
-  bool accepted = false;
-  ElementModel _element = ElementModel();
-  GameProvider _gameProvider;
-
-  Widget build(BuildContext context) {
-    return DragTarget(
-      builder: (context, List<String> candidateData, rejectedData) {
-        _gameProvider = Provider.of<GameProvider>(context, listen: false);
-        return accepted
-            ? ElasticIn(
-                key: UniqueKey(),
-                child: ClipOval(
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(color: _element.elementColor),
-                    child: Center(
-                      child: Text(
-                        _element.element,
-                        style: TextStyle(color: _element.fontColor),
-                      ),
-                    ),
-                  ),
-                ),
-              )
-            : ElasticIn(
-                key: UniqueKey(),
-                child: ClipOval(
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(color: Colors.grey),
-                    child: Center(
-                      child: Text(
-                        '+',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ),
-              );
-      },
-      onWillAccept: (data) {
-        AudioCache player = new AudioCache();
-        const alarmAudioPath = "boop.mp3";
-        player.play(alarmAudioPath);
-        return true;
-      },
-      onLeave: (data) {
-        AudioCache player = new AudioCache();
-        player.clearCache();
-      },
-      onAccept: (data) {
-        AudioCache player = new AudioCache();
-        const alarmAudioPath = "DOWN.mp3";
-        player.play(alarmAudioPath);
-        _gameProvider.elementReader.change(
-            element: widget.correctElement, targetElement: widget.place);
-
-        setState(() {
-          accepted = true;
-          _element.element = _gameProvider.element.element;
-          _element.fontColor = _gameProvider.element.fontColor;
-          _element.elementColor = _gameProvider.element.elementColor;
-        });
-      },
     );
   }
 }

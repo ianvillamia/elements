@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mynewapp/Game/rotateDevice.dart';
+import 'package:mynewapp/Widgets/rotateDevice.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
 
