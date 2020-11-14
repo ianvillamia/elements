@@ -38,6 +38,11 @@ class _HomeState extends State<Parent> {
 
         break;
       case 3:
+        controller.animateToPage(2,
+            duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+
+        break;
+      case 4:
         controller.animateToPage(3,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
@@ -62,7 +67,7 @@ class _HomeState extends State<Parent> {
         controller: controller,
         children: [
           Home(),
-
+          LessonsHome(),
           QuizHome(),
           PreludeToGame(),
           // ProtoGame(),
@@ -77,6 +82,8 @@ class _HomeState extends State<Parent> {
         items: [
           _buildBottomBarItem(
               icon: Icons.home, text: 'Home', color: Colors.purple),
+          _buildBottomBarItem(
+              icon: Icons.book, text: 'Lessons', color: Colors.greenAccent),
           _buildBottomBarItem(
               icon: Icons.videogame_asset,
               text: 'Quiz',

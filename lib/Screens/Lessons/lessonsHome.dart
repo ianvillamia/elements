@@ -42,6 +42,7 @@ class _LessonsMainState extends State<LessonsHome> {
     //get user cred
     _getUser(firebaseUser);
     size = MediaQuery.of(context).size;
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       key: scaffoldKey,
       // drawer: BuildDrawer(),
@@ -53,37 +54,32 @@ class _LessonsMainState extends State<LessonsHome> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _topbar(),
-              SizedBox(
-                height: size.height * .05,
-              ),
+              // _topbar(),
+              // SizedBox(
+              //   height: size.height * .05,
+              // ),
               _greeting(),
               SizedBox(
                 height: size.height * .03,
               ),
-              NavigationCarousel(),
-              SizedBox(height: size.height * .03),
-              // Text(
-              //   'Courses',
-              //   style: CustomTextStyles.customText(
-              //       size: FontSizes.large, isBold: true),
-              // ),
-              // Expanded(
-              //   child: Align(
-              //     alignment: Alignment.center,
-              //     child: SingleChildScrollView(
-              //       child: Column(
-              //         crossAxisAlignment: CrossAxisAlignment.start,
-              //         children: <Widget>[
-              //           //enter widgets here
-              //           //topbar
+              Text(
+                'Courses',
+                style: CustomTextStyles.customText(
+                    size: FontSizes.large, isBold: true),
+              ),
+              Container(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      //enter widgets here
+                      //topbar
 
-              //           _buildCategories(),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // )
+                      _buildCategories(),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
@@ -151,7 +147,7 @@ class _LessonsMainState extends State<LessonsHome> {
           height: size.height * .02,
         ),
         Text(
-          'Lets Get Started try one of these items ',
+          'Find a course you want to learn',
           style: CustomTextStyles.customText(
               color: Color.fromRGBO(129, 134, 163, 1),
               size: FontSizes.subHeading),

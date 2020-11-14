@@ -12,7 +12,7 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
   List cardList = [
     CarouselItem(
-      ontap: () {},
+      ontap: '/game',
       title: 'Compound Simulation Game',
       description:
           "Who say's learning needs to be boring? Have fun using our compound simulation Game",
@@ -22,7 +22,7 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
       textColor: Colors.black,
     ),
     CarouselItem(
-      ontap: () {},
+      ontap: '/lessonsMain',
       title: 'Learning Module',
       description:
           'A collective set of lessons in which you could learn a lot through watching videos',
@@ -41,7 +41,7 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
     //   textColor: Colors.black,
     // ),
     CarouselItem(
-      ontap: () {},
+      ontap: '/periodicTable',
       title: 'Interactive Periodic Table of Elements',
       description:
           'a well-organized view of elements according to its properties and characteristics.',
@@ -104,7 +104,7 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
 }
 
 class CarouselItem extends StatefulWidget {
-  final Function ontap;
+  final String ontap;
 
   final String title, description, image;
   final Color color1, color2, textColor;
@@ -127,7 +127,9 @@ class _CarouselItemState extends State<CarouselItem> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, widget.ontap);
+      },
       child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
