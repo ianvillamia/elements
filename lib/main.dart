@@ -15,8 +15,6 @@ import 'package:mynewapp/Services/routing.dart';
 import 'package:mynewapp/Strings/routes.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
