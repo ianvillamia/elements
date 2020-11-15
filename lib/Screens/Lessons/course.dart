@@ -1,11 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
+import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
+import 'package:provider/provider.dart';
 
 class Course extends StatefulWidget {
   final String image;
@@ -19,6 +22,8 @@ class Course extends StatefulWidget {
 
 class _CourseState extends State<Course> {
   Size size;
+  User firebaseUser;
+  bool showBanner;
   @override
   void dispose() {
     // TODO: implement dispose
@@ -26,7 +31,23 @@ class _CourseState extends State<Course> {
   }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    if (widget.course.subscribed) {
+      setState(() {
+        showBanner = false;
+      });
+    } else {
+      setState(() {
+        showBanner = true;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    firebaseUser = context.watch<User>();
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -81,55 +102,100 @@ class _CourseState extends State<Course> {
   }
 
   _body() {
-    return Container(
-      width: size.width,
-      height: size.height * .75,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: Colors.white,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Hero(
-                      tag: widget.course.title,
-                      child: Material(
-                        type: MaterialType.transparency,
-                        child: Text(
-                          widget.course.title,
-                          style: CustomTextStyles.customText(
-                              size: FontSizes.subHeading, isBold: true),
+    return Stack(
+      children: [
+        Container(
+          width: size.width,
+          height: size.height * .75,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Hero(
+                          tag: widget.course.title,
+                          child: Material(
+                            type: MaterialType.transparency,
+                            child: Text(
+                              widget.course.title,
+                              style: CustomTextStyles.customText(
+                                  size: FontSizes.subHeading, isBold: true),
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(height: size.height * .01),
+                        Text(
+                          widget.course.description,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          style: CustomTextStyles.customText(
+                              size: FontSizes.small, isBold: true),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: size.height * .01),
-                    Text(
-                      widget.course.description,
-                      maxLines: 3,
-                      overflow: TextOverflow.ellipsis,
-                      style: CustomTextStyles.customText(
-                          size: FontSizes.small, isBold: true),
-                    ),
-                  ],
+                  ),
+                ),
+                SizedBox(
+                  height: size.height * .01,
+                ),
+                Expanded(
+                    child: SingleChildScrollView(
+                        child: Column(
+                            children: widget.lessons
+                                .map(
+                                    (lesson) => _lessonCard(lessonTemp: lesson))
+                                .toList())))
+              ],
+            ),
+          ),
+        ),
+        _buildBanner()
+      ],
+    );
+  }
+
+  _buildBanner() {
+    return Visibility(
+      visible: showBanner,
+      child: Container(
+        width: size.width,
+        height: size.height * .75,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(195, 199, 213, .5),
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: size.width,
+              color: Colors.white,
+              child: MaterialButton(
+                onPressed: () {
+                  setState(() {
+                    showBanner = false;
+                    CourseService().subscribeToCourse(
+                        ref: firebaseUser.uid, courseID: widget.course.docId);
+                  });
+
+                  //update this
+                },
+                child: Text(
+                  'Take Course',
+                  style: TextStyle(
+                      fontSize: FontSizes.medium, fontWeight: FontWeight.bold),
                 ),
               ),
-            ),
-            SizedBox(
-              height: size.height * .01,
-            ),
-            Expanded(
-                child: SingleChildScrollView(
-                    child: Column(
-                        children: widget.lessons
-                            .map((lesson) => _lessonCard(lessonTemp: lesson))
-                            .toList())))
+            )
           ],
         ),
       ),
@@ -137,11 +203,7 @@ class _CourseState extends State<Course> {
   }
 
   Widget _lessonCard({LessonModel lessonTemp}) {
-    //accept data from fs
-    print(lessonTemp);
-    //  LessonModel lesson = LessonModel.getData(doc: doc);
-    // return Container();
-    print(lessonTemp.imageUrl);
+    // print(lessonTemp.imageUrl);
     return Material(
       type: MaterialType.transparency,
       child: Padding(
@@ -150,65 +212,31 @@ class _CourseState extends State<Course> {
           elevation: 5,
           child: Container(
             width: size.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Center(
+                Padding(
+                  padding: EdgeInsets.only(bottom: size.height * .005),
                   child: Container(
-                    width: size.width * .4,
-                    height: size.height * .15,
-                    child: FadeInImage.assetNetwork(
-                        placeholder: Images.loading,
-                        image: lessonTemp.imageUrl),
+                    width: size.width * .45,
+                    child: Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            lessonTemp.title,
+                            style: CustomTextStyles.customText(
+                                size: FontSizes.medium, isBold: true),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height: size.height * .05,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      lessonTemp.sequence.toString(),
-                      style: CustomTextStyles.customText(
-                          size: FontSizes.heading,
-                          isBold: true,
-                          color: Color.fromRGBO(228, 231, 244, 1)),
-                    ),
-                    //Column(
-                    //crossAxisAlignment: CrossAxisAlignment.start,
-                    //mainAxisAlignment: MainAxisAlignment.center,
-                    //children: [
-                    // Text(
-                    //   lesson.video_time,
-                    //   style: CustomTextStyles.customText(
-                    //       size: FontSizes.medium, color: Colors.red),
-                    // ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: size.height * .005),
-                      child: Container(
-                        width: size.width * .45,
-                        child: Row(
-                          children: [
-                            Flexible(
-                              child: Text(
-                                lessonTemp.title,
-                                style: CustomTextStyles.customText(
-                                    size: FontSizes.large, isBold: true),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    //],
-                    //),
-                    Padding(
-                        padding: EdgeInsets.only(bottom: size.height * .02),
-                        child: _playIcon(lesson: lessonTemp))
-                  ],
-                ),
+                //],
+                //),
+                Padding(
+                    padding: EdgeInsets.only(bottom: size.height * .02),
+                    child: _playIcon(lesson: lessonTemp))
               ],
             ),
           ),
@@ -220,7 +248,7 @@ class _CourseState extends State<Course> {
   _playIcon({@required LessonModel lesson}) {
     return ClipOval(
       child: Material(
-        color: Color.fromRGBO(73, 204, 150, 1),
+        color: Colors.blueGrey,
         child: InkWell(
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) {

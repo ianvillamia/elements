@@ -7,14 +7,18 @@ class CourseModel {
   String description;
   String organizationName;
   String courseImageUrl;
+  bool subscribed;
+  String docId;
   // List<String,LessonModel> lessons;
   List<LessonModel> lessons = [];
   CourseModel.getData({DocumentSnapshot doc}) {
     this.title = doc.data()['title'];
+    this.docId = doc.reference.id;
     this.courseImageUrl = doc.data()['courseImageUrl'];
     this.description = doc.data()['description'];
     this.organizationName = doc.data()['organizationName'];
-    //  this.lessons = doc.data()['lessons'];
+    this.subscribed = doc.data()['subscribed'];
+    // print(doc.data()['lessons'][0]['quiz'].runtimeType);
     for (var item in doc.data()['lessons']) {
       // this.lessons.add(lesson);
       LessonModel less = LessonModel.getData(item);
