@@ -208,11 +208,9 @@ class _LessonsMainState extends State<LessonsHome> {
                 ),
               )),
         ),
-        Text(
-          course.title,
-          style:
-              CustomTextStyles.customText(isBold: true, size: FontSizes.small),
-        ),
+        Text(course.title,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: size.width * 0.2)),
       ],
     );
   }

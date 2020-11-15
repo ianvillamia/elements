@@ -1,9 +1,11 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/elementBuilder.dart';
+import 'package:mynewapp/Game/preludeToGame.dart';
 import 'package:mynewapp/Global/magicwand.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
+import 'package:mynewapp/Screens/LewisStructureCalculator/ocr.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/detailpage.dart';
 import 'package:mynewapp/Screens/Periodic%20Table/periodicTable.dart';
 import 'package:mynewapp/Screens/authentication/signIn.dart';
@@ -30,9 +32,13 @@ class FluroRouter {
   static Handler _periodicTableHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PeriodicTable());
-  static Handler _gameHandler = Handler(
+
+  static Handler _preludeToGameHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-          Game());
+          PreludeToGame());
+  static Handler _lewisStructureHandler = Handler(
+      handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+          OCR());
   static Handler _quizLoadingHandler = Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           MagicWandSplashScreen());
@@ -50,8 +56,13 @@ class FluroRouter {
     router.define(Routes.periodicTable,
         handler: _periodicTableHandler,
         transitionType: TransitionType.cupertino);
-    router.define(Routes.game,
-        handler: _gameHandler, transitionType: TransitionType.cupertino);
+    router.define(Routes.lewisstructure,
+        handler: _lewisStructureHandler,
+        transitionType: TransitionType.cupertino);
+    router.define(Routes.preludeToGame,
+        handler: _preludeToGameHandler,
+        transitionType: TransitionType.cupertino);
+
     router.define(Routes.quizLoading,
         handler: _quizLoadingHandler, transitionType: TransitionType.cupertino);
   }

@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _topbar(),
+                    _topbar(context: context),
                     SizedBox(
                       height: size.height * .05,
                     ),

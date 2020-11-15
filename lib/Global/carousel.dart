@@ -12,10 +12,10 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
   List cardList = [
     CarouselItem(
-      ontap: '/game',
+      ontap: '/preludeToGame',
       title: 'Compound Simulation Game',
       description:
-          "Who say's learning needs to be boring? Have fun using our compound simulation Game",
+          "Who says learning needs to be boring? Have fun using our Compound Simulation Game",
       image: Images.owl,
       color1: Colors.yellow[800],
       color2: Colors.yellow[600],
@@ -31,15 +31,15 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
       color2: Colors.blue[200],
       textColor: Colors.white,
     ),
-    // CarouselItem(
-    //   ontap: () {},
-    //   title: 'Lewis Structure Calculator',
-    //   description: 'Get your naming problem solve',
-    //   image: Images.owl,
-    //   color1: Colors.yellow[800],
-    //   color2: Colors.yellow[600],
-    //   textColor: Colors.black,
-    // ),
+    CarouselItem(
+      ontap: '/lewisStructure',
+      title: 'Lewis Structure Calculator',
+      description: 'Get your naming problem solve!',
+      image: Images.owl,
+      color1: Colors.yellow[800],
+      color2: Colors.yellow[600],
+      textColor: Colors.black,
+    ),
     CarouselItem(
       ontap: '/periodicTable',
       title: 'Interactive Periodic Table of Elements',
