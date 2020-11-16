@@ -210,7 +210,7 @@ class _LessonsMainState extends State<LessonsHome> {
         ),
         Text(course.title,
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: size.width * 0.2)),
+                fontWeight: FontWeight.bold, fontSize: size.width * 0.03)),
       ],
     );
   }

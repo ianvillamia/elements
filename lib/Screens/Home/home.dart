@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mynewapp/Global/ocr.dart';
+import 'package:mynewapp/Screens/LewisStructureCalculator/ocr.dart';
 import 'package:mynewapp/Widgets/rotateDevice.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
@@ -35,15 +37,10 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _topbar(context: context),
-                    SizedBox(
-                      height: size.height * .05,
-                    ),
+                    SizedBox(height: size.height * .05),
                     _greeting(),
-                    SizedBox(
-                      height: size.height * .1,
-                    ),
+                    SizedBox(height: size.height * .07),
                     NavigationCarousel(),
-                    SizedBox(height: size.height * .03),
                   ],
                 ),
               ),

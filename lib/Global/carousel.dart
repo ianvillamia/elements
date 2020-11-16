@@ -164,7 +164,7 @@ class _CarouselItemState extends State<CarouselItem> {
                               child: Text(widget.title,
                                   style: TextStyle(
                                       color: widget.textColor,
-                                      fontSize: 20,
+                                      fontSize: size.width * 0.055,
                                       fontWeight: FontWeight.bold)),
                             ),
                             Expanded(
@@ -175,7 +175,7 @@ class _CarouselItemState extends State<CarouselItem> {
                                 child: Text(widget.description,
                                     style: TextStyle(
                                       color: widget.textColor,
-                                      fontSize: 13.0,
+                                      fontSize: size.width * 0.04,
                                     )),
                               ),
                             ),

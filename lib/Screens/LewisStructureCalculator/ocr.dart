@@ -8,29 +8,100 @@ class OCR extends StatefulWidget {
 
 class _OCRState extends State<OCR> {
   int _cameraOcr = FlutterMobileVision.CAMERA_BACK;
-  String _textValue = "sample";
-
+  bool hide = false, hideImage = false, hideImageWrong = false;
+  String _textValue =
+      "Click the camera to open and generate the organic compound";
+  Size size;
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      theme: new ThemeData(
-        primarySwatch: Colors.lime,
-        buttonColor: Colors.lime,
+    var size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Lewis Structure'),
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Flutter Mobile Vision'),
-        ),
-        body: Center(
-            child: new ListView(
-          children: <Widget>[
-            new Text(_textValue),
-            new RaisedButton(
-              onPressed: _read,
-              child: new Text('Start Scanning'),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(50),
+          child: SafeArea(
+            child: Column(
+              children: [
+                Text(
+                  _textValue,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: size.width * .05),
+                ),
+                Visibility(
+                  visible: hide,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MaterialButton(
+                        onPressed: () {
+                          if (_textValue == 'CH3-O-CH3') {
+                            setState(() {
+                              hideImage = true;
+                              //hideImageWrong = !hideImageWrong;
+                            });
+                            hideImageWrong = false;
+                          } else if (_textValue != 'CH3-O-CH3') {
+                            setState(() {
+                              //hideImageWrong = !hideImageWrong;
+                              hideImageWrong = true;
+                              hideImage = false;
+                            });
+                          }
+                        },
+                        child: Text('CALCULATE'),
+                        color: Colors.purpleAccent,
+                      ),
+                      SizedBox(width: size.width * 0.03),
+                      MaterialButton(
+                        onPressed: () {
+                          setState(() {
+                            _textValue =
+                                "Click the camera to open and generate the organic compound";
+                          });
+                          hide = false;
+                          hideImage = false;
+                          hideImageWrong = false;
+                        },
+                        child: Text('RESET'),
+                        color: Colors.purpleAccent,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: size.height * 0.05),
+                Visibility(
+                  visible: hideImage,
+                  child: Container(
+                      height: size.height * .3,
+                      child: Image.asset('assets/methoxymethane.jpg',
+                          fit: BoxFit.cover)),
+                ),
+                Visibility(
+                  visible: hideImageWrong,
+                  child: Container(
+                      height: size.height * .3,
+                      child: Image.asset('assets/wrongcompound.png',
+                          fit: BoxFit.contain)),
+                ),
+                SizedBox(height: size.height * 0.1),
+                MaterialButton(
+                  onPressed: _read,
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  child: Icon(
+                    Icons.camera_alt,
+                    size: 24,
+                  ),
+                  padding: EdgeInsets.all(16),
+                  shape: CircleBorder(),
+                ),
+              ],
             ),
-          ],
-        )),
+          ),
+        ),
       ),
     );
   }
@@ -45,6 +116,7 @@ class _OCRState extends State<OCR> {
 
       setState(() {
         _textValue = texts[0].value;
+        hide = true;
       });
     } on Exception {
       texts.add(new OcrText('Failed to recognize text.'));
