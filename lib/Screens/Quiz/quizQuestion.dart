@@ -77,15 +77,15 @@ class _QuestionState extends State<QuizQuestion>
         children: [
           Flexible(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(22, 30, 22, 0),
+              padding: EdgeInsets.all(40),
               child: Text(_question.question,
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.openSans(
                       fontSize: 22, fontWeight: FontWeight.bold)),
             ),
           ),
           SizedBox(
-            height: size.height * .02,
+            height: size.height * .015,
           ),
           Container(
             width: size.width,

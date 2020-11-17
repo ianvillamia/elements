@@ -34,15 +34,19 @@ class _GameHomeState extends State<GameHome> {
               Wrap(
                 children: [
                   ElementCard(
+                    elementName: 'Methoxymethane',
                     element: Methoxymethane(),
                   ),
                   ElementCard(
+                    elementName: 'Ethoxyethane',
                     element: Ethoxyethane(),
                   ),
                   ElementCard(
+                    elementName: 'Propoxybutane',
                     element: Propoxybutane(),
                   ),
                   ElementCard(
+                    elementName: 'Propanone',
                     element: Propanone(),
                   ),
                   // ElementCard(),
@@ -58,7 +62,8 @@ class _GameHomeState extends State<GameHome> {
 
 class ElementCard extends StatefulWidget {
   final Widget element;
-  ElementCard({@required this.element});
+  final String elementName;
+  ElementCard({@required this.element, @required this.elementName});
 
   @override
   _ElementCardState createState() => _ElementCardState();
