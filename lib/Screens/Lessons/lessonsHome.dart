@@ -166,12 +166,14 @@ class _LessonsMainState extends State<LessonsHome> {
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            return Wrap(
-                children: snapshot.data.docs
-                    .map<Widget>((doc) => _card(
-                          doc: doc,
-                        ))
-                    .toList());
+            return Center(
+              child: Wrap(
+                  children: snapshot.data.docs
+                      .map<Widget>((doc) => _card(
+                            doc: doc,
+                          ))
+                      .toList()),
+            );
           }
 
           return Center(
@@ -210,7 +212,7 @@ class _LessonsMainState extends State<LessonsHome> {
         ),
         Text(course.title,
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: size.width * 0.03)),
+                fontWeight: FontWeight.bold, fontSize: size.width * 0.023)),
       ],
     );
   }

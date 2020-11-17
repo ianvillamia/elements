@@ -17,7 +17,9 @@ class _OCRState extends State<OCR> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('Lewis Structure'),
+        centerTitle: true,
       ),
       body: Center(
         child: Container(

@@ -93,7 +93,6 @@ class _NavigationCarouselState extends State<NavigationCarousel> {
                       elevation: 0,
                       child: card,
                     ),
-                    //CarouselCard.navImage(size: size, image: Images.giraffe)
                   ],
                 ));
           });
@@ -150,7 +149,7 @@ class _CarouselItemState extends State<CarouselItem> {
           child: Stack(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                padding: EdgeInsets.all(10),
                 child: Container(
                   child: Stack(
                     children: [
@@ -171,11 +170,11 @@ class _CarouselItemState extends State<CarouselItem> {
                               flex: 60,
                               child: Padding(
                                 padding:
-                                    EdgeInsets.only(right: size.width * .3),
+                                    EdgeInsets.only(right: size.width * .25),
                                 child: Text(widget.description,
                                     style: TextStyle(
                                       color: widget.textColor,
-                                      fontSize: size.width * 0.04,
+                                      fontSize: size.width * 0.035,
                                     )),
                               ),
                             ),

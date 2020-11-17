@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Global/ocr.dart';
 import 'package:mynewapp/Screens/LewisStructureCalculator/ocr.dart';
+import 'package:mynewapp/Services/userService.dart';
 import 'package:mynewapp/Widgets/rotateDevice.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
@@ -11,6 +12,7 @@ import 'package:shape_of_view/shape_of_view.dart';
 import 'package:mynewapp/Screens/Home/stars.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -36,7 +38,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _topbar(context: context),
+                    _topbar(),
                     SizedBox(height: size.height * .05),
                     _greeting(),
                     SizedBox(height: size.height * .07),
@@ -49,7 +51,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  _topbar({@required BuildContext context}) {
+  _topbar() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -67,7 +69,7 @@ class _HomeState extends State<Home> {
         ClipOval(
           child: GestureDetector(
             onTap: () {
-              // /    context.read<AuthenticationService>().signOut();
+              context.read<AuthenticationService>().signOut();
             },
             child: Container(
                 width: 50,
