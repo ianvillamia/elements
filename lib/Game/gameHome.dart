@@ -25,7 +25,6 @@ class _GameHomeState extends State<GameHome> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              //enter widgets here
               Text(
                 'Pick an Element',
                 style: GoogleFonts.indieFlower(
@@ -91,7 +90,7 @@ class _ElementCardState extends State<ElementCard> {
           height: 100,
           child: Center(
               child: Text(
-            widget.element.toString(),
+            widget.elementName.toString(),
             style: GoogleFonts.indieFlower(
                 fontSize: 20, fontWeight: FontWeight.bold),
           )),

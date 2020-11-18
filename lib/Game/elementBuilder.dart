@@ -19,7 +19,8 @@ import 'package:provider/provider.dart';
 
 class Game extends StatefulWidget {
   final Widget element;
-  Game({@required this.element});
+  final String elementName;
+  Game({@required this.element, @required this.elementName});
 
   @override
   _ProtoGameState createState() => _ProtoGameState();
@@ -212,11 +213,11 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
           Align(
             alignment: Alignment.topCenter,
             child: Text(
-              widget.element.toString(),
+              widget.elementName.toString(),
               style: GoogleFonts.indieFlower(
                   fontSize: 40, fontWeight: FontWeight.bold),
             ),
-          ),
+          )
         ],
       ),
     ));
