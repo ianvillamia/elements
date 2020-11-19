@@ -29,26 +29,23 @@ class _HomeState extends State<Home> {
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     size = MediaQuery.of(context).size;
     return Scaffold(
-      body: isPortrait
-          ? Container(
-              width: size.width,
-              height: size.height,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _topbar(),
-                    SizedBox(height: size.height * .05),
-                    _greeting(),
-                    SizedBox(height: size.height * .07),
-                    NavigationCarousel(),
-                  ],
-                ),
-              ),
-            )
-          : RotateDevice(),
-    );
+        body: Container(
+      width: size.width,
+      height: size.height,
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _topbar(),
+            SizedBox(height: size.height * .05),
+            _greeting(),
+            SizedBox(height: size.height * .07),
+            NavigationCarousel(),
+          ],
+        ),
+      ),
+    ));
   }
 
   _topbar() {

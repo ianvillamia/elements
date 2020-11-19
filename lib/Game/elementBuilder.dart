@@ -125,8 +125,7 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
               minScale: 1,
               child: widget.element),
           ElementContainer(
-            element: widget.element,
-          ),
+              element: widget.element, elementName: widget.elementName),
           Align(
             alignment: Alignment.bottomRight,
             child: Container(

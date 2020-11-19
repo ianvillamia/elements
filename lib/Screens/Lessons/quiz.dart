@@ -25,55 +25,70 @@ class _QuizState extends State<Quiz> {
         body: Container(
             width: size.width,
             height: size.height,
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Text(StringUtils.capitalize(widget.lesson.question),
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.openSans(
-                            fontSize: 22, fontWeight: FontWeight.bold)),
-                  ),
-                  SizedBox(
-                    height: size.height * .02,
-                  ),
-                  Container(
-                    width: size.width,
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: size.width * .1),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          _listTile(text: widget.lesson.choices[0], val: 1),
-                          _listTile(text: widget.lesson.choices[1], val: 2),
-                          _listTile(text: widget.lesson.choices[2], val: 3),
-                          _listTile(text: widget.lesson.choices[3], val: 4),
-                          ElasticIn(
-                            child: MaterialButton(
-                              color: Color.fromRGBO(245, 47, 89, 1),
-                              onPressed: () {
-                                //update isQuizTaken
-                                if (selected.toLowerCase() ==
-                                    widget.lesson.correctAnswer.toLowerCase()) {
-                                  //update lesson is taken
-                                  //update dependents?
-                                  _showOnCompleteModal();
-                                }
-                              },
-                              child: Text(
-                                'Submit',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'POP QUIZ',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.openSans(
+                          fontSize: 35, fontWeight: FontWeight.bold),
                     ),
-                  )
-                ])));
+                    SizedBox(height: size.height * .08),
+                    Flexible(
+                      child: Text(
+                          StringUtils.capitalize(widget.lesson.question),
+                          textAlign: TextAlign.justify,
+                          style: GoogleFonts.openSans(
+                              fontSize: 22, fontWeight: FontWeight.bold)),
+                    ),
+                    SizedBox(
+                      height: size.height * .02,
+                    ),
+                    Container(
+                      width: size.width,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: size.width * .1),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            _listTile(text: widget.lesson.choices[0], val: 1),
+                            _listTile(text: widget.lesson.choices[1], val: 2),
+                            _listTile(text: widget.lesson.choices[2], val: 3),
+                            _listTile(text: widget.lesson.choices[3], val: 4),
+                            SizedBox(
+                              height: size.height * .05,
+                            ),
+                            ElasticIn(
+                              child: MaterialButton(
+                                color: Color.fromRGBO(245, 47, 89, 1),
+                                onPressed: () {
+                                  //update isQuizTaken
+                                  if (selected.toLowerCase() ==
+                                      widget.lesson.correctAnswer
+                                          .toLowerCase()) {
+                                    //update lesson is taken
+                                    //update dependents?
+                                    _showOnCompleteModal();
+                                  }
+                                },
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ]),
+            )));
   }
 
   _listTile({String text, int val}) {

@@ -78,7 +78,7 @@ class _OCRState extends State<OCR> {
                   visible: hideImage,
                   child: Container(
                       height: size.height * .3,
-                      child: Image.asset('assets/methoxymethane.jpg',
+                      child: Image.asset('assets/methoxymethane.png',
                           fit: BoxFit.cover)),
                 ),
                 Visibility(

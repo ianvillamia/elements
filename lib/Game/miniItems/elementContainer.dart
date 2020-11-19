@@ -10,7 +10,8 @@ import 'package:mynewapp/Models/Element.dart';
 
 class ElementContainer extends StatefulWidget {
   final Widget element;
-  ElementContainer({@required this.element});
+  String elementName;
+  ElementContainer({@required this.element, @required this.elementName});
 
   @override
   _ElementContainerState createState() => _ElementContainerState();
@@ -113,6 +114,7 @@ class _ElementContainerState extends State<ElementContainer> {
                                     MaterialPageRoute(
                                       builder: (context) => Game(
                                         element: widget.element,
+                                        elementName: widget.elementName,
                                       ),
                                     ));
                               },

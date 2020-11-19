@@ -23,35 +23,38 @@ class _GameHomeState extends State<GameHome> {
         width: size.width,
         height: size.height,
         child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Text(
-                'Pick an Element',
-                style: GoogleFonts.indieFlower(
-                    fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-              Wrap(
-                children: [
-                  ElementCard(
-                    elementName: 'Methoxymethane',
-                    element: Methoxymethane(),
-                  ),
-                  ElementCard(
-                    elementName: 'Ethoxyethane',
-                    element: Ethoxyethane(),
-                  ),
-                  ElementCard(
-                    elementName: 'Propoxybutane',
-                    element: Propoxybutane(),
-                  ),
-                  ElementCard(
-                    elementName: 'Propanone',
-                    element: Propanone(),
-                  ),
-                  // ElementCard(),
-                ],
-              ),
-            ],
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Pick an Element',
+                  style: GoogleFonts.indieFlower(
+                      fontSize: 40, fontWeight: FontWeight.bold),
+                ),
+                Wrap(
+                  children: [
+                    ElementCard(
+                      elementName: 'Methoxymethane',
+                      element: Methoxymethane(),
+                    ),
+                    ElementCard(
+                      elementName: 'Ethoxyethane',
+                      element: Ethoxyethane(),
+                    ),
+                    ElementCard(
+                      elementName: 'Propoxybutane',
+                      element: Propoxybutane(),
+                    ),
+                    ElementCard(
+                      elementName: 'Propanone',
+                      element: Propanone(),
+                    ),
+                    // ElementCard(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -82,6 +85,7 @@ class _ElementCardState extends State<ElementCard> {
               MaterialPageRoute(
                 builder: (context) => Game(
                   element: widget.element,
+                  elementName: widget.elementName,
                 ),
               ));
         },
