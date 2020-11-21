@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Global/spinner.dart';
 import 'package:mynewapp/Models/UserModel.dart';
@@ -36,9 +37,10 @@ class _SignUpState extends State<SignUp> {
     });
   }
 
+  Size size;
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    size = MediaQuery.of(context).size;
     return isLoading
         ? Spinner()
         : Scaffold(
@@ -53,112 +55,13 @@ class _SignUpState extends State<SignUp> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          'Elements++',
-                          style: GoogleFonts.indieFlower(
-                              fontSize: 50, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: size.height * .05,
-                        ),
-                        Text(
-                          'Welcome,',
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold),
-                        ),
-                        Text('Please register to get started!',
-                            style: CustomTextStyles.customText(
-                                color: Colors.grey, size: 19, isBold: true)),
+                        greetings(),
                         SizedBox(height: size.height * .05),
-                        Row(
-                          children: <Widget>[
-                            Flexible(
-                              child: TextFormField(
-                                controller: firstNameController,
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.all(8.0),
-                                  labelText: 'First Name',
-                                ),
-                                validator: (val) => val.isEmpty
-                                    ? 'Enter your First name'
-                                    : null,
-                                onChanged: (val) {
-                                  //setState(() => email = val);
-                                },
-                              ),
-                            ),
-                            SizedBox(
-                              width: size.width * .02,
-                            ),
-                            Flexible(
-                              child: TextFormField(
-                                controller: lastNameController,
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.all(8.0),
-                                  labelText: 'Last Name',
-                                ),
-                                validator: (val) =>
-                                    val.isEmpty ? 'Enter your Last name' : null,
-                                onChanged: (val) {
-                                  //setState(() => email = val);
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+                        fullNameField(),
                         SizedBox(height: size.height * .01),
-                        TextFormField(
-                          controller: emailController,
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(8.0),
-                            labelText: 'Email',
-                          ),
-                          validator: (val) =>
-                              val.isEmpty ? 'Enter your email' : null,
-                          onChanged: (val) {
-                            //setState(() => email = val);
-                          },
-                        ),
+                        emailField(),
                         SizedBox(height: size.height * .01),
-                        TextFormField(
-                          controller: passwordController,
-                          obscureText: _isHidden1,
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(8.0),
-                            labelText: 'Password',
-                            suffixIcon: IconButton(
-                                onPressed: _toggleVisibility1,
-                                icon: _isHidden1
-                                    ? Icon(Icons.visibility_off, size: 20)
-                                    : Icon(Icons.visibility, size: 20)),
-                          ),
-                          validator: (val) =>
-                              val.isEmpty ? 'Enter your password' : null,
-                        ),
-                        SizedBox(height: size.height * .01),
-                        TextFormField(
-                          autovalidate: true,
-                          controller: confirmPasswordController,
-                          obscureText: _isHidden2,
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(8.0),
-                            labelText: 'Confirm Password',
-                            suffixIcon: IconButton(
-                                onPressed: _toggleVisibility2,
-                                icon: _isHidden2
-                                    ? Icon(Icons.visibility_off, size: 20)
-                                    : Icon(Icons.visibility, size: 20)),
-                          ),
-                          validator: (val) {
-                            if (val != passwordController.text) {
-                              return "Password don't match";
-                            }
-                            if (val == null) {
-                              return "Please enter your password";
-                            }
-                            return null;
-                          },
-                        ),
+                        passwordField(),
                         SizedBox(height: size.height * .05),
                         Center(
                           child: MaterialButton(
@@ -232,5 +135,143 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
           );
+  }
+
+  greetings() {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Text(
+        'Elements++',
+        style:
+            GoogleFonts.indieFlower(fontSize: 50, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(
+        height: size.height * .05,
+      ),
+      Text(
+        'Welcome,',
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+      Text('Please register to get started!',
+          style: CustomTextStyles.customText(
+              color: Colors.grey, size: 19, isBold: true)),
+    ]);
+  }
+
+  fullNameField() {
+    return Row(
+      children: <Widget>[
+        Flexible(
+          child: TextFormField(
+            controller: firstNameController,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(8.0),
+              labelText: 'First Name',
+            ),
+            inputFormatters: [
+              FilteringTextInputFormatter(RegExp("[a-zA-Z-. \u0900-\u097F]"),
+                  allow: true)
+            ],
+            validator: (val) => val.isEmpty ? 'Enter your First name' : null,
+            onChanged: (val) {
+              //setState(() => email = val);
+            },
+          ),
+        ),
+        SizedBox(
+          width: size.width * .02,
+        ),
+        Flexible(
+          child: TextFormField(
+            controller: lastNameController,
+            textCapitalization: TextCapitalization.words,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(8.0),
+              labelText: 'Last Name',
+            ),
+            inputFormatters: [
+              FilteringTextInputFormatter(RegExp("[a-zA-Z-. \u0900-\u097F]"),
+                  allow: true)
+            ],
+            validator: (val) => val.isEmpty ? 'Enter your Last name' : null,
+            onChanged: (val) {
+              //setState(() => email = val);
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  emailField() {
+    return TextFormField(
+      controller: emailController,
+      textInputAction: TextInputAction.next,
+      onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(8.0),
+        labelText: 'Email',
+      ),
+      validator: (val) => val.isEmpty ? 'Enter your email' : null,
+      onChanged: (val) {
+        //setState(() => email = val);
+      },
+    );
+  }
+
+  passwordField() {
+    return Column(
+      children: [
+        TextFormField(
+            controller: passwordController,
+            obscureText: _isHidden1,
+            textInputAction: TextInputAction.next,
+            onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.all(8.0),
+              labelText: 'Password',
+              suffixIcon: IconButton(
+                  onPressed: _toggleVisibility1,
+                  icon: _isHidden1
+                      ? Icon(Icons.visibility_off, size: 20)
+                      : Icon(Icons.visibility, size: 20)),
+            ),
+            validator: (val) {
+              if (val.length == 0)
+                return "Please enter your password";
+              else if (val.length < 8)
+                return "Your password should be more than 8 char long";
+              else
+                return null;
+            }),
+        SizedBox(height: size.height * .01),
+        TextFormField(
+          autovalidate: true,
+          controller: confirmPasswordController,
+          obscureText: _isHidden2,
+          textInputAction: TextInputAction.next,
+          onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.all(8.0),
+            labelText: 'Confirm Password',
+            suffixIcon: IconButton(
+                onPressed: _toggleVisibility2,
+                icon: _isHidden2
+                    ? Icon(Icons.visibility_off, size: 20)
+                    : Icon(Icons.visibility, size: 20)),
+          ),
+          validator: (val) {
+            if (val != passwordController.text || val == null) {
+              return "Password don't match!";
+            }
+            return null;
+          },
+        ),
+      ],
+    );
   }
 }

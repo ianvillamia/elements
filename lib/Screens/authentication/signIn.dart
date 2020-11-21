@@ -14,21 +14,25 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  TextEditingController emailController = TextEditingController(),
-      passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  String _email;
+  String _password;
   bool isLoading = false;
-
   bool _isHidden = true;
+
   void _toggleVisibility() {
     setState(() {
       _isHidden = !_isHidden;
     });
   }
 
-  final _formKey = GlobalKey<FormState>();
+  Size size;
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final node = FocusScope.of(context);
+    size = MediaQuery.of(context).size;
     return isLoading
         ? Spinner()
         : Scaffold(
@@ -44,47 +48,11 @@ class _SignInState extends State<SignIn> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
-                          'Elements++',
-                          style: GoogleFonts.indieFlower(
-                              fontSize: 50, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: size.height * .05,
-                        ),
-                        Text(
-                          'Welcome,',
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold),
-                        ),
-                        Text('Sign in to continue!',
-                            style: CustomTextStyles.customText(
-                                color: Colors.grey, size: 25, isBold: true)),
+                        greetings(),
                         SizedBox(height: size.height * .05),
-                        TextFormField(
-                          controller: emailController,
-                          decoration: InputDecoration(
-                              contentPadding: const EdgeInsets.all(8.0),
-                              labelText: 'Email'),
-                          validator: (val) =>
-                              val.isEmpty ? 'Enter your Email' : null,
-                        ),
+                        emailField(),
                         SizedBox(height: size.height * .05),
-                        TextFormField(
-                          controller: passwordController,
-                          obscureText: _isHidden,
-                          decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.all(8.0),
-                            labelText: 'Password',
-                            suffixIcon: IconButton(
-                                onPressed: _toggleVisibility,
-                                icon: _isHidden
-                                    ? Icon(Icons.visibility_off, size: 20)
-                                    : Icon(Icons.visibility, size: 20)),
-                          ),
-                          validator: (val) =>
-                              val.isEmpty ? 'Enter your password' : null,
-                        ),
+                        passwordField(),
                         Padding(
                           padding: const EdgeInsets.all(9.0),
                           child: Row(
@@ -164,5 +132,71 @@ class _SignInState extends State<SignIn> {
               ),
             ),
           );
+  }
+
+  greetings() {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Text(
+        'Elements++',
+        style:
+            GoogleFonts.indieFlower(fontSize: 50, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(
+        height: size.height * .05,
+      ),
+      Text(
+        'Welcome,',
+        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      ),
+      Text(
+        'Sign in to continue!',
+        style: CustomTextStyles.customText(
+            color: Colors.grey, size: 25, isBold: true),
+      )
+    ]);
+  }
+
+  emailField() {
+    return TextFormField(
+        controller: emailController,
+        textInputAction: TextInputAction.next,
+        onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+        decoration: InputDecoration(
+            hintText: 'abcd@gmail.com',
+            contentPadding: const EdgeInsets.all(8.0),
+            labelText: 'Email'),
+        validator: (val) {
+          if (val.length == 0)
+            return "Please enter your email";
+          else if (!val.contains("@"))
+            return "Please enter valid email";
+          else
+            return null;
+        });
+  }
+
+  passwordField() {
+    return TextFormField(
+        controller: passwordController,
+        textInputAction: TextInputAction.done,
+        onFieldSubmitted: (_) => FocusScope.of(context).unfocus(),
+        obscureText: _isHidden,
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(8.0),
+          labelText: 'Password',
+          suffixIcon: IconButton(
+              onPressed: _toggleVisibility,
+              icon: _isHidden
+                  ? Icon(Icons.visibility_off, size: 20)
+                  : Icon(Icons.visibility, size: 20)),
+        ),
+        validator: (val) {
+          if (val.length == 0)
+            return "Please enter your password";
+          else if (val.length < 8)
+            return "Your password should be more than 8 char long";
+          else
+            return null;
+        });
   }
 }
