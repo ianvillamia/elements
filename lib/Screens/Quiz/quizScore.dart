@@ -68,7 +68,7 @@ class _QuizScoreState extends State<QuizScore> {
             SizedBox(
               height: size.height * 0.05,
             ),
-            _message(),
+            // _message(),
             SizedBox(
               height: size.height * 0.08,
             ),
@@ -88,7 +88,8 @@ class _QuizScoreState extends State<QuizScore> {
   }
 
   _score() {
-    double score = (_quizProvider.score / _quizProvider.quiz.questions.length);
+    double score =
+        (_quizProvider.quiz.score / _quizProvider.quiz.questions.length);
     return Container(
       child: CircularPercentIndicator(
         radius: 130.0,
@@ -97,7 +98,7 @@ class _QuizScoreState extends State<QuizScore> {
         lineWidth: 15.0,
         percent: score,
         center: new Text(
-          _quizProvider.score.toString() +
+          _quizProvider.quiz.score.toString() +
               "/" +
               _quizProvider.quiz.questions.length.toString(),
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),

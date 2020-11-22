@@ -106,9 +106,8 @@ class _QuestionState extends State<QuizQuestion>
                           onPressed: () {
                             if (_question.correctAnswer == selected) {
                               print('correct');
-                              _quizProvider.score += 1;
+                              _quizProvider.quiz.score += 1;
                               _quizProvider.animateToNextQuestion();
-                              print(_quizProvider.score);
                             } else {
                               _quizProvider.animateToNextQuestion();
                             }
@@ -116,7 +115,7 @@ class _QuestionState extends State<QuizQuestion>
                                 _quizProvider.quiz.questions.length) {
                               print('end of quiz');
                               for (var i = 1;
-                                  i < _quizProvider.quizLength;
+                                  i < _quizProvider.quiz.questions.length;
                                   i++) {
                                 print('pop' + i.toString());
                               }
