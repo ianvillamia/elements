@@ -54,28 +54,32 @@ class _QuizListState extends State<QuizList> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: snapshot.data.docs.map<Widget>((doc) {
-                          return Card(
-                            elevation: 5,
-                            child: InkWell(
-                              onTap: () {
-                                //set selected quiz
-                                _quizProvider.selectCurrentQuiz(doc: doc);
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (_) {
-                                  return QuizTitle();
-                                }));
-                              },
-                              child: Container(
-                                width: size.width * .5,
-                                height: size.height * .1,
-                                child: Center(
-                                    child: Text(
-                                  StringUtils.capitalize(doc.data()['title']),
-                                  style: TextStyle(fontSize: 20),
-                                )),
+                          if (doc.data()['isTaken']) {
+                            return Text('taken');
+                          } else {
+                            return Card(
+                              elevation: 5,
+                              child: InkWell(
+                                onTap: () {
+                                  //set selected quiz
+                                  _quizProvider.selectCurrentQuiz(doc: doc);
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (_) {
+                                    return QuizTitle();
+                                  }));
+                                },
+                                child: Container(
+                                  width: size.width * .5,
+                                  height: size.height * .1,
+                                  child: Center(
+                                      child: Text(
+                                    StringUtils.capitalize(doc.data()['title']),
+                                    style: TextStyle(fontSize: 20),
+                                  )),
+                                ),
                               ),
-                            ),
-                          );
+                            );
+                          }
                         }).toList(),
                       ),
                     ),
