@@ -3,6 +3,7 @@ import 'package:mynewapp/Game/preludeToGame.dart';
 import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_home.dart';
+import 'package:mynewapp/Screens/Quiz/quiz_title.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 enum _SelectedTab { home, likes, search, profile }
@@ -69,6 +70,7 @@ class _HomeState extends State<Parent> {
           Home(),
           LessonsHome(),
           QuizHome(),
+          // QuizTitle(),
           PreludeToGame(),
         ],
       ),

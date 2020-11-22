@@ -11,16 +11,6 @@ class NavigationCarousel extends StatefulWidget {
 class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
   List cardList = [
-    // CarouselItem(
-    //   ontap: '/preludeToGame',
-    //   title: 'Compound Simulation Game',
-    //   description:
-    //       "Who says learning needs to be boring? Have fun using our Compound Simulation Game",
-    //   image: Images.owl,
-    //   color1: Colors.yellow[800],
-    //   color2: Colors.yellow[600],
-    //   textColor: Colors.black,
-    // ),
     CarouselItem(
       ontap: '/lessonsMain',
       title: 'Learning Module',

@@ -8,11 +8,11 @@ class Question {
   List choices;
   String question;
 
-  Question.set({@required DocumentSnapshot doc}) {
-    this.sequence = doc.data()['sequence'];
-    this.correctAnswer = doc.data()['correctAnswer'];
-    this.choices = doc.data()['choices'];
-    this.question = doc.data()['question'];
+  Question.getData(data) {
+    this.question = data['question'];
+    this.choices = data['choices'];
+    this.correctAnswer = data['correctAnswer'];
+    this.sequence = data['sequence'];
   }
   Question() {}
 }

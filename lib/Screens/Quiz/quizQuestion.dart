@@ -11,8 +11,8 @@ import 'package:mynewapp/Strings/routes.dart';
 import 'package:provider/provider.dart';
 
 class QuizQuestion extends StatefulWidget {
-  final DocumentSnapshot doc;
-  QuizQuestion({@required this.doc});
+  final int questionNumber;
+  QuizQuestion({@required this.questionNumber});
   @override
   _QuestionState createState() => _QuestionState();
 }
@@ -35,10 +35,9 @@ class _QuestionState extends State<QuizQuestion>
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     _quizProvider = Provider.of<QuizProvider>(context, listen: false);
-    _question = Question.set(doc: widget.doc);
     size = MediaQuery.of(context).size;
+    _question = _quizProvider.quiz.questions[widget.questionNumber];
     return Scaffold(
       body: Container(
         width: size.width,
@@ -105,13 +104,8 @@ class _QuestionState extends State<QuizQuestion>
                         child: MaterialButton(
                           color: Color.fromRGBO(245, 47, 89, 1),
                           onPressed: () {
-                            if (selected == '') {
-                              //please select something
-
-                            }
                             if (_question.correctAnswer == selected) {
                               print('correct');
-
                               _quizProvider.score += 1;
                               _quizProvider.animateToNextQuestion();
                               print(_quizProvider.score);
@@ -119,9 +113,7 @@ class _QuestionState extends State<QuizQuestion>
                               _quizProvider.animateToNextQuestion();
                             }
                             if (_question.sequence ==
-                                _quizProvider.quizLength) {
-                              //compute & show loading
-                              print(_quizProvider.score);
+                                _quizProvider.quiz.questions.length) {
                               print('end of quiz');
                               for (var i = 1;
                                   i < _quizProvider.quizLength;

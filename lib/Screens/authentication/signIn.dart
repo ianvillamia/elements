@@ -94,7 +94,9 @@ class _SignInState extends State<SignIn> {
                                         email: emailController.text.trim(),
                                         password:
                                             passwordController.text.trim())
-                                    .catchError((error) {
+                                    .then((value) {
+                                  print(value);
+                                }).catchError((error) {
                                   print(error);
                                   setState(() {
                                     isLoading = false;
@@ -189,14 +191,6 @@ class _SignInState extends State<SignIn> {
               icon: _isHidden
                   ? Icon(Icons.visibility_off, size: 20)
                   : Icon(Icons.visibility, size: 20)),
-        ),
-        validator: (val) {
-          if (val.length == 0)
-            return "Please enter your password";
-          else if (val.length < 8)
-            return "Your password should be more than 8 char long";
-          else
-            return null;
-        });
+        ));
   }
 }

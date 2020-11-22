@@ -9,8 +9,6 @@ import 'package:provider/provider.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class QuizScore extends StatefulWidget {
-  final DocumentSnapshot doc;
-  QuizScore({@required this.doc});
   @override
   _QuizScoreState createState() => _QuizScoreState();
 }
@@ -24,7 +22,7 @@ class _QuizScoreState extends State<QuizScore> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     _quizProvider = Provider.of<QuizProvider>(context, listen: false);
-    _question = Question.set(doc: widget.doc);
+
     return Scaffold(
       body: Container(
         width: size.width,
@@ -90,10 +88,7 @@ class _QuizScoreState extends State<QuizScore> {
   }
 
   _score() {
-    print(_quizProvider.score);
-    print(_quizProvider.quizLength);
-    print(_quizProvider.score / _quizProvider.quizLength);
-    double score = (_quizProvider.score / _quizProvider.quizLength);
+    double score = (_quizProvider.score / _quizProvider.quiz.questions.length);
     return Container(
       child: CircularPercentIndicator(
         radius: 130.0,
@@ -104,7 +99,7 @@ class _QuizScoreState extends State<QuizScore> {
         center: new Text(
           _quizProvider.score.toString() +
               "/" +
-              _quizProvider.quizLength.toString(),
+              _quizProvider.quiz.questions.length.toString(),
           style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
         ),
         circularStrokeCap: CircularStrokeCap.butt,

@@ -16,10 +16,11 @@ class _OCRState extends State<OCR> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text('Lewis Structure'),
-        centerTitle: true,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: _read,
+        child: Icon(Icons.camera_alt),
       ),
       body: Center(
         child: Container(
@@ -89,17 +90,6 @@ class _OCRState extends State<OCR> {
                           fit: BoxFit.contain)),
                 ),
                 SizedBox(height: size.height * 0.1),
-                MaterialButton(
-                  onPressed: _read,
-                  color: Colors.blue,
-                  textColor: Colors.white,
-                  child: Icon(
-                    Icons.camera_alt,
-                    size: 24,
-                  ),
-                  padding: EdgeInsets.all(16),
-                  shape: CircleBorder(),
-                ),
               ],
             ),
           ),

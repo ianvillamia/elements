@@ -8,13 +8,10 @@ class UserService {
       FirebaseFirestore.instance.collection('courses');
   addUserToCollection({UserModel user, String uid}) {
     user.ref = uid;
-    this
-        .users
-        .doc(uid)
-        .set(user.toMap())
-        .then((value) => addCoursesToUser(uid));
-
-    // this.users.add(user.toMap());
+    this.users.doc(uid).set(user.toMap()).then((value) {
+      addCoursesToUser(uid);
+      addQuizzesToUser(uid);
+    });
   }
 
   void addCoursesToUser(uid) async {
@@ -25,6 +22,19 @@ class UserService {
             .collection('users')
             .doc(uid)
             .collection('courses')
+            .add(element.data());
+      });
+    });
+  }
+
+  void addQuizzesToUser(uid) async {
+    await FirebaseFirestore.instance.collection('quizzes').get().then((value) {
+      value.docs.forEach((element) async {
+        print(element.data());
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .collection('quizzes')
             .add(element.data());
       });
     });
