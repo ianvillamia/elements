@@ -49,7 +49,7 @@ class _SuccessState extends State<Success> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'CONGRATS ',
+                      'CONGRATULATIONS!',
                       style: CustomTextStyles.customText(
                           isBold: true,
                           color: Colors.white,

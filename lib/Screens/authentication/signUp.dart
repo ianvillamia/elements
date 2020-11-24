@@ -216,7 +216,14 @@ class _SignUpState extends State<SignUp> {
         contentPadding: const EdgeInsets.all(8.0),
         labelText: 'Email',
       ),
-      validator: (val) => val.isEmpty ? 'Enter your email' : null,
+      validator: (val) {
+        if (val.length == 0)
+          return "Please enter your email";
+        else if (!val.contains("@"))
+          return "Please enter valid email";
+        else
+          return null;
+      },
       onChanged: (val) {
         //setState(() => email = val);
       },
@@ -241,9 +248,8 @@ class _SignUpState extends State<SignUp> {
                       : Icon(Icons.visibility, size: 20)),
             ),
             validator: (val) {
-              if (val.length == 0)
-                return "Please enter your password";
-              else if (val.length < 8)
+              if (val.length == 0) return "Please enter your password";
+              if (val.length < 8)
                 return "Your password should be more than 8 char long";
               else
                 return null;
