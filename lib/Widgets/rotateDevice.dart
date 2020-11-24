@@ -35,17 +35,13 @@ class _PortraitState extends State<RotateDevice> {
           Align(
               alignment: Alignment.topCenter,
               child: Container(
-                height: size.height * .2,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Please Rotate Device',
-                      style: GoogleFonts.indieFlower(
-                          fontSize: size.width * 0.12,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                height: size.height * .25,
+                child: Center(
+                  child: Text(
+                    'Please Rotate Device',
+                    style: GoogleFonts.indieFlower(
+                        fontSize: 35, fontWeight: FontWeight.bold),
+                  ),
                 ),
               )),
         ],
