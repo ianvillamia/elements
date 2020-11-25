@@ -20,7 +20,13 @@ class _OCRState extends State<OCR> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: _read,
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (_) {
+            return ShowStructure(
+              condensed: 'CH3-O-CH3',
+            );
+          }));
+        },
         child: Icon(Icons.camera_alt),
       ),
       body: Center(
@@ -68,13 +74,19 @@ class _OCRState extends State<OCR> {
                       SizedBox(width: size.width * 0.03),
                       MaterialButton(
                         onPressed: () {
-                          setState(() {
-                            _textValue =
-                                "Click the camera to open and generate the organic compound";
-                          });
-                          hide = false;
-                          hideImage = false;
-                          hideImageWrong = false;
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return ShowStructure(
+                              condensed: 'CH3-O-CH3',
+                            );
+                          }));
+                          // setState(() {
+                          //   _textValue =
+                          //       "Click the camera to open and generate the organic compound";
+                          // });
+                          // hide = false;
+                          // hideImage = false;
+                          // hideImageWrong = false;
                         },
                         child: Text('RESET'),
                         color: Colors.purpleAccent,
