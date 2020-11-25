@@ -20,13 +20,7 @@ class _OCRState extends State<OCR> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return ShowStructure(
-              condensed: 'CH3-O-CH3',
-            );
-          }));
-        },
+        onPressed: _read,
         child: Icon(Icons.camera_alt),
       ),
       body: Center(
@@ -54,19 +48,6 @@ class _OCRState extends State<OCR> {
                               condensed: _textValue,
                             );
                           }));
-                          // if (_textValue == 'CH3-O-CH3') {
-                          //   setState(() {
-                          //     hideImage = true;
-                          //     //hideImageWrong = !hideImageWrong;
-                          //   });
-                          //   hideImageWrong = false;
-                          // } else if (_textValue != 'CH3-O-CH3') {
-                          //   setState(() {
-                          //     //hideImageWrong = !hideImageWrong;
-                          //     hideImageWrong = true;
-                          //     hideImage = false;
-                          //   });
-                          // }
                         },
                         child: Text('CALCULATE'),
                         color: Colors.purpleAccent,
@@ -74,19 +55,13 @@ class _OCRState extends State<OCR> {
                       SizedBox(width: size.width * 0.03),
                       MaterialButton(
                         onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) {
-                            return ShowStructure(
-                              condensed: 'CH3-O-CH3',
-                            );
-                          }));
-                          // setState(() {
-                          //   _textValue =
-                          //       "Click the camera to open and generate the organic compound";
-                          // });
-                          // hide = false;
-                          // hideImage = false;
-                          // hideImageWrong = false;
+                          setState(() {
+                            _textValue =
+                                "Click the camera to open and generate the organic compound";
+                          });
+                          hide = false;
+                          hideImage = false;
+                          hideImageWrong = false;
                         },
                         child: Text('RESET'),
                         color: Colors.purpleAccent,
@@ -94,22 +69,6 @@ class _OCRState extends State<OCR> {
                     ],
                   ),
                 ),
-                SizedBox(height: size.height * 0.05),
-                Visibility(
-                  visible: hideImage,
-                  child: Container(
-                      height: size.height * .3,
-                      child: Image.asset('assets/methoxymethane.png',
-                          fit: BoxFit.cover)),
-                ),
-                Visibility(
-                  visible: hideImageWrong,
-                  child: Container(
-                      height: size.height * .3,
-                      child: Image.asset('assets/wrongcompound.png',
-                          fit: BoxFit.contain)),
-                ),
-                SizedBox(height: size.height * 0.1),
               ],
             ),
           ),

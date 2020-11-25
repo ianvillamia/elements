@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Utils/textStyles.dart';
 import '';
 
 class ShowStructure extends StatefulWidget {
@@ -33,16 +35,41 @@ class _ShowStructureState extends State<ShowStructure> {
                 child: CachedNetworkImage(
                   imageUrl: image,
                   placeholder: (context, url) =>
-                      new CircularProgressIndicator(),
+                      Center(child: new CircularProgressIndicator()),
                   errorWidget: (context, url, error) => new Icon(Icons.error),
                 ),
               );
             } else {
-              return Container(
-                width: size.width,
-                height: size.height,
-                color: Colors.white,
-                child: Text('No element with that name'),
+              return Scaffold(
+                body: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: size.width,
+                    height: size.height,
+                    color: Colors.white,
+                    child: Center(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'No element with that name',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.indieFlower(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'press to retry',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.indieFlower(
+                              fontSize: 30, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    )),
+                  ),
+                ),
               );
             }
           } else {
