@@ -63,7 +63,7 @@ class _PreludeToGameState extends State<PreludeToGame> {
                       },
                       child: Text('Proceed to Game',
                           style: TextStyle(
-                              fontSize: size.width * 0.035,
+                              fontSize: size.width * 0.03,
                               fontWeight: FontWeight.bold)),
                     )),
               ))

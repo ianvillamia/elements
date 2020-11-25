@@ -40,7 +40,8 @@ class _PortraitState extends State<RotateDevice> {
                   child: Text(
                     'Please Rotate Device',
                     style: GoogleFonts.indieFlower(
-                        fontSize: 35, fontWeight: FontWeight.bold),
+                        fontSize: size.width * 0.092,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               )),

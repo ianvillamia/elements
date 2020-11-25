@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Game/elements/Methoxymethane.dart';
 import 'package:mynewapp/Game/miniItems/error.dart';
+import 'package:mynewapp/Game/miniItems/tutorial.dart';
 import 'package:mynewapp/Widgets/rotateDevice.dart';
 import 'package:mynewapp/Game/miniItems/success.dart';
 
@@ -125,7 +126,10 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
               minScale: 1,
               child: widget.element),
           ElementContainer(
-              element: widget.element, elementName: widget.elementName),
+            element: widget.element,
+            elementName: widget.elementName,
+          ),
+          Align(alignment: Alignment.topRight, child: howToPlay()),
           Align(
             alignment: Alignment.bottomRight,
             child: Container(
@@ -220,5 +224,26 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
         ],
       ),
     ));
+  }
+
+  howToPlay() {
+    return MaterialButton(
+      color: Colors.white,
+      textColor: Colors.blue,
+      elevation: 0,
+      child: Icon(
+        Icons.help,
+        size: 25,
+      ),
+      padding: EdgeInsets.all(0),
+      shape: CircleBorder(),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Tutorial(),
+            ));
+      },
+    );
   }
 }
