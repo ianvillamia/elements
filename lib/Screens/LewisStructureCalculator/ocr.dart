@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
+import 'package:mynewapp/Screens/LewisStructureCalculator/showStructure.dart';
 
 class OCR extends StatefulWidget {
   @override
@@ -40,19 +41,26 @@ class _OCRState extends State<OCR> {
                     children: [
                       MaterialButton(
                         onPressed: () {
-                          if (_textValue == 'CH3-O-CH3') {
-                            setState(() {
-                              hideImage = true;
-                              //hideImageWrong = !hideImageWrong;
-                            });
-                            hideImageWrong = false;
-                          } else if (_textValue != 'CH3-O-CH3') {
-                            setState(() {
-                              //hideImageWrong = !hideImageWrong;
-                              hideImageWrong = true;
-                              hideImage = false;
-                            });
-                          }
+                          //pass _textValue to new widget
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return ShowStructure(
+                              condensed: _textValue,
+                            );
+                          }));
+                          // if (_textValue == 'CH3-O-CH3') {
+                          //   setState(() {
+                          //     hideImage = true;
+                          //     //hideImageWrong = !hideImageWrong;
+                          //   });
+                          //   hideImageWrong = false;
+                          // } else if (_textValue != 'CH3-O-CH3') {
+                          //   setState(() {
+                          //     //hideImageWrong = !hideImageWrong;
+                          //     hideImageWrong = true;
+                          //     hideImage = false;
+                          //   });
+                          // }
                         },
                         child: Text('CALCULATE'),
                         color: Colors.purpleAccent,

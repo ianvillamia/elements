@@ -37,6 +37,7 @@ class _ShowStructureState extends State<ShowStructure> {
         print('works');
       });
     } else {
+      print('no element with that name');
       //no element with that name
       //show proper widget
     }
