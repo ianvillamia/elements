@@ -32,12 +32,7 @@ class _ShowStructureState extends State<ShowStructure> {
                 width: size.width,
                 height: size.height,
                 color: Colors.white,
-                child: CachedNetworkImage(
-                  imageUrl: image,
-                  placeholder: (context, url) =>
-                      Center(child: new CircularProgressIndicator()),
-                  errorWidget: (context, url, error) => new Icon(Icons.error),
-                ),
+                child: Image.network(image),
               );
             } else {
               return Scaffold(
