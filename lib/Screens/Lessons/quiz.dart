@@ -1,10 +1,16 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:audioplayers/audio_cache.dart';
 import 'package:basic_utils/basic_utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/Lessons.dart';
+import 'package:mynewapp/Providers/courseProvider.dart';
+import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:mynewapp/Strings/images.dart';
+import 'package:provider/provider.dart';
 
 class Quiz extends StatefulWidget {
   final LessonModel lesson;
@@ -15,11 +21,18 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  CourseProvider _courseProvider;
   int group = -1;
   String selected = '';
   Size size;
+  AudioCache player1 = new AudioCache();
+  AudioCache player2 = new AudioCache();
+  User firebaseUser;
   @override
   Widget build(BuildContext context) {
+    _courseProvider = Provider.of<CourseProvider>(context, listen: false);
+    firebaseUser = context.watch<User>();
+
     size = MediaQuery.of(context).size;
     return Scaffold(
         body: Container(
@@ -74,7 +87,10 @@ class _QuizState extends State<Quiz> {
                                           .toLowerCase()) {
                                     //update lesson is taken
                                     //update dependents?
+
                                     _showOnCompleteModal();
+                                  } else {
+                                    _showErrorModal();
                                   }
                                 },
                                 child: Text(
@@ -107,6 +123,10 @@ class _QuizState extends State<Quiz> {
   }
 
   void _showOnCompleteModal() {
+    CourseService().correctAnswer(
+        userRef: firebaseUser.uid, course: _courseProvider.currentCourse);
+    const alarmAudioPath = "TADA.mp3";
+    player1.play(alarmAudioPath);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await showModalBottomSheet(
           context: context,
@@ -129,6 +149,53 @@ class _QuizState extends State<Quiz> {
                           child: Image.asset(
                             Images.success,
                             fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Lesson Completed',
+                        style: CustomTextStyles.customText(
+                            isBold: true, size: FontSizes.large),
+                      ),
+                      Text(
+                        'Click to Continue',
+                        style:
+                            CustomTextStyles.customText(size: FontSizes.medium),
+                      ),
+                    ],
+                  )),
+            );
+          });
+    });
+  }
+
+  void _showErrorModal() {
+    const alarmAudioPath = "GASP.mp3";
+    player2.play(alarmAudioPath);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await showModalBottomSheet(
+          context: context,
+          builder: (builder) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+              child: Container(
+                  height: size.height * .3,
+                  decoration: new BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ElasticIn(
+                          child: FlareActor(
+                            "assets/error.flr",
+                            alignment: Alignment.center,
+                            //fit: BoxFit.contain,
+                            animation: 'action',
                           ),
                         ),
                       ),

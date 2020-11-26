@@ -182,6 +182,7 @@ class _ElementContainerState extends State<ElementContainer> {
         _element.elementColor = elementColor;
         _element.fontColor = fontColor;
         _gameProvider.changeSelectedElement(element: _element);
+
         if (isExpanded) {
           setState(() {
             isExpanded = false;
@@ -193,7 +194,6 @@ class _ElementContainerState extends State<ElementContainer> {
         } else {
           setState(() {
             isExpanded = true;
-
             sidebarWidth = size.width * .5;
             _icon = Icons.arrow_right;
             _elementContainer = Colors.grey;

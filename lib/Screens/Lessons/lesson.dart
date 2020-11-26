@@ -1,12 +1,17 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/Lessons.dart';
+import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Screens/Lessons/quiz.dart';
+import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
+import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
+import './course.dart';
 
 class Lesson extends StatefulWidget {
   final LessonModel lesson;
@@ -29,13 +34,15 @@ class _LessonState extends State<Lesson> {
     // TODO: implement initState
     super.initState();
     lesson = widget.lesson;
-
+    CourseProvider _courseProvider =
+        Provider.of<CourseProvider>(context, listen: false);
     _videoPlayerController = VideoPlayerController.network(lesson.videoUrl);
     _videoPlayerController.addListener(() {
       if (_videoPlayerController.value.position ==
           _videoPlayerController.value.duration) {
         //_showOnCompleteModal();
         _showQuiz();
+        _finishLesson(_courseProvider);
       }
     });
     _chewieController = ChewieController(
@@ -45,9 +52,23 @@ class _LessonState extends State<Lesson> {
     );
   }
 
+  _finishLesson(courseProvider) {
+    CourseService cs = CourseService();
+    print('finished lesson');
+    cs.takeLesson(
+        courseProvider: courseProvider,
+        course: _courseProvider.currentCourse,
+        userRef: firebaseUser.uid,
+        lessonNumber: lesson.sequence);
+  }
+
   _showQuiz() {
-    return Navigator.push(context,
-        MaterialPageRoute(builder: (context) => Quiz(lesson: widget.lesson)));
+    if (widget.lesson.izTaken == false) {
+      return Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Quiz(lesson: widget.lesson)));
+    } else {
+      print('already took quiz');
+    }
   }
 
   @override
@@ -58,8 +79,13 @@ class _LessonState extends State<Lesson> {
     super.dispose();
   }
 
+  CourseProvider _courseProvider;
+  User firebaseUser;
   @override
   Widget build(BuildContext context) {
+    firebaseUser = context.watch<User>();
+    _courseProvider = Provider.of<CourseProvider>(context, listen: false);
+
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -97,6 +123,19 @@ class _LessonState extends State<Lesson> {
                       icon: Icon(Icons.arrow_back_ios),
                       onPressed: () {
                         Navigator.pop(context);
+                        // Navigator.pop(context);
+
+                        // CourseService().takeLesson(
+                        //     userRef: firebaseUser.uid,
+                        //     course: null,
+                        //     lessonNumber: null);
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        //   return Course(
+                        //       image:
+                        //           _courseProvider.currentCourse.courseImageUrl,
+                        //       lessons: _courseProvider.currentCourse.lessons,
+                        //       course: _courseProvider.currentCourse);
+                        // }));
                       }),
                 ),
               ),

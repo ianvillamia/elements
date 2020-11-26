@@ -6,9 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Models/UserModel.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
+import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
 
 import 'package:mynewapp/Services/authentication_service.dart';
+import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Services/userService.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
@@ -35,13 +37,16 @@ class _LessonsMainState extends State<LessonsHome> {
     super.initState();
   }
 
+  CourseProvider _courseProvider;
+  User firebaseUser;
   Size size;
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User>();
+    firebaseUser = context.watch<User>();
     //get user cred
     _getUser(firebaseUser);
     size = MediaQuery.of(context).size;
+    _courseProvider = Provider.of<CourseProvider>(context, listen: false);
     var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       key: scaffoldKey,
@@ -54,10 +59,6 @@ class _LessonsMainState extends State<LessonsHome> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // _topbar(),
-              // SizedBox(
-              //   height: size.height * .05,
-              // ),
               _greeting(),
               SizedBox(
                 height: size.height * .03,
@@ -193,6 +194,9 @@ class _LessonsMainState extends State<LessonsHome> {
               child: InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
+                  _courseProvider.setCourseDoc(currentCourseDoc: doc);
+                  _courseProvider.setCurrentCourse(courseModel: course);
+
                   Navigator.push(context, MaterialPageRoute(builder: (_) {
                     return Course(
                         image: course.courseImageUrl,
@@ -216,4 +220,14 @@ class _LessonsMainState extends State<LessonsHome> {
       ],
     );
   }
+
+  // test() {
+  //   CourseService cs = CourseService();
+
+  //   cs.takeLesson(
+  //       course: _courseProvider.currentCourse,
+
+  //       userRef: firebaseUser.uid,
+  //       lessonNumber: 0);
+  // }
 }

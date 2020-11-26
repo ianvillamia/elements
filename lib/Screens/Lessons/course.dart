@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Models/Lessons.dart';
+import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Screens/Lessons/lesson.dart';
 import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Strings/images.dart';
@@ -45,9 +46,11 @@ class _CourseState extends State<Course> {
     }
   }
 
+  CourseProvider _courseProvider;
   @override
   Widget build(BuildContext context) {
     firebaseUser = context.watch<User>();
+    _courseProvider = Provider.of<CourseProvider>(context);
     size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
@@ -150,7 +153,7 @@ class _CourseState extends State<Course> {
                 Expanded(
                     child: SingleChildScrollView(
                         child: Column(
-                            children: widget.lessons
+                            children: _courseProvider.currentCourse.lessons
                                 .map(
                                     (lesson) => _lessonCard(lessonTemp: lesson))
                                 .toList())))
@@ -203,41 +206,65 @@ class _CourseState extends State<Course> {
   }
 
   Widget _lessonCard({LessonModel lessonTemp}) {
-    // print(lessonTemp.imageUrl);
-    return Material(
-      type: MaterialType.transparency,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Card(
-          elevation: 5,
-          child: Container(
-            width: size.width,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: size.height * .005),
-                  child: Container(
-                    width: size.width * .45,
-                    child: Row(
-                      children: [
-                        Flexible(
-                          child: Text(
-                            lessonTemp.title,
-                            style: CustomTextStyles.customText(
-                                size: FontSizes.medium, isBold: true),
+    bool isFirst;
+    bool allowCard = false;
+    if (lessonTemp.sequence == 0) {
+      isFirst = true;
+    }
+    //if first dont opacity even if iztaken sya
+    if (lessonTemp.izUpdated == true) {
+      allowCard = true;
+    }
+    if (lessonTemp.izTaken == true) {
+      allowCard = true;
+    }
+    if (isFirst == true) {
+      allowCard = true;
+    }
+    return IgnorePointer(
+      ignoring: !allowCard,
+      child: Material(
+        type: MaterialType.transparency,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Opacity(
+            opacity: allowCard ? 1 : .5,
+            // opacity: lessonTemp.izTaken ? .5 : 1,
+            child: Card(
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(bottom: size.height * .005),
+                        child: Container(
+                          width: size.width * .45,
+                          child: Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  lessonTemp.title,
+                                  style: CustomTextStyles.customText(
+                                      size: FontSizes.medium, isBold: true),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      //],
+                      //),
+                      Padding(
+                          padding: EdgeInsets.only(bottom: size.height * .02),
+                          child: _playIcon(lesson: lessonTemp))
+                    ],
                   ),
                 ),
-                //],
-                //),
-                Padding(
-                    padding: EdgeInsets.only(bottom: size.height * .02),
-                    child: _playIcon(lesson: lessonTemp))
-              ],
+              ),
             ),
           ),
         ),

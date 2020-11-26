@@ -1,15 +1,7 @@
-import 'package:animate_do/animate_do.dart';
-import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/elements/gameClass/gameClassMethoxyMethane.dart';
 import 'package:mynewapp/Game/miniItems/arrows.dart';
 import 'package:mynewapp/Game/miniItems/element.dart';
-import 'package:mynewapp/Models/Coordinates.dart';
-import 'package:mynewapp/Models/Element.dart';
-import 'package:mynewapp/Providers/gameProvider.dart';
-import 'package:mynewapp/Screens/Quiz/timer/timer.dart';
-import 'package:mynewapp/Utils/textStyles.dart';
-import 'package:provider/provider.dart';
 
 class Methoxymethane extends StatefulWidget {
   Methoxymethane({Key key}) : super(key: key);

@@ -9,6 +9,7 @@ class CourseModel {
   String courseImageUrl;
   bool subscribed;
   String docId;
+  String ref;
   // List<String,LessonModel> lessons;
   List<LessonModel> lessons = [];
   CourseModel.getData({DocumentSnapshot doc}) {
@@ -19,6 +20,7 @@ class CourseModel {
     this.organizationName = doc.data()['organizationName'];
     this.subscribed = doc.data()['subscribed'];
     // print(doc.data()['lessons'][0]['quiz'].runtimeType);
+    this.ref = doc.data()['ref'];
     for (var item in doc.data()['lessons']) {
       // this.lessons.add(lesson);
       LessonModel less = LessonModel.getData(item);
