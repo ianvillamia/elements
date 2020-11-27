@@ -68,18 +68,8 @@ class _LessonsMainState extends State<LessonsHome> {
                 style: CustomTextStyles.customText(
                     size: FontSizes.large, isBold: true),
               ),
-              Container(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      //enter widgets here
-                      //topbar
-
-                      _buildCategories(),
-                    ],
-                  ),
-                ),
+              Expanded(
+                child: _buildCategories(),
               )
             ],
           ),
@@ -168,12 +158,14 @@ class _LessonsMainState extends State<LessonsHome> {
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
             return Center(
-              child: Wrap(
-                  children: snapshot.data.docs
-                      .map<Widget>((doc) => _card(
-                            doc: doc,
-                          ))
-                      .toList()),
+              child: SingleChildScrollView(
+                child: Wrap(
+                    children: snapshot.data.docs
+                        .map<Widget>((doc) => _card(
+                              doc: doc,
+                            ))
+                        .toList()),
+              ),
             );
           }
 
