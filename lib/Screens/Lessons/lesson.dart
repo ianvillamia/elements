@@ -55,6 +55,7 @@ class _LessonState extends State<Lesson> {
   _finishLesson(courseProvider) {
     CourseService cs = CourseService();
     print('finished lesson');
+
     cs.takeLesson(
         courseProvider: courseProvider,
         course: _courseProvider.currentCourse,
@@ -123,19 +124,6 @@ class _LessonState extends State<Lesson> {
                       icon: Icon(Icons.arrow_back_ios),
                       onPressed: () {
                         Navigator.pop(context);
-                        // Navigator.pop(context);
-
-                        // CourseService().takeLesson(
-                        //     userRef: firebaseUser.uid,
-                        //     course: null,
-                        //     lessonNumber: null);
-                        // Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        //   return Course(
-                        //       image:
-                        //           _courseProvider.currentCourse.courseImageUrl,
-                        //       lessons: _courseProvider.currentCourse.lessons,
-                        //       course: _courseProvider.currentCourse);
-                        // }));
                       }),
                 ),
               ),

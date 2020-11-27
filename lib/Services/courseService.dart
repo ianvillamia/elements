@@ -40,11 +40,18 @@ class CourseService {
     });
 
     courseProvider.updateLessons(lessons: rebuild);
-    await users
-        .doc(userRef)
-        .collection('courses')
-        .doc(course.ref)
-        .update({'lessons': tobeAdded}).then((value) => print('wow'));
+    print(userRef);
+    print(course.ref);
+    print('here potato');
+    try {
+      await users
+          .doc(userRef)
+          .collection('courses')
+          .doc(course.ref)
+          .update({'lessons': tobeAdded}).then((value) => print('wow'));
+    } catch (e) {
+      print('Error' + e);
+    }
 
 //firebase.firestore.FieldValue.increment(50)
     //get old array edit push
