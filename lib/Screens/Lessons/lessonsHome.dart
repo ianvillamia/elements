@@ -157,7 +157,8 @@ class _LessonsMainState extends State<LessonsHome> {
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            return Center(
+            return Align(
+              alignment: Alignment.topCenter,
               child: SingleChildScrollView(
                 child: Wrap(
                     children: snapshot.data.docs
