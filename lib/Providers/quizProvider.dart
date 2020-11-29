@@ -9,6 +9,8 @@ class QuizProvider extends ChangeNotifier {
   QuizModel quiz;
 
   void selectCurrentQuiz({@required DocumentSnapshot doc}) {
+    this.score = 0;
+    this.quizLength = 0;
     QuizModel _quiz = QuizModel.get(doc: doc);
     this.quiz = _quiz;
     notifyListeners();

@@ -112,7 +112,7 @@ class _QuestionState extends State<QuizQuestion>
                               _quizProvider.animateToNextQuestion();
                             }
                             if (_question.sequence ==
-                                _quizProvider.quiz.questions.length) {
+                                _quizProvider.quiz.questions.length - 1) {
                               print('end of quiz');
                               for (var i = 1;
                                   i < _quizProvider.quiz.questions.length;

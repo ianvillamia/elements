@@ -62,6 +62,7 @@ class _QuizListState extends State<QuizList> {
                               child: InkWell(
                                 onTap: () {
                                   //set selected quiz
+                                  //wipe
                                   _quizProvider.selectCurrentQuiz(doc: doc);
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (_) {
