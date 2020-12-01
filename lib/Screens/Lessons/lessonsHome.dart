@@ -8,7 +8,7 @@ import 'package:mynewapp/Models/UserModel.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Screens/Lessons/course.dart';
-
+import 'package:email_launcher/email_launcher.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Services/courseService.dart';
 import 'package:mynewapp/Services/userService.dart';
@@ -78,45 +78,24 @@ class _LessonsMainState extends State<LessonsHome> {
     );
   }
 
-  _topbar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          iconSize: 30,
-          icon: Icon(Icons.sort),
-          onPressed: () => scaffoldKey.currentState.openDrawer(),
-          splashColor: Colors.blue,
-        ),
-        Text(
-          'Elements++',
-          style: GoogleFonts.indieFlower(
-              fontSize: FontSizes.large, fontWeight: FontWeight.bold),
-        ),
-        ClipOval(
-          child: GestureDetector(
-            onTap: () {
-              context.read<AuthenticationService>().signOut();
-            },
-            child: Container(
-                width: 50,
-                height: 50,
-                child: Image.asset(
-                  Images.user,
-                  fit: BoxFit.fill,
-                )),
-          ),
-        ),
-      ],
-    );
-  }
-
   _greeting() {
     FirebaseAuth auth = FirebaseAuth.instance;
     var user = FirebaseAuth.instance.currentUser;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Align(
+            alignment: Alignment.centerRight,
+            child: GestureDetector(
+              onTap: () {
+                //show dialog
+                showAlertDialog(context);
+              },
+              child: Text(
+                'want to add your course?',
+                style: TextStyle(color: Colors.grey),
+              ),
+            )),
         StreamBuilder<DocumentSnapshot>(
             stream: FirebaseFirestore.instance
                 .collection('users')
@@ -214,13 +193,51 @@ class _LessonsMainState extends State<LessonsHome> {
     );
   }
 
-  // test() {
-  //   CourseService cs = CourseService();
+  showAlertDialog(BuildContext context) {
+    // set up the button
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
 
-  //   cs.takeLesson(
-  //       course: _courseProvider.currentCourse,
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Hi"),
+      content: Container(
+        height: size.height*.1,
+              child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Please email us at"),
+            GestureDetector(
+                onTap: () async {
+                  Email email = Email(
+                      to: ['elementplusplus@gmail.com'],
+                
+                   
+                      subject: "I'd like to upload a course to your app :)",
+                      body: "");
+                  await EmailLauncher.launch(email);
+                },
+                child: Text("elementplusplus@gmail.com",style: TextStyle(
+                  color: Colors.blue,decoration: TextDecoration.underline
+                ),)),
+          ],
+        ),
+      ),
+      actions: [
+        okButton,
+      ],
+    );
 
-  //       userRef: firebaseUser.uid,
-  //       lessonNumber: 0);
-  // }
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
 }
