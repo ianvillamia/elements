@@ -22,7 +22,8 @@ class UserService {
             .collection('users')
             .doc(uid)
             .collection('courses')
-            .add(element.data());
+            .doc(element.data()['ref'])
+            .set(element.data());
       });
     });
   }
