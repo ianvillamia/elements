@@ -39,22 +39,22 @@ class CourseService {
       tobeAdded.add(LessonModel.toMap(lesson: lesson));
     });
 
-    courseProvider.updateLessons(lessons: rebuild);
     print(userRef);
     print(course.ref);
     print('here potato');
+    print(tobeAdded);
     try {
       await users
           .doc(userRef)
           .collection('courses')
           .doc(course.ref)
-          .update({'lessons': tobeAdded}).then((value) => print('wow'));
+          .update({'lessons': tobeAdded}).then((value) {
+        print('took lesson');
+        courseProvider.updateLessons(lessons: rebuild);
+      });
     } catch (e) {
-      print('Error' + e);
+      print('Error' + e.toString());
     }
-
-//firebase.firestore.FieldValue.increment(50)
-    //get old array edit push
   }
 
   void correctAnswer({

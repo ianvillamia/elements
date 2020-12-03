@@ -41,6 +41,7 @@ class _LessonState extends State<Lesson> {
       if (_videoPlayerController.value.position ==
           _videoPlayerController.value.duration) {
         //_showOnCompleteModal();
+
         _showQuiz();
         _finishLesson(_courseProvider);
       }

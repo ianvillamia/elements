@@ -17,6 +17,11 @@ class CourseProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  addScore() {
+    this.currentCourse.score++;
+    notifyListeners();
+  }
+
   setCourseDoc({@required DocumentSnapshot currentCourseDoc}) {
     this.currentCourseDoc = currentCourseDoc;
     notifyListeners();

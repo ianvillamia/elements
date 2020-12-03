@@ -125,6 +125,7 @@ class _QuizState extends State<Quiz> {
   void _showOnCompleteModal() {
     CourseService().correctAnswer(
         userRef: firebaseUser.uid, course: _courseProvider.currentCourse);
+    _courseProvider.addScore();
     const alarmAudioPath = "TADA.mp3";
     player1.play(alarmAudioPath);
     WidgetsBinding.instance.addPostFrameCallback((_) async {
