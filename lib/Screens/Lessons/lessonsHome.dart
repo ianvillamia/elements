@@ -206,8 +206,8 @@ class _LessonsMainState extends State<LessonsHome> {
     AlertDialog alert = AlertDialog(
       title: Text("Hi"),
       content: Container(
-        height: size.height*.1,
-              child: Column(
+        height: size.height * .1,
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Please email us at"),
@@ -215,15 +215,15 @@ class _LessonsMainState extends State<LessonsHome> {
                 onTap: () async {
                   Email email = Email(
                       to: ['elementplusplus@gmail.com'],
-                
-                   
                       subject: "I'd like to upload a course to your app :)",
                       body: "");
                   await EmailLauncher.launch(email);
                 },
-                child: Text("elementplusplus@gmail.com",style: TextStyle(
-                  color: Colors.blue,decoration: TextDecoration.underline
-                ),)),
+                child: Text(
+                  "elementplusplus@gmail.com",
+                  style: TextStyle(
+                      color: Colors.blue, decoration: TextDecoration.underline),
+                )),
           ],
         ),
       ),

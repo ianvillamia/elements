@@ -10,6 +10,7 @@ class CourseModel {
   bool subscribed;
   String docId;
   String ref;
+  int score;
   // List<String,LessonModel> lessons;
   List<LessonModel> lessons = [];
   CourseModel.getData({DocumentSnapshot doc}) {
@@ -19,7 +20,7 @@ class CourseModel {
     this.description = doc.data()['description'];
     this.organizationName = doc.data()['organizationName'];
     this.subscribed = doc.data()['subscribed'];
-    // print(doc.data()['lessons'][0]['quiz'].runtimeType);
+    this.score = doc.data()['score'];
     this.ref = doc.data()['ref'];
     for (var item in doc.data()['lessons']) {
       // this.lessons.add(lesson);

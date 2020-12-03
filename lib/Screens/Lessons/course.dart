@@ -127,13 +127,27 @@ class _CourseState extends State<Course> {
                         Hero(
                           tag: widget.course.title,
                           child: Material(
-                            type: MaterialType.transparency,
-                            child: Text(
-                              widget.course.title,
-                              style: CustomTextStyles.customText(
-                                  size: FontSizes.subHeading, isBold: true),
-                            ),
-                          ),
+                              type: MaterialType.transparency,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    widget.course.title,
+                                    style: CustomTextStyles.customText(
+                                        size: FontSizes.subHeading,
+                                        isBold: true),
+                                  ),
+                                  Text(
+                                    widget.course.score.toString() +
+                                        "/" +
+                                        widget.course.lessons.length.toString(),
+                                    style: CustomTextStyles.customText(
+                                        size: FontSizes.subHeading,
+                                        isBold: true),
+                                  ),
+                                ],
+                              )),
                         ),
                         SizedBox(height: size.height * .01),
                         Text(
