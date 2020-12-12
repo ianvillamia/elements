@@ -113,7 +113,9 @@ class CarouselItem extends StatefulWidget {
 class _CarouselItemState extends State<CarouselItem> {
   @override
   Size size;
+  Orientation orientation;
   Widget build(BuildContext context) {
+    orientation = MediaQuery.of(context).orientation;
     size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
@@ -175,8 +177,12 @@ class _CarouselItemState extends State<CarouselItem> {
                         bottom: 0,
                         right: -10,
                         child: Container(
-                          width: size.width * .3,
-                          height: size.height * .2,
+                          width: orientation == Orientation.landscape
+                              ? size.width * .0001
+                              : size.width * .3,
+                          height: orientation == Orientation.landscape
+                              ? size.height * .0001
+                              : size.height * .2,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(widget.image),

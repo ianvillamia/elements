@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Models/UserModel.dart';
@@ -32,16 +33,15 @@ class _LessonsMainState extends State<LessonsHome> {
   }
 
   var scaffoldKey = GlobalKey<ScaffoldState>();
-  @override
-  void initState() {
-    super.initState();
-  }
 
   CourseProvider _courseProvider;
   User firebaseUser;
   Size size;
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     firebaseUser = context.watch<User>();
     //get user cred
     _getUser(firebaseUser);

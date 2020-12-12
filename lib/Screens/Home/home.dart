@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mynewapp/Global/ocr.dart';
 import 'package:mynewapp/Screens/LewisStructureCalculator/ocr.dart';
 import 'package:mynewapp/Services/userService.dart';
@@ -23,6 +24,24 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Size size;
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +51,19 @@ class _HomeState extends State<Home> {
         body: Container(
       width: size.width,
       height: size.height,
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _topbar(),
-            SizedBox(height: size.height * .05),
-            _greeting(),
-            SizedBox(height: size.height * .07),
-            NavigationCarousel(),
-          ],
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _topbar(),
+              SizedBox(height: size.height * .05),
+              _greeting(),
+              SizedBox(height: size.height * .07),
+              NavigationCarousel(),
+            ],
+          ),
         ),
       ),
     ));

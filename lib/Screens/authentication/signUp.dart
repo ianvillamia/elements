@@ -37,6 +37,14 @@ class _SignUpState extends State<SignUp> {
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   Size size;
   @override
   Widget build(BuildContext context) {

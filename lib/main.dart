@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynewapp/Global/splashscreen.dart';
 import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Providers/gameProvider.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
@@ -74,6 +75,6 @@ class AuthenticationWrapper extends StatelessWidget {
       return Parent();
     }
 
-    return SignIn();
+    return SplashScreens();
   }
 }

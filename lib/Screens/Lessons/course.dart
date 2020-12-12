@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mynewapp/Models/CourseModel.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Providers/courseProvider.dart';
@@ -44,6 +45,11 @@ class _CourseState extends State<Course> {
         showBanner = true;
       });
     }
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 
   CourseProvider _courseProvider;

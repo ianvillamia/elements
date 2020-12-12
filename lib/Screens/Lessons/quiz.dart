@@ -4,6 +4,7 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Providers/courseProvider.dart';
@@ -28,6 +29,15 @@ class _QuizState extends State<Quiz> {
   AudioCache player1 = new AudioCache();
   AudioCache player2 = new AudioCache();
   User firebaseUser;
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     _courseProvider = Provider.of<CourseProvider>(context, listen: false);

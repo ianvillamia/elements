@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Game/gameHome.dart';
 import 'package:nima/nima_actor.dart';
@@ -11,6 +12,16 @@ class PreludeToGame extends StatefulWidget {
 }
 
 class _PreludeToGameState extends State<PreludeToGame> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+    ]);
+  }
+
   String _animation = "space";
   @override
   Widget build(BuildContext context) {

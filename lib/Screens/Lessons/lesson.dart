@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mynewapp/Models/Lessons.dart';
 import 'package:mynewapp/Providers/courseProvider.dart';
 import 'package:mynewapp/Screens/Lessons/quiz.dart';
@@ -51,6 +52,11 @@ class _LessonState extends State<Lesson> {
       aspectRatio: 3 / 2,
       autoPlay: true,
     );
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
   }
 
   _finishLesson(courseProvider) {
@@ -159,7 +165,7 @@ class _LessonState extends State<Lesson> {
             children: [
               Container(
                 width: size.width,
-                height: size.height * .65,
+                height: size.height * .6,
                 child: SingleChildScrollView(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

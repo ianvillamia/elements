@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mynewapp/Game/preludeToGame.dart';
 import 'package:mynewapp/Screens/Home/home.dart';
 import 'package:mynewapp/Screens/Lessons/lessonsHome.dart';
@@ -16,6 +17,14 @@ class Parent extends StatefulWidget {
 }
 
 class _HomeState extends State<Parent> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   final controller = PageController(initialPage: 0);
   var _selectedTab = _SelectedTab.home;
 
@@ -25,25 +34,40 @@ class _HomeState extends State<Parent> {
     print(i);
     switch (i) {
       case 0:
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         controller.animateToPage(0,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
         break;
       case 1:
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         controller.animateToPage(1,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 2:
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         controller.animateToPage(2,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 3:
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         controller.animateToPage(3,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 4:
+        SystemChrome.setPreferredOrientations([
+          DeviceOrientation.portraitUp,
+        ]);
         controller.animateToPage(4,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
@@ -57,6 +81,9 @@ class _HomeState extends State<Parent> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return Scaffold(
       body: PageView(
         onPageChanged: (index) {
