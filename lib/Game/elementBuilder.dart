@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Game/elements/Methoxymethane.dart';
 import 'package:mynewapp/Game/miniItems/error.dart';
@@ -89,6 +90,12 @@ class _ProtoGameState extends State<Game> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 400),
     );
     _gameProvider = Provider.of<GameProvider>(context, listen: false);
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+    ]);
   }
 
   @override

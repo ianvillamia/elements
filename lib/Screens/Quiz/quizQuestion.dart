@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Global/magicwand.dart';
 import 'package:mynewapp/Models/Question.dart';
@@ -28,6 +29,10 @@ class _QuestionState extends State<QuizQuestion>
   @override
   void initState() {
     super.initState();
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
   }
 
   @override

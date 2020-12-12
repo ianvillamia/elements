@@ -2,6 +2,7 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mynewapp/Providers/quizProvider.dart';
 import 'package:mynewapp/Screens/Quiz/quizQuestion.dart';
 import 'package:mynewapp/Screens/Quiz/quiz_builder.dart';
@@ -17,6 +18,14 @@ class QuizList extends StatefulWidget {
 }
 
 class _QuizListState extends State<QuizList> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final _quizProvider = Provider.of<QuizProvider>(context, listen: false);

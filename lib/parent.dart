@@ -34,40 +34,25 @@ class _HomeState extends State<Parent> {
     print(i);
     switch (i) {
       case 0:
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-        ]);
         controller.animateToPage(0,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
         break;
       case 1:
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-        ]);
         controller.animateToPage(1,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 2:
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-        ]);
         controller.animateToPage(2,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 3:
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-        ]);
         controller.animateToPage(3,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 
         break;
       case 4:
-        SystemChrome.setPreferredOrientations([
-          DeviceOrientation.portraitUp,
-        ]);
         controller.animateToPage(4,
             duration: Duration(milliseconds: 500), curve: Curves.easeIn);
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Game/elementBuilder.dart';
 import 'package:mynewapp/Game/elements/Ethoxyethane.dart';
@@ -14,6 +15,16 @@ class GameHome extends StatefulWidget {
 }
 
 class _GameHomeState extends State<GameHome> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   Size size;
   @override
   Widget build(BuildContext context) {

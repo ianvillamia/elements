@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 import 'package:mynewapp/Screens/LewisStructureCalculator/showStructure.dart';
 
@@ -8,6 +9,14 @@ class OCR extends StatefulWidget {
 }
 
 class _OCRState extends State<OCR> {
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
   int _cameraOcr = FlutterMobileVision.CAMERA_BACK;
   bool hide = false, hideImage = false, hideImageWrong = false;
   String _textValue =
