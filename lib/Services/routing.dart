@@ -1,4 +1,4 @@
-import 'package:fluro/fluro.dart';
+import 'package:fluro/fluro.dart' as fluro;
 import 'package:flutter/material.dart';
 import 'package:mynewapp/Game/elementBuilder.dart';
 import 'package:mynewapp/Game/preludeToGame.dart';
@@ -15,55 +15,58 @@ import 'package:mynewapp/Strings/routes.dart';
 import 'package:mynewapp/parent.dart';
 
 class FluroRouter {
-  static Router router = Router();
+  static fluro.Router router = fluro.Router();
 
-  static Handler _signInHandler = Handler(
+  static fluro.Handler _signInHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           SignIn());
-  static Handler _signUpHandler = Handler(
+  static fluro.Handler _signUpHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           SignUp());
-  static Handler _homeHandler = Handler(
+  static fluro.Handler _homeHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           Parent());
-  static Handler _lessonsMainHandler = Handler(
+  static fluro.Handler _lessonsMainHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           LessonsHome());
-  static Handler _periodicTableHandler = Handler(
+  static fluro.Handler _periodicTableHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PeriodicTable());
 
-  static Handler _preludeToGameHandler = Handler(
+  static fluro.Handler _preludeToGameHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           PreludeToGame());
-  static Handler _lewisStructureHandler = Handler(
+  static fluro.Handler _lewisStructureHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           OCR());
-  static Handler _quizLoadingHandler = Handler(
+  static fluro.Handler _quizLoadingHandler = fluro.Handler(
       handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           MagicWandSplashScreen());
 
 //-----------------------Routenames----------------------------------------//
   static void setupRouter() {
     router.define(Routes.def,
-        handler: _signInHandler, transitionType: TransitionType.fadeIn);
+        handler: _signInHandler, transitionType: fluro.TransitionType.fadeIn);
     router.define(Routes.signUp,
-        handler: _signUpHandler, transitionType: TransitionType.cupertino);
+        handler: _signUpHandler,
+        transitionType: fluro.TransitionType.cupertino);
     router.define(Routes.home,
-        handler: _homeHandler, transitionType: TransitionType.cupertino);
+        handler: _homeHandler, transitionType: fluro.TransitionType.cupertino);
     router.define(Routes.lessonsMain,
-        handler: _lessonsMainHandler, transitionType: TransitionType.cupertino);
+        handler: _lessonsMainHandler,
+        transitionType: fluro.TransitionType.cupertino);
     router.define(Routes.periodicTable,
         handler: _periodicTableHandler,
-        transitionType: TransitionType.cupertino);
+        transitionType: fluro.TransitionType.cupertino);
     router.define(Routes.lewisstructure,
         handler: _lewisStructureHandler,
-        transitionType: TransitionType.cupertino);
+        transitionType: fluro.TransitionType.cupertino);
     router.define(Routes.preludeToGame,
         handler: _preludeToGameHandler,
-        transitionType: TransitionType.cupertino);
+        transitionType: fluro.TransitionType.cupertino);
 
     router.define(Routes.quizLoading,
-        handler: _quizLoadingHandler, transitionType: TransitionType.cupertino);
+        handler: _quizLoadingHandler,
+        transitionType: fluro.TransitionType.cupertino);
   }
 }

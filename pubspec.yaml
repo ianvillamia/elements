@@ -46,8 +46,14 @@ dependencies:
   carousel_slider: ^2.3.1
   flutter_mobile_vision: ^0.1.4+1
   email_launcher: ^1.0.0
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  flutter_launcher_icons: ^0.8.1
+
+flutter_icons:
+  image_path_android: "assets/elements-logo.jpg"
+  image_path_ios: "assets/elements-logo.jpg"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

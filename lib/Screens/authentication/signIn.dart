@@ -104,7 +104,10 @@ class _SignInState extends State<SignIn> {
                                         password:
                                             passwordController.text.trim())
                                     .then((value) {
+                                  setState(() => isLoading = false);
                                   print(value);
+                                  Navigator.of(context).pushNamedAndRemoveUntil(
+                                      '/', (Route<dynamic> route) => false);
                                 }).catchError((error) {
                                   print(error);
                                   setState(() {
