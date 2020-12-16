@@ -6,6 +6,7 @@ import 'package:mynewapp/Game/elements/Ethoxyethane.dart';
 import 'package:mynewapp/Game/elements/Methoxymethane.dart';
 import 'package:mynewapp/Game/elements/Propanone.dart';
 import 'package:mynewapp/Game/elements/Propoxybutane.dart';
+import 'package:mynewapp/Global/customAlertDialog.dart';
 
 class GameHome extends StatefulWidget {
   GameHome({Key key}) : super(key: key);
@@ -46,6 +47,7 @@ class _GameHomeState extends State<GameHome> {
                 Wrap(
                   children: [
                     ElementCard(
+                      izDisabled: false,
                       elementName: 'Methoxymethane',
                       element: Methoxymethane(),
                     ),
@@ -75,8 +77,10 @@ class _GameHomeState extends State<GameHome> {
 
 class ElementCard extends StatefulWidget {
   final Widget element;
+  final bool izDisabled;
   final String elementName;
-  ElementCard({@required this.element, @required this.elementName});
+  ElementCard(
+      {@required this.element, @required this.elementName, this.izDisabled});
 
   @override
   _ElementCardState createState() => _ElementCardState();
@@ -91,14 +95,18 @@ class _ElementCardState extends State<ElementCard> {
       child: InkWell(
         splashColor: Colors.blue.withAlpha(30),
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Game(
-                  element: widget.element,
-                  elementName: widget.elementName,
-                ),
-              ));
+          if (widget.izDisabled == false) {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Game(
+                    element: widget.element,
+                    elementName: widget.elementName,
+                  ),
+                ));
+          } else {
+            showAlertDialog(context);
+          }
         },
         child: Container(
           width: 300,
@@ -111,6 +119,19 @@ class _ElementCardState extends State<ElementCard> {
           )),
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CustomAlertDialog(
+          title: Text('Apologies :( '),
+          content: Text('This element is still disabled'),
+        );
+      },
     );
   }
 }
