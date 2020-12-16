@@ -11,16 +11,16 @@ class NavigationCarousel extends StatefulWidget {
 class _NavigationCarouselState extends State<NavigationCarousel> {
   int _currentIndex = 0;
   List cardList = [
-    CarouselItem(
-      ontap: '/lessonsMain',
-      title: 'Learning Module',
-      description:
-          'A collective set of lessons in which you could learn a lot through watching videos',
-      image: Images.giraffe,
-      color1: Colors.blue[400],
-      color2: Colors.blue[200],
-      textColor: Colors.white,
-    ),
+    // CarouselItem(
+    //   ontap: '/lessonsMain',
+    //   title: 'Learning Module',
+    //   description:
+    //       'A collective set of lessons in which you could learn a lot through watching videos',
+    //   image: Images.giraffe,
+    //   color1: Colors.blue[400],
+    //   color2: Colors.blue[200],
+    //   textColor: Colors.white,
+    // ),
     CarouselItem(
       ontap: '/lewisStructure',
       title: 'Lewis Structure Calculator',
