@@ -1,5 +1,6 @@
 class Routes {
   static String def = '/';
+  static String signIn = '/signIn';
   static String signUp = '/signUp';
   static String home = '/home';
   static String lessonsMain = '/lessonsMain';

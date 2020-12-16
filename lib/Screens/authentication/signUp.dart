@@ -131,7 +131,7 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               ),
                               onTap: () {
-                                Navigator.pushNamed(context, Routes.def);
+                                Navigator.pushNamed(context, Routes.signIn);
                               },
                             ),
                           ],

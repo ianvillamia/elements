@@ -2,15 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mynewapp/Global/ocr.dart';
-import 'package:mynewapp/Screens/LewisStructureCalculator/ocr.dart';
-import 'package:mynewapp/Services/userService.dart';
-import 'package:mynewapp/Widgets/rotateDevice.dart';
+import 'package:mynewapp/Global/drawer.dart';
 import 'package:mynewapp/Global/carousel.dart';
 import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Strings/images.dart';
-import 'package:shape_of_view/shape_of_view.dart';
-import 'package:mynewapp/Screens/Home/stars.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 import 'package:provider/provider.dart';
@@ -43,30 +38,33 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    //var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     size = MediaQuery.of(context).size;
     return Scaffold(
+        key: _drawerKey,
+        drawer: BuildDrawer(),
         body: Container(
-      width: size.width,
-      height: size.height,
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _topbar(),
-              SizedBox(height: size.height * .05),
-              _greeting(),
-              SizedBox(height: size.height * .07),
-              NavigationCarousel(),
-            ],
+          width: size.width,
+          height: size.height,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _topbar(),
+                  SizedBox(height: size.height * .05),
+                  _greeting(),
+                  SizedBox(height: size.height * .07),
+                  NavigationCarousel(),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 
   _topbar() {
@@ -74,10 +72,11 @@ class _HomeState extends State<Home> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
+          splashRadius: 23,
           iconSize: 30,
           icon: Icon(Icons.sort),
-          onPressed: () {},
-          splashColor: Colors.blue,
+          onPressed: () => _drawerKey.currentState.openDrawer(),
+          splashColor: Colors.purple,
         ),
         Text(
           'Elements++',
@@ -86,9 +85,7 @@ class _HomeState extends State<Home> {
         ),
         ClipOval(
           child: GestureDetector(
-            onTap: () {
-              context.read<AuthenticationService>().signOut();
-            },
+            onTap: () {},
             child: Container(
                 width: 50,
                 height: 50,
@@ -103,7 +100,6 @@ class _HomeState extends State<Home> {
   }
 
   _greeting() {
-    FirebaseAuth auth = FirebaseAuth.instance;
     var user = FirebaseAuth.instance.currentUser;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

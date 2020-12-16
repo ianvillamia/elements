@@ -47,6 +47,8 @@ class FluroRouter {
   static void setupRouter() {
     router.define(Routes.def,
         handler: _signInHandler, transitionType: fluro.TransitionType.fadeIn);
+    router.define(Routes.signIn,
+        handler: _signInHandler, transitionType: fluro.TransitionType.fadeIn);
     router.define(Routes.signUp,
         handler: _signUpHandler,
         transitionType: fluro.TransitionType.cupertino);

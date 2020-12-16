@@ -1,235 +1,92 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynewapp/Game/elementBuilder.dart';
 
 import 'package:mynewapp/Screens/Home/stars.dart';
+import 'package:mynewapp/Services/authentication_service.dart';
 import 'package:mynewapp/Strings/images.dart';
 import 'package:mynewapp/Utils/textStyles.dart';
 
-class BuildDrawer extends StatelessWidget {
+class BuildDrawer extends StatefulWidget {
+  @override
+  _BuildDrawerState createState() => _BuildDrawerState();
+}
+
+class _BuildDrawerState extends State<BuildDrawer> {
   Size size;
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Drawer(
       child: ListView(
+        padding: EdgeInsets.zero,
         children: <Widget>[
-          Column(children: <Widget>[
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                'Elements++',
-                style: GoogleFonts.indieFlower(
-                    fontSize: FontSizes.heading, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(
-              height: size.height * .03,
-            ),
-            _leftIconcategoryBuilder(
-              size: size,
-              icon: Images.elephant,
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Game(),
-                    ));
-              },
-              buttonText: 'Compound Simulation',
-              descText:
-                  'Learn organic compounds through this  simulation game.',
-              color1: Colors.deepPurple[300],
-              color2: Colors.deepPurple[200],
-            ),
-            _rightIconcategoryBuilder(
-                size: size,
-                icon: Images.owl,
-                onTap: () {
-                  Navigator.pushNamed(context, '/lessonsMain');
-                },
-                buttonText: 'Learning Module',
-                descText: 'Learn more about chemistry',
-                color1: Colors.blue[400],
-                color2: Colors.blue[200]),
-            _leftIconcategoryBuilder(
-              size: size,
-              icon: Images.hippo,
-              onTap: () {},
-              buttonText: 'Lewis Structure Calculator',
-              descText: 'Get your naming problem solve',
-              color1: Colors.yellow[800],
-              color2: Colors.yellow[600],
-            ),
-            _rightIconcategoryBuilder(
-                size: size,
-                icon: Images.giraffe,
-                onTap: () {
-                  Navigator.pushNamed(context, '/periodicTable');
-                },
-                buttonText: 'Interactive Periodic Table of Elements',
-                descText:
-                    'a well-organized view of elements according to its properties and characteristics.',
-                color1: Colors.green[300],
-                color2: Colors.green[200]),
-          ]),
+          _createHeader(),
+          _createDrawerItem(
+            icon: Icons.contacts,
+            text: 'Profile',
+            onPressed: () {},
+          ),
+          Divider(),
+          _createDrawerItem(
+            icon: Icons.bug_report,
+            text: 'Report an issue',
+            onPressed: () {},
+          ),
+          _createDrawerItem(
+              icon: Icons.exit_to_app,
+              text: 'Logout',
+              onPressed: () => context.read<AuthenticationService>().signOut()),
+          // ListTile(
+          //   title: Text('v0.0.1'),
+          //   onTap: () {},
+          // ),
         ],
       ),
     );
   }
 
-  _leftIconcategoryBuilder(
-      {@required size,
-      @required String icon,
-      @required onTap,
-      @required String buttonText,
-      @required String descText,
-      @required Color color1,
-      color2}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-        child: Container(
-          height: size.height * .28,
-          width: size.width,
-          child: Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.fromLTRB(105, 10, 10, 10),
-                //margin: EdgeInsets.only(left: 20),
-                width: size.width * .72,
-                height: size.height * .2,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [color1, color2],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      stops: [0.2, 0.65]),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 7,
-                      offset: Offset(0, 3),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(buttonText,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold)),
-                    Flexible(
-                      child: Text(descText,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(color: Colors.white, fontSize: 12)),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  width: size.width * .72,
-                  height: size.height * .2,
-                  child: Stars()),
-              Positioned(
-                left: -8,
-                child: Container(
-                  width: size.width * .35,
-                  height: size.height * .23,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(icon), fit: BoxFit.contain)),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+  Widget _createHeader() {
+    var user = FirebaseAuth.instance.currentUser;
+    return StreamBuilder<DocumentSnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .snapshots(),
+        builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+          if (snapshot.hasError) {
+            print(snapshot.error);
+            return Text('');
+          } else if (snapshot.hasData) {
+            return UserAccountsDrawerHeader(
+              margin: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage('assets/background-login.jpg'))),
+              accountName: Text(
+                  '${snapshot.data['firstName']} ${snapshot.data['lastName']}'),
+              accountEmail: Text('${snapshot.data['email']}'),
+            );
+          }
+          return Center();
+        });
   }
 
-  _rightIconcategoryBuilder(
-      {@required size,
-      @required String icon,
-      @required onTap,
-      @required String buttonText,
-      @required String descText,
-      @required Color color1,
-      color2}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 5.0, right: 5.0),
-        child: Container(
-          height: size.height * .28,
-          width: size.width,
-          child: Stack(
-            alignment: Alignment.center,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.fromLTRB(30, 10, 90, 10),
-                //margin: EdgeInsets.only(left: 20),
-                width: size.width * .72,
-                height: size.height * .2,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [color1, color2],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                      stops: [0.2, 0.65]),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 7,
-                      offset: Offset(3, 3),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(buttonText,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold)),
-                    Flexible(
-                      child: Text(descText,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(color: Colors.white, fontSize: 12)),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  width: size.width * .72,
-                  height: size.height * .2,
-                  child: Stars()),
-              Positioned(
-                right: -10,
-                child: Container(
-                  width: size.width * .35,
-                  height: size.height * .28,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(icon))),
-                ),
-              ),
-            ],
-          ),
-        ),
+  Widget _createDrawerItem({IconData icon, String text, onPressed}) {
+    return ListTile(
+        title: MaterialButton(
+      padding: EdgeInsets.zero,
+      onPressed: onPressed,
+      child: Row(
+        children: [
+          Icon(icon),
+          Text(text),
+        ],
       ),
-    );
+    ));
   }
 }
